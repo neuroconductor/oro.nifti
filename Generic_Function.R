@@ -4,7 +4,7 @@
 #' @param object is an object of class \code{nifti}
 #' @param value Value to assign to %ff% 
 #' @description Methods that act on the ``%ff%'' in the NIfTI header.
-#' @rdname %%-methods
+#' @rdname %ff%-methods
 #' @aliases %%-methods 
 #' @aliases %%
 %example%

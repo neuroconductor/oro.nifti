@@ -4,7 +4,7 @@
 #' @param object is an object of class \code{nifti}
 #' @param value Value to assign to cal_min 
 #' @description Methods that act on the ``cal_min'' in the NIfTI header.
-#' @rdname cal.min-methods
+#' @rdname cal_min-methods
 #' @aliases cal.min-methods 
 #' @aliases cal.min
 #' @examples \dontrun{

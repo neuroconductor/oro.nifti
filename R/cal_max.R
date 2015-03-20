@@ -4,7 +4,7 @@
 #' @param object is an object of class \code{nifti}
 #' @param value Value to assign to cal_max 
 #' @description Methods that act on the ``cal_max'' in the NIfTI header.
-#' @rdname cal.max-methods
+#' @rdname cal_max-methods
 #' @aliases cal.max-methods 
 #' @aliases cal.max
 #' @examples \dontrun{

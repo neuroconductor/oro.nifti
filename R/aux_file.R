@@ -4,7 +4,7 @@
 #' @param object is an object of class \code{nifti}
 #' @param value Value to assign to aux_file 
 #' @description Methods that act on the ``aux_file'' in the NIfTI header.
-#' @rdname aux.file-methods
+#' @rdname aux_file-methods
 #' @aliases aux.file-methods 
 #' @aliases aux.file
 #' @examples \dontrun{

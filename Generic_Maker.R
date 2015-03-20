@@ -15,8 +15,8 @@ makefunc = function(funcname, type="numeric", ex_text = NULL,
   } else {
     x = gsub("%example%", "#'", x)
   }
-  if (write) writeLines(text=x, con = paste0("R/", funcname, ".R"))
-  if (remove) file.remove(paste0("R/", funcname, ".R"))
+  if (write) writeLines(text=x, con = paste0("R/", f_no_dot, ".R"))
+  if (remove) file.remove(paste0("R/", f_no_dot, ".R"))
   return(TRUE)
 }
 
