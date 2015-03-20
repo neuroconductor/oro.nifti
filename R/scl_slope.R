@@ -7,6 +7,7 @@
 #' @rdname scl_slope-methods
 #' @aliases scl_slope-methods 
 #' @aliases scl_slope
+#' @export
 #'
 #' @export
 setGeneric("scl_slope", function(object) standardGeneric("scl_slope"))
@@ -14,22 +15,26 @@ setGeneric("scl_slope", function(object) standardGeneric("scl_slope"))
 #' @name scl_slope
 #' @rdname scl_slope-methods
 #' @aliases scl_slope,nifti-method
+#' @export
 setMethod("scl_slope", "nifti", function(object) { object@"scl_slope" })
 
 #' @name scl_slope
 #' @rdname scl_slope-methods
 #' @aliases scl_slope,anlz-method
+#' @export
 setMethod("scl_slope", "anlz", function(object) { object@"scl_slope" })
 
 
 #' @name scl_slope
 #' @rdname scl_slope-methods
 #' @aliases scl_slope<- 
+#' @export
 setGeneric("scl_slope<-", function(object, value) { standardGeneric("scl_slope<-") })
 
 #' @name scl_slope
 #' @rdname scl_slope-methods
 #' @aliases scl_slope<-,nifti-method
+#' @export
 setMethod("scl_slope<-", 
           signature(object="nifti"), 
           function(object, value) { 
@@ -43,6 +48,7 @@ setMethod("scl_slope<-",
 #' @name scl_slope
 #' @rdname scl_slope-methods
 #' @aliases scl_slope<-,anlz-method
+#' @export
 setMethod("scl_slope<-", 
           signature(object="anlz"), 
           function(object, value) { 

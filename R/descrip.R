@@ -7,6 +7,7 @@
 #' @rdname descrip-methods
 #' @aliases descrip-methods 
 #' @aliases descrip
+#' @export
 #' @examples \dontrun{
 #' url <- "http://nifti.nimh.nih.gov/nifti-1/data/avg152T1_LR_nifti.nii.gz"
 #' urlfile <- file.path(system.file("nifti", package="oro.nifti"),
@@ -27,22 +28,26 @@ setGeneric("descrip", function(object) standardGeneric("descrip"))
 #' @name descrip
 #' @rdname descrip-methods
 #' @aliases descrip,nifti-method
+#' @export
 setMethod("descrip", "nifti", function(object) { object@"descrip" })
 
 #' @name descrip
 #' @rdname descrip-methods
 #' @aliases descrip,anlz-method
+#' @export
 setMethod("descrip", "anlz", function(object) { object@"descrip" })
 
 
 #' @name descrip
 #' @rdname descrip-methods
 #' @aliases descrip<- 
+#' @export
 setGeneric("descrip<-", function(object, value) { standardGeneric("descrip<-") })
 
 #' @name descrip
 #' @rdname descrip-methods
 #' @aliases descrip<-,nifti-method
+#' @export
 setMethod("descrip<-", 
           signature(object="nifti"), 
           function(object, value) { 
@@ -56,6 +61,7 @@ setMethod("descrip<-",
 #' @name descrip
 #' @rdname descrip-methods
 #' @aliases descrip<-,anlz-method
+#' @export
 setMethod("descrip<-", 
           signature(object="anlz"), 
           function(object, value) { 

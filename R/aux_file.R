@@ -7,6 +7,7 @@
 #' @rdname aux_file-methods
 #' @aliases aux.file-methods 
 #' @aliases aux.file
+#' @export
 #' @examples \dontrun{
 #' url <- "http://nifti.nimh.nih.gov/nifti-1/data/avg152T1_RL_nifti.nii.gz"
 #' urlfile <- file.path(system.file("nifti", package="oro.nifti"),
@@ -27,22 +28,26 @@ setGeneric("aux.file", function(object) standardGeneric("aux.file"))
 #' @name aux.file
 #' @rdname aux_file-methods
 #' @aliases aux.file,nifti-method
+#' @export
 setMethod("aux.file", "nifti", function(object) { object@"aux_file" })
 
 #' @name aux.file
 #' @rdname aux_file-methods
 #' @aliases aux.file,anlz-method
+#' @export
 setMethod("aux.file", "anlz", function(object) { object@"aux_file" })
 
 
 #' @name aux.file
 #' @rdname aux_file-methods
 #' @aliases aux.file<- 
+#' @export
 setGeneric("aux.file<-", function(object, value) { standardGeneric("aux.file<-") })
 
 #' @name aux.file
 #' @rdname aux_file-methods
 #' @aliases aux.file<-,nifti-method
+#' @export
 setMethod("aux.file<-", 
           signature(object="nifti"), 
           function(object, value) { 
@@ -56,6 +61,7 @@ setMethod("aux.file<-",
 #' @name aux.file
 #' @rdname aux_file-methods
 #' @aliases aux.file<-,anlz-method
+#' @export
 setMethod("aux.file<-", 
           signature(object="anlz"), 
           function(object, value) { 

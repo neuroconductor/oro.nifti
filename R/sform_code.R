@@ -7,6 +7,7 @@
 #' @rdname sform_code-methods
 #' @aliases sform_code-methods 
 #' @aliases sform_code
+#' @export
 #'
 #' @export
 setGeneric("sform_code", function(object) standardGeneric("sform_code"))
@@ -14,22 +15,26 @@ setGeneric("sform_code", function(object) standardGeneric("sform_code"))
 #' @name sform_code
 #' @rdname sform_code-methods
 #' @aliases sform_code,nifti-method
+#' @export
 setMethod("sform_code", "nifti", function(object) { object@"sform_code" })
 
 #' @name sform_code
 #' @rdname sform_code-methods
 #' @aliases sform_code,anlz-method
+#' @export
 setMethod("sform_code", "anlz", function(object) { object@"sform_code" })
 
 
 #' @name sform_code
 #' @rdname sform_code-methods
 #' @aliases sform_code<- 
+#' @export
 setGeneric("sform_code<-", function(object, value) { standardGeneric("sform_code<-") })
 
 #' @name sform_code
 #' @rdname sform_code-methods
 #' @aliases sform_code<-,nifti-method
+#' @export
 setMethod("sform_code<-", 
           signature(object="nifti"), 
           function(object, value) { 
@@ -43,6 +48,7 @@ setMethod("sform_code<-",
 #' @name sform_code
 #' @rdname sform_code-methods
 #' @aliases sform_code<-,anlz-method
+#' @export
 setMethod("sform_code<-", 
           signature(object="anlz"), 
           function(object, value) { 

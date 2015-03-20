@@ -7,6 +7,7 @@
 #' @rdname cal_max-methods
 #' @aliases cal.max-methods 
 #' @aliases cal.max
+#' @export
 #' @examples \dontrun{
 #' url <- "http://nifti.nimh.nih.gov/nifti-1/data/avg152T1_LR_nifti.nii.gz"
 #' urlfile <- file.path(system.file("nifti", package="oro.nifti"),
@@ -23,22 +24,26 @@ setGeneric("cal.max", function(object) standardGeneric("cal.max"))
 #' @name cal.max
 #' @rdname cal_max-methods
 #' @aliases cal.max,nifti-method
+#' @export
 setMethod("cal.max", "nifti", function(object) { object@"cal_max" })
 
 #' @name cal.max
 #' @rdname cal_max-methods
 #' @aliases cal.max,anlz-method
+#' @export
 setMethod("cal.max", "anlz", function(object) { object@"cal_max" })
 
 
 #' @name cal.max
 #' @rdname cal_max-methods
 #' @aliases cal.max<- 
+#' @export
 setGeneric("cal.max<-", function(object, value) { standardGeneric("cal.max<-") })
 
 #' @name cal.max
 #' @rdname cal_max-methods
 #' @aliases cal.max<-,nifti-method
+#' @export
 setMethod("cal.max<-", 
           signature(object="nifti"), 
           function(object, value) { 
@@ -52,6 +57,7 @@ setMethod("cal.max<-",
 #' @name cal.max
 #' @rdname cal_max-methods
 #' @aliases cal.max<-,anlz-method
+#' @export
 setMethod("cal.max<-", 
           signature(object="anlz"), 
           function(object, value) { 

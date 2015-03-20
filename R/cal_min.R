@@ -7,6 +7,7 @@
 #' @rdname cal_min-methods
 #' @aliases cal.min-methods 
 #' @aliases cal.min
+#' @export
 #' @examples \dontrun{
 #' url <- "http://nifti.nimh.nih.gov/nifti-1/data/avg152T1_LR_nifti.nii.gz"
 #' urlfile <- file.path(system.file("nifti", package="oro.nifti"),
@@ -23,22 +24,26 @@ setGeneric("cal.min", function(object) standardGeneric("cal.min"))
 #' @name cal.min
 #' @rdname cal_min-methods
 #' @aliases cal.min,nifti-method
+#' @export
 setMethod("cal.min", "nifti", function(object) { object@"cal_min" })
 
 #' @name cal.min
 #' @rdname cal_min-methods
 #' @aliases cal.min,anlz-method
+#' @export
 setMethod("cal.min", "anlz", function(object) { object@"cal_min" })
 
 
 #' @name cal.min
 #' @rdname cal_min-methods
 #' @aliases cal.min<- 
+#' @export
 setGeneric("cal.min<-", function(object, value) { standardGeneric("cal.min<-") })
 
 #' @name cal.min
 #' @rdname cal_min-methods
 #' @aliases cal.min<-,nifti-method
+#' @export
 setMethod("cal.min<-", 
           signature(object="nifti"), 
           function(object, value) { 
@@ -52,6 +57,7 @@ setMethod("cal.min<-",
 #' @name cal.min
 #' @rdname cal_min-methods
 #' @aliases cal.min<-,anlz-method
+#' @export
 setMethod("cal.min<-", 
           signature(object="anlz"), 
           function(object, value) { 

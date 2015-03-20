@@ -7,6 +7,7 @@
 #' @rdname pixdim-methods
 #' @aliases pixdim-methods 
 #' @aliases pixdim
+#' @export
 #' @examples \dontrun{
 #' url <- "http://nifti.nimh.nih.gov/nifti-1/data/avg152T1_LR_nifti.nii.gz"
 #' urlfile <- file.path(system.file("nifti", package="oro.nifti"),
@@ -23,22 +24,26 @@ setGeneric("pixdim", function(object) standardGeneric("pixdim"))
 #' @name pixdim
 #' @rdname pixdim-methods
 #' @aliases pixdim,nifti-method
+#' @export
 setMethod("pixdim", "nifti", function(object) { object@"pixdim" })
 
 #' @name pixdim
 #' @rdname pixdim-methods
 #' @aliases pixdim,anlz-method
+#' @export
 setMethod("pixdim", "anlz", function(object) { object@"pixdim" })
 
 
 #' @name pixdim
 #' @rdname pixdim-methods
 #' @aliases pixdim<- 
+#' @export
 setGeneric("pixdim<-", function(object, value) { standardGeneric("pixdim<-") })
 
 #' @name pixdim
 #' @rdname pixdim-methods
 #' @aliases pixdim<-,nifti-method
+#' @export
 setMethod("pixdim<-", 
           signature(object="nifti"), 
           function(object, value) { 
@@ -52,6 +57,7 @@ setMethod("pixdim<-",
 #' @name pixdim
 #' @rdname pixdim-methods
 #' @aliases pixdim<-,anlz-method
+#' @export
 setMethod("pixdim<-", 
           signature(object="anlz"), 
           function(object, value) { 

@@ -7,6 +7,7 @@
 #' @rdname scl_inter-methods
 #' @aliases scl_inter-methods 
 #' @aliases scl_inter
+#' @export
 #'
 #' @export
 setGeneric("scl_inter", function(object) standardGeneric("scl_inter"))
@@ -14,22 +15,26 @@ setGeneric("scl_inter", function(object) standardGeneric("scl_inter"))
 #' @name scl_inter
 #' @rdname scl_inter-methods
 #' @aliases scl_inter,nifti-method
+#' @export
 setMethod("scl_inter", "nifti", function(object) { object@"scl_inter" })
 
 #' @name scl_inter
 #' @rdname scl_inter-methods
 #' @aliases scl_inter,anlz-method
+#' @export
 setMethod("scl_inter", "anlz", function(object) { object@"scl_inter" })
 
 
 #' @name scl_inter
 #' @rdname scl_inter-methods
 #' @aliases scl_inter<- 
+#' @export
 setGeneric("scl_inter<-", function(object, value) { standardGeneric("scl_inter<-") })
 
 #' @name scl_inter
 #' @rdname scl_inter-methods
 #' @aliases scl_inter<-,nifti-method
+#' @export
 setMethod("scl_inter<-", 
           signature(object="nifti"), 
           function(object, value) { 
@@ -43,6 +48,7 @@ setMethod("scl_inter<-",
 #' @name scl_inter
 #' @rdname scl_inter-methods
 #' @aliases scl_inter<-,anlz-method
+#' @export
 setMethod("scl_inter<-", 
           signature(object="anlz"), 
           function(object, value) { 
