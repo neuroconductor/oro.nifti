@@ -3,10 +3,25 @@
 \docType{methods}
 \name{cal.max}
 \alias{cal.max}
+\alias{cal.max,anlz-method}
+\alias{cal.max,nifti-method}
 \alias{cal.max-methods}
+\alias{cal.max<-}
+\alias{cal.max<-,anlz-method}
+\alias{cal.max<-,nifti-method}
 \title{Extract NIfTI 3D Image cal.max attribute}
 \usage{
 cal.max(object)
+
+\S4method{cal.max}{nifti}(object)
+
+\S4method{cal.max}{anlz}(object)
+
+cal.max(object) <- value
+
+\S4method{cal.max}{nifti}(object) <- value
+
+\S4method{cal.max}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti}}

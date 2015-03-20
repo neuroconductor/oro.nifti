@@ -21,23 +21,23 @@
 setGeneric("cal.max", function(object) standardGeneric("cal.max"))
 
 #' @name cal.max
-#' @rdname cal.max-methods
+#' @rdname cal_max-methods
 #' @aliases cal.max,nifti-method
 setMethod("cal.max", "nifti", function(object) { object@"cal_max" })
 
 #' @name cal.max
-#' @rdname cal.max-methods
+#' @rdname cal_max-methods
 #' @aliases cal.max,anlz-method
 setMethod("cal.max", "anlz", function(object) { object@"cal_max" })
 
 
 #' @name cal.max
-#' @rdname cal.max-methods
+#' @rdname cal_max-methods
 #' @aliases cal.max<- 
 setGeneric("cal.max<-", function(object, value) { standardGeneric("cal.max<-") })
 
 #' @name cal.max
-#' @rdname cal.max-methods
+#' @rdname cal_max-methods
 #' @aliases cal.max<-,nifti-method
 setMethod("cal.max<-", 
           signature(object="nifti"), 
@@ -50,7 +50,7 @@ setMethod("cal.max<-",
           })
 
 #' @name cal.max
-#' @rdname cal.max-methods
+#' @rdname cal_max-methods
 #' @aliases cal.max<-,anlz-method
 setMethod("cal.max<-", 
           signature(object="anlz"), 

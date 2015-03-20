@@ -12,23 +12,23 @@
 setGeneric("%%", function(object) standardGeneric("%%"))
 
 #' @name %%
-#' @rdname %%-methods
+#' @rdname %ff%-methods
 #' @aliases %%,nifti-method
 setMethod("%%", "nifti", function(object) { object@"%ff%" })
 
 #' @name %%
-#' @rdname %%-methods
+#' @rdname %ff%-methods
 #' @aliases %%,anlz-method
 setMethod("%%", "anlz", function(object) { object@"%ff%" })
 
 
 #' @name %%
-#' @rdname %%-methods
+#' @rdname %ff%-methods
 #' @aliases %%<- 
 setGeneric("%%<-", function(object, value) { standardGeneric("%%<-") })
 
 #' @name %%
-#' @rdname %%-methods
+#' @rdname %ff%-methods
 #' @aliases %%<-,nifti-method
 setMethod("%%<-", 
           signature(object="nifti"), 
@@ -41,7 +41,7 @@ setMethod("%%<-",
           })
 
 #' @name %%
-#' @rdname %%-methods
+#' @rdname %ff%-methods
 #' @aliases %%<-,anlz-method
 setMethod("%%<-", 
           signature(object="anlz"), 

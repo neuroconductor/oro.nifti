@@ -3,10 +3,25 @@
 \docType{methods}
 \name{cal.min}
 \alias{cal.min}
+\alias{cal.min,anlz-method}
+\alias{cal.min,nifti-method}
 \alias{cal.min-methods}
+\alias{cal.min<-}
+\alias{cal.min<-,anlz-method}
+\alias{cal.min<-,nifti-method}
 \title{Extract NIfTI 3D Image cal.min attribute}
 \usage{
 cal.min(object)
+
+\S4method{cal.min}{nifti}(object)
+
+\S4method{cal.min}{anlz}(object)
+
+cal.min(object) <- value
+
+\S4method{cal.min}{nifti}(object) <- value
+
+\S4method{cal.min}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti}}

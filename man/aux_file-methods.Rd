@@ -3,10 +3,25 @@
 \docType{methods}
 \name{aux.file}
 \alias{aux.file}
+\alias{aux.file,anlz-method}
+\alias{aux.file,nifti-method}
 \alias{aux.file-methods}
+\alias{aux.file<-}
+\alias{aux.file<-,anlz-method}
+\alias{aux.file<-,nifti-method}
 \title{Extract NIfTI 3D Image aux.file attribute}
 \usage{
 aux.file(object)
+
+\S4method{aux.file}{nifti}(object)
+
+\S4method{aux.file}{anlz}(object)
+
+aux.file(object) <- value
+
+\S4method{aux.file}{nifti}(object) <- value
+
+\S4method{aux.file}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti}}

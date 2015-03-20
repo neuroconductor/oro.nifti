@@ -25,23 +25,23 @@
 setGeneric("aux.file", function(object) standardGeneric("aux.file"))
 
 #' @name aux.file
-#' @rdname aux.file-methods
+#' @rdname aux_file-methods
 #' @aliases aux.file,nifti-method
 setMethod("aux.file", "nifti", function(object) { object@"aux_file" })
 
 #' @name aux.file
-#' @rdname aux.file-methods
+#' @rdname aux_file-methods
 #' @aliases aux.file,anlz-method
 setMethod("aux.file", "anlz", function(object) { object@"aux_file" })
 
 
 #' @name aux.file
-#' @rdname aux.file-methods
+#' @rdname aux_file-methods
 #' @aliases aux.file<- 
 setGeneric("aux.file<-", function(object, value) { standardGeneric("aux.file<-") })
 
 #' @name aux.file
-#' @rdname aux.file-methods
+#' @rdname aux_file-methods
 #' @aliases aux.file<-,nifti-method
 setMethod("aux.file<-", 
           signature(object="nifti"), 
@@ -54,7 +54,7 @@ setMethod("aux.file<-",
           })
 
 #' @name aux.file
-#' @rdname aux.file-methods
+#' @rdname aux_file-methods
 #' @aliases aux.file<-,anlz-method
 setMethod("aux.file<-", 
           signature(object="anlz"), 
