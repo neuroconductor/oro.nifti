@@ -10,7 +10,6 @@
 #' @name zero_trans
 #' @export
 zero_trans = function(img){
-  img = check_nifti(img)  
   img@scl_slope = 1
   img@scl_inter = 0
   return(img)
