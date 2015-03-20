@@ -131,7 +131,24 @@ setClass("nifti",
 #############################################################################
 ## setClass("niftiExtension")
 #############################################################################
-
+#' @title Class "niftiExtension"
+#' 
+#' @description An extension of the NIfTI class that allows \dQuote{extensions} that conform
+#' to the NIfTI data standard.
+#' 
+#' 
+#' @name niftiExtension-class
+#' @docType class
+#' @section Objects from the Class: Objects can be created by calls of the form
+#' \code{new("niftiExtension", data, dim, dimnames, ...)}.
+#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}
+#' @seealso \code{\linkS4class{nifti}}, \code{\linkS4class{niftiAuditTrail}}
+#' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
+#' @keywords classes
+#' @examples
+#' 
+#' showClass("niftiExtension")
+#' @export
 setClass("niftiExtension",
          representation(extensions="list"),
          prototype(extensions=list()),
@@ -140,7 +157,23 @@ setClass("niftiExtension",
 #############################################################################
 ## setClass("niftiAuditTrail")
 #############################################################################
-
+#' @title Class "niftiAuditTrail"
+#' 
+#' @description An extension of the NIfTI class that adds an audit trail in XML format.
+#' 
+#' 
+#' @name niftiAuditTrail-class
+#' @docType class
+#' @section Objects from the Class: Objects can be created by calls of the form
+#' \code{new("niftiAuditTrail", data, dim, dimnames, ...)}.
+#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}
+#' @seealso \code{\linkS4class{nifti}}, \code{\linkS4class{niftiExtension}}
+#' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
+#' @keywords classes
+#' @examples
+#' 
+#' showClass("niftiAuditTrail")
+#' @export
 setClass("niftiAuditTrail",
          representation(trail="ANY"),
          prototype(trail=newAuditTrail()),
@@ -149,7 +182,26 @@ setClass("niftiAuditTrail",
 #############################################################################
 ## setClass("niftiExtensionSection")
 #############################################################################
-
+#' @title Class "niftiExtensionSection"
+#' 
+#' @description A \code{niftiExtensionSection} contains the fields that conform to the NIfTI
+#' standard regarding header extensions.  A \code{niftiExtension} is composed
+#' of one or more of these objects.
+#' 
+#' 
+#' @name niftiExtensionSection-class
+#' @docType class
+#' @section Objects from the Class: Objects can be created by calls of the form
+#' \code{new("niftiExtensionSection", data, dim, dimnames, ...)}.
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com},\cr Andrew Thornton
+#' \email{zeripath@@users.sourcefore.net}
+#' @seealso \code{\linkS4class{niftiExtension}}, \code{\linkS4class{nifti}}
+#' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
+#' @keywords classes
+#' @examples
+#' 
+#' showClass("niftiExtensionSection")
+#' @export
 setClass("niftiExtensionSection",
          representation(esize="numeric",
                         ecode="numeric",

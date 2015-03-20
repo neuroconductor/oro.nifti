@@ -7,6 +7,7 @@
 #' @rdname %%-methods
 #' @aliases %%-methods 
 #' @aliases %%
+%example%
 #' @export
 setGeneric("%%", function(object) standardGeneric("%%"))
 
@@ -34,7 +35,7 @@ setMethod("%%<-",
           function(object, value) { 
             object@"%ff%" <- value 
             audit.trail(object) <-
-              niftiAuditTrailEvent(x, "modification", match.call(),
+              niftiAuditTrailEvent(object, "modification", match.call(),
                                    paste("%ff% <-", value))            
             return(object)
           })
@@ -47,7 +48,7 @@ setMethod("%%<-",
           function(object, value) { 
             object@"%ff%" <- value 
             audit.trail(object) <-
-              niftiAuditTrailEvent(x, "modification", match.call(),
+              niftiAuditTrailEvent(object, "modification", match.call(),
                                    paste("%ff% <-", value))            
             return(object)
           })

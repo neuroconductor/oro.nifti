@@ -1,0 +1,55 @@
+#' @name glmin
+#' @title Extract NIfTI 3D Image glmin attribute
+#' @docType methods 
+#' @param object is an object of class \code{nifti}
+#' @param value Value to assign to glmin 
+#' @description Methods that act on the ``glmin'' in the NIfTI header.
+#' @rdname glmin-methods
+#' @aliases glmin-methods 
+#' @aliases glmin
+#'
+#' @export
+setGeneric("glmin", function(object) standardGeneric("glmin"))
+
+#' @name glmin
+#' @rdname glmin-methods
+#' @aliases glmin,nifti-method
+setMethod("glmin", "nifti", function(object) { object@"glmin" })
+
+#' @name glmin
+#' @rdname glmin-methods
+#' @aliases glmin,anlz-method
+setMethod("glmin", "anlz", function(object) { object@"glmin" })
+
+
+#' @name glmin
+#' @rdname glmin-methods
+#' @aliases glmin<- 
+setGeneric("glmin<-", function(object, value) { standardGeneric("glmin<-") })
+
+#' @name glmin
+#' @rdname glmin-methods
+#' @aliases glmin<-,nifti-method
+setMethod("glmin<-", 
+          signature(object="nifti"), 
+          function(object, value) { 
+            object@"glmin" <- value 
+            audit.trail(object) <-
+              niftiAuditTrailEvent(object, "modification", match.call(),
+                                   paste("glmin <-", value))            
+            return(object)
+          })
+
+#' @name glmin
+#' @rdname glmin-methods
+#' @aliases glmin<-,anlz-method
+setMethod("glmin<-", 
+          signature(object="anlz"), 
+          function(object, value) { 
+            object@"glmin" <- value 
+            audit.trail(object) <-
+              niftiAuditTrailEvent(object, "modification", match.call(),
+                                   paste("glmin <-", value))            
+            return(object)
+          })
+
