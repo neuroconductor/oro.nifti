@@ -292,9 +292,10 @@ dim2slice <- function(di) {
 ############################################################################
 ## as.nifti()
 ############################################################################
-#' as.nifti
+#' @name as.nifti
+#' @title as.nifti
 #' 
-#' Internal function that converts multidimensional arrays to NIfTI class
+#' @description Internal function that converts multidimensional arrays to NIfTI class
 #' objects.
 #' 
 #' 

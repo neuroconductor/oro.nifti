@@ -85,6 +85,7 @@ convert.bitpix.anlz <- function(bitpix=NULL) {
 
 #' @rdname convert_anlz
 #' @aliases convert.datatype.anlz convert.orient.anlz
+#' @export
 convert.datatype.anlz <- function(datatype.code=NULL) {
   anlz.datatype <- list("NONE" = 0,
                         "UNKNOWN" = 0,
@@ -106,6 +107,7 @@ convert.datatype.anlz <- function(datatype.code=NULL) {
 
 #' @rdname convert_anlz
 #' @aliases convert.orient.anlz
+#' @export 
 convert.orient.anlz <- function(orientation) {
   switch(as.character(orientation),
          "0" = "transverse unflipped",
@@ -121,9 +123,10 @@ convert.orient.anlz <- function(orientation) {
 ## as.anlz()
 ############################################################################
 
-#' as.anlz
+#' @name as.anlz
+#' @title as.anlz
 #' 
-#' Internal function that converts multidimensional arrays to ANALYZE class
+#' @description Internal function that converts multidimensional arrays to ANALYZE class
 #' objects.
 #' 
 #' 
