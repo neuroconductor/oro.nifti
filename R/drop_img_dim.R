@@ -5,6 +5,23 @@
 #' @description Drops a dimension of an image that has one-dimension and 
 #' sets respective values to 0 in pixdim or 1 in dim
 #' @export
+#' @examples
+#' \dontrun{
+#' ## 27 scans of Colin Holmes (MNI) brain co-registered and averaged
+#' ## NIfTI two-file format
+#' URL <- "http://imaging.mrc-cbu.cam.ac.uk/downloads/Colin/colin_1mm.tgz"
+#' urlfile <- file.path(tempdir(), "colin_1mm.tgz")
+#' download.file(URL, dest=urlfile, quiet=TRUE)
+#' untar(urlfile, exdir=tempdir())
+#' colin <- readNIfTI(file.path(tempdir(), "colin_1mm"))
+#' dim(colin)
+#' dim_(colin)
+#' pixdim(colin)
+#' # this will error
+#' writeNIfTI(colin, filename = tempfile())
+#' colin = drop_img_dim(colin)
+#' writeNIfTI(colin, filename = tempfile())
+#' }
 drop_img_dim = function(img, warn = TRUE){
   dim_  = dim_(img)
   imgdim = dim(img)

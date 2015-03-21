@@ -3,7 +3,7 @@ Version: 0.4.5
 Date: 2015-03-20
 Title: Rigorous - NIfTI+ANALYZE+AFNI Input / Output
 Author: Brandon Whitcher, Volker Schmid and Andrew Thornton, with
-    contributions by Karsten Tabelow and Jon Clayden
+    contributions by Karsten Tabelow and Jon Clayden and John Muschelli
 Maintainer: Brandon Whitcher <bwhitcher@gmail.com>
 Description: Functions for the input/output and visualization of
     medical imaging data that follow either the ANALYZE, NIfTI or AFNI
