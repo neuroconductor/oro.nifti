@@ -29,6 +29,7 @@ Collate:
     'niftiS4.R'
     'analyzeS4.R'
     'afniS4.R'
+    'nifti_assign.R'
     'coerce.R'
     'writeS4.R'
     'oro.nifti-package.R'    

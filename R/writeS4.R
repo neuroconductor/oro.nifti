@@ -49,8 +49,8 @@ setGeneric("writeNIfTI", function(nim,  ...) standardGeneric("writeNIfTI"))
 #' \item{list("UINT16")}{DT UNSIGNED SHORT (16 bits per voxel)} }
 #' 
 #' @name writeNIfTI-methods
-#' @aliases writeNIfTI-methods writeNIfTI,nifti-method writeNIfTI,anlz-method
-#' writeNIfTI,array-method writeNIfTI
+#' @aliases writeNIfTI writeNIfTI-methods writeNIfTI,nifti-method writeNIfTI,anlz-method
+#' writeNIfTI,array-method
 #' @docType methods
 #' @param nim is an object of class \code{nifti} or \code{anlz}.
 #' @param filename is the path and file name to save the NIfTI file (.nii)
@@ -280,7 +280,7 @@ setGeneric("writeANALYZE", function(aim,  ...) standardGeneric("writeANALYZE"))
 #' \code{writeChar} command to write information to a binary file.
 #' 
 #' @name writeANALYZE-methods
-#' @aliases writeANALYZE-methods writeANALYZE,anlz-method writeANALYZE
+#' @aliases writeANALYZE writeANALYZE-methods writeANALYZE,anlz-method
 #' @docType methods
 #' @param aim is an object of class \code{anlz}.
 #' @param filename is the path and file name to save the Analyze file pair

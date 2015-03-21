@@ -37,50 +37,6 @@
 ## promptMethods(image, "image-methods.Rd")
 #############################################################################
 
-
-#' @title Methods for Function `image'
-#' 
-#' @description Produce \dQuote{lightbox} layout of images for \code{nifti}, \code{anlz} and
-#' \code{afni} objects.
-#' 
-#' @details Uses the S3 generic function \code{image}, with medical-image friendly
-#' settings, to display \code{nifti}, \code{anlz} and \code{afni} class objects
-#' in a \dQuote{lightbox} layout.
-#' 
-#' @name image-methods
-#' @aliases image.nifti image-methods image,ANY-method image,afni-method
-#' image,anlz-method image,nifti-method
-#' @docType methods
-#' @param x is an object of class \code{nifti} or similar.
-#' @param z is the slice to be displayed (ignored when \code{plot.type =
-#' "multiple"}).
-#' @param w is the time point to be displayed (4D arrays only).
-#' @param col is grayscale (by default).
-#' @param plane is the plane of acquisition to be displayed (choices are
-#' \sQuote{axial}, \sQuote{coronal}, \sQuote{sagittal}).
-#' @param plot.type allows the choice between all slices being displayed, in a
-#' matrix (left-to-right, top-to-bottom), or a single slice.
-#' @param zlim is set to \code{NULL} by default and utilizes the internal image
-#' range.
-#' @param xlab is set to \dQuote{} since all margins are set to zero.
-#' @param ylab is set to \dQuote{} since all margins are set to zero.
-#' @param axes is set to \code{FALSE} since all margins are set to zero.
-#' @param oma is the size of the outer margins in the \code{par} function.
-#' @param mar is the number of lines of margin in the \code{par} function.
-#' @param bg is the background color in the \code{par} function.
-#' @param \dots other arguments to the \code{image} function may be provided
-#' here.
-#' @section Methods: \describe{ \item{x = "ANY"}{Generic function: see
-#' \code{\link[graphics]{image}}.} \item{x = "nifti"}{Produce images for
-#' \code{x}.} \item{x = "anlz"}{Produce images for \code{x}.} \item{x =
-#' "afni"}{Produce images for \code{x}.} }
-#' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
-#' @seealso \code{\link{orthographic-methods}}, \code{\link{overlay-methods}}
-#' @keywords methods
-#' @import graphics
-#' @import grDevices
-#' @export
-#' @rdname image-methods
 image.nifti <- function(x, z=1, w=1, col=gray(0:64/64),
                         plane=c("axial", "coronal", "sagittal"),
                         plot.type=c("multiple", "single"), zlim=NULL,
@@ -168,6 +124,47 @@ image.nifti <- function(x, z=1, w=1, col=gray(0:64/64),
   par(oldpar)
   invisible()
 }
+#' @title Methods for Function `image'
+#' 
+#' @description Produce \dQuote{lightbox} layout of images for \code{nifti}, \code{anlz} and
+#' \code{afni} objects.
+#' 
+#' @details Uses the S3 generic function \code{image}, with medical-image friendly
+#' settings, to display \code{nifti}, \code{anlz} and \code{afni} class objects
+#' in a \dQuote{lightbox} layout.
+#' 
+#' @name image-methods
+#' @aliases image.nifti image-methods image,ANY-method image,afni-method
+#' image,anlz-method image,nifti-method
+#' @docType methods
+#' @param x is an object of class \code{nifti} or similar.
+#' @param z is the slice to be displayed (ignored when \code{plot.type =
+#' "multiple"}).
+#' @param w is the time point to be displayed (4D arrays only).
+#' @param col is grayscale (by default).
+#' @param plane is the plane of acquisition to be displayed (choices are
+#' \sQuote{axial}, \sQuote{coronal}, \sQuote{sagittal}).
+#' @param plot.type allows the choice between all slices being displayed, in a
+#' matrix (left-to-right, top-to-bottom), or a single slice.
+#' @param zlim is set to \code{NULL} by default and utilizes the internal image
+#' range.
+#' @param xlab is set to \dQuote{} since all margins are set to zero.
+#' @param ylab is set to \dQuote{} since all margins are set to zero.
+#' @param axes is set to \code{FALSE} since all margins are set to zero.
+#' @param oma is the size of the outer margins in the \code{par} function.
+#' @param mar is the number of lines of margin in the \code{par} function.
+#' @param bg is the background color in the \code{par} function.
+#' @param \dots other arguments to the \code{image} function may be provided
+#' here.
+#' @section Methods: \describe{ \item{x = "ANY"}{Generic function: see
+#' \code{\link[graphics]{image}}.} \item{x = "nifti"}{Produce images for
+#' \code{x}.} \item{x = "anlz"}{Produce images for \code{x}.} \item{x =
+#' "afni"}{Produce images for \code{x}.} }
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @seealso \code{\link{orthographic-methods}}, \code{\link{overlay-methods}}
+#' @keywords methods
+#' @import graphics
+#' @import grDevices
 #' @export
 #' @rdname image-methods
 setMethod("image", signature(x="nifti"), image.nifti)

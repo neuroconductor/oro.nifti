@@ -219,9 +219,6 @@ setClass("anlz",
 #############################################################################
 ## setMethod("show", "anlz")
 #############################################################################
-#' @rdname anlz-class
-#' @aliases show,anlz
-#' @export
 setMethod("show", "anlz", function(object) {
   cat("ANALYZE 7.5 format", fill=TRUE)
   cat("  Type            :", class(object), fill=TRUE)

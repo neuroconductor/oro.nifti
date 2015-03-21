@@ -3,15 +3,8 @@
 \docType{class}
 \name{afni-class}
 \alias{afni-class}
-\alias{show,afni}
 \alias{show,afni-method}
 \title{Class "afni"}
-\usage{
-\S4method{show}{afni}(object)
-}
-\arguments{
-\item{object}{is an R object of class \code{afni}}
-}
 \description{
 The AFNI class for medical imaging data.
 }

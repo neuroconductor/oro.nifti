@@ -3,12 +3,8 @@
 \docType{class}
 \name{anlz-class}
 \alias{anlz-class}
-\alias{show,anlz}
 \alias{show,anlz-method}
 \title{Class "anlz"}
-\usage{
-\S4method{show}{anlz}(object)
-}
 \description{
 The ANALYZE class for medical imaging data.
 }

@@ -204,10 +204,6 @@ setClass("afni",
 #############################################################################
 ## setMethod("show", "afni")
 #############################################################################
-#' @rdname afni-class
-#' @aliases show,afni
-#' @param object is an R object of class \code{afni}
-#' @export
 setMethod("show", "afni", function(object) {
   cat("AFNI format", fill=TRUE)
   cat("  Type            :", class(object), fill=TRUE)
@@ -709,8 +705,7 @@ setGeneric("writeAFNI", function(nim,  ...) standardGeneric("writeAFNI"))
 #' per voxel)} \item{list("COMPLEX128")}{DT COMPLEX (128 bits per voxel)} }
 #' 
 #' @name writeAFNI-methods
-#' @aliases writeAFNI-methods writeAFNI,afni-method writeAFNI,ANY-method
-#' writeAFNI
+#' @aliases writeAFNI writeAFNI-methods writeAFNI,afni-method writeAFNI,ANY-method
 #' @docType methods
 #' @param nim is an object of class \code{afni}.
 #' @param fname is the path and file name to save the AFNI file (.HEAD/BRIK)
