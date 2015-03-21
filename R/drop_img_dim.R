@@ -15,13 +15,16 @@ drop_img_dim = function(img){
   pdim = pixdim(img)
   no.data = dim_ <= 1
   no.data[1] = FALSE
-  pdim[no.data] = 0
-  pixdim(img) = pdim
   ### subtract 1 for first observation
   ndim = sum(!no.data) - 1
-  dim_[1] = ndim
-  dim_[no.data] = 1
-  dim_(img) = dim_
-  img@.Data = drop(img@.Data)
+  ### need the if statement in case 1x1x1 array (as is default)
+  if (ndim > 0){
+    pdim[no.data] = 0
+    pixdim(img) = pdim
+    dim_[1] = ndim
+    dim_[no.data] = 1
+    dim_(img) = dim_
+    img@.Data = drop(img@.Data)
+  } 
   img
 }
