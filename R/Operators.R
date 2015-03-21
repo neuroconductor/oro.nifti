@@ -13,7 +13,7 @@ setMethod("Ops", signature(e1="nifti", e2="nifti"),
             e1@.Data = callGeneric(e1@.Data, e2@.Data)
             e1 = zero_trans(e1)
             e1 = cal_img(e1, infok = TRUE)
-            e1 = drop_img_dim(e1, warn=FALSE)
+#             e1 = drop_img_dim(e1, warn=FALSE)
             ### creating the datatype that is the maximal precision
             new.dtype = max(datatype(e1), datatype(e2))
             datatype(e1) = new.dtype
@@ -30,7 +30,7 @@ setMethod("Ops", signature(e1="nifti", e2="numeric"),
             e1@.Data = callGeneric(e1@.Data, e2)
             e1 = zero_trans(e1)            
             e1 = cal_img(e1, infok = TRUE)
-            e1 = drop_img_dim(e1)
+#             e1 = drop_img_dim(e1)
             validObject(e1)
             return(e1)
           }
@@ -44,7 +44,7 @@ setMethod("Ops", signature(e1="numeric", e2="nifti"),
             e1 = e2
             e1 = zero_trans(e1)            
             e1 = cal_img(e1, infok = TRUE)
-            e1 = drop_img_dim(e1)
+#             e1 = drop_img_dim(e1)
             validObject(e1)
             return(e1)
           }
