@@ -1,10 +1,11 @@
 #' @title Drop Image Dimension
 #' @return Object of class nifti
 #' @param img nifti object
+#' @param warn output warning if dimensions are under 3
 #' @description Drops a dimension of an image that has one-dimension and 
 #' sets respective values to 0 in pixdim or 1 in dim
 #' @export
-drop_img_dim = function(img){
+drop_img_dim = function(img, warn = TRUE){
   dim_  = dim_(img)
   imgdim = dim(img)
   ####
@@ -27,7 +28,9 @@ drop_img_dim = function(img){
     dim_(img) = dim_
     img@.Data = drop(img@.Data)
   } else {
-    warning("Cannot drop under 3 Dimensions - .Data must be an array")
+    if (warn){
+      warning("Cannot drop under 3 Dimensions - .Data must be an array")
+    }
   }
   img
 }
