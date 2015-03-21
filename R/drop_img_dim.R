@@ -18,7 +18,8 @@ drop_img_dim = function(img){
   ### subtract 1 for first observation
   ndim = sum(!no.data) - 1
   ### need the if statement in case 1x1x1 array (as is default)
-  if (ndim > 0){
+  ### Must also if the dimensions are less than 3 then not an array
+  if (ndim >= 3){
     pdim[no.data] = 0
     pixdim(img) = pdim
     dim_[1] = ndim
