@@ -16,8 +16,6 @@ each voxel.  See \code{convert.datatype.anlz} or the ANALYZE documentation
 for more details.}
 
 \item{\dots}{allows for additional \sQuote{slots} to be specified.}
-
-\item{x}{is an object to be checked.}
 }
 \value{
 An object of class \code{anlz}.

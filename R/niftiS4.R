@@ -34,154 +34,6 @@
 #############################################################################
 ## setClass("nifti")
 #############################################################################
-
-setClass("nifti",
-         representation("sizeof_hdr"="numeric",
-                        "data_type"="character",
-                        "db_name"="character",
-                        "extents"="numeric",
-                        "session_error"="numeric",
-                        "regular"="character",
-                        "dim_info"="character",
-                        "dim_"="vector",
-                        "intent_p1"="numeric",
-                        "intent_p2"="numeric",
-                        "intent_p3"="numeric",
-                        "intent_code"="numeric",
-                        "datatype"="numeric",
-                        "bitpix"="numeric",
-                        "slice_start"="numeric",
-                        "pixdim"="vector",
-                        "vox_offset"="numeric",
-                        "scl_slope"="numeric",
-                        "scl_inter"="numeric",
-                        "slice_end"="numeric",
-                        "slice_code"="numeric", # character?
-                        "xyzt_units"="numeric", # character?
-                        "cal_max"="numeric",
-                        "cal_min"="numeric",
-                        "slice_duration"="numeric",
-                        "toffset"="numeric",
-                        "glmax"="numeric",
-                        "glmin"="numeric",
-                        "descrip"="character",
-                        "aux_file"="character",
-                        "qform_code"="numeric",
-                        "sform_code"="numeric",
-                        "quatern_b"="numeric",
-                        "quatern_c"="numeric",
-                        "quatern_d"="numeric",
-                        "qoffset_x"="numeric",
-                        "qoffset_y"="numeric",
-                        "qoffset_z"="numeric",
-                        "srow_x"="vector",
-                        "srow_y"="vector",
-                        "srow_z"="vector",
-                        "intent_name"="character",
-                        "magic"="character",
-                        "extender"="vector",
-			"reoriented"="logical"),
-         prototype("sizeof_hdr"=348,
-                   "data_type"="",
-                   "db_name"="",
-                   "extents"=numeric(1),
-                   "session_error"=numeric(1),
-                   "regular"="",
-                   "dim_info"="",
-                   "dim_"=numeric(8),
-                   "intent_p1"=numeric(1),
-                   "intent_p2"=numeric(1),
-                   "intent_p3"=numeric(1),
-                   "intent_code"=numeric(1),
-                   "datatype"=2,
-                   "bitpix"=8,
-                   "slice_start"=numeric(1),
-                   "pixdim"=numeric(8),
-                   "vox_offset"=352,
-                   "scl_slope"=numeric(1),
-                   "scl_inter"=numeric(1),
-                   "slice_end"=numeric(1),
-                   "slice_code"=numeric(1),
-                   "xyzt_units"=numeric(1),
-                   "cal_max"=numeric(1),
-                   "cal_min"=numeric(1),
-                   "slice_duration"=numeric(1),
-                   "toffset"=numeric(1),
-                   "glmax"=numeric(1),
-                   "glmin"=numeric(1),
-                   "descrip"="",
-                   "aux_file"="",
-                   "qform_code"=numeric(1),
-                   "sform_code"=numeric(1),
-                   "quatern_b"=numeric(1),
-                   "quatern_c"=numeric(1),
-                   "quatern_d"=numeric(1),
-                   "qoffset_x"=numeric(1),
-                   "qoffset_y"=numeric(1),
-                   "qoffset_z"=numeric(1),
-                   "srow_x"=numeric(4),
-                   "srow_y"=numeric(4),
-                   "srow_z"=numeric(4),
-                   "intent_name"="",
-                   "magic"="n+1",
-		   "extender"=numeric(4),
-		   "reoriented"=FALSE),
-         contains="array")
-
-#############################################################################
-## setClass("niftiExtension")
-#############################################################################
-#' @title Class "niftiExtension"
-#' 
-#' @description An extension of the NIfTI class that allows \dQuote{extensions} that conform
-#' to the NIfTI data standard.
-#' 
-#' 
-#' @name niftiExtension-class
-#' @docType class
-#' @section Objects from the Class: Objects can be created by calls of the form
-#' \code{new("niftiExtension", data, dim, dimnames, ...)}.
-#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}
-#' @seealso \code{\linkS4class{nifti}}, \code{\linkS4class{niftiAuditTrail}}
-#' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
-#' @keywords classes
-#' @examples
-#' 
-#' showClass("niftiExtension")
-#' @export
-setClass("niftiExtension",
-         representation(extensions="list"),
-         prototype(extensions=list()),
-         contains="nifti")
-
-#############################################################################
-## setClass("niftiAuditTrail")
-#############################################################################
-#' @title Class "niftiAuditTrail"
-#' 
-#' @description An extension of the NIfTI class that adds an audit trail in XML format.
-#' 
-#' 
-#' @name niftiAuditTrail-class
-#' @docType class
-#' @section Objects from the Class: Objects can be created by calls of the form
-#' \code{new("niftiAuditTrail", data, dim, dimnames, ...)}.
-#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}
-#' @seealso \code{\linkS4class{nifti}}, \code{\linkS4class{niftiExtension}}
-#' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
-#' @keywords classes
-#' @examples
-#' 
-#' showClass("niftiAuditTrail")
-#' @export
-setClass("niftiAuditTrail",
-         representation(trail="ANY"),
-         prototype(trail=newAuditTrail()),
-         contains="niftiExtension")
-
-#############################################################################
-## setClass("niftiExtensionSection")
-#############################################################################
 #' @title Class "niftiExtensionSection"
 #' 
 #' @description A \code{niftiExtensionSection} contains the fields that conform to the NIfTI
@@ -314,6 +166,153 @@ setClass("niftiExtensionSection",
 #'     \item{show}{\code{signature(object = "nifti")}: prints out a summary
 #'                 of the imaging data}
 #'   }
+#' @export
+setClass("nifti",
+         representation("sizeof_hdr"="numeric",
+                        "data_type"="character",
+                        "db_name"="character",
+                        "extents"="numeric",
+                        "session_error"="numeric",
+                        "regular"="character",
+                        "dim_info"="character",
+                        "dim_"="vector",
+                        "intent_p1"="numeric",
+                        "intent_p2"="numeric",
+                        "intent_p3"="numeric",
+                        "intent_code"="numeric",
+                        "datatype"="numeric",
+                        "bitpix"="numeric",
+                        "slice_start"="numeric",
+                        "pixdim"="vector",
+                        "vox_offset"="numeric",
+                        "scl_slope"="numeric",
+                        "scl_inter"="numeric",
+                        "slice_end"="numeric",
+                        "slice_code"="numeric", # character?
+                        "xyzt_units"="numeric", # character?
+                        "cal_max"="numeric",
+                        "cal_min"="numeric",
+                        "slice_duration"="numeric",
+                        "toffset"="numeric",
+                        "glmax"="numeric",
+                        "glmin"="numeric",
+                        "descrip"="character",
+                        "aux_file"="character",
+                        "qform_code"="numeric",
+                        "sform_code"="numeric",
+                        "quatern_b"="numeric",
+                        "quatern_c"="numeric",
+                        "quatern_d"="numeric",
+                        "qoffset_x"="numeric",
+                        "qoffset_y"="numeric",
+                        "qoffset_z"="numeric",
+                        "srow_x"="vector",
+                        "srow_y"="vector",
+                        "srow_z"="vector",
+                        "intent_name"="character",
+                        "magic"="character",
+                        "extender"="vector",
+			"reoriented"="logical"),
+         prototype("sizeof_hdr"=348,
+                   "data_type"="",
+                   "db_name"="",
+                   "extents"=numeric(1),
+                   "session_error"=numeric(1),
+                   "regular"="",
+                   "dim_info"="",
+                   "dim_"=numeric(8),
+                   "intent_p1"=numeric(1),
+                   "intent_p2"=numeric(1),
+                   "intent_p3"=numeric(1),
+                   "intent_code"=numeric(1),
+                   "datatype"=2,
+                   "bitpix"=8,
+                   "slice_start"=numeric(1),
+                   "pixdim"=numeric(8),
+                   "vox_offset"=352,
+                   "scl_slope"=numeric(1),
+                   "scl_inter"=numeric(1),
+                   "slice_end"=numeric(1),
+                   "slice_code"=numeric(1),
+                   "xyzt_units"=numeric(1),
+                   "cal_max"=numeric(1),
+                   "cal_min"=numeric(1),
+                   "slice_duration"=numeric(1),
+                   "toffset"=numeric(1),
+                   "glmax"=numeric(1),
+                   "glmin"=numeric(1),
+                   "descrip"="",
+                   "aux_file"="",
+                   "qform_code"=numeric(1),
+                   "sform_code"=numeric(1),
+                   "quatern_b"=numeric(1),
+                   "quatern_c"=numeric(1),
+                   "quatern_d"=numeric(1),
+                   "qoffset_x"=numeric(1),
+                   "qoffset_y"=numeric(1),
+                   "qoffset_z"=numeric(1),
+                   "srow_x"=numeric(4),
+                   "srow_y"=numeric(4),
+                   "srow_z"=numeric(4),
+                   "intent_name"="",
+                   "magic"="n+1",
+		   "extender"=numeric(4),
+		   "reoriented"=FALSE),
+         contains="array")
+
+#############################################################################
+## setClass("niftiExtension")
+#############################################################################
+#' @title Class "niftiExtension"
+#' 
+#' @description An extension of the NIfTI class that allows \dQuote{extensions} that conform
+#' to the NIfTI data standard.
+#' 
+#' 
+#' @name niftiExtension-class
+#' @docType class
+#' @section Objects from the Class: Objects can be created by calls of the form
+#' \code{new("niftiExtension", data, dim, dimnames, ...)}.
+#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}
+#' @seealso \code{\linkS4class{nifti}}, \code{\linkS4class{niftiAuditTrail}}
+#' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
+#' @keywords classes
+#' @examples
+#' showClass("niftiExtension")
+#' @export
+setClass("niftiExtension",
+         representation(extensions="list"),
+         prototype(extensions=list()),
+         contains="nifti")
+
+#############################################################################
+## setClass("niftiAuditTrail")
+#############################################################################
+#' @title Class "niftiAuditTrail"
+#' 
+#' @description An extension of the NIfTI class that adds an audit trail in XML format.
+#' 
+#' 
+#' @name niftiAuditTrail-class
+#' @docType class
+#' @section Objects from the Class: Objects can be created by calls of the form
+#' \code{new("niftiAuditTrail", data, dim, dimnames, ...)}.
+#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}
+#' @seealso \code{\linkS4class{nifti}}, \code{\linkS4class{niftiExtension}}
+#' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
+#' @keywords classes
+#' @examples
+#' 
+#' showClass("niftiAuditTrail")
+#' @export
+setClass("niftiAuditTrail",
+         representation(trail="ANY"),
+         prototype(trail=newAuditTrail()),
+         contains="niftiExtension")
+
+#############################################################################
+## setClass("niftiExtensionSection")
+#############################################################################
 #' @rdname nifti-class
 #' @export
 setMethod("show", "nifti", function(object) {
@@ -477,7 +476,37 @@ setValidity("niftiExtensionSection", function(object) {
 #############################################################################
 ## nifti()
 #############################################################################
-#' @rdname nifti-class
+#' @name nifti
+#' @title Constructor for NIfTI
+#' 
+#' @description Constructor for NIfTI class objects.
+#' 
+#' 
+#' @aliases nifti 
+#' @param img is a multidimensional array of data.
+#' @param dim is the dimension of the data (default = \code{missing}).
+#' @param datatype is an integer that denotes the type of data contained in
+#' each voxel.  See \code{convert.datatype} or the NIfTI documentation for more
+#' details.
+#' @param cal.min allows user-specified minimum value in the array
+#' (visualization purposes only).
+#' @param cal.max allows user-specified minimum value in the array
+#' (visualization purposes only).
+#' @param pixdim allows user-specified pixel dimension vector (length = 8).
+#' @param \dots allows for additional \sQuote{slots} to be specified.
+#' @return An object of class \code{nifti}.
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @seealso \code{\linkS4class{nifti}}, \code{\link{anlz}},
+#' \code{\link{convert.datatype}}
+#' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
+#' @examples
+#' 
+#' options("niftiAuditTrail"=FALSE)
+#' 
+#' nim <- nifti() # default
+#' nim
+#' nim <- nifti(datatype=4) # 2-byte integers
+#' nim
 #' @export
 nifti <- function(img=array(0, dim=rep(1,4)), dim, datatype=2,
                   cal.min=NULL, cal.max=NULL, pixdim=NULL, ...) {
@@ -566,6 +595,7 @@ is.nifti <- function(x) {
 #' audit.trail<-,nifti-method audit.trail<-
 #' @docType methods
 #' @param object is of class \code{nifti}.
+#' @param value Value to assign to trail slot
 #' @section Methods: \describe{ \item{object = "nifti"}{Extract or replace
 #' NIfTI audit trail.} }
 #' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}
@@ -588,18 +618,18 @@ setMethod("audit.trail", "nifti",
 #' @export
 #' @rdname audit_trail-methods
 setGeneric("audit.trail<-",
-           function(x, value) { standardGeneric("audit.trail<-") })
+           function(object, value) { standardGeneric("audit.trail<-") })
 #' @export
 #' @rdname audit_trail-methods
 setReplaceMethod("audit.trail", "nifti",
-                 function(x, value) {
+                 function(object, value) {
                    if (getOption("niftiAuditTrail")) {
-                     if (!is(x, "niftiAuditTrail")) {
-                       x <- as(x, "niftiAuditTrail")
+                     if (!is(object, "niftiAuditTrail")) {
+                       object <- as(object, "niftiAuditTrail")
                      }
-                     x@"trail" <- value
+                     object@"trail" <- value
                    } 
-                   return(x)
+                   return(object)
                  })
 
 #' @export

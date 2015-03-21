@@ -13,12 +13,14 @@ audit.trail(object)
 
 \S4method{audit.trail}{nifti}(object)
 
-audit.trail(x) <- value
+audit.trail(object) <- value
 
-\S4method{audit.trail}{nifti}(x) <- value
+\S4method{audit.trail}{nifti}(object) <- value
 }
 \arguments{
 \item{object}{is of class \code{nifti}.}
+
+\item{value}{Value to assign to trail slot}
 }
 \description{
 Operators that act on the audit trail (XML) in the NIfTI header.

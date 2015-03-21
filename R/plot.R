@@ -38,12 +38,12 @@
 #############################################################################
 
 
-#' Methods for Function `image'
+#' @title Methods for Function `image'
 #' 
-#' Produce \dQuote{lightbox} layout of images for \code{nifti}, \code{anlz} and
+#' @description Produce \dQuote{lightbox} layout of images for \code{nifti}, \code{anlz} and
 #' \code{afni} objects.
 #' 
-#' Uses the S3 generic function \code{image}, with medical-image friendly
+#' @details Uses the S3 generic function \code{image}, with medical-image friendly
 #' settings, to display \code{nifti}, \code{anlz} and \code{afni} class objects
 #' in a \dQuote{lightbox} layout.
 #' 

@@ -2,15 +2,11 @@
 % Please edit documentation in R/niftiS4.R
 \docType{class}
 \name{nifti-class}
-\alias{nifti}
 \alias{nifti-class}
 \alias{show,nifti-method}
 \title{Class "nifti"}
 \usage{
 \S4method{show}{nifti}(object)
-
-nifti(img = array(0, dim = rep(1, 4)), dim, datatype = 2, cal.min = NULL,
-  cal.max = NULL, pixdim = NULL, ...)
 }
 \description{
 The NIfTI class for medical imaging data.

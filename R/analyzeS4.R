@@ -126,6 +126,7 @@
 #'     \item{show}{\code{signature(object = "anlz")}: prints out a summary
 #'                 of the imaging data}
 #'   }
+#'   
 setClass("anlz",
          representation("sizeof_hdr" = "numeric",
                         "data_type" = "character",
@@ -220,6 +221,7 @@ setClass("anlz",
 #############################################################################
 #' @rdname anlz-class
 #' @aliases show,anlz
+#' @export
 setMethod("show", "anlz", function(object) {
   cat("ANALYZE 7.5 format", fill=TRUE)
   cat("  Type            :", class(object), fill=TRUE)
@@ -280,9 +282,9 @@ setValidity("anlz", function(object) {
 #############################################################################
 ## anlz()
 #############################################################################
-#' Constructor for Analyze
+#' @title Constructor for Analyze
 #' 
-#' Constructor for Analyze class objects.
+#' @description Constructor for Analyze class objects.
 #' 
 #' 
 #' @aliases anlz
@@ -292,7 +294,6 @@ setValidity("anlz", function(object) {
 #' each voxel.  See \code{convert.datatype.anlz} or the ANALYZE documentation
 #' for more details.
 #' @param \dots allows for additional \sQuote{slots} to be specified.
-#' @param x is an object to be checked.
 #' @return An object of class \code{anlz}.
 #' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
 #' @seealso \code{\linkS4class{anlz}}, \code{\linkS4class{nifti}},

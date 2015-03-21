@@ -206,6 +206,7 @@ setClass("afni",
 #############################################################################
 #' @rdname afni-class
 #' @aliases show,afni
+#' @export
 setMethod("show", "afni", function(object) {
   cat("AFNI format", fill=TRUE)
   cat("  Type            :", class(object), fill=TRUE)

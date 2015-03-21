@@ -2,12 +2,9 @@
 % Please edit documentation in R/convert_nifti.R
 \name{convert.bitpix}
 \alias{convert.bitpix}
-\alias{convert.bitpix.anlz}
 \alias{convert.datatype}
-\alias{convert.datatype.anlz}
 \alias{convert.form}
 \alias{convert.intent}
-\alias{convert.orient.anlz}
 \alias{convert.slice}
 \alias{convert.units}
 \title{Convert NIfTI Codes}
@@ -29,7 +26,16 @@ convert.slice(slice.code)
 
 \item{datatype.code}{defines data type.}
 
-\item{orientation}{defines the orientation.}
+\item{intent.code}{is the NIfTI intent code.}
+
+\item{form.code}{is the \eqn{(x,y,z)} coordinate system.}
+
+\item{units}{is the units of pixdim[1..4].}
+
+\item{inverse}{is a logical value that denotes the direction of unit
+conversion.}
+
+\item{slice.code}{is the slice timing order.}
 }
 \value{
 A character string.
@@ -56,11 +62,7 @@ convert.orient.anlz(4)
 Brandon Whitcher \email{bwhitcher@gmail.com}
 }
 \references{
-ANALYZE 7.5\cr\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}
-}
-\seealso{
-\code{\link{convert.datatype}}, \code{\link{convert.bitpix}},
-\code{\link{convert.intent}}, \code{\link{convert.form}},
-\code{\link{convert.units}}, \code{\link{convert.slice}}
+Neuroimaging Informatics Technology Initiative (NIfTI)\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

@@ -43,16 +43,20 @@
 #' \code{switch} statements are used to map a numeric code to the appropriate
 #' string.
 #' 
-#' @aliases convert.bitpix.anlz convert.datatype.anlz convert.orient.anlz
+#' @aliases convert.bitpix convert.datatype convert.intent convert.form
+#' @aliases convert.units convert.slice
 #' @param bitpix is the bit-per-pixel code.
 #' @param datatype.code defines data type.
-#' @param orientation defines the orientation.
+#' @param intent.code is the NIfTI intent code.
+#' @param form.code is the \eqn{(x,y,z)} coordinate system.
+#' @param units is the units of pixdim[1..4].
+#' @param inverse is a logical value that denotes the direction of unit
+#' conversion.
+#' @param slice.code is the slice timing order.
 #' @return A character string.
 #' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
-#' @seealso \code{\link{convert.datatype}}, \code{\link{convert.bitpix}},
-#' \code{\link{convert.intent}}, \code{\link{convert.form}},
-#' \code{\link{convert.units}}, \code{\link{convert.slice}}
-#' @references ANALYZE 7.5\cr\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}
+#' @references Neuroimaging Informatics Technology Initiative (NIfTI)\cr
+#' \url{http://nifti.nimh.nih.gov/}
 #' @examples
 #' 
 #' ##  4 = SIGNED_SHORT
