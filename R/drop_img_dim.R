@@ -26,6 +26,8 @@ drop_img_dim = function(img){
     dim_[no.data] = 1
     dim_(img) = dim_
     img@.Data = drop(img@.Data)
-  } 
+  } else {
+    warning("Cannot drop under 3 Dimensions - .Data must be an array")
+  }
   img
 }
