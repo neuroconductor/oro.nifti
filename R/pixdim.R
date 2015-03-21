@@ -61,10 +61,7 @@ setMethod("pixdim<-",
 setMethod("pixdim<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"pixdim" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("pixdim <-", value))            
+            object@"pixdim" <- value         
             return(object)
           })
 

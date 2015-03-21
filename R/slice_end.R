@@ -52,10 +52,7 @@ setMethod("slice_end<-",
 setMethod("slice_end<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"slice_end" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("slice_end <-", value))            
+            object@"slice_end" <- value         
             return(object)
           })
 

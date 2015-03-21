@@ -52,10 +52,7 @@ setMethod("glmin<-",
 setMethod("glmin<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"glmin" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("glmin <-", value))            
+            object@"glmin" <- value         
             return(object)
           })
 

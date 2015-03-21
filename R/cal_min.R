@@ -61,10 +61,7 @@ setMethod("cal.min<-",
 setMethod("cal.min<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"cal_min" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("cal_min <-", value))            
+            object@"cal_min" <- value         
             return(object)
           })
 

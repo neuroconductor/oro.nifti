@@ -52,10 +52,7 @@ setMethod("qform_code<-",
 setMethod("qform_code<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"qform_code" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("qform_code <-", value))            
+            object@"qform_code" <- value         
             return(object)
           })
 

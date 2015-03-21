@@ -52,10 +52,7 @@ setMethod("intent_p1<-",
 setMethod("intent_p1<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"intent_p1" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("intent_p1 <-", value))            
+            object@"intent_p1" <- value         
             return(object)
           })
 

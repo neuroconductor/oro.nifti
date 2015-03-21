@@ -52,10 +52,7 @@ setMethod("scl_inter<-",
 setMethod("scl_inter<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"scl_inter" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("scl_inter <-", value))            
+            object@"scl_inter" <- value         
             return(object)
           })
 

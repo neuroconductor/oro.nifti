@@ -52,10 +52,7 @@ setMethod("sizeof_hdr<-",
 setMethod("sizeof_hdr<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"sizeof_hdr" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("sizeof_hdr <-", value))            
+            object@"sizeof_hdr" <- value         
             return(object)
           })
 

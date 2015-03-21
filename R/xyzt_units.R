@@ -52,10 +52,7 @@ setMethod("xyzt_units<-",
 setMethod("xyzt_units<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"xyzt_units" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("xyzt_units <-", value))            
+            object@"xyzt_units" <- value         
             return(object)
           })
 

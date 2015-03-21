@@ -65,10 +65,7 @@ setMethod("aux.file<-",
 setMethod("aux.file<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"aux_file" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("aux_file <-", value))            
+            object@"aux_file" <- value         
             return(object)
           })
 

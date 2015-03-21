@@ -52,10 +52,7 @@ setMethod("scl_slope<-",
 setMethod("scl_slope<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"scl_slope" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("scl_slope <-", value))            
+            object@"scl_slope" <- value         
             return(object)
           })
 

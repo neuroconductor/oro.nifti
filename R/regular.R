@@ -52,10 +52,7 @@ setMethod("regular<-",
 setMethod("regular<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"regular" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("regular <-", value))            
+            object@"regular" <- value         
             return(object)
           })
 

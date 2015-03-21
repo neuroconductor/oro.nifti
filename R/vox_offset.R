@@ -52,10 +52,7 @@ setMethod("vox_offset<-",
 setMethod("vox_offset<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"vox_offset" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("vox_offset <-", value))            
+            object@"vox_offset" <- value         
             return(object)
           })
 

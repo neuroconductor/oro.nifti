@@ -52,10 +52,7 @@ setMethod("toffset<-",
 setMethod("toffset<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"toffset" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("toffset <-", value))            
+            object@"toffset" <- value         
             return(object)
           })
 

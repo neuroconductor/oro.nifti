@@ -5,7 +5,7 @@
 #' sets respective values to 0 in pixdim or 1 in dim
 #' @export
 drop_img_dim = function(img){
-  dim_  = img@dim_
+  dim_  = dim_(img)
   imgdim = dim(img)
   ####
   ndim = length(imgdim) + 1
@@ -21,7 +21,7 @@ drop_img_dim = function(img){
   ndim = sum(!no.data) - 1
   dim_[1] = ndim
   dim_[no.data] = 1
-  img@dim_ = dim_
+  dim_(img) = dim_
   img@.Data = drop(img@.Data)
   img
 }

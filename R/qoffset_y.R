@@ -52,10 +52,7 @@ setMethod("qoffset_y<-",
 setMethod("qoffset_y<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"qoffset_y" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("qoffset_y <-", value))            
+            object@"qoffset_y" <- value         
             return(object)
           })
 

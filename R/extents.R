@@ -52,10 +52,7 @@ setMethod("extents<-",
 setMethod("extents<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"extents" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("extents <-", value))            
+            object@"extents" <- value         
             return(object)
           })
 

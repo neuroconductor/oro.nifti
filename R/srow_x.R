@@ -52,10 +52,7 @@ setMethod("srow_x<-",
 setMethod("srow_x<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"srow_x" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("srow_x <-", value))            
+            object@"srow_x" <- value         
             return(object)
           })
 

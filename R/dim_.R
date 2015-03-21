@@ -52,10 +52,7 @@ setMethod("dim_<-",
 setMethod("dim_<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"dim_" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("dim_ <-", value))            
+            object@"dim_" <- value         
             return(object)
           })
 

@@ -61,10 +61,7 @@ setMethod("cal.max<-",
 setMethod("cal.max<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"cal_max" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("cal_max <-", value))            
+            object@"cal_max" <- value         
             return(object)
           })
 

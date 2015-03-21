@@ -48,6 +48,7 @@ Collate:
     'wrappers.R'
     'onefile.R'
     'voxdim.R'
+    'anlz_Operators.R'
     'Operators.R'
     'zero_trans.R'
     'aux_file.R'

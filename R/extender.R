@@ -52,10 +52,7 @@ setMethod("extender<-",
 setMethod("extender<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"extender" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("extender <-", value))            
+            object@"extender" <- value         
             return(object)
           })
 

@@ -65,10 +65,7 @@ setMethod("descrip<-",
 setMethod("descrip<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"descrip" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("descrip <-", value))            
+            object@"descrip" <- value         
             return(object)
           })
 

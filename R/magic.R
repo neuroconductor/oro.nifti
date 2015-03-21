@@ -52,10 +52,7 @@ setMethod("magic<-",
 setMethod("magic<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"magic" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("magic <-", value))            
+            object@"magic" <- value         
             return(object)
           })
 

@@ -52,10 +52,7 @@ setMethod("reoriented<-",
 setMethod("reoriented<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"reoriented" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("reoriented <-", value))            
+            object@"reoriented" <- value         
             return(object)
           })
 

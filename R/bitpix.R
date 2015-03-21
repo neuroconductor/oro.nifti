@@ -52,10 +52,7 @@ setMethod("bitpix<-",
 setMethod("bitpix<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"bitpix" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("bitpix <-", value))            
+            object@"bitpix" <- value         
             return(object)
           })
 

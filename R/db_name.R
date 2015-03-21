@@ -52,10 +52,7 @@ setMethod("db_name<-",
 setMethod("db_name<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"db_name" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("db_name <-", value))            
+            object@"db_name" <- value         
             return(object)
           })
 

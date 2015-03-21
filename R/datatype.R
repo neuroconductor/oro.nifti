@@ -52,10 +52,7 @@ setMethod("datatype<-",
 setMethod("datatype<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"datatype" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("datatype <-", value))            
+            object@"datatype" <- value         
             return(object)
           })
 

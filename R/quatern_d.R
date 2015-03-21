@@ -52,10 +52,7 @@ setMethod("quatern_d<-",
 setMethod("quatern_d<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"quatern_d" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("quatern_d <-", value))            
+            object@"quatern_d" <- value         
             return(object)
           })
 

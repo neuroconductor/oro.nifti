@@ -52,10 +52,7 @@ setMethod("glmax<-",
 setMethod("glmax<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"glmax" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("glmax <-", value))            
+            object@"glmax" <- value         
             return(object)
           })
 

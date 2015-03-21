@@ -52,10 +52,7 @@ setMethod("sform_code<-",
 setMethod("sform_code<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"sform_code" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("sform_code <-", value))            
+            object@"sform_code" <- value         
             return(object)
           })
 

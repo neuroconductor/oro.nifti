@@ -52,10 +52,7 @@ setMethod("session_error<-",
 setMethod("session_error<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"session_error" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("session_error <-", value))            
+            object@"session_error" <- value         
             return(object)
           })
 
