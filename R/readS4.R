@@ -624,6 +624,8 @@ readANALYZE <- function(fname, SPM=FALSE, verbose=FALSE, warn=-1) {
   }
   ## Warnings?
   options(warn=oldwarn)
+  ### Reset cal_max and cal_min - in case these do not work correctly
+  aim = cal_img(aim, infok = TRUE)  
   ## Check validity
   validANALYZE <- getValidity(getClassDef("anlz"))
   validANALYZE(aim)
