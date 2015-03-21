@@ -17,7 +17,7 @@ setMethod("Ops", signature(e1="anlz", e2="anlz"),
             ### creating the datatype that is the maximal precision
             new.dtype = max(datatype(e1), datatype(e2))
             datatype(e1) = new.dtype
-            bitpix(e1) = convert.bitpix.anlz()[[new.dtype]]
+            bitpix(e1) = convert.bitpix.anlz()[[convert.datatype.anlz(new.dtype)]]
             validObject(e1)
             return(e1)
           }

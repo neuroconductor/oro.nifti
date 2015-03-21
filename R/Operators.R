@@ -17,7 +17,7 @@ setMethod("Ops", signature(e1="nifti", e2="nifti"),
             ### creating the datatype that is the maximal precision
             new.dtype = max(datatype(e1), datatype(e2))
             datatype(e1) = new.dtype
-            bitpix(e1) = convert.bitpix()[[new.dtype]]
+            bitpix(e1) = convert.bitpix()[[convert.datatype(new.dtype)]]
             validObject(e1)
             return(e1)
           }
