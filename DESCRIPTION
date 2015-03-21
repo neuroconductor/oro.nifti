@@ -61,6 +61,5 @@ Collate:
     'scl_inter.R'
     'scl_slope.R'
     'sform_code.R'
-    'slope.R'
     'vox_offset.R'
     'zzz.R'

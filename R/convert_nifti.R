@@ -35,12 +35,13 @@
 ############################################################################
 ## Conversion subroutines
 ############################################################################
-#' Convert NIfTI Codes
+#' @name Convert NIfTI Codes
+#' @title Convert NIfTI Codes
 #' 
-#' Codes that appear in the ANALYZE header are mapped to meaningful chartacter
+#' @description Codes that appear in the ANALYZE header are mapped to meaningful chartacter
 #' strings.
 #' 
-#' \code{switch} statements are used to map a numeric code to the appropriate
+#' @details \code{switch} statements are used to map a numeric code to the appropriate
 #' string.
 #' 
 #' @aliases convert.bitpix convert.datatype convert.intent convert.form

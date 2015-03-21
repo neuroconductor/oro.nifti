@@ -32,12 +32,13 @@
 ## $Id: convert_anlz.R 332 2010-01-29 16:54:07Z bjw34032 $
 ##
 
-#' Convert ANALYZE Codes
+#' @name Convert ANALYZE Codes
+#' @title Convert ANALYZE Codes
 #' 
-#' Codes that appear in the ANALYZE header are mapped to meaningful chartacter
+#' @description Codes that appear in the ANALYZE header are mapped to meaningful chartacter
 #' strings.
 #' 
-#' \code{switch} statements are used to map a numeric code to the appropriate
+#' @details \code{switch} statements are used to map a numeric code to the appropriate
 #' string.
 #' 
 #' @aliases convert.bitpix.anlz
