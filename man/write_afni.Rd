@@ -8,10 +8,6 @@
 \alias{writeAFNI-methods}
 \title{writeAFNI}
 \usage{
-writeAFNI(nim, ...)
-
-writeAFNI(nim, ...)
-
 \S4method{writeAFNI}{afni}(nim, fname, verbose = FALSE, warn = -1)
 }
 \arguments{

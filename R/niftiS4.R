@@ -73,6 +73,7 @@ setClass("niftiExtensionSection",
 #' 
 #' @aliases nifti-class show,nifti-method
 #' @docType class
+#' @param object is an object of class \code{nifti}
 #' @section Objects from the Class: Objects can be created by calls of the form
 #' \code{new("nifti", data, dim, dimnames, ...)} or by calling the \code{nifti}
 #' function.

@@ -8,6 +8,9 @@
 \usage{
 \S4method{show}{nifti}(object)
 }
+\arguments{
+\item{object}{is an object of class \code{nifti}}
+}
 \description{
 The NIfTI class for medical imaging data.
 }

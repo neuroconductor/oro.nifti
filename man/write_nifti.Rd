@@ -9,8 +9,6 @@
 \alias{writeNIfTI-methods}
 \title{writeNIfTI}
 \usage{
-writeNIfTI(nim, ...)
-
 \S4method{writeNIfTI}{nifti}(nim, filename, onefile = TRUE, gzipped = TRUE,
   verbose = FALSE, warn = -1)
 

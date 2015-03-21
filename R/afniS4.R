@@ -206,6 +206,7 @@ setClass("afni",
 #############################################################################
 #' @rdname afni-class
 #' @aliases show,afni
+#' @param object is an R object of class \code{afni}
 #' @export
 setMethod("show", "afni", function(object) {
   cat("AFNI format", fill=TRUE)
@@ -691,6 +692,11 @@ invisible(aim)
   writeChar(a, conhead, eos=NULL)
 }
 
+
+writeAFNI <- function(nim, ...) {
+  cat("No writeAFNI defined for this class:", class(nim), "\n")
+}
+setGeneric("writeAFNI", function(nim,  ...) standardGeneric("writeAFNI"))
 #' @title writeAFNI
 #' 
 #' @description This function saves a afni-class object to HEAD/BRIK pair in AFNI format.
@@ -735,14 +741,6 @@ invisible(aim)
 #' abs.err <- abs(data - orig)
 #' image(as(abs.err, "nifti"), zlim=range(0,1), oma=rep(2,4),
 #'       bg="white")
-#' @export
-#' @rdname write_afni
-writeAFNI <- function(nim, ...) {
-  cat("No writeAFNI defined for this class:", class(nim), "\n")
-}
-#' @export
-#' @rdname write_afni
-setGeneric("writeAFNI", function(nim,  ...) standardGeneric("writeAFNI"))
 #' @export
 #' @rdname write_afni
 setMethod("writeAFNI", "afni", function(nim, fname, verbose=FALSE, warn=-1) {

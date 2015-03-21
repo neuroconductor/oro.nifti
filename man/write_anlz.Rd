@@ -7,8 +7,6 @@
 \alias{writeANALYZE-methods}
 \title{writeANALYZE}
 \usage{
-writeANALYZE(aim, ...)
-
 \S4method{writeANALYZE}{anlz}(aim, filename, gzipped = TRUE,
   verbose = FALSE, warn = -1)
 }

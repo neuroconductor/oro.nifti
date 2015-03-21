@@ -9,6 +9,9 @@
 \usage{
 \S4method{show}{afni}(object)
 }
+\arguments{
+\item{object}{is an R object of class \code{afni}}
+}
 \description{
 The AFNI class for medical imaging data.
 }

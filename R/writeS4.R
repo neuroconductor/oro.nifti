@@ -31,6 +31,8 @@
 ## 
 ## $Id: writeS4.R 332 2010-01-29 16:54:07Z bjw34032 $
 ##
+
+setGeneric("writeNIfTI", function(nim,  ...) standardGeneric("writeNIfTI"))
 #' @title writeNIfTI
 #' 
 #' @description This function saves a NIfTI-class object to a single binary file in NIfTI
@@ -108,9 +110,6 @@
 #' names(equal) <- datatypes$name
 #' unlist(equal)
 #' }
-#' @export
-#' @rdname write_nifti
-setGeneric("writeNIfTI", function(nim,  ...) standardGeneric("writeNIfTI"))
 #' @export
 #' @rdname write_nifti
 setMethod("writeNIfTI", signature(nim="nifti"), 
@@ -271,6 +270,7 @@ setMethod("writeNIfTI", signature(nim="array"),
 ############################################################################
 ############################################################################
 ############################################################################
+setGeneric("writeANALYZE", function(aim,  ...) standardGeneric("writeANALYZE"))
 #' @title writeANALYZE
 #' 
 #' @description This function saves an Analyze-class object to a single binary file in
@@ -331,9 +331,6 @@ setMethod("writeNIfTI", signature(nim="array"),
 #' names(equal) <- datatypes$name
 #' unlist(equal)
 #' }
-#' @export
-#' @rdname write_anlz 
-setGeneric("writeANALYZE", function(aim,  ...) standardGeneric("writeANALYZE"))
 #' @export
 #' @rdname write_anlz 
 setMethod("writeANALYZE", signature(aim="anlz"), 
