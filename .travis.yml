@@ -3,6 +3,7 @@
 language: r
 warnings_are_errors: true
 
+r_build_args: --compact-vignettes=gs+qpdf
 notifications:
   email:
     on_success: change
