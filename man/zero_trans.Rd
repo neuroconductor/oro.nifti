@@ -7,10 +7,11 @@
 zero_trans(img)
 }
 \arguments{
-\item{img}{nifti object (or character of filename)}
+\item{img}{nifti object (or character of filename).  If anlz, will return
+unchanged anlz image}
 }
 \value{
-object of type nifti
+object of type passed
 }
 \description{
 Forces image \code{scl_slope} to 1 and \code{scl_inter}
