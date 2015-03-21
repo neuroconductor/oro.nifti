@@ -14,6 +14,10 @@ setMethod("Ops", signature(e1="nifti", e2="nifti"),
             e1 = zero_trans(e1)
             e1 = cal_img(e1, infok = TRUE)
             e1 = drop_img_dim(e1)
+            ### creating the datatype that is the maximal precision
+            new.dtype = max(datatype(e1), datatype(e2))
+            datatype(e1) = new.dtype
+            bitpix(e1) = convert.bitpix()[[new.dtype]]
             validObject(e1)
             return(e1)
           }
