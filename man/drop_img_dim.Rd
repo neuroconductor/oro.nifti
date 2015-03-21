@@ -4,10 +4,12 @@
 \alias{drop_img_dim}
 \title{Drop Image Dimension}
 \usage{
-drop_img_dim(img)
+drop_img_dim(img, warn = TRUE)
 }
 \arguments{
 \item{img}{nifti object}
+
+\item{warn}{output warning if dimensions are under 3}
 }
 \value{
 Object of class nifti
