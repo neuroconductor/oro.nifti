@@ -1,4 +1,4 @@
-#' @name db_name
+#' @name db_name-methods
 #' @title Extract Image db_name attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

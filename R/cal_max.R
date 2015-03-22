@@ -1,4 +1,4 @@
-#' @name cal.max
+#' @name cal.max-methods
 #' @title Extract Image cal.max attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

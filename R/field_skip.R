@@ -1,4 +1,4 @@
-#' @name field_skip
+#' @name field_skip-methods
 #' @title Extract Image field_skip attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

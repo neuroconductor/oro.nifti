@@ -1,4 +1,4 @@
-#' @name aux.file
+#' @name aux.file-methods
 #' @title Extract Image aux.file attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

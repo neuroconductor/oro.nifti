@@ -1,4 +1,4 @@
-#' @name glmax
+#' @name glmax-methods
 #' @title Extract Image glmax attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

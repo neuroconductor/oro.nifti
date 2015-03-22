@@ -1,4 +1,4 @@
-#' @name start_field
+#' @name start_field-methods
 #' @title Extract Image start_field attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

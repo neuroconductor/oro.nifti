@@ -1,4 +1,4 @@
-#' @name %%
+#' @name %%-methods
 #' @title Extract Image %% attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

@@ -1,4 +1,4 @@
-#' @name qoffset_z
+#' @name qoffset_z-methods
 #' @title Extract Image qoffset_z attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

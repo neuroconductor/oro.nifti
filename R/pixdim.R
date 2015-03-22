@@ -1,4 +1,4 @@
-#' @name pixdim
+#' @name pixdim-methods
 #' @title Extract Image pixdim attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

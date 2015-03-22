@@ -1,4 +1,4 @@
-#' @name dim_
+#' @name dim_-methods
 #' @title Extract Image dim_ attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

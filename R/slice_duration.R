@@ -1,4 +1,4 @@
-#' @name slice_duration
+#' @name slice_duration-methods
 #' @title Extract Image slice_duration attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

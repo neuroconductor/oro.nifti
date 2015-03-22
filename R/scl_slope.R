@@ -1,4 +1,4 @@
-#' @name scl_slope
+#' @name scl_slope-methods
 #' @title Extract Image scl_slope attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

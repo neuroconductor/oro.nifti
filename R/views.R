@@ -1,4 +1,4 @@
-#' @name views
+#' @name views-methods
 #' @title Extract Image views attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

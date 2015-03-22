@@ -1,4 +1,4 @@
-#' @name xyzt_units
+#' @name xyzt_units-methods
 #' @title Extract Image xyzt_units attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

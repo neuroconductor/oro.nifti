@@ -1,4 +1,4 @@
-#' @name magic
+#' @name magic-methods
 #' @title Extract Image magic attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

@@ -1,4 +1,4 @@
-#' @name vox_offset
+#' @name vox_offset-methods
 #' @title Extract Image vox_offset attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

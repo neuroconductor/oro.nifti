@@ -1,4 +1,4 @@
-#' @name omin
+#' @name omin-methods
 #' @title Extract Image omin attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

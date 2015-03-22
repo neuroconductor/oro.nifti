@@ -1,4 +1,4 @@
-#' @name unused1
+#' @name unused1-methods
 #' @title Extract Image unused1 attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

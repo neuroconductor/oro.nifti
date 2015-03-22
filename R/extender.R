@@ -1,4 +1,4 @@
-#' @name extender
+#' @name extender-methods
 #' @title Extract Image extender attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

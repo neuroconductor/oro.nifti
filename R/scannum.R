@@ -1,4 +1,4 @@
-#' @name scannum
+#' @name scannum-methods
 #' @title Extract Image scannum attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

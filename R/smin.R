@@ -1,4 +1,4 @@
-#' @name smin
+#' @name smin-methods
 #' @title Extract Image smin attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

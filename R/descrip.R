@@ -1,4 +1,4 @@
-#' @name descrip
+#' @name descrip-methods
 #' @title Extract Image descrip attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

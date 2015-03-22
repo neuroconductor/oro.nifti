@@ -1,4 +1,4 @@
-#' @name omax
+#' @name omax-methods
 #' @title Extract Image omax attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

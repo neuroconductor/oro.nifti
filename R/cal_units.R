@@ -1,4 +1,4 @@
-#' @name cal_units
+#' @name cal_units-methods
 #' @title Extract Image cal_units attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

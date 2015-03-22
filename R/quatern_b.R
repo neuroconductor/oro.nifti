@@ -1,4 +1,4 @@
-#' @name quatern_b
+#' @name quatern_b-methods
 #' @title Extract Image quatern_b attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

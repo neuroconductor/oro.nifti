@@ -1,4 +1,4 @@
-#' @name glmin
+#' @name glmin-methods
 #' @title Extract Image glmin attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

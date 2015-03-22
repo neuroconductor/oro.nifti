@@ -1,4 +1,4 @@
-#' @name exp_date
+#' @name exp_date-methods
 #' @title Extract Image exp_date attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

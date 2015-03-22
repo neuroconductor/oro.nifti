@@ -1,4 +1,4 @@
-#' @name hist_un0
+#' @name hist_un0-methods
 #' @title Extract Image hist_un0 attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

@@ -1,4 +1,4 @@
-#' @name reoriented
+#' @name reoriented-methods
 #' @title Extract Image reoriented attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

@@ -1,4 +1,4 @@
-#' @name intent_p3
+#' @name intent_p3-methods
 #' @title Extract Image intent_p3 attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

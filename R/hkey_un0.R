@@ -1,4 +1,4 @@
-#' @name hkey_un0
+#' @name hkey_un0-methods
 #' @title Extract Image hkey_un0 attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

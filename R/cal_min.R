@@ -1,4 +1,4 @@
-#' @name cal.min
+#' @name cal.min-methods
 #' @title Extract Image cal.min attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

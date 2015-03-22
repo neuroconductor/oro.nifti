@@ -1,4 +1,4 @@
-#' @name verified
+#' @name verified-methods
 #' @title Extract Image verified attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

@@ -1,4 +1,4 @@
-#' @name scl_inter
+#' @name scl_inter-methods
 #' @title Extract Image scl_inter attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

@@ -1,4 +1,4 @@
-#' @name slice_end
+#' @name slice_end-methods
 #' @title Extract Image slice_end attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

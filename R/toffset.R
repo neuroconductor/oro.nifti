@@ -1,4 +1,4 @@
-#' @name toffset
+#' @name toffset-methods
 #' @title Extract Image toffset attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

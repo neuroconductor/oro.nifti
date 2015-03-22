@@ -1,4 +1,4 @@
-#' @name vols_added
+#' @name vols_added-methods
 #' @title Extract Image vols_added attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

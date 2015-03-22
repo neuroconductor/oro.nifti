@@ -1,4 +1,4 @@
-#' @name vox_units
+#' @name vox_units-methods
 #' @title Extract Image vox_units attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

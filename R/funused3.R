@@ -1,4 +1,4 @@
-#' @name funused3
+#' @name funused3-methods
 #' @title Extract Image funused3 attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

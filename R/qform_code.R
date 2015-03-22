@@ -1,4 +1,4 @@
-#' @name qform_code
+#' @name qform_code-methods
 #' @title Extract Image qform_code attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

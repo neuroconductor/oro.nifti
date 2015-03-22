@@ -1,4 +1,4 @@
-#' @name extents
+#' @name extents-methods
 #' @title Extract Image extents attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

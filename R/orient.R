@@ -1,4 +1,4 @@
-#' @name orient
+#' @name orient-methods
 #' @title Extract Image orient attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

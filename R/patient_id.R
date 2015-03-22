@@ -1,4 +1,4 @@
-#' @name patient_id
+#' @name patient_id-methods
 #' @title Extract Image patient_id attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

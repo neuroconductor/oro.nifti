@@ -1,4 +1,4 @@
-#' @name generated
+#' @name generated-methods
 #' @title Extract Image generated attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

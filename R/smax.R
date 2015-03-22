@@ -1,4 +1,4 @@
-#' @name smax
+#' @name smax-methods
 #' @title Extract Image smax attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

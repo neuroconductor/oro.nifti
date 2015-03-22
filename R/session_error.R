@@ -1,4 +1,4 @@
-#' @name session_error
+#' @name session_error-methods
 #' @title Extract Image session_error attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

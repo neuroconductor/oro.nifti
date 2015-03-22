@@ -1,4 +1,4 @@
-#' @name origin
+#' @name origin-methods
 #' @title Extract Image origin attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

@@ -1,4 +1,4 @@
-#' @name sizeof_hdr
+#' @name sizeof_hdr-methods
 #' @title Extract Image sizeof_hdr attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

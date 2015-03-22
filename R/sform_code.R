@@ -1,4 +1,4 @@
-#' @name sform_code
+#' @name sform_code-methods
 #' @title Extract Image sform_code attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

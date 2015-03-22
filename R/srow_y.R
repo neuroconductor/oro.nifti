@@ -1,4 +1,4 @@
-#' @name srow_y
+#' @name srow_y-methods
 #' @title Extract Image srow_y attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}

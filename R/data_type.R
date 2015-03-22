@@ -1,4 +1,4 @@
-#' @name data_type
+#' @name data_type-methods
 #' @title Extract Image data_type attribute
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}
