@@ -178,6 +178,8 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
       }
     }
   }
+  ### Reset cal_max and cal_min - in case these do not work correctly
+  nim = cal_img(nim, infok = TRUE)
   options(warn=oldwarn)
   return(nim)
 }
@@ -385,8 +387,6 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
   }
   ## Warnings?
   options(warn=oldwarn)
-  ### Reset cal_max and cal_min - in case these do not work correctly
-  nim = cal_img(nim, infok = TRUE)
   ## Check validity
   validNIfTI <- getValidity(getClassDef("nifti"))
   validNIfTI(nim)

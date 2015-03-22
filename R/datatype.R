@@ -38,7 +38,7 @@ setGeneric("datatype<-", function(object, value) { standardGeneric("datatype<-")
 setMethod("datatype<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( datatype %in% slotNames(object) ){
+            if ( "datatype" %in% slotNames(object) ){
               object@"datatype" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("datatype<-",
 setMethod("datatype<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( datatype %in% slotNames(object) ){
+            if ( "datatype" %in% slotNames(object) ){
               object@"datatype" <- value
             } else {
               warning("datatype is not in slotNames of object")

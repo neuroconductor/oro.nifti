@@ -38,7 +38,7 @@ setGeneric("omax<-", function(object, value) { standardGeneric("omax<-") })
 setMethod("omax<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( omax %in% slotNames(object) ){
+            if ( "omax" %in% slotNames(object) ){
               object@"omax" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("omax<-",
 setMethod("omax<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( omax %in% slotNames(object) ){
+            if ( "omax" %in% slotNames(object) ){
               object@"omax" <- value
             } else {
               warning("omax is not in slotNames of object")

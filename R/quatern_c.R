@@ -38,7 +38,7 @@ setGeneric("quatern_c<-", function(object, value) { standardGeneric("quatern_c<-
 setMethod("quatern_c<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( quatern_c %in% slotNames(object) ){
+            if ( "quatern_c" %in% slotNames(object) ){
               object@"quatern_c" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("quatern_c<-",
 setMethod("quatern_c<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( quatern_c %in% slotNames(object) ){
+            if ( "quatern_c" %in% slotNames(object) ){
               object@"quatern_c" <- value
             } else {
               warning("quatern_c is not in slotNames of object")

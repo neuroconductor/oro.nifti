@@ -38,7 +38,7 @@ setGeneric("smax<-", function(object, value) { standardGeneric("smax<-") })
 setMethod("smax<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( smax %in% slotNames(object) ){
+            if ( "smax" %in% slotNames(object) ){
               object@"smax" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("smax<-",
 setMethod("smax<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( smax %in% slotNames(object) ){
+            if ( "smax" %in% slotNames(object) ){
               object@"smax" <- value
             } else {
               warning("smax is not in slotNames of object")

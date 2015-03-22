@@ -38,7 +38,7 @@ setGeneric("bitpix<-", function(object, value) { standardGeneric("bitpix<-") })
 setMethod("bitpix<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( bitpix %in% slotNames(object) ){
+            if ( "bitpix" %in% slotNames(object) ){
               object@"bitpix" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("bitpix<-",
 setMethod("bitpix<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( bitpix %in% slotNames(object) ){
+            if ( "bitpix" %in% slotNames(object) ){
               object@"bitpix" <- value
             } else {
               warning("bitpix is not in slotNames of object")

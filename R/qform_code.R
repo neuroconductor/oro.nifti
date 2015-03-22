@@ -38,7 +38,7 @@ setGeneric("qform_code<-", function(object, value) { standardGeneric("qform_code
 setMethod("qform_code<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( qform_code %in% slotNames(object) ){
+            if ( "qform_code" %in% slotNames(object) ){
               object@"qform_code" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("qform_code<-",
 setMethod("qform_code<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( qform_code %in% slotNames(object) ){
+            if ( "qform_code" %in% slotNames(object) ){
               object@"qform_code" <- value
             } else {
               warning("qform_code is not in slotNames of object")

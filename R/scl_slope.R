@@ -38,7 +38,7 @@ setGeneric("scl_slope<-", function(object, value) { standardGeneric("scl_slope<-
 setMethod("scl_slope<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( scl_slope %in% slotNames(object) ){
+            if ( "scl_slope" %in% slotNames(object) ){
               object@"scl_slope" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("scl_slope<-",
 setMethod("scl_slope<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( scl_slope %in% slotNames(object) ){
+            if ( "scl_slope" %in% slotNames(object) ){
               object@"scl_slope" <- value
             } else {
               warning("scl_slope is not in slotNames of object")

@@ -47,7 +47,7 @@ setGeneric("cal.max<-", function(object, value) { standardGeneric("cal.max<-") }
 setMethod("cal.max<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( cal_max %in% slotNames(object) ){
+            if ( "cal_max" %in% slotNames(object) ){
               object@"cal_max" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -65,7 +65,7 @@ setMethod("cal.max<-",
 setMethod("cal.max<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( cal_max %in% slotNames(object) ){
+            if ( "cal_max" %in% slotNames(object) ){
               object@"cal_max" <- value
             } else {
               warning("cal_max is not in slotNames of object")

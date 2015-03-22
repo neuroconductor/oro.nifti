@@ -38,7 +38,7 @@ setGeneric("sizeof_hdr<-", function(object, value) { standardGeneric("sizeof_hdr
 setMethod("sizeof_hdr<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( sizeof_hdr %in% slotNames(object) ){
+            if ( "sizeof_hdr" %in% slotNames(object) ){
               object@"sizeof_hdr" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("sizeof_hdr<-",
 setMethod("sizeof_hdr<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( sizeof_hdr %in% slotNames(object) ){
+            if ( "sizeof_hdr" %in% slotNames(object) ){
               object@"sizeof_hdr" <- value
             } else {
               warning("sizeof_hdr is not in slotNames of object")

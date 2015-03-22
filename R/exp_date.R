@@ -38,7 +38,7 @@ setGeneric("exp_date<-", function(object, value) { standardGeneric("exp_date<-")
 setMethod("exp_date<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( exp_date %in% slotNames(object) ){
+            if ( "exp_date" %in% slotNames(object) ){
               object@"exp_date" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("exp_date<-",
 setMethod("exp_date<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( exp_date %in% slotNames(object) ){
+            if ( "exp_date" %in% slotNames(object) ){
               object@"exp_date" <- value
             } else {
               warning("exp_date is not in slotNames of object")

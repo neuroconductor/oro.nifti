@@ -38,7 +38,7 @@ setGeneric("compressed<-", function(object, value) { standardGeneric("compressed
 setMethod("compressed<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( compressed %in% slotNames(object) ){
+            if ( "compressed" %in% slotNames(object) ){
               object@"compressed" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("compressed<-",
 setMethod("compressed<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( compressed %in% slotNames(object) ){
+            if ( "compressed" %in% slotNames(object) ){
               object@"compressed" <- value
             } else {
               warning("compressed is not in slotNames of object")

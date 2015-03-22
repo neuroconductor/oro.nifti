@@ -51,7 +51,7 @@ setGeneric("descrip<-", function(object, value) { standardGeneric("descrip<-") }
 setMethod("descrip<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( descrip %in% slotNames(object) ){
+            if ( "descrip" %in% slotNames(object) ){
               object@"descrip" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -69,7 +69,7 @@ setMethod("descrip<-",
 setMethod("descrip<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( descrip %in% slotNames(object) ){
+            if ( "descrip" %in% slotNames(object) ){
               object@"descrip" <- value
             } else {
               warning("descrip is not in slotNames of object")

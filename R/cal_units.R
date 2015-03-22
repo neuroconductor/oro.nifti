@@ -38,7 +38,7 @@ setGeneric("cal_units<-", function(object, value) { standardGeneric("cal_units<-
 setMethod("cal_units<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( cal_units %in% slotNames(object) ){
+            if ( "cal_units" %in% slotNames(object) ){
               object@"cal_units" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("cal_units<-",
 setMethod("cal_units<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( cal_units %in% slotNames(object) ){
+            if ( "cal_units" %in% slotNames(object) ){
               object@"cal_units" <- value
             } else {
               warning("cal_units is not in slotNames of object")

@@ -38,7 +38,7 @@ setGeneric("intent_code<-", function(object, value) { standardGeneric("intent_co
 setMethod("intent_code<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( intent_code %in% slotNames(object) ){
+            if ( "intent_code" %in% slotNames(object) ){
               object@"intent_code" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("intent_code<-",
 setMethod("intent_code<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( intent_code %in% slotNames(object) ){
+            if ( "intent_code" %in% slotNames(object) ){
               object@"intent_code" <- value
             } else {
               warning("intent_code is not in slotNames of object")

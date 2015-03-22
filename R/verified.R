@@ -38,7 +38,7 @@ setGeneric("verified<-", function(object, value) { standardGeneric("verified<-")
 setMethod("verified<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( verified %in% slotNames(object) ){
+            if ( "verified" %in% slotNames(object) ){
               object@"verified" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("verified<-",
 setMethod("verified<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( verified %in% slotNames(object) ){
+            if ( "verified" %in% slotNames(object) ){
               object@"verified" <- value
             } else {
               warning("verified is not in slotNames of object")

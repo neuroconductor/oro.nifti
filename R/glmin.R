@@ -38,7 +38,7 @@ setGeneric("glmin<-", function(object, value) { standardGeneric("glmin<-") })
 setMethod("glmin<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( glmin %in% slotNames(object) ){
+            if ( "glmin" %in% slotNames(object) ){
               object@"glmin" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("glmin<-",
 setMethod("glmin<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( glmin %in% slotNames(object) ){
+            if ( "glmin" %in% slotNames(object) ){
               object@"glmin" <- value
             } else {
               warning("glmin is not in slotNames of object")

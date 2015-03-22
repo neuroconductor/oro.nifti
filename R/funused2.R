@@ -38,7 +38,7 @@ setGeneric("funused2<-", function(object, value) { standardGeneric("funused2<-")
 setMethod("funused2<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( funused2 %in% slotNames(object) ){
+            if ( "funused2" %in% slotNames(object) ){
               object@"funused2" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("funused2<-",
 setMethod("funused2<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( funused2 %in% slotNames(object) ){
+            if ( "funused2" %in% slotNames(object) ){
               object@"funused2" <- value
             } else {
               warning("funused2 is not in slotNames of object")

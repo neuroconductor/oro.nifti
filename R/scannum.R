@@ -38,7 +38,7 @@ setGeneric("scannum<-", function(object, value) { standardGeneric("scannum<-") }
 setMethod("scannum<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( scannum %in% slotNames(object) ){
+            if ( "scannum" %in% slotNames(object) ){
               object@"scannum" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("scannum<-",
 setMethod("scannum<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( scannum %in% slotNames(object) ){
+            if ( "scannum" %in% slotNames(object) ){
               object@"scannum" <- value
             } else {
               warning("scannum is not in slotNames of object")

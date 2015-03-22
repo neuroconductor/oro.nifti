@@ -38,7 +38,7 @@ setGeneric("slice_duration<-", function(object, value) { standardGeneric("slice_
 setMethod("slice_duration<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( slice_duration %in% slotNames(object) ){
+            if ( "slice_duration" %in% slotNames(object) ){
               object@"slice_duration" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("slice_duration<-",
 setMethod("slice_duration<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( slice_duration %in% slotNames(object) ){
+            if ( "slice_duration" %in% slotNames(object) ){
               object@"slice_duration" <- value
             } else {
               warning("slice_duration is not in slotNames of object")

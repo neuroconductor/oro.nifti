@@ -38,7 +38,7 @@ setGeneric("field_skip<-", function(object, value) { standardGeneric("field_skip
 setMethod("field_skip<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( field_skip %in% slotNames(object) ){
+            if ( "field_skip" %in% slotNames(object) ){
               object@"field_skip" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("field_skip<-",
 setMethod("field_skip<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( field_skip %in% slotNames(object) ){
+            if ( "field_skip" %in% slotNames(object) ){
               object@"field_skip" <- value
             } else {
               warning("field_skip is not in slotNames of object")

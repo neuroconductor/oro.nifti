@@ -38,7 +38,7 @@ setGeneric("hkey_un0<-", function(object, value) { standardGeneric("hkey_un0<-")
 setMethod("hkey_un0<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( hkey_un0 %in% slotNames(object) ){
+            if ( "hkey_un0" %in% slotNames(object) ){
               object@"hkey_un0" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("hkey_un0<-",
 setMethod("hkey_un0<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( hkey_un0 %in% slotNames(object) ){
+            if ( "hkey_un0" %in% slotNames(object) ){
               object@"hkey_un0" <- value
             } else {
               warning("hkey_un0 is not in slotNames of object")

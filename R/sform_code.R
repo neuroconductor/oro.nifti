@@ -38,7 +38,7 @@ setGeneric("sform_code<-", function(object, value) { standardGeneric("sform_code
 setMethod("sform_code<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( sform_code %in% slotNames(object) ){
+            if ( "sform_code" %in% slotNames(object) ){
               object@"sform_code" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("sform_code<-",
 setMethod("sform_code<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( sform_code %in% slotNames(object) ){
+            if ( "sform_code" %in% slotNames(object) ){
               object@"sform_code" <- value
             } else {
               warning("sform_code is not in slotNames of object")

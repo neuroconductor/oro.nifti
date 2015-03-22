@@ -51,7 +51,7 @@ setGeneric("aux.file<-", function(object, value) { standardGeneric("aux.file<-")
 setMethod("aux.file<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( aux_file %in% slotNames(object) ){
+            if ( "aux_file" %in% slotNames(object) ){
               object@"aux_file" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -69,7 +69,7 @@ setMethod("aux.file<-",
 setMethod("aux.file<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( aux_file %in% slotNames(object) ){
+            if ( "aux_file" %in% slotNames(object) ){
               object@"aux_file" <- value
             } else {
               warning("aux_file is not in slotNames of object")

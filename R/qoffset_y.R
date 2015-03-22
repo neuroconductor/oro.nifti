@@ -38,7 +38,7 @@ setGeneric("qoffset_y<-", function(object, value) { standardGeneric("qoffset_y<-
 setMethod("qoffset_y<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( qoffset_y %in% slotNames(object) ){
+            if ( "qoffset_y" %in% slotNames(object) ){
               object@"qoffset_y" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("qoffset_y<-",
 setMethod("qoffset_y<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( qoffset_y %in% slotNames(object) ){
+            if ( "qoffset_y" %in% slotNames(object) ){
               object@"qoffset_y" <- value
             } else {
               warning("qoffset_y is not in slotNames of object")

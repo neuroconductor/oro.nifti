@@ -38,7 +38,7 @@ setGeneric("orient<-", function(object, value) { standardGeneric("orient<-") })
 setMethod("orient<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( orient %in% slotNames(object) ){
+            if ( "orient" %in% slotNames(object) ){
               object@"orient" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("orient<-",
 setMethod("orient<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( orient %in% slotNames(object) ){
+            if ( "orient" %in% slotNames(object) ){
               object@"orient" <- value
             } else {
               warning("orient is not in slotNames of object")

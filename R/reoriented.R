@@ -38,7 +38,7 @@ setGeneric("reoriented<-", function(object, value) { standardGeneric("reoriented
 setMethod("reoriented<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( reoriented %in% slotNames(object) ){
+            if ( "reoriented" %in% slotNames(object) ){
               object@"reoriented" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("reoriented<-",
 setMethod("reoriented<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( reoriented %in% slotNames(object) ){
+            if ( "reoriented" %in% slotNames(object) ){
               object@"reoriented" <- value
             } else {
               warning("reoriented is not in slotNames of object")

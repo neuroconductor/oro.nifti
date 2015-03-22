@@ -38,7 +38,7 @@ setGeneric("extender<-", function(object, value) { standardGeneric("extender<-")
 setMethod("extender<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( extender %in% slotNames(object) ){
+            if ( "extender" %in% slotNames(object) ){
               object@"extender" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("extender<-",
 setMethod("extender<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( extender %in% slotNames(object) ){
+            if ( "extender" %in% slotNames(object) ){
               object@"extender" <- value
             } else {
               warning("extender is not in slotNames of object")

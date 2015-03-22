@@ -38,7 +38,7 @@ setGeneric("origin<-", function(object, value) { standardGeneric("origin<-") })
 setMethod("origin<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( origin %in% slotNames(object) ){
+            if ( "origin" %in% slotNames(object) ){
               object@"origin" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("origin<-",
 setMethod("origin<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( origin %in% slotNames(object) ){
+            if ( "origin" %in% slotNames(object) ){
               object@"origin" <- value
             } else {
               warning("origin is not in slotNames of object")

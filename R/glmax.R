@@ -38,7 +38,7 @@ setGeneric("glmax<-", function(object, value) { standardGeneric("glmax<-") })
 setMethod("glmax<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( glmax %in% slotNames(object) ){
+            if ( "glmax" %in% slotNames(object) ){
               object@"glmax" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("glmax<-",
 setMethod("glmax<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( glmax %in% slotNames(object) ){
+            if ( "glmax" %in% slotNames(object) ){
               object@"glmax" <- value
             } else {
               warning("glmax is not in slotNames of object")

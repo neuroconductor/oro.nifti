@@ -38,7 +38,7 @@ setGeneric("omin<-", function(object, value) { standardGeneric("omin<-") })
 setMethod("omin<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( omin %in% slotNames(object) ){
+            if ( "omin" %in% slotNames(object) ){
               object@"omin" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("omin<-",
 setMethod("omin<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( omin %in% slotNames(object) ){
+            if ( "omin" %in% slotNames(object) ){
               object@"omin" <- value
             } else {
               warning("omin is not in slotNames of object")

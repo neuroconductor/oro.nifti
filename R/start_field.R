@@ -38,7 +38,7 @@ setGeneric("start_field<-", function(object, value) { standardGeneric("start_fie
 setMethod("start_field<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( start_field %in% slotNames(object) ){
+            if ( "start_field" %in% slotNames(object) ){
               object@"start_field" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("start_field<-",
 setMethod("start_field<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( start_field %in% slotNames(object) ){
+            if ( "start_field" %in% slotNames(object) ){
               object@"start_field" <- value
             } else {
               warning("start_field is not in slotNames of object")

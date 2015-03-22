@@ -38,7 +38,7 @@ setGeneric("dim_un0<-", function(object, value) { standardGeneric("dim_un0<-") }
 setMethod("dim_un0<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( dim_un0 %in% slotNames(object) ){
+            if ( "dim_un0" %in% slotNames(object) ){
               object@"dim_un0" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("dim_un0<-",
 setMethod("dim_un0<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( dim_un0 %in% slotNames(object) ){
+            if ( "dim_un0" %in% slotNames(object) ){
               object@"dim_un0" <- value
             } else {
               warning("dim_un0 is not in slotNames of object")

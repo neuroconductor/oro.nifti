@@ -47,7 +47,7 @@ setGeneric("pixdim<-", function(object, value) { standardGeneric("pixdim<-") })
 setMethod("pixdim<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( pixdim %in% slotNames(object) ){
+            if ( "pixdim" %in% slotNames(object) ){
               object@"pixdim" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -65,7 +65,7 @@ setMethod("pixdim<-",
 setMethod("pixdim<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( pixdim %in% slotNames(object) ){
+            if ( "pixdim" %in% slotNames(object) ){
               object@"pixdim" <- value
             } else {
               warning("pixdim is not in slotNames of object")

@@ -38,7 +38,7 @@ setGeneric("regular<-", function(object, value) { standardGeneric("regular<-") }
 setMethod("regular<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( regular %in% slotNames(object) ){
+            if ( "regular" %in% slotNames(object) ){
               object@"regular" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("regular<-",
 setMethod("regular<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( regular %in% slotNames(object) ){
+            if ( "regular" %in% slotNames(object) ){
               object@"regular" <- value
             } else {
               warning("regular is not in slotNames of object")

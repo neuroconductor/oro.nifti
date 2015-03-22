@@ -47,7 +47,7 @@ setGeneric("cal.min<-", function(object, value) { standardGeneric("cal.min<-") }
 setMethod("cal.min<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( cal_min %in% slotNames(object) ){
+            if ( "cal_min" %in% slotNames(object) ){
               object@"cal_min" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -65,7 +65,7 @@ setMethod("cal.min<-",
 setMethod("cal.min<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( cal_min %in% slotNames(object) ){
+            if ( "cal_min" %in% slotNames(object) ){
               object@"cal_min" <- value
             } else {
               warning("cal_min is not in slotNames of object")

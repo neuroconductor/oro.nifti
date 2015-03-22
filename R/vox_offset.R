@@ -38,7 +38,7 @@ setGeneric("vox_offset<-", function(object, value) { standardGeneric("vox_offset
 setMethod("vox_offset<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( vox_offset %in% slotNames(object) ){
+            if ( "vox_offset" %in% slotNames(object) ){
               object@"vox_offset" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("vox_offset<-",
 setMethod("vox_offset<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( vox_offset %in% slotNames(object) ){
+            if ( "vox_offset" %in% slotNames(object) ){
               object@"vox_offset" <- value
             } else {
               warning("vox_offset is not in slotNames of object")

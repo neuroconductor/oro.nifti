@@ -38,7 +38,7 @@ setGeneric("db_name<-", function(object, value) { standardGeneric("db_name<-") }
 setMethod("db_name<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( db_name %in% slotNames(object) ){
+            if ( "db_name" %in% slotNames(object) ){
               object@"db_name" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("db_name<-",
 setMethod("db_name<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( db_name %in% slotNames(object) ){
+            if ( "db_name" %in% slotNames(object) ){
               object@"db_name" <- value
             } else {
               warning("db_name is not in slotNames of object")

@@ -38,7 +38,7 @@ setGeneric("srow_x<-", function(object, value) { standardGeneric("srow_x<-") })
 setMethod("srow_x<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( srow_x %in% slotNames(object) ){
+            if ( "srow_x" %in% slotNames(object) ){
               object@"srow_x" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("srow_x<-",
 setMethod("srow_x<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( srow_x %in% slotNames(object) ){
+            if ( "srow_x" %in% slotNames(object) ){
               object@"srow_x" <- value
             } else {
               warning("srow_x is not in slotNames of object")

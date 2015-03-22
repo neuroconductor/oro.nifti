@@ -38,7 +38,7 @@ setGeneric("session_error<-", function(object, value) { standardGeneric("session
 setMethod("session_error<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( session_error %in% slotNames(object) ){
+            if ( "session_error" %in% slotNames(object) ){
               object@"session_error" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("session_error<-",
 setMethod("session_error<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( session_error %in% slotNames(object) ){
+            if ( "session_error" %in% slotNames(object) ){
               object@"session_error" <- value
             } else {
               warning("session_error is not in slotNames of object")

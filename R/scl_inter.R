@@ -38,7 +38,7 @@ setGeneric("scl_inter<-", function(object, value) { standardGeneric("scl_inter<-
 setMethod("scl_inter<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( scl_inter %in% slotNames(object) ){
+            if ( "scl_inter" %in% slotNames(object) ){
               object@"scl_inter" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("scl_inter<-",
 setMethod("scl_inter<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( scl_inter %in% slotNames(object) ){
+            if ( "scl_inter" %in% slotNames(object) ){
               object@"scl_inter" <- value
             } else {
               warning("scl_inter is not in slotNames of object")

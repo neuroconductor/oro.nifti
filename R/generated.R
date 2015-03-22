@@ -38,7 +38,7 @@ setGeneric("generated<-", function(object, value) { standardGeneric("generated<-
 setMethod("generated<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            if ( generated %in% slotNames(object) ){
+            if ( "generated" %in% slotNames(object) ){
               object@"generated" <- value
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
@@ -56,7 +56,7 @@ setMethod("generated<-",
 setMethod("generated<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            if ( generated %in% slotNames(object) ){
+            if ( "generated" %in% slotNames(object) ){
               object@"generated" <- value
             } else {
               warning("generated is not in slotNames of object")
