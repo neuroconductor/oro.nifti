@@ -1,9 +1,9 @@
 #' @name pixdim
-#' @title Extract NIfTI 3D Image pixdim attribute
+#' @title Extract Image pixdim attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to pixdim 
-#' @description Methods that act on the ``pixdim'' in the NIfTI header.
+#' @description Methods that act on the ``pixdim'' in the NIfTI/ANALYZE header.
 #' @rdname pixdim-methods
 #' @aliases pixdim-methods 
 #' @aliases pixdim
@@ -47,10 +47,14 @@ setGeneric("pixdim<-", function(object, value) { standardGeneric("pixdim<-") })
 setMethod("pixdim<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"pixdim" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("pixdim <-", value))            
+            if ( pixdim %in% slotNames(object) ){
+              object@"pixdim" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("pixdim <-", value))               
+            } else {
+              warning("pixdim is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -61,7 +65,11 @@ setMethod("pixdim<-",
 setMethod("pixdim<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"pixdim" <- value         
+            if ( pixdim %in% slotNames(object) ){
+              object@"pixdim" <- value
+            } else {
+              warning("pixdim is not in slotNames of object")
+            }
             return(object)
           })
 

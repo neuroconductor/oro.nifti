@@ -9,7 +9,7 @@
 \alias{magic<-}
 \alias{magic<-,anlz-method}
 \alias{magic<-,nifti-method}
-\title{Extract NIfTI 3D Image magic attribute}
+\title{Extract Image magic attribute}
 \usage{
 magic(object)
 
@@ -24,11 +24,11 @@ magic(object) <- value
 \S4method{magic}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to magic}
 }
 \description{
-Methods that act on the ``magic'' in the NIfTI header.
+Methods that act on the ``magic'' in the NIfTI/ANALYZE header.
 }
 

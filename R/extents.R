@@ -1,9 +1,9 @@
 #' @name extents
-#' @title Extract NIfTI 3D Image extents attribute
+#' @title Extract Image extents attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to extents 
-#' @description Methods that act on the ``extents'' in the NIfTI header.
+#' @description Methods that act on the ``extents'' in the NIfTI/ANALYZE header.
 #' @rdname extents-methods
 #' @aliases extents-methods 
 #' @aliases extents
@@ -38,10 +38,14 @@ setGeneric("extents<-", function(object, value) { standardGeneric("extents<-") }
 setMethod("extents<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"extents" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("extents <-", value))            
+            if ( extents %in% slotNames(object) ){
+              object@"extents" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("extents <-", value))               
+            } else {
+              warning("extents is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -52,7 +56,11 @@ setMethod("extents<-",
 setMethod("extents<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"extents" <- value         
+            if ( extents %in% slotNames(object) ){
+              object@"extents" <- value
+            } else {
+              warning("extents is not in slotNames of object")
+            }
             return(object)
           })
 

@@ -9,7 +9,7 @@
 \alias{scl_slope<-}
 \alias{scl_slope<-,anlz-method}
 \alias{scl_slope<-,nifti-method}
-\title{Extract NIfTI 3D Image scl_slope attribute}
+\title{Extract Image scl_slope attribute}
 \usage{
 scl_slope(object)
 
@@ -24,11 +24,11 @@ scl_slope(object) <- value
 \S4method{scl_slope}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to scl_slope}
 }
 \description{
-Methods that act on the ``scl_slope'' in the NIfTI header.
+Methods that act on the ``scl_slope'' in the NIfTI/ANALYZE header.
 }
 

@@ -9,7 +9,7 @@
 \alias{aux.file<-}
 \alias{aux.file<-,anlz-method}
 \alias{aux.file<-,nifti-method}
-\title{Extract NIfTI 3D Image aux.file attribute}
+\title{Extract Image aux.file attribute}
 \usage{
 aux.file(object)
 
@@ -24,12 +24,12 @@ aux.file(object) <- value
 \S4method{aux.file}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to aux_file}
 }
 \description{
-Methods that act on the ``aux_file'' in the NIfTI header.
+Methods that act on the ``aux_file'' in the NIfTI/ANALYZE header.
 }
 \examples{
 \dontrun{

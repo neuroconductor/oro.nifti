@@ -9,7 +9,7 @@
 \alias{extender<-}
 \alias{extender<-,anlz-method}
 \alias{extender<-,nifti-method}
-\title{Extract NIfTI 3D Image extender attribute}
+\title{Extract Image extender attribute}
 \usage{
 extender(object)
 
@@ -24,11 +24,11 @@ extender(object) <- value
 \S4method{extender}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to extender}
 }
 \description{
-Methods that act on the ``extender'' in the NIfTI header.
+Methods that act on the ``extender'' in the NIfTI/ANALYZE header.
 }
 

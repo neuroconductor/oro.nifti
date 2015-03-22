@@ -9,7 +9,7 @@
 \alias{cal.min<-}
 \alias{cal.min<-,anlz-method}
 \alias{cal.min<-,nifti-method}
-\title{Extract NIfTI 3D Image cal.min attribute}
+\title{Extract Image cal.min attribute}
 \usage{
 cal.min(object)
 
@@ -24,12 +24,12 @@ cal.min(object) <- value
 \S4method{cal.min}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to cal_min}
 }
 \description{
-Methods that act on the ``cal_min'' in the NIfTI header.
+Methods that act on the ``cal_min'' in the NIfTI/ANALYZE header.
 }
 \examples{
 \dontrun{

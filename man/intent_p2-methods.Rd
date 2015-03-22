@@ -9,7 +9,7 @@
 \alias{intent_p2<-}
 \alias{intent_p2<-,anlz-method}
 \alias{intent_p2<-,nifti-method}
-\title{Extract NIfTI 3D Image intent_p2 attribute}
+\title{Extract Image intent_p2 attribute}
 \usage{
 intent_p2(object)
 
@@ -24,11 +24,11 @@ intent_p2(object) <- value
 \S4method{intent_p2}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to intent_p2}
 }
 \description{
-Methods that act on the ``intent_p2'' in the NIfTI header.
+Methods that act on the ``intent_p2'' in the NIfTI/ANALYZE header.
 }
 

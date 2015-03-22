@@ -1,9 +1,9 @@
 #' @name toffset
-#' @title Extract NIfTI 3D Image toffset attribute
+#' @title Extract Image toffset attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to toffset 
-#' @description Methods that act on the ``toffset'' in the NIfTI header.
+#' @description Methods that act on the ``toffset'' in the NIfTI/ANALYZE header.
 #' @rdname toffset-methods
 #' @aliases toffset-methods 
 #' @aliases toffset
@@ -38,10 +38,14 @@ setGeneric("toffset<-", function(object, value) { standardGeneric("toffset<-") }
 setMethod("toffset<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"toffset" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("toffset <-", value))            
+            if ( toffset %in% slotNames(object) ){
+              object@"toffset" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("toffset <-", value))               
+            } else {
+              warning("toffset is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -52,7 +56,11 @@ setMethod("toffset<-",
 setMethod("toffset<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"toffset" <- value         
+            if ( toffset %in% slotNames(object) ){
+              object@"toffset" <- value
+            } else {
+              warning("toffset is not in slotNames of object")
+            }
             return(object)
           })
 

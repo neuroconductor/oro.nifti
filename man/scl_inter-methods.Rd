@@ -9,7 +9,7 @@
 \alias{scl_inter<-}
 \alias{scl_inter<-,anlz-method}
 \alias{scl_inter<-,nifti-method}
-\title{Extract NIfTI 3D Image scl_inter attribute}
+\title{Extract Image scl_inter attribute}
 \usage{
 scl_inter(object)
 
@@ -24,11 +24,11 @@ scl_inter(object) <- value
 \S4method{scl_inter}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to scl_inter}
 }
 \description{
-Methods that act on the ``scl_inter'' in the NIfTI header.
+Methods that act on the ``scl_inter'' in the NIfTI/ANALYZE header.
 }
 

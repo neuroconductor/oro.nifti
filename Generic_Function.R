@@ -1,9 +1,9 @@
 #' @name %%
-#' @title Extract NIfTI 3D Image %% attribute
+#' @title Extract Image %% attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to %ff% 
-#' @description Methods that act on the ``%ff%'' in the NIfTI header.
+#' @description Methods that act on the ``%ff%'' in the NIfTI/ANALYZE header.
 #' @rdname %ff%-methods
 #' @aliases %%-methods 
 #' @aliases %%
@@ -38,10 +38,14 @@ setGeneric("%%<-", function(object, value) { standardGeneric("%%<-") })
 setMethod("%%<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"%ff%" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("%ff% <-", value))            
+            if ( %ff% %in% slotNames(object) ){
+              object@"%ff%" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("%ff% <-", value))               
+            } else {
+              warning("%ff% is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -52,7 +56,11 @@ setMethod("%%<-",
 setMethod("%%<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"%ff%" <- value         
+            if ( %ff% %in% slotNames(object) ){
+              object@"%ff%" <- value
+            } else {
+              warning("%ff% is not in slotNames of object")
+            }
             return(object)
           })
 

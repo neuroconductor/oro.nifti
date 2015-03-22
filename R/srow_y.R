@@ -1,9 +1,9 @@
 #' @name srow_y
-#' @title Extract NIfTI 3D Image srow_y attribute
+#' @title Extract Image srow_y attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to srow_y 
-#' @description Methods that act on the ``srow_y'' in the NIfTI header.
+#' @description Methods that act on the ``srow_y'' in the NIfTI/ANALYZE header.
 #' @rdname srow_y-methods
 #' @aliases srow_y-methods 
 #' @aliases srow_y
@@ -38,10 +38,14 @@ setGeneric("srow_y<-", function(object, value) { standardGeneric("srow_y<-") })
 setMethod("srow_y<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"srow_y" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("srow_y <-", value))            
+            if ( srow_y %in% slotNames(object) ){
+              object@"srow_y" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("srow_y <-", value))               
+            } else {
+              warning("srow_y is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -52,7 +56,11 @@ setMethod("srow_y<-",
 setMethod("srow_y<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"srow_y" <- value         
+            if ( srow_y %in% slotNames(object) ){
+              object@"srow_y" <- value
+            } else {
+              warning("srow_y is not in slotNames of object")
+            }
             return(object)
           })
 

@@ -9,7 +9,7 @@
 \alias{bitpix<-}
 \alias{bitpix<-,anlz-method}
 \alias{bitpix<-,nifti-method}
-\title{Extract NIfTI 3D Image bitpix attribute}
+\title{Extract Image bitpix attribute}
 \usage{
 bitpix(object)
 
@@ -24,11 +24,11 @@ bitpix(object) <- value
 \S4method{bitpix}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to bitpix}
 }
 \description{
-Methods that act on the ``bitpix'' in the NIfTI header.
+Methods that act on the ``bitpix'' in the NIfTI/ANALYZE header.
 }
 

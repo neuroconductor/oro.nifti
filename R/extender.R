@@ -1,9 +1,9 @@
 #' @name extender
-#' @title Extract NIfTI 3D Image extender attribute
+#' @title Extract Image extender attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to extender 
-#' @description Methods that act on the ``extender'' in the NIfTI header.
+#' @description Methods that act on the ``extender'' in the NIfTI/ANALYZE header.
 #' @rdname extender-methods
 #' @aliases extender-methods 
 #' @aliases extender
@@ -38,10 +38,14 @@ setGeneric("extender<-", function(object, value) { standardGeneric("extender<-")
 setMethod("extender<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"extender" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("extender <-", value))            
+            if ( extender %in% slotNames(object) ){
+              object@"extender" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("extender <-", value))               
+            } else {
+              warning("extender is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -52,7 +56,11 @@ setMethod("extender<-",
 setMethod("extender<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"extender" <- value         
+            if ( extender %in% slotNames(object) ){
+              object@"extender" <- value
+            } else {
+              warning("extender is not in slotNames of object")
+            }
             return(object)
           })
 

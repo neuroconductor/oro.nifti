@@ -1,9 +1,9 @@
 #' @name quatern_c
-#' @title Extract NIfTI 3D Image quatern_c attribute
+#' @title Extract Image quatern_c attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to quatern_c 
-#' @description Methods that act on the ``quatern_c'' in the NIfTI header.
+#' @description Methods that act on the ``quatern_c'' in the NIfTI/ANALYZE header.
 #' @rdname quatern_c-methods
 #' @aliases quatern_c-methods 
 #' @aliases quatern_c
@@ -38,10 +38,14 @@ setGeneric("quatern_c<-", function(object, value) { standardGeneric("quatern_c<-
 setMethod("quatern_c<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"quatern_c" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("quatern_c <-", value))            
+            if ( quatern_c %in% slotNames(object) ){
+              object@"quatern_c" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("quatern_c <-", value))               
+            } else {
+              warning("quatern_c is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -52,7 +56,11 @@ setMethod("quatern_c<-",
 setMethod("quatern_c<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"quatern_c" <- value         
+            if ( quatern_c %in% slotNames(object) ){
+              object@"quatern_c" <- value
+            } else {
+              warning("quatern_c is not in slotNames of object")
+            }
             return(object)
           })
 

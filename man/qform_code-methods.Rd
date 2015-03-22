@@ -9,7 +9,7 @@
 \alias{qform_code<-}
 \alias{qform_code<-,anlz-method}
 \alias{qform_code<-,nifti-method}
-\title{Extract NIfTI 3D Image qform_code attribute}
+\title{Extract Image qform_code attribute}
 \usage{
 qform_code(object)
 
@@ -24,11 +24,11 @@ qform_code(object) <- value
 \S4method{qform_code}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to qform_code}
 }
 \description{
-Methods that act on the ``qform_code'' in the NIfTI header.
+Methods that act on the ``qform_code'' in the NIfTI/ANALYZE header.
 }
 

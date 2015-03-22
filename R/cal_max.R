@@ -1,9 +1,9 @@
 #' @name cal.max
-#' @title Extract NIfTI 3D Image cal.max attribute
+#' @title Extract Image cal.max attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to cal_max 
-#' @description Methods that act on the ``cal_max'' in the NIfTI header.
+#' @description Methods that act on the ``cal_max'' in the NIfTI/ANALYZE header.
 #' @rdname cal_max-methods
 #' @aliases cal.max-methods 
 #' @aliases cal.max
@@ -47,10 +47,14 @@ setGeneric("cal.max<-", function(object, value) { standardGeneric("cal.max<-") }
 setMethod("cal.max<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"cal_max" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("cal_max <-", value))            
+            if ( cal_max %in% slotNames(object) ){
+              object@"cal_max" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("cal_max <-", value))               
+            } else {
+              warning("cal_max is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -61,7 +65,11 @@ setMethod("cal.max<-",
 setMethod("cal.max<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"cal_max" <- value         
+            if ( cal_max %in% slotNames(object) ){
+              object@"cal_max" <- value
+            } else {
+              warning("cal_max is not in slotNames of object")
+            }
             return(object)
           })
 

@@ -1,9 +1,9 @@
 #' @name session_error
-#' @title Extract NIfTI 3D Image session_error attribute
+#' @title Extract Image session_error attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to session_error 
-#' @description Methods that act on the ``session_error'' in the NIfTI header.
+#' @description Methods that act on the ``session_error'' in the NIfTI/ANALYZE header.
 #' @rdname session_error-methods
 #' @aliases session_error-methods 
 #' @aliases session_error
@@ -38,10 +38,14 @@ setGeneric("session_error<-", function(object, value) { standardGeneric("session
 setMethod("session_error<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"session_error" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("session_error <-", value))            
+            if ( session_error %in% slotNames(object) ){
+              object@"session_error" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("session_error <-", value))               
+            } else {
+              warning("session_error is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -52,7 +56,11 @@ setMethod("session_error<-",
 setMethod("session_error<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"session_error" <- value         
+            if ( session_error %in% slotNames(object) ){
+              object@"session_error" <- value
+            } else {
+              warning("session_error is not in slotNames of object")
+            }
             return(object)
           })
 

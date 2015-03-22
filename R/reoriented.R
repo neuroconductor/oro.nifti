@@ -1,9 +1,9 @@
 #' @name reoriented
-#' @title Extract NIfTI 3D Image reoriented attribute
+#' @title Extract Image reoriented attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to reoriented 
-#' @description Methods that act on the ``reoriented'' in the NIfTI header.
+#' @description Methods that act on the ``reoriented'' in the NIfTI/ANALYZE header.
 #' @rdname reoriented-methods
 #' @aliases reoriented-methods 
 #' @aliases reoriented
@@ -38,10 +38,14 @@ setGeneric("reoriented<-", function(object, value) { standardGeneric("reoriented
 setMethod("reoriented<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"reoriented" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("reoriented <-", value))            
+            if ( reoriented %in% slotNames(object) ){
+              object@"reoriented" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("reoriented <-", value))               
+            } else {
+              warning("reoriented is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -52,7 +56,11 @@ setMethod("reoriented<-",
 setMethod("reoriented<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"reoriented" <- value         
+            if ( reoriented %in% slotNames(object) ){
+              object@"reoriented" <- value
+            } else {
+              warning("reoriented is not in slotNames of object")
+            }
             return(object)
           })
 

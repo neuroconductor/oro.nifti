@@ -9,7 +9,7 @@
 \alias{reoriented<-}
 \alias{reoriented<-,anlz-method}
 \alias{reoriented<-,nifti-method}
-\title{Extract NIfTI 3D Image reoriented attribute}
+\title{Extract Image reoriented attribute}
 \usage{
 reoriented(object)
 
@@ -24,11 +24,11 @@ reoriented(object) <- value
 \S4method{reoriented}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to reoriented}
 }
 \description{
-Methods that act on the ``reoriented'' in the NIfTI header.
+Methods that act on the ``reoriented'' in the NIfTI/ANALYZE header.
 }
 

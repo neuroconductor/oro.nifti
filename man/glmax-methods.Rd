@@ -9,7 +9,7 @@
 \alias{glmax<-}
 \alias{glmax<-,anlz-method}
 \alias{glmax<-,nifti-method}
-\title{Extract NIfTI 3D Image glmax attribute}
+\title{Extract Image glmax attribute}
 \usage{
 glmax(object)
 
@@ -24,11 +24,11 @@ glmax(object) <- value
 \S4method{glmax}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to glmax}
 }
 \description{
-Methods that act on the ``glmax'' in the NIfTI header.
+Methods that act on the ``glmax'' in the NIfTI/ANALYZE header.
 }
 

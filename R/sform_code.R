@@ -1,9 +1,9 @@
 #' @name sform_code
-#' @title Extract NIfTI 3D Image sform_code attribute
+#' @title Extract Image sform_code attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to sform_code 
-#' @description Methods that act on the ``sform_code'' in the NIfTI header.
+#' @description Methods that act on the ``sform_code'' in the NIfTI/ANALYZE header.
 #' @rdname sform_code-methods
 #' @aliases sform_code-methods 
 #' @aliases sform_code
@@ -38,10 +38,14 @@ setGeneric("sform_code<-", function(object, value) { standardGeneric("sform_code
 setMethod("sform_code<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"sform_code" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("sform_code <-", value))            
+            if ( sform_code %in% slotNames(object) ){
+              object@"sform_code" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("sform_code <-", value))               
+            } else {
+              warning("sform_code is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -52,7 +56,11 @@ setMethod("sform_code<-",
 setMethod("sform_code<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"sform_code" <- value         
+            if ( sform_code %in% slotNames(object) ){
+              object@"sform_code" <- value
+            } else {
+              warning("sform_code is not in slotNames of object")
+            }
             return(object)
           })
 

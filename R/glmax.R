@@ -1,9 +1,9 @@
 #' @name glmax
-#' @title Extract NIfTI 3D Image glmax attribute
+#' @title Extract Image glmax attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to glmax 
-#' @description Methods that act on the ``glmax'' in the NIfTI header.
+#' @description Methods that act on the ``glmax'' in the NIfTI/ANALYZE header.
 #' @rdname glmax-methods
 #' @aliases glmax-methods 
 #' @aliases glmax
@@ -38,10 +38,14 @@ setGeneric("glmax<-", function(object, value) { standardGeneric("glmax<-") })
 setMethod("glmax<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"glmax" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("glmax <-", value))            
+            if ( glmax %in% slotNames(object) ){
+              object@"glmax" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("glmax <-", value))               
+            } else {
+              warning("glmax is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -52,7 +56,11 @@ setMethod("glmax<-",
 setMethod("glmax<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"glmax" <- value         
+            if ( glmax %in% slotNames(object) ){
+              object@"glmax" <- value
+            } else {
+              warning("glmax is not in slotNames of object")
+            }
             return(object)
           })
 

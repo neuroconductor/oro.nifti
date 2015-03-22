@@ -9,7 +9,7 @@
 \alias{slice_duration<-}
 \alias{slice_duration<-,anlz-method}
 \alias{slice_duration<-,nifti-method}
-\title{Extract NIfTI 3D Image slice_duration attribute}
+\title{Extract Image slice_duration attribute}
 \usage{
 slice_duration(object)
 
@@ -24,11 +24,11 @@ slice_duration(object) <- value
 \S4method{slice_duration}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to slice_duration}
 }
 \description{
-Methods that act on the ``slice_duration'' in the NIfTI header.
+Methods that act on the ``slice_duration'' in the NIfTI/ANALYZE header.
 }
 

@@ -9,7 +9,7 @@
 \alias{slice_end<-}
 \alias{slice_end<-,anlz-method}
 \alias{slice_end<-,nifti-method}
-\title{Extract NIfTI 3D Image slice_end attribute}
+\title{Extract Image slice_end attribute}
 \usage{
 slice_end(object)
 
@@ -24,11 +24,11 @@ slice_end(object) <- value
 \S4method{slice_end}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to slice_end}
 }
 \description{
-Methods that act on the ``slice_end'' in the NIfTI header.
+Methods that act on the ``slice_end'' in the NIfTI/ANALYZE header.
 }
 

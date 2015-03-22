@@ -135,3 +135,11 @@ makefunc("intent_name", write=TRUE, remove=remove)
 makefunc("magic", write=TRUE, remove=remove)
 makefunc("extender", write=TRUE, remove=remove)
 makefunc("reoriented", write=TRUE, remove=remove)
+
+##### ANALYZE slotstuff
+aim_names = c("hkey_un0", "vox_units", "cal_units", "unused1", "dim_un0", 
+              "funused1", "funused2", "funused3", "compressed", "verified", 
+              "orient", "origin", "generated", "scannum", "patient_id", "exp_date", 
+              "exp_time", "hist_un0", "views", "vols_added", "start_field", 
+              "field_skip", "omax", "omin", "smax", "smin")
+sapply(aim_names, makefunc, write=TRUE, remove=remove)

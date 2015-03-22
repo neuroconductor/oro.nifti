@@ -9,7 +9,7 @@
 \alias{vox_offset<-}
 \alias{vox_offset<-,anlz-method}
 \alias{vox_offset<-,nifti-method}
-\title{Extract NIfTI 3D Image vox_offset attribute}
+\title{Extract Image vox_offset attribute}
 \usage{
 vox_offset(object)
 
@@ -24,11 +24,11 @@ vox_offset(object) <- value
 \S4method{vox_offset}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to vox_offset}
 }
 \description{
-Methods that act on the ``vox_offset'' in the NIfTI header.
+Methods that act on the ``vox_offset'' in the NIfTI/ANALYZE header.
 }
 

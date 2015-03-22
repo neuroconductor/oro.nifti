@@ -1,9 +1,9 @@
 #' @name descrip
-#' @title Extract NIfTI 3D Image descrip attribute
+#' @title Extract Image descrip attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to descrip 
-#' @description Methods that act on the ``descrip'' in the NIfTI header.
+#' @description Methods that act on the ``descrip'' in the NIfTI/ANALYZE header.
 #' @rdname descrip-methods
 #' @aliases descrip-methods 
 #' @aliases descrip
@@ -51,10 +51,14 @@ setGeneric("descrip<-", function(object, value) { standardGeneric("descrip<-") }
 setMethod("descrip<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"descrip" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("descrip <-", value))            
+            if ( descrip %in% slotNames(object) ){
+              object@"descrip" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("descrip <-", value))               
+            } else {
+              warning("descrip is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -65,7 +69,11 @@ setMethod("descrip<-",
 setMethod("descrip<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"descrip" <- value         
+            if ( descrip %in% slotNames(object) ){
+              object@"descrip" <- value
+            } else {
+              warning("descrip is not in slotNames of object")
+            }
             return(object)
           })
 

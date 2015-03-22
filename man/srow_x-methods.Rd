@@ -9,7 +9,7 @@
 \alias{srow_x<-}
 \alias{srow_x<-,anlz-method}
 \alias{srow_x<-,nifti-method}
-\title{Extract NIfTI 3D Image srow_x attribute}
+\title{Extract Image srow_x attribute}
 \usage{
 srow_x(object)
 
@@ -24,11 +24,11 @@ srow_x(object) <- value
 \S4method{srow_x}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to srow_x}
 }
 \description{
-Methods that act on the ``srow_x'' in the NIfTI header.
+Methods that act on the ``srow_x'' in the NIfTI/ANALYZE header.
 }
 

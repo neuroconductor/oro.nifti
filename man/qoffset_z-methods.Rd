@@ -9,7 +9,7 @@
 \alias{qoffset_z<-}
 \alias{qoffset_z<-,anlz-method}
 \alias{qoffset_z<-,nifti-method}
-\title{Extract NIfTI 3D Image qoffset_z attribute}
+\title{Extract Image qoffset_z attribute}
 \usage{
 qoffset_z(object)
 
@@ -24,11 +24,11 @@ qoffset_z(object) <- value
 \S4method{qoffset_z}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to qoffset_z}
 }
 \description{
-Methods that act on the ``qoffset_z'' in the NIfTI header.
+Methods that act on the ``qoffset_z'' in the NIfTI/ANALYZE header.
 }
 

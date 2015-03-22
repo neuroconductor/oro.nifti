@@ -1,9 +1,9 @@
 #' @name data_type
-#' @title Extract NIfTI 3D Image data_type attribute
+#' @title Extract Image data_type attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to data_type 
-#' @description Methods that act on the ``data_type'' in the NIfTI header.
+#' @description Methods that act on the ``data_type'' in the NIfTI/ANALYZE header.
 #' @rdname data_type-methods
 #' @aliases data_type-methods 
 #' @aliases data_type
@@ -38,10 +38,14 @@ setGeneric("data_type<-", function(object, value) { standardGeneric("data_type<-
 setMethod("data_type<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"data_type" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("data_type <-", value))            
+            if ( data_type %in% slotNames(object) ){
+              object@"data_type" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("data_type <-", value))               
+            } else {
+              warning("data_type is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -52,7 +56,11 @@ setMethod("data_type<-",
 setMethod("data_type<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"data_type" <- value         
+            if ( data_type %in% slotNames(object) ){
+              object@"data_type" <- value
+            } else {
+              warning("data_type is not in slotNames of object")
+            }
             return(object)
           })
 

@@ -9,7 +9,7 @@
 \alias{datatype<-}
 \alias{datatype<-,anlz-method}
 \alias{datatype<-,nifti-method}
-\title{Extract NIfTI 3D Image datatype attribute}
+\title{Extract Image datatype attribute}
 \usage{
 datatype(object)
 
@@ -24,11 +24,11 @@ datatype(object) <- value
 \S4method{datatype}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to datatype}
 }
 \description{
-Methods that act on the ``datatype'' in the NIfTI header.
+Methods that act on the ``datatype'' in the NIfTI/ANALYZE header.
 }
 

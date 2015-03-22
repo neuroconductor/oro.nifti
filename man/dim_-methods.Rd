@@ -9,7 +9,7 @@
 \alias{dim_<-}
 \alias{dim_<-,anlz-method}
 \alias{dim_<-,nifti-method}
-\title{Extract NIfTI 3D Image dim_ attribute}
+\title{Extract Image dim_ attribute}
 \usage{
 dim_(object)
 
@@ -24,11 +24,11 @@ dim_(object) <- value
 \S4method{dim_}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to dim_}
 }
 \description{
-Methods that act on the ``dim_'' in the NIfTI header.
+Methods that act on the ``dim_'' in the NIfTI/ANALYZE header.
 }
 

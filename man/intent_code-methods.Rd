@@ -9,7 +9,7 @@
 \alias{intent_code<-}
 \alias{intent_code<-,anlz-method}
 \alias{intent_code<-,nifti-method}
-\title{Extract NIfTI 3D Image intent_code attribute}
+\title{Extract Image intent_code attribute}
 \usage{
 intent_code(object)
 
@@ -24,11 +24,11 @@ intent_code(object) <- value
 \S4method{intent_code}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to intent_code}
 }
 \description{
-Methods that act on the ``intent_code'' in the NIfTI header.
+Methods that act on the ``intent_code'' in the NIfTI/ANALYZE header.
 }
 

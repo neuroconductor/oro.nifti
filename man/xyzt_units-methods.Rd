@@ -9,7 +9,7 @@
 \alias{xyzt_units<-}
 \alias{xyzt_units<-,anlz-method}
 \alias{xyzt_units<-,nifti-method}
-\title{Extract NIfTI 3D Image xyzt_units attribute}
+\title{Extract Image xyzt_units attribute}
 \usage{
 xyzt_units(object)
 
@@ -24,11 +24,11 @@ xyzt_units(object) <- value
 \S4method{xyzt_units}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to xyzt_units}
 }
 \description{
-Methods that act on the ``xyzt_units'' in the NIfTI header.
+Methods that act on the ``xyzt_units'' in the NIfTI/ANALYZE header.
 }
 

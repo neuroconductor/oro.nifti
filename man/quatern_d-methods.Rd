@@ -9,7 +9,7 @@
 \alias{quatern_d<-}
 \alias{quatern_d<-,anlz-method}
 \alias{quatern_d<-,nifti-method}
-\title{Extract NIfTI 3D Image quatern_d attribute}
+\title{Extract Image quatern_d attribute}
 \usage{
 quatern_d(object)
 
@@ -24,11 +24,11 @@ quatern_d(object) <- value
 \S4method{quatern_d}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to quatern_d}
 }
 \description{
-Methods that act on the ``quatern_d'' in the NIfTI header.
+Methods that act on the ``quatern_d'' in the NIfTI/ANALYZE header.
 }
 

@@ -9,7 +9,7 @@
 \alias{descrip<-}
 \alias{descrip<-,anlz-method}
 \alias{descrip<-,nifti-method}
-\title{Extract NIfTI 3D Image descrip attribute}
+\title{Extract Image descrip attribute}
 \usage{
 descrip(object)
 
@@ -24,12 +24,12 @@ descrip(object) <- value
 \S4method{descrip}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to descrip}
 }
 \description{
-Methods that act on the ``descrip'' in the NIfTI header.
+Methods that act on the ``descrip'' in the NIfTI/ANALYZE header.
 }
 \examples{
 \dontrun{

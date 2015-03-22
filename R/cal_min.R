@@ -1,9 +1,9 @@
 #' @name cal.min
-#' @title Extract NIfTI 3D Image cal.min attribute
+#' @title Extract Image cal.min attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to cal_min 
-#' @description Methods that act on the ``cal_min'' in the NIfTI header.
+#' @description Methods that act on the ``cal_min'' in the NIfTI/ANALYZE header.
 #' @rdname cal_min-methods
 #' @aliases cal.min-methods 
 #' @aliases cal.min
@@ -47,10 +47,14 @@ setGeneric("cal.min<-", function(object, value) { standardGeneric("cal.min<-") }
 setMethod("cal.min<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"cal_min" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("cal_min <-", value))            
+            if ( cal_min %in% slotNames(object) ){
+              object@"cal_min" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("cal_min <-", value))               
+            } else {
+              warning("cal_min is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -61,7 +65,11 @@ setMethod("cal.min<-",
 setMethod("cal.min<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"cal_min" <- value         
+            if ( cal_min %in% slotNames(object) ){
+              object@"cal_min" <- value
+            } else {
+              warning("cal_min is not in slotNames of object")
+            }
             return(object)
           })
 

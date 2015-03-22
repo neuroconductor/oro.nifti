@@ -9,7 +9,7 @@
 \alias{db_name<-}
 \alias{db_name<-,anlz-method}
 \alias{db_name<-,nifti-method}
-\title{Extract NIfTI 3D Image db_name attribute}
+\title{Extract Image db_name attribute}
 \usage{
 db_name(object)
 
@@ -24,11 +24,11 @@ db_name(object) <- value
 \S4method{db_name}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to db_name}
 }
 \description{
-Methods that act on the ``db_name'' in the NIfTI header.
+Methods that act on the ``db_name'' in the NIfTI/ANALYZE header.
 }
 

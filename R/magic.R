@@ -1,9 +1,9 @@
 #' @name magic
-#' @title Extract NIfTI 3D Image magic attribute
+#' @title Extract Image magic attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to magic 
-#' @description Methods that act on the ``magic'' in the NIfTI header.
+#' @description Methods that act on the ``magic'' in the NIfTI/ANALYZE header.
 #' @rdname magic-methods
 #' @aliases magic-methods 
 #' @aliases magic
@@ -38,10 +38,14 @@ setGeneric("magic<-", function(object, value) { standardGeneric("magic<-") })
 setMethod("magic<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"magic" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("magic <-", value))            
+            if ( magic %in% slotNames(object) ){
+              object@"magic" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("magic <-", value))               
+            } else {
+              warning("magic is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -52,7 +56,11 @@ setMethod("magic<-",
 setMethod("magic<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"magic" <- value         
+            if ( magic %in% slotNames(object) ){
+              object@"magic" <- value
+            } else {
+              warning("magic is not in slotNames of object")
+            }
             return(object)
           })
 

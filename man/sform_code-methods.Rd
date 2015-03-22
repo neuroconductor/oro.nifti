@@ -9,7 +9,7 @@
 \alias{sform_code<-}
 \alias{sform_code<-,anlz-method}
 \alias{sform_code<-,nifti-method}
-\title{Extract NIfTI 3D Image sform_code attribute}
+\title{Extract Image sform_code attribute}
 \usage{
 sform_code(object)
 
@@ -24,11 +24,11 @@ sform_code(object) <- value
 \S4method{sform_code}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to sform_code}
 }
 \description{
-Methods that act on the ``sform_code'' in the NIfTI header.
+Methods that act on the ``sform_code'' in the NIfTI/ANALYZE header.
 }
 

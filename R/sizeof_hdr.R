@@ -1,9 +1,9 @@
 #' @name sizeof_hdr
-#' @title Extract NIfTI 3D Image sizeof_hdr attribute
+#' @title Extract Image sizeof_hdr attribute
 #' @docType methods 
-#' @param object is an object of class \code{nifti}
+#' @param object is an object of class \code{nifti} or \code{anlz}
 #' @param value Value to assign to sizeof_hdr 
-#' @description Methods that act on the ``sizeof_hdr'' in the NIfTI header.
+#' @description Methods that act on the ``sizeof_hdr'' in the NIfTI/ANALYZE header.
 #' @rdname sizeof_hdr-methods
 #' @aliases sizeof_hdr-methods 
 #' @aliases sizeof_hdr
@@ -38,10 +38,14 @@ setGeneric("sizeof_hdr<-", function(object, value) { standardGeneric("sizeof_hdr
 setMethod("sizeof_hdr<-", 
           signature(object="nifti"), 
           function(object, value) { 
-            object@"sizeof_hdr" <- value 
-            audit.trail(object) <-
-              niftiAuditTrailEvent(object, "modification", match.call(),
-                                   paste("sizeof_hdr <-", value))            
+            if ( sizeof_hdr %in% slotNames(object) ){
+              object@"sizeof_hdr" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("sizeof_hdr <-", value))               
+            } else {
+              warning("sizeof_hdr is not in slotNames of object")
+            }                       
             return(object)
           })
 
@@ -52,7 +56,11 @@ setMethod("sizeof_hdr<-",
 setMethod("sizeof_hdr<-", 
           signature(object="anlz"), 
           function(object, value) { 
-            object@"sizeof_hdr" <- value         
+            if ( sizeof_hdr %in% slotNames(object) ){
+              object@"sizeof_hdr" <- value
+            } else {
+              warning("sizeof_hdr is not in slotNames of object")
+            }
             return(object)
           })
 

@@ -9,7 +9,7 @@
 \alias{toffset<-}
 \alias{toffset<-,anlz-method}
 \alias{toffset<-,nifti-method}
-\title{Extract NIfTI 3D Image toffset attribute}
+\title{Extract Image toffset attribute}
 \usage{
 toffset(object)
 
@@ -24,11 +24,11 @@ toffset(object) <- value
 \S4method{toffset}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}}
 
 \item{value}{Value to assign to toffset}
 }
 \description{
-Methods that act on the ``toffset'' in the NIfTI header.
+Methods that act on the ``toffset'' in the NIfTI/ANALYZE header.
 }
 
