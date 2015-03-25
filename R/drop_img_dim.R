@@ -72,12 +72,12 @@ drop_img_dim = function(img, onlylast = TRUE, warn = TRUE){
   ### Must also if the dimensions are less than 3 then not an array
   pdim = pdim[!no.data]
   pdim = c(pdim, rep(1, 8-length(pdim)))
-  pixdim(img) = pdim
   dim_ = dim_[!no.data]
   dim_ = c(dim_, rep(1, 8-length(dim_)))
   #     dim_[no.data] = 1
-  dim_(img) = dim_
   if (length(imgdim) > ndim){
+    pixdim(img) = pdim
+    dim_(img) = dim_    
     if (onlylast){
       ############# code for last only
       ## cs - so first must be a 1, then 2, for all TRUE, b/c reversed
@@ -91,6 +91,8 @@ drop_img_dim = function(img, onlylast = TRUE, warn = TRUE){
     } else {
       D = drop(img@.Data)
     }
+  } else {
+    return(img)
   }
   
   if (ndim >= 3){

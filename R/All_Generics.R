@@ -1,4 +1,5 @@
 #' @export
+#' @aliases [,nifti,missing,ANY-method
 setMethod ("[", signature(x="nifti", i="missing", j="missing", "ANY"),
            function(x, i , j, ..., drop = TRUE) {
              ## list(...) doesn't work in this S4 method dispatch framework we
