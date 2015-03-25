@@ -1,6 +1,6 @@
 #' @export
 setMethod ("[", signature(x="nifti", i="missing", j="missing", "ANY"),
-           function(x, i , j, ..., drop = TRUE) {
+           function(x, i , j, ..., drop = FALSE) {
              ## list(...) doesn't work in this S4 method dispatch framework we
              ## are using the following trick: the current call is evaluated,
              ## but using x@.Data instead of x in the previous calling frame
