@@ -37,6 +37,7 @@ Collate:
     'convert_anlz.R'
     'convert_nifti.R'
     'as_nifti.R'
+    'All_Generics.R'
     'cal_img.R'
     'drop_img_dim.R'
     'hotmetal.R'
