@@ -38,6 +38,7 @@ SIGNED SHORT (16 bits per voxel)} \item{list("FLOAT32")}{DT FLOAT (32 bits
 per voxel)} \item{list("COMPLEX128")}{DT COMPLEX (128 bits per voxel)} }
 }
 \examples{
+\dontrun{
 ## Taken from the AFNI Matlab Library
 ## http://afni.nimh.nih.gov/pub/dist/data/afni_matlab_data.tgz
 afni.path <- system.file("afni", package="oro.nifti")
@@ -48,6 +49,7 @@ orthographic(orig, zlim=c(0.5,256), oma=rep(2,4))
 TT <- readAFNI(file.path(afni.path, "TT_N27_EZ_LR+tlrc"))
 image(TT, zlim=c(0.5,256), oma=rep(2,4))
 orthographic(TT, zlim=c(0.5,256), oma=rep(2,4))
+}
 }
 \author{
 Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}

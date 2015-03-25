@@ -1,5 +1,16 @@
-#' @export
-#' @aliases [,nifti,missing,ANY-method
+##' @title Subset a nifti
+##'
+##' @description Returns a subsetted nifti
+##' @param x nifti
+##' @param i boolean or integer index
+##' @param j boolean or integer index
+##' @param ... boolean or integer index
+##' @param drop Drop 1-dim elements
+##' @return nifti, matrix or array
+##' @export
+#' @aliases [,nifti,missing,missing,ANY-method
+#' @aliases [,nifti,missing,missing-method
+#' @aliases [,nifti-method
 setMethod ("[", signature(x="nifti", i="missing", j="missing", "ANY"),
            function(x, i , j, ..., drop = TRUE) {
              ## list(...) doesn't work in this S4 method dispatch framework we

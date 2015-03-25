@@ -360,7 +360,7 @@ is.afni <- function(x) {
 #' @keywords file methods
 #' @export
 #' @examples
-#' 
+#' \dontrun{
 #' ## Taken from the AFNI Matlab Library
 #' ## http://afni.nimh.nih.gov/pub/dist/data/afni_matlab_data.tgz
 #' afni.path <- system.file("afni", package="oro.nifti")
@@ -371,6 +371,7 @@ is.afni <- function(x) {
 #' TT <- readAFNI(file.path(afni.path, "TT_N27_EZ_LR+tlrc"))
 #' image(TT, zlim=c(0.5,256), oma=rep(2,4))
 #' orthographic(TT, zlim=c(0.5,256), oma=rep(2,4))
+#' }
 #' @rdname read_afni
 #' @name readAFNI
 readAFNI <- function(fname, vol=NULL, verbose=FALSE, warn=-1, call=NULL) {
