@@ -23,7 +23,7 @@ Drops a dimension of an image that has one-dimension and
 sets respective values to 0 in pixdim or 1 in dim
 }
 \examples{
-nim = nifti(array(rnorm(10^4), dim= rep(10, 4)))
+nim = nifti(array(rnorm(10^3), dim= rep(10, 3)))
 nim2 = nifti(array(rnorm(10^3), dim= c(10, 10, 1, 10)))
 drop_img_dim(nim2)
 drop_img_dim(nim2, onlylast = FALSE)
@@ -31,6 +31,8 @@ nim3 = nifti(array(rnorm(10^3), dim= c(10, 10, 10, 1)))
 drop_img_dim(nim3)
 drop_img_dim(nim3, onlylast = FALSE) # the same as above
 nim4 = nifti(array(rnorm(10^3), dim= c(10, 10, 10, 1, 10)))
+dim(nim4[,,,1,])
+dim(nim4[,,,1,,drop=TRUE])
 drop_img_dim(nim4)
 
 nim5 = nifti(array(rnorm(10^4), dim= c(1, 10, 10, 10, 1, 10)))

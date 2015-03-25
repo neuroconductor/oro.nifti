@@ -10,7 +10,7 @@
 #' @export
 #' @importFrom abind adrop
 #' @examples
-#' nim = nifti(array(rnorm(10^4), dim= rep(10, 4)))
+#' nim = nifti(array(rnorm(10^3), dim= rep(10, 3)))
 #' nim2 = nifti(array(rnorm(10^3), dim= c(10, 10, 1, 10)))
 #' drop_img_dim(nim2)
 #' drop_img_dim(nim2, onlylast = FALSE)
@@ -18,6 +18,8 @@
 #' drop_img_dim(nim3)
 #' drop_img_dim(nim3, onlylast = FALSE) # the same as above
 #' nim4 = nifti(array(rnorm(10^3), dim= c(10, 10, 10, 1, 10)))
+#' dim(nim4[,,,1,])
+#' dim(nim4[,,,1,,drop=TRUE])
 #' drop_img_dim(nim4)
 #' 
 #' nim5 = nifti(array(rnorm(10^4), dim= c(1, 10, 10, 10, 1, 10)))
@@ -68,34 +70,38 @@ drop_img_dim = function(img, onlylast = TRUE, warn = TRUE){
   dim_[1] = ndim
   ### need the if statement in case 1x1x1 array (as is default)
   ### Must also if the dimensions are less than 3 then not an array
-  if (ndim >= 3){
-    pdim = pdim[!no.data]
-    pdim = c(pdim, rep(1, 8-length(pdim)))
-    pixdim(img) = pdim
-    dim_ = dim_[!no.data]
-    dim_ = c(dim_, rep(1, 8-length(dim_)))
-#     dim_[no.data] = 1
-    dim_(img) = dim_
-    if (length(imgdim) > ndim){
-      if (onlylast){
-        ############# code for last only
-        ## cs - so first must be a 1, then 2, for all TRUE, b/c reversed
-        cs = cumsum(rev(no.data[1+seq(length(imgdim))]))
-        ### if cs[1] = 1, and cs[2] = 2, then last cols
-        dropcols = cs == seq(length(imgdim))
-        ### reverse it back to the correct order
-        dropcols = rev(dropcols)        
-        dropcols = which(dropcols)
-        img@.Data = adrop(img@.Data, drop = dropcols)        
-      } else {
-        img@.Data = drop(img@.Data)
-      }
-    }
-#     img@.Data = drop(img@.Data)
-  } else {
-    if (warn){
-      warning("Cannot drop under 3 Dimensions - .Data must be an array")
+  pdim = pdim[!no.data]
+  pdim = c(pdim, rep(1, 8-length(pdim)))
+  pixdim(img) = pdim
+  dim_ = dim_[!no.data]
+  dim_ = c(dim_, rep(1, 8-length(dim_)))
+  #     dim_[no.data] = 1
+  dim_(img) = dim_
+  if (length(imgdim) > ndim){
+    if (onlylast){
+      ############# code for last only
+      ## cs - so first must be a 1, then 2, for all TRUE, b/c reversed
+      cs = cumsum(rev(no.data[1+seq(length(imgdim))]))
+      ### if cs[1] = 1, and cs[2] = 2, then last cols
+      dropcols = cs == seq(length(imgdim))
+      ### reverse it back to the correct order
+      dropcols = rev(dropcols)        
+      dropcols = which(dropcols)
+      D = adrop(img@.Data, drop = dropcols)        
+    } else {
+      D = drop(img@.Data)
     }
   }
-  img
+  
+  if (ndim >= 3){
+    img@.Data = D
+    return(img)
+  #     img@.Data = drop(img@.Data)
+  } else {
+    if (warn){
+      warning("Dropping under 3 Dimensions - returning non-nifti object array")
+    }
+    return(D)
+  }
+#   img
 }

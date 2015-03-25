@@ -1,6 +1,6 @@
 #' @export
 setMethod ("[", signature(x="nifti", i="missing", j="missing", "ANY"),
-           function(x, i , j, ..., drop = FALSE) {
+           function(x, i , j, ..., drop = TRUE) {
              ## list(...) doesn't work in this S4 method dispatch framework we
              ## are using the following trick: the current call is evaluated,
              ## but using x@.Data instead of x in the previous calling frame
@@ -21,7 +21,7 @@ setMethod ("[", signature(x="nifti", i="missing", j="missing", "ANY"),
                y = eval.parent(sc)
                y = as.nifti(y, x)
                if (drop){
-                 y = drop_img_dim(y, onlylast = FALSE)
+                 y = drop_img_dim(y, onlylast = FALSE, warn=FALSE)
                }             
                x = y
 #                # drop dims higher than 2 unless 'drop' explicitly set to FALSE
@@ -31,7 +31,7 @@ setMethod ("[", signature(x="nifti", i="missing", j="missing", "ANY"),
 #                }
 #                
 #                x@.Data = y
-               validObject(x)
+#                validObject(x)
                x
              }
            })
