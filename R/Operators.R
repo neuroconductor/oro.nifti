@@ -8,6 +8,7 @@
 #' @param e2 object
 setMethod("Ops", signature(e1="nifti", e2="nifti"),
           function(e1, e2) {
+            ## either use drop_img_dim and validObject or take out both
             e1 = drop_img_dim(e1)            
             e2 = drop_img_dim(e2)            
             e1@.Data = callGeneric(e1@.Data, e2@.Data)

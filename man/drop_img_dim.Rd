@@ -4,10 +4,14 @@
 \alias{drop_img_dim}
 \title{Drop Image Dimension}
 \usage{
-drop_img_dim(img, warn = TRUE)
+drop_img_dim(img, onlylast = TRUE, warn = TRUE)
 }
 \arguments{
 \item{img}{nifti object}
+
+\item{onlylast}{Drop dimension only if it's the last dimensions.
+For example if dim is 10x10x1x10 then no dimension is dropped, but
+if 10x10x10x1 then it will be 10x10x10}
 
 \item{warn}{output warning if dimensions are under 3}
 }
@@ -19,6 +23,22 @@ Drops a dimension of an image that has one-dimension and
 sets respective values to 0 in pixdim or 1 in dim
 }
 \examples{
+nim = nifti(array(rnorm(10^4), dim= rep(10, 4)))
+nim2 = nifti(array(rnorm(10^3), dim= c(10, 10, 1, 10)))
+drop_img_dim(nim2)
+drop_img_dim(nim2, onlylast = FALSE)
+nim3 = nifti(array(rnorm(10^3), dim= c(10, 10, 10, 1)))
+drop_img_dim(nim3)
+drop_img_dim(nim3, onlylast = FALSE) # the same as above
+nim4 = nifti(array(rnorm(10^3), dim= c(10, 10, 10, 1, 10)))
+drop_img_dim(nim4)
+
+nim5 = nifti(array(rnorm(10^4), dim= c(1, 10, 10, 10, 1, 10)))
+drop_img_dim(nim5)
+drop_img_dim(nim5, onlylast = FALSE)
+
+nim6 = nifti(array(rnorm(10^3), dim= c(1, 10, 10, 10, 1, 1)))
+drop_img_dim(nim6)
 \dontrun{
 ## 27 scans of Colin Holmes (MNI) brain co-registered and averaged
 ## NIfTI two-file format
