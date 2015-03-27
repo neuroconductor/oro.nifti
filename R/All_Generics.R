@@ -30,12 +30,17 @@ setMethod ("[", signature(x="nifti", i="missing", j="missing", "ANY"),
                sc$drop = FALSE
                sc[[2L]] = call('slot', sc[[2L]], '.Data')
                y = eval.parent(sc)
-               y = eval.parent(sc)
-               y = as.nifti(y, x)
+#                y = eval.parent(sc)
+#                print(class(y))
+#                print(class(x))
+               x@.Data = y
+               x = cal_img(x)
+               y = zero_trans(x)
+#                y = as.nifti(y, x)                
                if (drop){
-                 y = drop_img_dim(y, onlylast = FALSE, warn=FALSE)
+                 x = drop_img_dim(x, onlylast = FALSE, warn=FALSE)
                }             
-               x = y
+#                x = y
 #                # drop dims higher than 2 unless 'drop' explicitly set to FALSE
 #                if(!isTRUE(args$drop==FALSE) && length( (d = dim(y)) ) > 2L){
 #                  dims = which(d==1L)
