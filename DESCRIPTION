@@ -1,6 +1,6 @@
 Package: oro.nifti
-Version: 0.4.5
-Date: 2015-03-20
+Version: 0.5.0
+Date: 2015-04-01
 Title: Rigorous - NIfTI+ANALYZE+AFNI Input / Output
 Author: Brandon Whitcher, Volker Schmid and Andrew Thornton, with
     contributions by Karsten Tabelow and Jon Clayden and John Muschelli
@@ -37,7 +37,6 @@ Collate:
     'convert_anlz.R'
     'convert_nifti.R'
     'as_nifti.R'
-    'All_Generics.R'
     'cal_img.R'
     'drop_img_dim.R'
     'hotmetal.R'
