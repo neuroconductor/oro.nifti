@@ -35,7 +35,41 @@
 ############################################################################
 ## Conversion subroutines
 ############################################################################
-
+#' @name Convert NIfTI Codes
+#' @title Convert NIfTI Codes
+#' 
+#' @description Codes that appear in the ANALYZE header are mapped to meaningful chartacter
+#' strings.
+#' 
+#' @details \code{switch} statements are used to map a numeric code to the appropriate
+#' string.
+#' 
+#' @aliases convert.bitpix convert.datatype convert.intent convert.form
+#' @aliases convert.units convert.slice
+#' @param bitpix is the bit-per-pixel code.
+#' @param datatype.code defines data type.
+#' @param intent.code is the NIfTI intent code.
+#' @param form.code is the \eqn{(x,y,z)} coordinate system.
+#' @param units is the units of pixdim[1..4].
+#' @param inverse is a logical value that denotes the direction of unit
+#' conversion.
+#' @param slice.code is the slice timing order.
+#' @return A character string.
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references Neuroimaging Informatics Technology Initiative (NIfTI)\cr
+#' \url{http://nifti.nimh.nih.gov/}
+#' @examples
+#' 
+#' ##  4 = SIGNED_SHORT
+#' convert.datatype.anlz(4)
+#' ## 16 = FLOAT
+#' convert.datatype.anlz(16)
+#' ##  2 = "saggital unflipped"
+#' convert.orient.anlz(2)
+#' ##  4 = "coronal flipped"
+#' convert.orient.anlz(4)
+#' @rdname convert_nifti
+#' @export
 convert.bitpix <- function(bitpix=NULL) {
   nifti.bitpix <- list(UINT8 = 8,
                        INT8 = 8,
@@ -60,7 +94,8 @@ convert.bitpix <- function(bitpix=NULL) {
   }
 }
 
-
+#' @rdname convert_nifti
+#' @export
 convert.datatype <- function(datatype.code=NULL) {
   nifti.datatype <- list(UINT8 = 2,
                          INT16 = 4,
@@ -84,7 +119,8 @@ convert.datatype <- function(datatype.code=NULL) {
     names(which(nifti.datatype == as.numeric(datatype.code)))
   }
 }
-
+#' @rdname convert_nifti
+#' @export
 convert.intent <- function(intent.code=NULL) {
   nifti.intent <- list(None = 0,
                        Correl = 2,
@@ -127,7 +163,8 @@ convert.intent <- function(intent.code=NULL) {
     names(which(nifti.intent == as.numeric(intent.code)))
   }
 }
-
+#' @rdname convert_nifti
+#' @export
 convert.form <- function(form.code) {
   switch(as.character(form.code),
          "0" = "Unknown",       # Arbitrary coordinates (Method 1)
@@ -138,7 +175,8 @@ convert.form <- function(form.code) {
                                 # Tournoux Atlas; (0,0,0)=AC, etc.
          "4" = "MNI_152")       # MNI 152 normalized coordinates
 }
-
+#' @rdname convert_nifti
+#' @export
 convert.units <- function(units, inverse=FALSE) {
   if (inverse) {
     switch(units,
@@ -166,7 +204,8 @@ convert.units <- function(units, inverse=FALSE) {
            "48" = "rads")         # radians per second
   }
 }
-
+#' @rdname convert_nifti
+#' @export
 convert.slice <- function(slice.code) {
   switch(as.character(slice.code),
          "0" = "Unknown",
@@ -181,17 +220,54 @@ convert.slice <- function(slice.code) {
 ############################################################################
 ## Bitwise conversion subroutines
 ############################################################################
-
+#' Bitwise Conversion Subroutines
+#' 
+#' Units of spatial and temporal dimensions, and MRI-specific spatial and
+#' temporal information.
+#' 
+#' The functions \code{xyzt2space} and \code{xyzt2time} can be used to mask off
+#' the undesired bits from the \kbd{xyzt_units} fields, leaving \dQuote{pure}
+#' space and time codes.\cr
+#' \url{http://nifti.nimh.nih.gov/nifti-1/documentation/nifti1fields/nifti1fields_pages/xyzt_units.html}
+#' 
+#' The functions \code{dim2freq}, \code{dim2phase}, and \code{dim2slice} can be
+#' used to extract values from the \kbd{dim_info} byte.\cr
+#' \url{http://nifti.nimh.nih.gov/nifti-1/documentation/nifti1fields/nifti1fields_pages/dim_info.html}
+#' 
+#' @aliases xyzt2space xyzt2time space.time2xyzt dim2freq dim2phase dim2slice
+#' @param xyzt represents the units of pixdim[1..4] in the NIfTI header.
+#' @param ss is the character string of spatial units.  Valid strings are:
+#' \dQuote{Unknown}, \dQuote{meter}, \dQuote{mm} and \dQuote{micron}.
+#' @param tt is the character string of temporal units.  Valid strings are:
+#' \dQuote{sec}, \dQuote{msec}, \dQuote{usec}, \dQuote{Hz}, \dQuote{ppm} and
+#' \dQuote{rads}.
+#' @param di represents MRI slice ordering in the NIfTI header.
+#' @return For \kbd{diminfo}: the frequency, phase and slice dimensions encode
+#' which spatial dimension (1,2, or 3) corresponds to which acquisition
+#' dimension for MRI data.  For \kbd{xyzt_units}: the codes are used to
+#' indicate the units of pixdim.  Dimensions 1,2,3 are for x,y,z; dimension 4
+#' is for time (t).
+#' @author B. Whitcher \email{bwhitcher@@gmail.com}
+#' @seealso \code{\link{convert.units}}, \code{\link{convert.slice}}
+#' @references Neuroimaging Informatics Technology Initiative (NIfTI)\cr
+#' \url{http://nifti.nimh.nih.gov/}
+#' @keywords misc
+#' @rdname bitwise
+#' @import bitops
+#' @export
 xyzt2space <- function(xyzt) {
   ## define XYZT_TO_SPACE(xyzt) ( (xyzt) & 0x07 )
   bitops::bitAnd(xyzt, 7)
 }
 
+#' @rdname bitwise
+#' @export
 xyzt2time <- function(xyzt) {
   ## define XYZT_TO_TIME(xyzt) ( (xyzt) & 0x38 )
   bitops::bitAnd(xyzt, 56)
 }
-
+#' @rdname bitwise
+#' @export
 space.time2xyzt <- function(ss, tt) {
   ## define SPACE_TIME_TO_XYZT(ss,tt) (  (((char)(ss)) & 0x07)   \
   ##                                   | (((char)(tt)) & 0x38) )
@@ -199,17 +275,20 @@ space.time2xyzt <- function(ss, tt) {
   tt <- bitops::bitAnd(convert.units(tt, inverse=TRUE), 56)
   ss + tt
 }
-
+#' @rdname bitwise
+#' @export
 dim2freq <- function(di) {
   ## define DIM_INFO_TO_FREQ_DIM(di) ( ((di)     ) & 0x03 )
   bitops::bitAnd(di, 3)
 }
-
+#' @rdname bitwise
+#' @export
 dim2phase <- function(di) {
   ## define DIM_INFO_TO_PHASE_DIM(di) ( ((di) >> 2) & 0x03 )
   bitops::bitAnd(bitops::bitShiftR(di, 2), 3)
 }
-
+#' @rdname bitwise
+#' @export
 dim2slice <- function(di) {
   ## define DIM_INFO_TO_SLICE_DIM(di) ( ((di) >> 4) & 0x03 )
   bitops::bitAnd(bitops::bitShiftR(di, 4), 3)
@@ -218,7 +297,23 @@ dim2slice <- function(di) {
 ############################################################################
 ## as.nifti()
 ############################################################################
-
+#' @name as.nifti
+#' @title as.nifti
+#' 
+#' @description Internal function that converts multidimensional arrays to NIfTI class
+#' objects.
+#' 
+#' 
+#' @aliases as.nifti
+#' @param from is the object to be converted.
+#' @param value is the \code{anlz} class object to use as a template for
+#' various NIfTI header information.
+#' @param verbose is a logical variable (default = \code{FALSE}) that allows
+#' text-based feedback during execution of the function.
+#' @return An object of class \code{nifti}.
+#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net} and Brandon
+#' Whitcher \email{bwhitcher@@gmail.com}
+#' @export
 as.nifti <- function(from, value=NULL, verbose=FALSE) {
   anlz.as.nifti <- function(from, value=nifti()) {
     ## So what kind of thing do we keep?

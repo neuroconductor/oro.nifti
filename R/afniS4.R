@@ -35,7 +35,92 @@
 #############################################################################
 ## setClass("afni")
 #############################################################################
-
+#' Class "afni"
+#' 
+#' The AFNI class for medical imaging data.
+#' 
+#' 
+#' @name afni-class
+#' @aliases afni-class show,afni-method
+#' @docType class
+#' @section Objects from the Class: Objects can be created by calls of the form
+#' \code{new("afni", data, dim, dimnames, ...)}.
+#' @author Karsten Tabelow \email{karsten.tabelow@@wias-berlin.de}
+#' @seealso \code{\linkS4class{nifti}}, \code{\linkS4class{anlz}}
+#' @references AFNI\cr
+#' \url{http://afni.nimh.nih.gov/pub/dist/src/README.attributes}
+#' @keywords classes
+#' @examples
+#' 
+#' showClass("afni")
+#' @section Slots:
+#'   \describe{
+#'     \item{\code{.Data}:}{Object of class \code{"array"} contains the
+#'                          imaging data}
+#'     \item{\code{DATASET_RANK}:}{Object of class \code{"integer"}}
+#'     \item{\code{DATASET_DIMENSIONS}:}{Object of class \code{"integer"}}
+#'     \item{\code{TYPESTRING}:}{Object of class \code{"character"}}
+#'     \item{\code{SCENE_DATA}:}{Object of class \code{"integer"}}
+#'     \item{\code{ORIENT_SPECIFIC}:}{Object of class \code{"integer"}}
+#'     \item{\code{ORIGIN}:}{Object of class \code{"numeric"}}
+#'     \item{\code{DELTA}:}{Object of class \code{"numeric"}}
+#'     \item{\code{TAXIS_NUMS}:}{Object of class \code{"integer"}}
+#'     \item{\code{TAXIS_FLOATS}:}{Object of class \code{"numeric"}}
+#'     \item{\code{TAXIS_OFFSETS}:}{Object of class \code{"numeric"}}
+#'     \item{\code{IDCODE_STRING}:}{Object of class \code{"character"}}
+#'     \item{\code{IDCODE_DATE}:}{Object of class \code{"character"}}
+#'     \item{\code{BYTEORDER_STRING}:}{Object of class \code{"character"}}
+#'     \item{\code{BRICK_STATS}:}{Object of class \code{"numeric"}}
+#'     \item{\code{BRICK_TYPES}:}{Object of class \code{"integer"}}
+#'     \item{\code{BRICK_FLOAT_FACS}:}{Object of class \code{"numeric"}}
+#'     \item{\code{BRICK_LABS}:}{Object of class \code{"character"}}
+#'     \item{\code{BRICK_STATAUX}:}{Object of class \code{"numeric"}}
+#'     \item{\code{STAT_AUX}:}{Object of class \code{"numeric"}}
+#'     \item{\code{HISTORY_NOTE}:}{Object of class \code{"character"}}
+#'     \item{\code{NOTES_COUNT}:}{Object of class \code{"integer"}}
+#'     \item{\code{NOTE_NUMBER}:}{Object of class \code{"character"}}
+#'     \item{\code{TAGALIGN_MATVEC}:}{Object of class \code{"numeric"}}
+#'     \item{\code{VOLREG_MATVEC}:}{Object of class \code{"array"}}
+#'     \item{\code{VOLREG_ROTCOM}:}{Object of class \code{"character"}}
+#'     \item{\code{VOLREG_CENTER_OLD}:}{Object of class \code{"numeric"}}
+#'     \item{\code{VOLREG_CENTER_BASE}:}{Object of class \code{"numeric"}}
+#'     \item{\code{VOLREG_ROTPARENT_IDCODE}:}{Object of class \code{"character"}}
+#'     \item{\code{VOLREG_ROTPARENT_NAME}:}{Object of class \code{"character"}}
+#'     \item{\code{VOLREG_GRIDPARENT_IDCODE}:}{Object of class \code{"character"}}
+#'     \item{\code{VOLREG_GRIDPARENT_NAME}:}{Object of class \code{"character"}}
+#'     \item{\code{VOLREG_INPUT_IDCODE}:}{Object of class \code{"character"}}
+#'     \item{\code{VOLREG_INPUT_NAME}:}{Object of class \code{"character"}}
+#'     \item{\code{VOLREG_BASE_IDCODE}:}{Object of class \code{"character"}}
+#'     \item{\code{VOLREG_BASE_NAME}:}{Object of class \code{"character"}}
+#'     \item{\code{VOLREG_ROTCOM_NUM}:}{Object of class \code{"integer"}}
+#'     \item{\code{IDCODE_ANAT_PARENT}:}{Object of class \code{"character"}}
+#'     \item{\code{TO3D_ZPAD}:}{Object of class \code{"integer"}}
+#'     \item{\code{IDCODE_WARP_PARENT}:}{Object of class \code{"character"}}
+#'     \item{\code{WARP_TYPE}:}{Object of class \code{"integer"}}
+#'     \item{\code{WARP_DATA}:}{Object of class \code{"numeric"}}
+#'     \item{\code{MARKS_XYZ}:}{Object of class \code{"numeric"}}
+#'     \item{\code{MARKS_LAB}:}{Object of class \code{"character"}}
+#'     \item{\code{MARKS_HELP}:}{Object of class \code{"character"}}
+#'     \item{\code{MARKS_FLAGS}:}{Object of class \code{"integer"}}
+#'     \item{\code{TAGSET_NUM}:}{Object of class \code{"integer"}}
+#'     \item{\code{TAGSET_FLOATS}:}{Object of class \code{"numeric"}}
+#'     \item{\code{TAGSET_LABELS}:}{Object of class \code{"character"}}
+#'     \item{\code{LABEL_1}:}{Object of class \code{"character"}}
+#'     \item{\code{LABEL_2}:}{Object of class \code{"character"}}
+#'     \item{\code{DATASET_NAME}:}{Object of class \code{"character"}}
+#'     \item{\code{DATASET_KEYWORDS}:}{Object of class \code{"character"}}
+#'     \item{\code{BRICK_KEYWORDS}:}{Object of class \code{"character"}}
+#'   }
+#' 
+#' @section Extends:
+#'   Class \code{"\linkS4class{array}"}, from data part.\cr
+#'   Class \code{"\linkS4class{matrix}"}, by class "array", distance 2, with
+#'   explicit test and coerce.\cr
+#'   Class \code{"\linkS4class{structure}"}, by class "array", distance 2.\cr
+#'   Class \code{"\linkS4class{vector}"}, by class "array", distance 3, with
+#'   explicit coerce.\cr
+#'   Class \code{"\linkS4class{vector}"}, by class "array", distance 5, with
+#'   explicit test and coerce.
 setClass("afni", 
          representation(## Mandatory attributes                 # number in R index count
 			DATASET_RANK = "integer",               # 2
@@ -119,7 +204,6 @@ setClass("afni",
 #############################################################################
 ## setMethod("show", "afni")
 #############################################################################
-
 setMethod("show", "afni", function(object) {
   cat("AFNI format", fill=TRUE)
   cat("  Type            :", class(object), fill=TRUE)
@@ -210,6 +294,27 @@ setValidity("afni", function(object) {
 ## is.afni()
 #############################################################################
 
+
+
+
+
+
+
+#' @name is.afni
+#' 
+#' @title check object
+#' 
+#' @description Check whether object is of class \code{\linkS4class{afni}}
+#' 
+#' @param x is an object to be checked.
+#' @return Logical indicating whether object is of class
+#' \code{\linkS4class{afni}}
+#' @author Karsten Tabelow \email{karsten.tabelow@@wias-berlin.de}
+#' @seealso \code{\linkS4class{afni}}
+#' @references AFNI\cr
+#' \url{http://afni.nimh.nih.gov/pub/dist/src/README.attributes}
+#' @export is.afni
+#' @rdname is_afni
 is.afni <- function(x) {
   if (!is(x, "afni")) {
     return(FALSE)
@@ -225,7 +330,50 @@ is.afni <- function(x) {
 #############################################################################
 ## readAFNI()
 #############################################################################
-
+#' @title readAFNI
+#' 
+#' @description These functions read in the header information and multidimensional array
+#' from a binary file in AFNI format into a \code{\linkS4class{afni}}-class
+#' object.
+#' 
+#' @details The \code{readAFNI} function utilizes internal methods \code{readBin} and
+#' \code{readLines} to efficiently extract information from the header and
+#' binary file(s).  Compression is allowed on the BRIK file using gzip.
+#' 
+#' Current acceptable data types include \describe{ \item{list("INT16")}{DT
+#' SIGNED SHORT (16 bits per voxel)} \item{list("FLOAT32")}{DT FLOAT (32 bits
+#' per voxel)} \item{list("COMPLEX128")}{DT COMPLEX (128 bits per voxel)} }
+#' 
+#' @param fname is the file name of the AFNI file.
+#' @param vol vector of brick numbers to be read from file.
+#' @param verbose is a logical variable (default = \code{FALSE}) that allows
+#' text-based feedback during execution of the function.
+#' @param warn is a number to regularegulatete the display of warnings (default
+#' = -1).  See \code{options} for more details.
+#' @param call keeps track of the current function call for use in the AFNI
+#' extension.
+#' @return object of class \code{\linkS4class{afni}}
+#' @author Karsten Tabelow \email{karsten.tabelow@@wias-berlin.de}
+#' @seealso \code{\link{readANALYZE}}, \code{\link{readNIfTI}}
+#' @references AFNI\cr
+#' \url{http://afni.nimh.nih.gov/pub/dist/src/README.attributes}
+#' @keywords file methods
+#' @export
+#' @examples
+#' \dontrun{
+#' ## Taken from the AFNI Matlab Library
+#' ## http://afni.nimh.nih.gov/pub/dist/data/afni_matlab_data.tgz
+#' afni.path <- system.file("afni", package="oro.nifti")
+#' orig <- readAFNI(file.path(afni.path, "ARzs_CW_avvr.DEL+orig"))
+#' image(orig, zlim=c(0.5,256), oma=rep(2,4))
+#' orthographic(orig, zlim=c(0.5,256), oma=rep(2,4))
+#' ## Taken from the AFNI installation
+#' TT <- readAFNI(file.path(afni.path, "TT_N27_EZ_LR+tlrc"))
+#' image(TT, zlim=c(0.5,256), oma=rep(2,4))
+#' orthographic(TT, zlim=c(0.5,256), oma=rep(2,4))
+#' }
+#' @rdname read_afni
+#' @name readAFNI
 readAFNI <- function(fname, vol=NULL, verbose=FALSE, warn=-1, call=NULL) {
     if (is.null(call)) {
         call <- match.call()
@@ -541,11 +689,56 @@ invisible(aim)
   writeChar(a, conhead, eos=NULL)
 }
 
+
 writeAFNI <- function(nim, ...) {
   cat("No writeAFNI defined for this class:", class(nim), "\n")
 }
-
 setGeneric("writeAFNI", function(nim,  ...) standardGeneric("writeAFNI"))
+#' @title writeAFNI
+#' 
+#' @description This function saves a afni-class object to HEAD/BRIK pair in AFNI format.
+#' 
+#' @details The \code{writeAFNI} function utilizes the internal \code{writeBin} and
+#' \code{writeLines} command to write information to header/binary file pair.
+#' 
+#' Current acceptable data types include \describe{ \item{list("INT16")}{DT
+#' SIGNED SHORT (16 bits per voxel)} \item{list("FLOAT32")}{DT FLOAT (32 bits
+#' per voxel)} \item{list("COMPLEX128")}{DT COMPLEX (128 bits per voxel)} }
+#' 
+#' @name writeAFNI-methods
+#' @aliases writeAFNI writeAFNI-methods writeAFNI,afni-method writeAFNI,ANY-method
+#' @docType methods
+#' @param nim is an object of class \code{afni}.
+#' @param fname is the path and file name to save the AFNI file (.HEAD/BRIK)
+#' \bold{without} the suffix.
+#' @param verbose is a logical variable (default = \code{FALSE}) that allows
+#' text-based feedback during execution of the function.
+#' @param warn is a number to regulate the display of warnings (default = -1).
+#' See \code{\link{options}} for more details.
+#' @return Nothing.
+#' @section Methods: \describe{ \item{nim = "afni"}{ Write AFNI volume to disk.
+#' } \item{nim = "ANY"}{ not implemented. } }
+#' @author Karsten Tabelow \email{karsten.tabelow@@wias-berlin.de}
+#' @seealso \code{\link{writeANALYZE}}, \code{\link{writeNIfTI}}
+#' @references AFNI\cr
+#' \url{http://afni.nimh.nih.gov/pub/dist/src/README.attributes}
+#' @keywords file methods
+#' @examples
+#' 
+#' ## Taken from the AFNI Matlab Library
+#' ## http://afni.nimh.nih.gov/pub/dist/data/afni_matlab_data.tgz
+#' afni.path <- system.file("afni", package="oro.nifti")
+#' orig <- readAFNI(file.path(afni.path, "ARzs_CW_avvr.DEL+orig"))
+#' writeAFNI(orig, "test-afni-image", verbose=TRUE)
+#' 
+#' data <- readAFNI("test-afni-image", verbose=TRUE)
+#' image(orig, zlim=c(0.5,256), oma=rep(2,4), bg="white")
+#' image(data, zlim=c(0.5,256), oma=rep(2,4), bg="white")
+#' abs.err <- abs(data - orig)
+#' image(as(abs.err, "nifti"), zlim=range(0,1), oma=rep(2,4),
+#'       bg="white")
+#' @export
+#' @rdname write_afni
 setMethod("writeAFNI", "afni", function(nim, fname, verbose=FALSE, warn=-1) {
   ## Warnings?
   oldwarn <- getOption("warn")
@@ -742,7 +935,32 @@ setMethod("writeAFNI", "afni", function(nim, fname, verbose=FALSE, warn=-1) {
 ##############################################################################
 ## for convert_afni.R
 ##############################################################################
-  
+
+#' @title Convert AFNI data codes
+#' 
+#' @description Codes that appear in the AFNI header are mapped to meaningful character
+#' strings.
+#' 
+#' @details \code{switch} statements are used to map a numeric code to the appropriate
+#' string.
+#' 
+#' @name convert.scene
+#' @docType data
+#' @param scene.data defines data type.
+#' @param typestring defines whether func or anat data.
+#' @return A character string.
+#' @author Karsten Tabelow \email{karsten.tabelow@@wias-berlin.de}
+#' @seealso \code{\link{convert.datatype.anlz}},
+#' \code{\link{convert.orient.anlz}}
+#' @references AFNI\cr
+#' \url{http://afni.nimh.nih.gov/pub/dist/src/README.attributes}
+#' @keywords misc
+#' @examples
+#' 
+#' ## 4 = CT for anatomic data
+#' convert.scene(4, "3DIM_HEAD_ANAT")
+#' @export 
+#' @rdname convert_afni
 convert.scene <- function (scene.data, typestring) {
   if (grepl("ANAT", typestring)) {
     switch(as.character(scene.data),
@@ -776,19 +994,5 @@ convert.scene <- function (scene.data, typestring) {
     ""
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

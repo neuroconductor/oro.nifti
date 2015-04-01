@@ -506,7 +506,7 @@ $[0,1]$, hence the display of \code{nifti} data may be performed using
 
 <<EBImage01,eval=FALSE>>=
 mniLR.range <- range(mniLR)
-display((mniLR - min(mniLR)) / diff(mniLR.range))
+EBImage::display((mniLR - min(mniLR)) / diff(mniLR.range))
 @
 
 Interactive visualization of multi-dimensional arrays, stored in NIfTI

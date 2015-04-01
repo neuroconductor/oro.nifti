@@ -31,15 +31,38 @@
 ## 
 ##
 
+#' Dimension Accessor Functions
+#' 
+#' Functions to extract the higher dimensions from ANALYZE/NIfTI data.
+#' 
+#' Simple calls to \code{dim} to replicate the functionality of \code{nrow} and
+#' \code{ncol} for higher dimensions of an array that are commonly required
+#' when manipulating medical imaging data.
+#' 
+#' @aliases nsli NSLI ntim NTIM
+#' @param x is a three- or four-dimensional array (e.g., read in from an
+#' ANALYZE/NIfTI file).
+#' @return Third (slice) or fourth (time) dimension of the array.
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @seealso \code{\link{readNIfTI}}, \code{\link{readANALYZE}}
+#' @rdname miscellaneous
+#' @keywords misc
+#' @export
 nsli <- function(x)
   dim(x)[3]
 
+#' @rdname miscellaneous
+#' @export
 NSLI <- function(x)
   dim(x)[3]
 
+#' @rdname miscellaneous
+#' @export
 ntim <- function(x)
   dim(x)[4]
 
+#' @rdname miscellaneous
+#' @export
 NTIM <- function(x)
   dim(x)[4]
 

@@ -35,7 +35,26 @@
 ############################################################################
 ## performPermutation
 ############################################################################
-
+#' @name performPermutation
+#' @title Transform array with orthogonal permutation matrix
+#' @description Given an orthogonal permutation matrix \eqn{T}, an array of dimensions and a
+#' one-dimensional representation of data.  It will return a transformed array
+#' with the transformed dimensions.
+#' 
+#' @details This function is mainly used by the \code{\link{reorient}} function to
+#' transform nifti data into neuroradiological convention.
+#' 
+#' @param T is an orthogonal matrix.
+#' @param real.dimensions is a one-dimensional array, representing the length
+#' of dimensions in data.
+#' @param data is a one-dimensional representation of the data to be
+#' transformed.
+#' @param verbose is a logical variable (default = \code{FALSE}) that allows
+#' text-based feedback during execution of the function.
+#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}
+#' @seealso \code{\link{reorient}},\code{\link{inverseReorient}}
+#' @export
+#' @rdname performPermutation
 performPermutation <- function(T, real.dimensions, data, verbose=FALSE) {
   workingdims <- (
                   function(r) {
@@ -119,7 +138,27 @@ performPermutation <- function(T, real.dimensions, data, verbose=FALSE) {
 ############################################################################
 ## reorient
 ############################################################################
-
+#' @name reorient
+#' @title Reorient Image using NIfTI header
+#' 
+#' @description Transforms in the NIfTI header are parsed and normalized versions of these
+#' transforms are applied.
+#' 
+#' @details This function utilizes the \code{performPermutation} function internally.
+#' 
+#' @aliases reorient inverseReorient
+#' @param nim is an object of class \code{nifti}.
+#' @param data is an array associated with \code{nim}.
+#' @param verbose is a logical variable (default = \code{FALSE}) that allows
+#' text-based feedback during execution of the function.
+#' @param invert stores the inverse transform.
+#' @param tol is a very small value used to judge if a number is essentially
+#' zero.
+#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net} and Brandon
+#' Whitcher \email{bwhitcher@@gmail.com}
+#' @seealso \code{\link{performPermutation}}
+#' @rdname reorient
+#' @export
 reorient <- function(nim, data, verbose=FALSE, invert=FALSE, tol=1e-7) {
   ## from nifti1.h there are three different methods of orienting the
   ## i,j,k data into x,y,z space.
@@ -216,7 +255,8 @@ reorient <- function(nim, data, verbose=FALSE, invert=FALSE, tol=1e-7) {
 ############################################################################
 ## inverseReorient
 ############################################################################
-
+#' @rdname reorient
+#' @export
 inverseReorient <- function(nim, verbose=FALSE) {
   reorient(nim, nim@.Data, verbose=verbose, invert=TRUE)
 }
@@ -225,6 +265,28 @@ inverseReorient <- function(nim, verbose=FALSE) {
 ## integerTranslation
 ############################################################################
 
+
+
+
+
+
+
+#' @title integerTranslation
+#' 
+#' @description ...
+#' 
+#' @details ...
+#' 
+#' @aliases integerTranslation invertIntegerTranslation
+#' @param nim is an object of class \code{nifti}.
+#' @param data is ...
+#' @param verbose is a logical variable (default = \code{FALSE}) that allows
+#' text-based feedback during execution of the function.
+#' @return ...
+#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}
+#' @export integerTranslation
+#' @rdname integerTranslation
+#' @name integerTranslation
 integerTranslation <- function(nim, data, verbose=FALSE) {
   ## 3D IMAGE (VOLUME) ORIENTATION AND LOCATION IN SPACE:
   ## There are 3 different methods by which continuous coordinates can
@@ -327,6 +389,8 @@ integerTranslation <- function(nim, data, verbose=FALSE) {
 ## invertIntegerTranslation
 ############################################################################
 
+#' @export
+#' @rdname integerTranslation
 invertIntegerTranslation <- function(nim, verbose=FALSE) {
   dims <- 2:(1+nim@"dim_"[1])
   if (nim@"qform_code" <= 0 && nim@"sform_code" <= 0) {
@@ -401,7 +465,43 @@ invertIntegerTranslation <- function(nim, verbose=FALSE) {
 ############################################################################
 ## translateCoordinate
 ############################################################################
-
+#' @name translateCoordinate
+#' @title Translate Voxel Coordinates
+#' 
+#' @description Translates a voxel index into the continuous coordinate space defined by the
+#' NIfTI qform and sform information.
+#' 
+#' @details This function takes as input a \code{nifti} object and an index vector in
+#' the voxel space of the object and translates that voxel index into the
+#' continuous coordinate space defined by the object's qform and sform.
+#' 
+#' Please note: \enumerate{ \item By default the index \code{i} varies most
+#' rapidly, etc.  \item The ANALYZE 7.5 coordinate system is \tabular{ccl}{ +x
+#' \tab = \tab Left\cr +y \tab = \tab Anterior\cr +z \tab = \tab Superior } (A
+#' left-handed co-ordinate system) \item The three methods below give the
+#' locations of the voxel centres in the x,y,z system.  In many cases programs
+#' will want to display the data on other grids.  In which case the program
+#' will be required to convert the desired (x,y,z) values in to voxel values
+#' using the inverse transformation.  \item Method 2 uses a factor \code{qfac}
+#' which is either -1 or 1.  \code{qfac} is stored in \code{pixdim[0]}.  If
+#' \code{pixdim[0]} != 1 or -1, which should not occur, we assume 1.  \item The
+#' units of the \code{xyzt} are set in \code{xyzt_units} field.  }
+#' 
+#' @param i An index vector in \code{nim}.
+#' @param nim An object of class \code{nifti}.
+#' @param verbose Provide detailed output to the user.
+#' @return A \code{nifti}-class object with translated coordinates.
+#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}
+#' @examples
+#' 
+#' ffd <- readNIfTI(file.path(system.file("nifti", package="oro.nifti"),
+#'                            "filtered_func_data"))
+#' xyz <- c(1,1,1)
+#' translateCoordinate(xyz, ffd, verbose=TRUE)
+#' xyz <- trunc(dim(ffd)[1:3]/2)
+#' translateCoordinate(xyz, ffd, verbose=TRUE)
+#' @rdname transformCoordinate
+#' @export
 translateCoordinate <- function(i, nim, verbose=FALSE) {
   ## 3D Image orientation and location in space (as per nifti1.h)
   ##

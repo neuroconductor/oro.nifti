@@ -35,7 +35,98 @@
 #############################################################################
 ## setClass("anlz")
 #############################################################################
-
+#' Class "anlz"
+#' 
+#' The ANALYZE class for medical imaging data.
+#' 
+#' 
+#' @name anlz-class
+#' @aliases anlz-class show,anlz-method
+#' @docType class
+#' @section Objects from the Class: Objects can be created by calls of the form
+#' \code{new("anlz", data, dim, dimnames, ...)} or by calling the \code{anlz}
+#' function.
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @seealso \code{\linkS4class{nifti}}, \code{\linkS4class{niftiExtension}}
+#' @references ANALYZE 7.5\cr\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}
+#' @keywords classes
+#' @examples
+#' 
+#' showClass("anlz")
+#' @section Slots:
+#'   \describe{
+#'     \item{\code{.Data}:}{Object of class \code{"array"} contains the
+#'                          imaging data}
+#'     \item{\code{sizeof_hdr}:}{Object of class \code{"numeric"} contains
+#'                               the size of the header (= 348)}
+#'     \item{\code{data_type}:}{Object of class \code{"character"}}
+#'     \item{\code{db_name}:}{Object of class \code{"character"}}
+#'     \item{\code{extents}:}{Object of class \code{"numeric"}}
+#'     \item{\code{session_error}:}{Object of class \code{"numeric"}}
+#'     \item{\code{regular}:}{Object of class \code{"character"}}
+#'     \item{\code{hkey_un0}:}{Object of class \code{"character"}}
+#'     \item{\code{dim_}:}{Object of class \code{"vector"} contains the
+#'                         dimensions of the imaging data}
+#'     \item{\code{vox_units}:}{Object of class \code{"character"}}
+#'     \item{\code{cal_units}:}{Object of class \code{"character"}}
+#'     \item{\code{unused1}:}{Object of class \code{"numeric"}}
+#'     \item{\code{datatype}:}{Object of class \code{"numeric"}}
+#'     \item{\code{bitpix}:}{Object of class \code{"numeric"} contains the
+#'                           number of bits per voxel (pixel)}
+#'     \item{\code{dim_un0}:}{Object of class \code{"numeric"}}
+#'     \item{\code{pixdim}:}{Object of class \code{"vector"} contains the
+#'                           real-world dimensions of the imaging data}
+#'     \item{\code{vox_offset}:}{Object of class \code{"numeric"}}
+#'     \item{\code{funused1}:}{Object of class \code{"numeric"}}
+#'     \item{\code{funused2}:}{Object of class \code{"numeric"}}
+#'     \item{\code{funused3}:}{Object of class \code{"numeric"}}
+#'     \item{\code{cal_max}:}{Object of class \code{"numeric"} contains the
+#'                            maximum display intensity}
+#'     \item{\code{cal_min}:}{Object of class \code{"numeric"} contains the
+#'                            minimum display intensity}
+#'     \item{\code{compressed}:}{Object of class \code{"numeric"}}
+#'     \item{\code{verified}:}{Object of class \code{"numeric"}}
+#'     \item{\code{glmax}:}{Object of class \code{"numeric"}}
+#'     \item{\code{glmin}:}{Object of class \code{"numeric"}}
+#'     \item{\code{descrip}:}{Object of class \code{"character"}}
+#'     \item{\code{aux_file}:}{Object of class \code{"character"}}
+#'     \item{\code{orient}:}{Object of class \code{"character"}}
+#'     \item{\code{origin}:}{Object of class \code{"numeric"}}
+#'     \item{\code{generated}:}{Object of class \code{"character"}}
+#'     \item{\code{scannum}:}{Object of class \code{"character"}}
+#'     \item{\code{patient_id}:}{Object of class \code{"character"}}
+#'     \item{\code{exp_date}:}{Object of class \code{"character"}}
+#'     \item{\code{exp_time}:}{Object of class \code{"character"}}
+#'     \item{\code{hist_un0}:}{Object of class \code{"character"}}
+#'     \item{\code{views}:}{Object of class \code{"numeric"}}
+#'     \item{\code{vols_added}:}{Object of class \code{"numeric"}}
+#'     \item{\code{start_field}:}{Object of class \code{"numeric"}}
+#'     \item{\code{field_skip}:}{Object of class \code{"numeric"}}
+#'     \item{\code{omax}:}{Object of class \code{"numeric"}}
+#'     \item{\code{omin}:}{Object of class \code{"numeric"}}
+#'     \item{\code{smax}:}{Object of class \code{"numeric"}}
+#'     \item{\code{smin}:}{Object of class \code{"numeric"}}
+#'   }
+#' @section Extends:
+#'   Class \code{"\linkS4class{array}"}, from data part.\cr
+#'   Class \code{"\linkS4class{matrix}"}, by class "array", distance 2,
+#'   with explicit test and coerce. \cr
+#'   Class \code{"\linkS4class{structure}"}, by class "array", distance 2.\cr
+#'   Class \code{"\linkS4class{vector}"}, by class "array", distance 3,
+#'   with explicit coerce.\cr
+#'   Class \code{"\linkS4class{vector}"}, by class "array", distance 5,
+#'   with explicit test and coerce.
+#' @section Methods:
+#'   \describe{
+#'     \item{descrip<-}{\code{signature(x = "anlz")}: replaces the
+#'                      \dQuote{description} field}
+#'     \item{descrip}{\code{signature(object = "anlz")}: returns the
+#'                    \dQuote{description} field}
+#'     \item{image}{\code{signature(x = "anlz")}: diplays the image(s)}
+#'     \item{show}{\code{signature(object = "anlz")}: prints out a summary
+#'                 of the imaging data}
+#'   }
+#'   
 setClass("anlz",
          representation("sizeof_hdr" = "numeric",
                         "data_type" = "character",
@@ -128,7 +219,6 @@ setClass("anlz",
 #############################################################################
 ## setMethod("show", "anlz")
 #############################################################################
-
 setMethod("show", "anlz", function(object) {
   cat("ANALYZE 7.5 format", fill=TRUE)
   cat("  Type            :", class(object), fill=TRUE)
@@ -189,7 +279,28 @@ setValidity("anlz", function(object) {
 #############################################################################
 ## anlz()
 #############################################################################
-
+#' @title Constructor for Analyze
+#' 
+#' @description Constructor for Analyze class objects.
+#' 
+#' 
+#' @aliases anlz
+#' @param img is a multidimensional array of data.
+#' @param dim is the dimension of the data (default = \code{missing}).
+#' @param datatype is an integer that denotes the type of data contained in
+#' each voxel.  See \code{convert.datatype.anlz} or the ANALYZE documentation
+#' for more details.
+#' @param \dots allows for additional \sQuote{slots} to be specified.
+#' @return An object of class \code{anlz}.
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @seealso \code{\linkS4class{anlz}}, \code{\linkS4class{nifti}},
+#' \code{\link{nifti}}, \code{\link{convert.datatype.anlz}}
+#' @references ANALYZE 7.5\cr \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}
+#' @examples
+#' 
+#' (aim <- anlz()) # default
+#' 
+#' @export anlz
 anlz <- function(img=array(0, dim=rep(1,4)), dim, datatype=2, ...) {
   if (missing(dim)) {
     if (is.array(img)) {
@@ -231,6 +342,21 @@ anlz <- function(img=array(0, dim=rep(1,4)), dim, datatype=2, ...) {
 ## is.anlz()
 #############################################################################
 
+
+#' @name is.anlz
+#' 
+#' @title check object
+#' 
+#' @description Check whether object is of class \code{\linkS4class{anlz}}
+#' 
+#' @param x is an object to be checked.
+#' @return Logical indicating whether object is of class
+#' \code{\linkS4class{anlz}}
+#' @author Karsten Tabelow \email{karsten.tabelow@@wias-berlin.de}
+#' @seealso \code{\linkS4class{anlz}}
+#' @references ANALYZE 7.5\cr \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}
+#' @export is.anlz
+#' @rdname is_anlz
 is.anlz <- function(x) {
   if (!is(x, "anlz")) {
     return(FALSE)
@@ -243,46 +369,5 @@ is.anlz <- function(x) {
 ## descrip() and descrip<-()
 #############################################################################
 
-if (!isGeneric("descrip")) {
-  if (is.function("descrip")) {
-    setGeneric("descrip", descrip)
-  } else {
-    setGeneric("descrip", function(object) { standardGeneric("descrip") })
-  }
-}
-setMethod("descrip", "anlz", function(object) { object@"descrip" })
-setGeneric("descrip<-", function(x, value) { standardGeneric("descrip<-") })
-setReplaceMethod("descrip", "anlz",
-                 function(x, value) { x@"descrip" <- value ; x })
 
-#############################################################################
-## aux.file() and aux.file<-()
-#############################################################################
 
-if (!isGeneric("aux.file")) {
-  if (is.function("aux.file")) {
-    setGeneric("aux.file", aux_file)
-  } else {
-    setGeneric("aux.file", function(object) { standardGeneric("aux.file") })
-  }
-}
-setMethod("aux.file", "anlz", function(object) { object@"aux_file" })
-setGeneric("aux.file<-", function(x, value) { standardGeneric("aux.file<-") })
-setReplaceMethod("aux.file", "anlz",
-                 function(x, value) { x@"aux_file" <- value ; x })
-
-############################################################################
-## as("array", "anlz")
-############################################################################
-
-setAs("array", "anlz",
-      function(from) { as.anlz(from) },
-      function(from, value) { as.anlz(from, value) } )
-
-############################################################################
-## as("list", "anlz")
-############################################################################
-
-setAs("list", "anlz",
-      function(from) { as.anlz(from) },
-      function(from, value) { as.anlz(from, value) } )

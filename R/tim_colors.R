@@ -30,7 +30,31 @@
 ## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ## 
 ##
-
+#' @title Tim's Useful Color Table
+#' 
+#' @description A pleasing rainbow style color table patterned after that used in Matlab.
+#' 
+#' @details Based on the \code{tim.colors} function in the \pkg{fields} package.  The
+#' \code{tim.colors} function here has been modified to break any dependence on
+#' code in the \pkg{fields} package.  Spline interpolation
+#' (\code{interpSpline}) is used when the number of requested colors is not the
+#' default.
+#' 
+#' @param n is the number of color levels (default = 64).
+#' @return A vector of character strings giving the colors in hexadecimal
+#' format.
+#' @author Tim Hoar (GSP-NCAR); modified by B. Whitcher
+#' @seealso \code{\link{hotmetal}}, \code{\link{topo.colors}},
+#' \code{\link{terrain.colors}}
+#' @keywords aplot
+#' @examples
+#' 
+#' tim.colors(10) 
+#' image(outer(1:20, 1:20, "+"), col=tim.colors(75), main="tim.colors")
+#' @export 
+#' @importFrom splines interpSpline
+#' @rdname tim_colors
+#' @name tim.colors
 tim.colors <- function(n=64) {
   ## Tim Hoar's original 64 color definition:
   orig <- c("#00008F", "#00009F", "#0000AF", "#0000BF",

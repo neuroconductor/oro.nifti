@@ -31,6 +31,35 @@
 ## 
 ##
 
+
+
+
+
+
+
+#' @name hotmetal
+#' @title Hot Metal Color Table
+#' 
+#' @description The hotmetal color table patterned after the one used in Matlab.
+#' 
+#' @details Based on the \code{tim.colors} function in the \pkg{fields} package.  The
+#' \code{hotmetal} function has been modified to break any dependence on code
+#' in the \pkg{fields} package.  Spline interpolation (\code{interpSpline}) is
+#' used when the number of requested colors is not the default.
+#' 
+#' @param n is the number of color levels (default = 64).
+#' @return A vector of character strings giving the colors in hexadecimal
+#' format.
+#' @seealso \code{\link{terrain.colors}}, \code{\link{tim.colors}},
+#' \code{\link{topo.colors}}
+#' @keywords aplot
+#' @examples
+#' 
+#' hotmetal(10) 
+#' image(outer(1:20,1:20,"+"), col=hotmetal(75), main="hotmetal")
+#' 
+#' @export hotmetal
+#' @rdname hotmetal
 hotmetal <- function(n=64) {
   orig <- c("#010000", "#0C0000", "#170000", "#210000", "#2C0000",
             "#360000", "#410000", "#4C0000", "#560000", "#610000",

@@ -41,7 +41,69 @@
 ##
 ## readNIfTI() is a convient interface for the user
 ##
-
+#'
+#' @title readNIfTI
+#' 
+#' @description These functions read in the header information and multidimensional array
+#' from a binary file in NIfTI-1 format into a \code{\linkS4class{nifti}}-class
+#' object.
+#' 
+#' @details The \code{readNIfTI} function utilizes internal methods \code{readBin} and
+#' \code{readChar} to efficiently extract information from the binary file(s).
+#' 
+#' Current acceptable data types include \describe{ \item{list("UINT8")}{BINARY
+#' (1 bit per voxel)} \item{list("INT16")}{SIGNED SHORT (16 bits per voxel)}
+#' \item{list("INT32")}{SINGED INT (32 bits per voxel)}
+#' \item{list("FLOAT32")}{FLOAT (32 bits per voxel)}
+#' \item{list("DOUBLE64")}{DOUBLE (64 bits per voxel)}
+#' \item{list("UINT16")}{UNSIGNED SHORT (16 bits per voxel)}
+#' \item{list("UINT32")}{UNSIGNED INT (32 bits per voxel)} }
+#' 
+#' @param fname is the file name of the NIfTI file(s).
+#' @param verbose is a logical variable (default = \code{FALSE}) that allows
+#' text-based feedback during execution of the function.
+#' @param warn is a number to regulate the display of warnings (default = -1).
+#' See \code{options} for more details.
+#' @param reorient is a logical variable (default = \code{TRUE}) that enforces
+#' Qform/Sform transformations.
+#' @param call keeps track of the current function call for use in the NIfTI
+#' extension.
+#' @return An object of class \code{nifti}.
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com},\cr Volker Schmid
+#' \email{volkerschmid@@users.sourceforge.net},\cr Andrew Thornton
+#' \email{zeripath@@users.sourceforge.net}
+#' @seealso \code{\link{readAFNI}}, \code{\link{readANALYZE}}
+#' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
+#' @keywords file
+#' @examples
+#' 
+#' \dontrun{
+#' url <- "http://nifti.nimh.nih.gov/nifti-1/data/filtered_func_data.nii.gz"
+#' urlfile <- file.path(system.file("nifti", package="oro.nifti"),
+#'                      "filtered_func_data")
+#' download.file(url, urlfile, quiet=TRUE)
+#' }
+#' ## The NIfTI file provided here contains the first 18 volumes (10%)
+#' ## of the original data set
+#' urlfile <- file.path(system.file("nifti", package="oro.nifti"),
+#'                      "filtered_func_data")
+#' (ffd <- readNIfTI(urlfile))
+#' image(ffd, oma=rep(2,4))
+#' orthographic(ffd, oma=rep(2,4))
+#' \dontrun{
+#' ## 27 scans of Colin Holmes (MNI) brain co-registered and averaged
+#' ## NIfTI two-file format
+#' URL <- "http://imaging.mrc-cbu.cam.ac.uk/downloads/Colin/colin_1mm.tgz"
+#' urlfile <- file.path(tempdir(), "colin_1mm.tgz")
+#' download.file(URL, dest=urlfile, quiet=TRUE)
+#' untar(urlfile, exdir=tempdir())
+#' colin <- readNIfTI(file.path(tempdir(), "colin_1mm"))
+#' image(colin, oma=rep(2,4))
+#' orthographic(colin, oma=rep(2,4))
+#' }
+#' @rdname read_nifti
+#' @export
+#' @name readNIfTI
 readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
                       call=NULL) {
   if (is.null(call)) {
@@ -116,6 +178,8 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
       }
     }
   }
+  ### Reset cal_max and cal_min - in case these do not work correctly
+  nim = cal_img(nim, infok = TRUE)
   options(warn=oldwarn)
   return(nim)
 }
@@ -339,7 +403,42 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
 ############################################################################
 ## readANALYZE() is a convenient interface for the user
 ############################################################################
-
+#' @title readANALYZE
+#' 
+#' @description These functions read in the header information and multi-dimensional array
+#' from a binary file in Analyze 7.5 format.
+#' 
+#' @details The internal functions \code{readBin} and \code{rawToChar} are utilized in
+#' order to efficiently extract information from a binary file.  The types of
+#' data are limited to 1- and 2-byte integers, 4-byte floats and 8-byte
+#' doubles.
+#' 
+#' @param fname Pathname of the Analyze pair of files .img and .hdr without the
+#' suffix.
+#' @param SPM is a logical variable (default = \code{FALSE}) that forces the
+#' voxel data values to be rescaled using the funused1 ANALYZE header field.
+#' This is an undocumented convention of ANALYZE files processed using the
+#' Statistical Parametric Mapping (SPM) software.
+#' @param verbose is a logical variable (default = \code{FALSE}) that allows
+#' text-based feedback during execution of the function.
+#' @param warn is a number to regulate the display of warnings (default = -1).
+#' See \code{options} for more details.
+#' @return An object of class \code{anlz} is produced.
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com},\cr Volker Schmid
+#' \email{volkerschmid@@users.sourceforge.net}
+#' @seealso \code{\link{readNIfTI}}
+#' @references ANALYZE 7.5\cr \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}
+#' @keywords file
+#' @examples
+#' 
+#' ## avg152T1
+#' anlz.path <- system.file("anlz", package="oro.nifti")
+#' mni152 <- readANALYZE(file.path(anlz.path, "avg152T1"))
+#' image(mni152, oma=rep(2,4))
+#' orthographic(mni152, oma=rep(2,4))
+#' @name readANALYZE
+#' @rdname read_anlz
+#' @export
 readANALYZE <- function(fname, SPM=FALSE, verbose=FALSE, warn=-1) {
   ## Warnings?
   oldwarn <- getOption("warn")
@@ -525,6 +624,8 @@ readANALYZE <- function(fname, SPM=FALSE, verbose=FALSE, warn=-1) {
   }
   ## Warnings?
   options(warn=oldwarn)
+  ### Reset cal_max and cal_min - in case these do not work correctly
+  aim = cal_img(aim, infok = TRUE)  
   ## Check validity
   validANALYZE <- getValidity(getClassDef("anlz"))
   validANALYZE(aim)

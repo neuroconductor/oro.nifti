@@ -33,18 +33,100 @@
 ##
 
 setGeneric("writeNIfTI", function(nim,  ...) standardGeneric("writeNIfTI"))
-
+#' @title writeNIfTI
+#' 
+#' @description This function saves a NIfTI-class object to a single binary file in NIfTI
+#' format.
+#' 
+#' @details The \code{writeNIfTI} function utilizes the internal \code{writeBin} and
+#' \code{writeChar} command to write information to a binary file.
+#' 
+#' Current acceptable data types include \describe{ \item{list("UINT8")}{DT
+#' BINARY (1 bit per voxel)} \item{list("INT16")}{DT SIGNED SHORT (16 bits per
+#' voxel)} \item{list("INT32")}{DT SINGED INT (32 bits per voxel)}
+#' \item{list("FLOAT32")}{DT FLOAT (32 bits per voxel)}
+#' \item{list("DOUBLE64")}{DT DOUBLE (64 bits per voxel)}
+#' \item{list("UINT16")}{DT UNSIGNED SHORT (16 bits per voxel)} }
+#' 
+#' @name writeNIfTI-methods
+#' @aliases writeNIfTI writeNIfTI-methods writeNIfTI,nifti-method writeNIfTI,anlz-method
+#' writeNIfTI,array-method
+#' @docType methods
+#' @param nim is an object of class \code{nifti} or \code{anlz}.
+#' @param filename is the path and file name to save the NIfTI file (.nii)
+#' \bold{without} the suffix.
+#' @param onefile is a logical value that allows the scanning of single-file
+#' (.nii) or dual-file format (.hdr and .img) NIfTI files (default =
+#' \code{TRUE}).
+#' @param gzipped is a character string that enables exportation of compressed
+#' (.gz) files (default = \code{TRUE}).
+#' @param verbose is a logical variable (default = \code{FALSE}) that allows
+#' text-based feedback during execution of the function.
+#' @param warn is a number to regulate the display of warnings (default = -1).
+#' See \code{\link{options}} for more details.
+#' @return Nothing.
+#' @section Methods: \describe{ \item{object = "anlz"}{Convert ANALYZE object
+#' to class \code{nifti} and write the NIfTI volume to disk.} \item{object =
+#' "array"}{Convert array to class \code{nifti} and write the NIfTI volume to
+#' disk.} \item{object = "nifti"}{Write NIfTI volume to disk.} }
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com},\cr Volker Schmid
+#' \email{volkerschmid@@users.sourceforge.net}
+#' @seealso \code{\link{writeAFNI}}, \code{\link{writeANALYZE}}
+#' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
+#' @import methods
+#' @import utils
+#' @keywords file methods
+#' @examples
+#' 
+#' norm <- dnorm(seq(-5, 5, length=32), sd=2)
+#' norm <- (norm-min(norm)) / max(norm-min(norm))
+#' img <- outer(outer(norm, norm), norm)
+#' img <- round(255 * img)
+#' img[17:32,,] <- 255 - img[17:32,,]
+#' img.nifti <- nifti(img) # create NIfTI object
+#' 
+#' writeNIfTI(img.nifti, "test-nifti-image-uint8", verbose=TRUE)
+#' ## These files should be viewable in, for example, FSLview
+#' ## Make sure you adjust the min/max values for proper visualization
+#' data <- readNIfTI("test-nifti-image-uint8", verbose=TRUE)
+#' image(img.nifti, oma=rep(2,4), bg="white")
+#' image(data, oma=rep(2,4), bg="white")
+#' abs.err <- abs(data - img.nifti)
+#' image(as(abs.err, "nifti"), zlim=range(img.nifti), oma=rep(2,4),
+#'       bg="white")
+#' 
+#' \dontrun{
+#' ## Loop through all possible data types
+#' datatypes <- list(code=c(2, 4, 8, 16, 64),
+#'                   name=c("uint8", "int16", "int32", "float", "double"))
+#' equal <- vector("list")
+#' for (i in 1:length(datatypes$code)) {
+#'   fname <- paste("test-nifti-image-", datatypes$name[i], sep="")
+#'   rm(img.nifti)
+#'   img.nifti <- nifti(img, datatype=datatypes$code[i])
+#'   writeNIfTI(img.nifti, fname, verbose=TRUE)
+#'   equal[[i]] <- all(readNIfTI(fname) == img)
+#' }
+#' names(equal) <- datatypes$name
+#' unlist(equal)
+#' }
+#' @export
+#' @rdname write_nifti
 setMethod("writeNIfTI", signature(nim="nifti"), 
 	  function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
                    warn=-1) {
             .writeNIfTI(nim, filename, onefile, gzipped, verbose, warn)
           })
+#' @export
+#' @rdname write_nifti
 setMethod("writeNIfTI", signature(nim="anlz"), 
 	  function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
                    warn=-1) {
             .writeNIfTI(as(nim, "nifti"), filename, onefile, gzipped,
                         verbose, warn)
           })
+#' @export
+#' @rdname write_nifti
 setMethod("writeNIfTI", signature(nim="array"), 
 	  function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
                    warn=-1) {
@@ -57,6 +139,10 @@ setMethod("writeNIfTI", signature(nim="array"),
   ## Warnings?
   oldwarn <- getOption("warn")
   options(warn=warn)
+  #### added so that range of the data will equal cal.min/cal.max
+  nim = cal_img(nim)
+  ##### Added so that bad dimensions are dropped
+#   nim = drop_img_dim(nim)
   ## Basic error checking
   validNIfTI <- getValidity(getClassDef("nifti"))
   if (is.character(vnim <- validNIfTI(nim))) {
@@ -188,8 +274,69 @@ setMethod("writeNIfTI", signature(nim="array"),
 ############################################################################
 ############################################################################
 ############################################################################
-
 setGeneric("writeANALYZE", function(aim,  ...) standardGeneric("writeANALYZE"))
+#' @title writeANALYZE
+#' 
+#' @description This function saves an Analyze-class object to a single binary file in
+#' Analyze format.
+#' 
+#' @details The \code{writeANALYZE} function utilizes the internal \code{writeBin} and
+#' \code{writeChar} command to write information to a binary file.
+#' 
+#' @name writeANALYZE-methods
+#' @aliases writeANALYZE writeANALYZE-methods writeANALYZE,anlz-method
+#' @docType methods
+#' @param aim is an object of class \code{anlz}.
+#' @param filename is the path and file name to save the Analyze file pair
+#' (.hdr,img) \bold{without} the suffixes.
+#' @param gzipped is a character string that enables exportation of compressed
+#' (.gz) files (default = \code{TRUE}).
+#' @param verbose is a logical variable (default = \code{FALSE}) that allows
+#' text-based feedback during execution of the function.
+#' @param warn is a number to regulate the display of warnings (default = -1).
+#' See \code{\link{options}} for more details.
+#' @return Nothing.
+#' @section Methods: \describe{ \item{object = "anlz"}{Write ANALYZE volume to
+#' disk.} }
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @seealso \code{\link{writeAFNI}}, \code{\link{writeNIfTI}}
+#' @references Analyze 7.5\cr \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}
+#' @keywords file methods
+#' @examples
+#' 
+#' norm <- dnorm(seq(-5, 5, length=32), sd=2)
+#' norm <- (norm-min(norm)) / max(norm-min(norm))
+#' img <- outer(outer(norm, norm), norm)
+#' img <- round(255*img)
+#' img[17:32,,] <- 255 - img[17:32,,]
+#' img.anlz <- anlz(img) # create Analyze object
+#' 
+#' writeANALYZE(img.anlz, "test-anlz-image-uint8", verbose=TRUE)
+#' ## These files should be viewable in, for example, FSLview
+#' ## Make sure you adjust the min/max values for proper visualization
+#' data <- readANALYZE("test-anlz-image-uint8", verbose=TRUE)
+#' image(img.anlz, oma=rep(2,4), bg="white")
+#' image(data, oma=rep(2,4), bg="white")
+#' abs.err <- abs(data - img.anlz)
+#' image(as(abs.err, "anlz"), zlim=range(img.anlz), oma=rep(2,4), bg="white")
+#' 
+#' \dontrun{
+#' ## Loop through all possible data types
+#' datatypes <- list(code=c(2, 4, 8, 16, 64),
+#'                   name=c("uint8", "int16", "int32", "float", "double"))
+#' equal <- vector("list")
+#' for (i in 1:length(datatypes$code)) {
+#'   fname <- paste("test-anlz-image-", datatypes$name[i], sep="")
+#'   rm(img.anlz)
+#'   img.anlz <- anlz(img, datatype=datatypes$code[i])
+#'   writeANALYZE(img.anlz, fname)
+#'   equal[[i]] <- all(readANALYZE(fname) == img)
+#' }
+#' names(equal) <- datatypes$name
+#' unlist(equal)
+#' }
+#' @export
+#' @rdname write_anlz 
 setMethod("writeANALYZE", signature(aim="anlz"), 
 	  function(aim, filename, gzipped=TRUE, verbose=FALSE, warn=-1) {
             .writeANALYZE(aim, filename, gzipped, verbose, warn)

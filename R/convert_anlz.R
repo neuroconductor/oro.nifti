@@ -32,6 +32,39 @@
 ## $Id: convert_anlz.R 332 2010-01-29 16:54:07Z bjw34032 $
 ##
 
+#' @name Convert ANALYZE Codes
+#' @title Convert ANALYZE Codes
+#' 
+#' @description Codes that appear in the ANALYZE header are mapped to meaningful chartacter
+#' strings.
+#' 
+#' @details \code{switch} statements are used to map a numeric code to the appropriate
+#' string.
+#' 
+#' @aliases convert.bitpix.anlz
+#' @param bitpix is the bit-per-pixel code.
+#' @param datatype.code defines data type.
+#' @param orientation defines the orientation.
+#' @return A character string.
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @seealso \code{\link{convert.datatype}}, \code{\link{convert.bitpix}},
+#' \code{\link{convert.intent}}, \code{\link{convert.form}},
+#' \code{\link{convert.units}}, \code{\link{convert.slice}}
+#' @references ANALYZE 7.5\cr\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}
+#' @export
+#' @rdname convert_anlz
+#' @examples
+#' 
+#' ##  4 = SIGNED_SHORT
+#' convert.datatype.anlz(4)
+#' ## 16 = FLOAT
+#' convert.datatype.anlz(16)
+#' ##  2 = "saggital unflipped"
+#' convert.orient.anlz(2)
+#' ##  4 = "coronal flipped"
+#' convert.orient.anlz(4)
+#' 
+#' 
 convert.bitpix.anlz <- function(bitpix=NULL) {
   anlz.bitpix <- list("NONE" = 0,
                       "UNKNOWN" = 0,
@@ -51,6 +84,9 @@ convert.bitpix.anlz <- function(bitpix=NULL) {
   }
 }
 
+#' @rdname convert_anlz
+#' @aliases convert.datatype.anlz convert.orient.anlz
+#' @export
 convert.datatype.anlz <- function(datatype.code=NULL) {
   anlz.datatype <- list("NONE" = 0,
                         "UNKNOWN" = 0,
@@ -70,6 +106,9 @@ convert.datatype.anlz <- function(datatype.code=NULL) {
   }
 }
 
+#' @rdname convert_anlz
+#' @aliases convert.orient.anlz
+#' @export 
 convert.orient.anlz <- function(orientation) {
   switch(as.character(orientation),
          "0" = "transverse unflipped",
@@ -85,6 +124,23 @@ convert.orient.anlz <- function(orientation) {
 ## as.anlz()
 ############################################################################
 
+#' @name as.anlz
+#' @title as.anlz
+#' 
+#' @description Internal function that converts multidimensional arrays to ANALYZE class
+#' objects.
+#' 
+#' 
+#' @aliases as.anlz
+#' @param from is the object to be converted.
+#' @param value is the \code{nifti} class object to use as a template for
+#' various ANALYZE header information.
+#' @param verbose is a logical variable (default = \code{FALSE}) that allows
+#' text-based feedback during execution of the function.
+#' @return An object of class \code{anlz}.
+#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net} and Brandon
+#' Whitcher \email{bwhitcher@@gmail.com}
+#' @export
 as.anlz <- function(from, value=NULL, verbose=FALSE) {
   integertype <- function(from) {
     integer.ranges <- list("SIGNED_SHORT" = c(0, 2^15-1),

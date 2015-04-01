@@ -124,9 +124,55 @@ image.nifti <- function(x, z=1, w=1, col=gray(0:64/64),
   par(oldpar)
   invisible()
 }
-
+#' @title Methods for Function `image'
+#' 
+#' @description Produce \dQuote{lightbox} layout of images for \code{nifti}, \code{anlz} and
+#' \code{afni} objects.
+#' 
+#' @details Uses the S3 generic function \code{image}, with medical-image friendly
+#' settings, to display \code{nifti}, \code{anlz} and \code{afni} class objects
+#' in a \dQuote{lightbox} layout.
+#' 
+#' @name image-methods
+#' @aliases image.nifti image-methods image,ANY-method image,afni-method
+#' image,anlz-method image,nifti-method
+#' @docType methods
+#' @param x is an object of class \code{nifti} or similar.
+#' @param z is the slice to be displayed (ignored when \code{plot.type =
+#' "multiple"}).
+#' @param w is the time point to be displayed (4D arrays only).
+#' @param col is grayscale (by default).
+#' @param plane is the plane of acquisition to be displayed (choices are
+#' \sQuote{axial}, \sQuote{coronal}, \sQuote{sagittal}).
+#' @param plot.type allows the choice between all slices being displayed, in a
+#' matrix (left-to-right, top-to-bottom), or a single slice.
+#' @param zlim is set to \code{NULL} by default and utilizes the internal image
+#' range.
+#' @param xlab is set to \dQuote{} since all margins are set to zero.
+#' @param ylab is set to \dQuote{} since all margins are set to zero.
+#' @param axes is set to \code{FALSE} since all margins are set to zero.
+#' @param oma is the size of the outer margins in the \code{par} function.
+#' @param mar is the number of lines of margin in the \code{par} function.
+#' @param bg is the background color in the \code{par} function.
+#' @param \dots other arguments to the \code{image} function may be provided
+#' here.
+#' @section Methods: \describe{ \item{x = "ANY"}{Generic function: see
+#' \code{\link[graphics]{image}}.} \item{x = "nifti"}{Produce images for
+#' \code{x}.} \item{x = "anlz"}{Produce images for \code{x}.} \item{x =
+#' "afni"}{Produce images for \code{x}.} }
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @seealso \code{\link{orthographic-methods}}, \code{\link{overlay-methods}}
+#' @keywords methods
+#' @import graphics
+#' @import grDevices
+#' @export
+#' @rdname image-methods
 setMethod("image", signature(x="nifti"), image.nifti)
+#' @export
+#' @rdname image-methods
 setMethod("image", signature(x="anlz"), image.nifti)
+#' @export
+#' @rdname image-methods
 setMethod("image", signature(x="afni"),
           function(x, ...) {
             x <- as(x, "nifti")
@@ -136,7 +182,51 @@ setMethod("image", signature(x="afni"),
 #############################################################################
 ## overlay() for class="nifti"
 #############################################################################
-
+#' Methods for Function overlay
+#' 
+#' Methods for function \code{overlay}
+#' 
+#' The \code{image} command is used multiple times to simultaneously visualize
+#' one of the three orthogonal planes in two multidimensional arrays, one on
+#' top of the other, for medical imaging data.
+#' 
+#' @name overlay-methods
+#' @aliases overlay overlay-methods overlay,nifti,nifti-method
+#' overlay,nifti,anlz-method overlay,nifti,array-method
+#' overlay,anlz,nifti-method overlay,anlz,anlz-method overlay,anlz,array-method
+#' overlay,array,nifti-method overlay,array,anlz-method
+#' overlay,array,array-method overlay,afni,afni-method
+#' overlay,afni,array-method overlay.nifti
+#' @docType methods
+#' @param x,y is an object of class \code{nifti} or similar.
+#' @param z is the slice to be displayed (ignored when \code{plot.type =
+#' "multiple"}).
+#' @param w is the time point to be displayed (4D arrays only).
+#' @param col.x is grayscale (by default).
+#' @param col.y is hotmetal (by default).
+#' @param zlim.x,zlim.y are set to \code{NULL} (by default) and taken from the
+#' header information.
+#' @param plane is the plane of acquisition to be displayed (choices are
+#' \sQuote{axial}, \sQuote{coronal}, \sQuote{sagittal}).
+#' @param plot.type allows the choice between all slices being displayed, in a
+#' matrix (left-to-right, top-to-bottom), or a single slice.
+#' @param xlab is set to \dQuote{} since all margins are set to zero.
+#' @param ylab is set to \dQuote{} since all margins are set to zero.
+#' @param axes is set to \code{FALSE} since all margins are set to zero.
+#' @param oma is the size of the outer margins in the \code{par} function.
+#' @param mar is the number of lines of margin in the \code{par} function.
+#' @param bg is the background color in the \code{par} function.
+#' @param \dots other arguments to the \code{image} function may be provided
+#' here.
+#' @section Methods: \describe{ \item{x = "nifti", y = "nifti"}{Produce overlay
+#' of \code{y} on \code{x}.} \item{x = "anlz", y = "anlz"}{Produce overlay of
+#' \code{y} on \code{x}.} \item{x = "afni", y = "afni"}{Produce overlay of
+#' \code{y} on \code{x}.} }
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @seealso \code{\link{image-methods}}, \code{\link{overlay-methods}}
+#' @keywords methods
+#' @export
+#' @rdname overlay-methods
 overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
                           col.y=hotmetal(), zlim.x=NULL, zlim.y=NULL,
                           plane=c("axial", "coronal", "sagittal"),
@@ -236,43 +326,67 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
   invisible()
 }
 
+#' @export
+#' @rdname overlay-methods
 setGeneric("overlay", function(x, y, ...) standardGeneric("overlay"))
+#' @export
+#' @rdname overlay-methods
 setMethod("overlay", signature(x="nifti", y="nifti"), overlay.nifti)
+#' @export
+#' @rdname overlay-methods
 setMethod("overlay", signature(x="anlz", y="anlz"), overlay.nifti)
+#' @export
+#' @rdname overlay-methods
 setMethod("overlay", signature(x="anlz", y="nifti"), overlay.nifti)
+#' @export
+#' @rdname overlay-methods
 setMethod("overlay", signature(x="nifti", y="anlz"), overlay.nifti)
+#' @export
+#' @rdname overlay-methods
 setMethod("overlay", signature(x="array", y="array"),
           function(x, y, ...) {
             x <- as(x, "nifti")
             y <- as(y, "nifti")
             overlay.nifti(x, y, ...)
           })
+#' @export
+#' @rdname overlay-methods
 setMethod("overlay", signature(x="array", y="nifti"),
           function(x, y, ...) {
             x <- as(x, "nifti")
             overlay.nifti(x, y, ...)
           })
+#' @export
+#' @rdname overlay-methods
 setMethod("overlay", signature(x="nifti", y="array"),
           function(x, y, ...) {
             y <- as(y, "nifti")
             overlay.nifti(x, y, ...)
           })
+#' @export
+#' @rdname overlay-methods
 setMethod("overlay", signature(x="array", y="anlz"),
           function(x, y, ...) {
             x <- as(x, "nifti")
             overlay.nifti(x, y, ...)
           })
+#' @export
+#' @rdname overlay-methods
 setMethod("overlay", signature(x="anlz", y="array"),
           function(x, y, ...) {
             y <- as(y, "nifti")
             overlay.nifti(x, y, ...)
           })
+#' @export
+#' @rdname overlay-methods
 setMethod("overlay", signature(x="afni", y="afni"),
           function(x, y, ...) {
             x <- as(x, "nifti")
             y <- as(y, "nifti")
             overlay.nifti(x, y, ...)
           })
+#' @export
+#' @rdname overlay-methods
 setMethod("overlay", signature(x="afni", y="array"),
           function(x, y, ...) {
             x <- as(x, "nifti")
@@ -282,7 +396,52 @@ setMethod("overlay", signature(x="afni", y="array"),
 #############################################################################
 ## orthographic() for class="nifti"
 #############################################################################
-
+#' Methods for Function `orthographic' in Package `dcemriS4'
+#' 
+#' Produce orthographic display for \code{nifti}, \code{anlz} and \code{afni}
+#' objects.
+#' 
+#' 
+#' @name orthographic-methods
+#' @aliases orthographic orthographic-methods orthographic,nifti-method
+#' orthographic,anlz-method orthographic,array-method orthographic,afni-method
+#' orthographic.nifti
+#' @docType methods
+#' @param x is an object of class \code{nifti} or similar.
+#' @param y is an object of class \code{nifti} or similar for the overlay.
+#' @param xyz is the coordinate for the center of the crosshairs.
+#' @param w is the time point to be displayed (4D arrays only).
+#' @param col is grayscale (by default).
+#' @param col.y is hotmetal (by default).
+#' @param zlim is the minimum and maximum \sQuote{z} values passed into
+#' \code{image}.
+#' @param zlim.y is the minimum and maximum \sQuote{z} values passed into
+#' \code{image} for the overlay.
+#' @param crosshairs is a logical value for the presence of crosshairs in all
+#' three orthogonal planes (default = TRUE).
+#' @param col.crosshairs is the color of the crosshairs (default = red).
+#' @param xlab is set to "" since all margins are set to zero.
+#' @param ylab is set to "" since all margins are set to zero.
+#' @param axes is set to \code{FALSE} since all margins are set to zero.
+#' @param oma is the size of the outer margins in the \code{par} function.
+#' @param mar is the number of lines of margin in the \code{par} function.
+#' @param bg is the background color in the \code{par} function.
+#' @param text allows the user to specify text to appear in the fourth (unused)
+#' pane.
+#' @param text.color is the color of the user-specified text (default =
+#' \dQuote{white}.
+#' @param text.cex is the size of the user-specified text (default = 2).
+#' @param \dots other arguments to the \code{image} function may be provided
+#' here.
+#' @section Methods: \describe{ \item{x = "afni"}{Produce orthographic display
+#' for \code{x}.} \item{x = "anlz"}{Produce orthographic display for \code{x}.}
+#' \item{x = "array"}{Produce orthographic display for \code{x}.} \item{x =
+#' "nifti"}{Produce orthographic display for \code{x}.} }
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @seealso \code{\link{image-methods}}, \code{\link{overlay-methods}}
+#' @keywords methods
+#' @export
+#' @rdname orthographic-methods
 orthographic.nifti <- function(x, y=NULL, xyz=NULL, w=1, col=gray(0:64/64),
                                col.y=hotmetal(), zlim=NULL, zlim.y=NULL,
                                crosshairs=TRUE, col.crosshairs="red", 
@@ -402,14 +561,24 @@ orthographic.nifti <- function(x, y=NULL, xyz=NULL, w=1, col=gray(0:64/64),
   invisible()
 }
 
+#' @export
+#' @rdname orthographic-methods
 setGeneric("orthographic", function(x, ...) standardGeneric("orthographic"))
+#' @export
+#' @rdname orthographic-methods
 setMethod("orthographic", signature(x="nifti"), orthographic.nifti)
+#' @export
+#' @rdname orthographic-methods
 setMethod("orthographic", signature(x="anlz"), orthographic.nifti)
+#' @export
+#' @rdname orthographic-methods
 setMethod("orthographic", signature(x="array"),
           function(x, ...) {
             x <- as(x, "nifti")
             orthographic.nifti(x, ...)
           })
+#' @export
+#' @rdname orthographic-methods
 setMethod("orthographic", signature(x="afni"),
           function(x, ...) {
             x <- as(x, "nifti")
