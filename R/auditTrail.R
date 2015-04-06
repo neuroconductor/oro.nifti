@@ -125,7 +125,7 @@
 #'   return (array(1, dim=c(x,y)))
 #' }
 #' 
-#' ## The niftiized form
+#' ## The nifti-ized form
 #' niftiizedForm <- function(nim,...) {
 #'   return(wrapper(functionToWrap, "niftiizedForm", nim, ...))
 #' }
@@ -317,7 +317,8 @@ niftiAuditTrailCreated <- function(history=NULL, call=NULL,
         historyChildren <-
           lapply(historyChildren,
                  function(x) {
-                   XML::xmlRoot(XML::xmlParse(iconv(XML::saveXML(x), to="UTF-8"), asText=TRUE))
+                   XML::xmlRoot(XML::xmlParse(iconv(XML::saveXML(x), to="UTF-8"), 
+                                              asText=TRUE))
                  })
         historyNode <- XML::addChildren(historyNode, historyChildren)
         created <- XML::addChildren(created, historyNode)

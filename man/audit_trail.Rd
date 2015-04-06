@@ -168,7 +168,7 @@ functionToWrap <- function(ignored, x, y) {
   return (array(1, dim=c(x,y)))
 }
 
-## The niftiized form
+## The nifti-ized form
 niftiizedForm <- function(nim,...) {
   return(wrapper(functionToWrap, "niftiizedForm", nim, ...))
 }

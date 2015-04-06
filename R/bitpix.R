@@ -1,37 +1,35 @@
 #' @name bitpix-methods
-#' @title Extract Image bitpix attribute
+#' @title Extract Image Attribute \code{bitpix}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to bitpix 
-#' @description Methods that act on the ``bitpix'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{bitpix} field.
+#' @description Methods that act on the \code{bitpix} field in the 
+#' NIfTI/ANALYZE header.
 #' @rdname bitpix-methods
-#' @aliases bitpix-methods 
-#' @aliases bitpix
-#' @export
-#'
+#' @aliases bitpix-methods, bitpix
+#' @references 
+#' ANALYZE 7.5\cr 
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr 
+#' \url{http://nifti.nimh.nih.gov/}
 #' @export
 setGeneric("bitpix", function(object) standardGeneric("bitpix"))
 
-#' @name bitpix
 #' @rdname bitpix-methods
 #' @aliases bitpix,nifti-method
 #' @export
 setMethod("bitpix", "nifti", function(object) { object@"bitpix" })
 
-#' @name bitpix
 #' @rdname bitpix-methods
 #' @aliases bitpix,anlz-method
 #' @export
 setMethod("bitpix", "anlz", function(object) { object@"bitpix" })
 
-
-#' @name bitpix
 #' @rdname bitpix-methods
 #' @aliases bitpix<- 
 #' @export
 setGeneric("bitpix<-", function(object, value) { standardGeneric("bitpix<-") })
 
-#' @name bitpix
 #' @rdname bitpix-methods
 #' @aliases bitpix<-,nifti-method
 #' @export
@@ -49,7 +47,6 @@ setMethod("bitpix<-",
             return(object)
           })
 
-#' @name bitpix
 #' @rdname bitpix-methods
 #' @aliases bitpix<-,anlz-method
 #' @export
@@ -63,4 +60,3 @@ setMethod("bitpix<-",
             }
             return(object)
           })
-

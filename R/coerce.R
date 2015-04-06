@@ -42,8 +42,9 @@
 #' list are coerced into NIfTI objects.  All other objects are left alone.  The
 #' original list structure is retained.} 
 #' }
-#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}, Brandon
-#' Whitcher \email{bwhitcher@@gmail.com}
+#' @author 
+#' Andrew Thornton \email{zeripath@@users.sourceforge.net},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
 #' @seealso \code{\link{as}}
 #' @keywords methods
 #' @rdname coerce-methods

@@ -6,10 +6,11 @@
 \alias{aux.file,anlz-method}
 \alias{aux.file,nifti-method}
 \alias{aux.file-methods}
+\alias{aux.file-methods,}
 \alias{aux.file<-}
 \alias{aux.file<-,anlz-method}
 \alias{aux.file<-,nifti-method}
-\title{Extract Image aux.file attribute}
+\title{Extract Image Attribute \code{aux.file}}
 \usage{
 aux.file(object)
 
@@ -24,12 +25,13 @@ aux.file(object) <- value
 \S4method{aux.file}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to aux_file}
+\item{value}{is the value to assign to the \code{aux_file} field.}
 }
 \description{
-Methods that act on the ``aux_file'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{aux_file} field in the
+NIfTI/ANALYZE header.
 }
 \examples{
 \dontrun{
@@ -46,5 +48,14 @@ mniRL <- readNIfTI(urlfile)
 aux.file(mniRL)
 aux.file(mniRL) <- "avg152T1_RL_nifti"
 aux.file(mniRL)
+}
+\author{
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

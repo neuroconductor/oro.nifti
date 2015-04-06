@@ -6,10 +6,11 @@
 \alias{cal.min,anlz-method}
 \alias{cal.min,nifti-method}
 \alias{cal.min-methods}
+\alias{cal.min-methods,}
 \alias{cal.min<-}
 \alias{cal.min<-,anlz-method}
 \alias{cal.min<-,nifti-method}
-\title{Extract Image cal.min attribute}
+\title{Extract Image Attribute \code{cal.min}}
 \usage{
 cal.min(object)
 
@@ -24,12 +25,13 @@ cal.min(object) <- value
 \S4method{cal.min}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to cal_min}
+\item{value}{is the value to assign to the \code{cal_min} field.}
 }
 \description{
-Methods that act on the ``cal_min'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{cal_min} field in the
+NIfTI/ANALYZE header.
 }
 \examples{
 \dontrun{
@@ -42,5 +44,14 @@ urlfile <- file.path(system.file("nifti", package="oro.nifti"),
                      "mniLR.nii.gz")
 mniLR <- readNIfTI(urlfile)
 cal.min(mniLR)
+}
+\author{
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

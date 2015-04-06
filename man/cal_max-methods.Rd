@@ -6,10 +6,11 @@
 \alias{cal.max,anlz-method}
 \alias{cal.max,nifti-method}
 \alias{cal.max-methods}
+\alias{cal.max-methods,}
 \alias{cal.max<-}
 \alias{cal.max<-,anlz-method}
 \alias{cal.max<-,nifti-method}
-\title{Extract Image cal.max attribute}
+\title{Extract Image Attribute \code{cal.max}}
 \usage{
 cal.max(object)
 
@@ -24,12 +25,13 @@ cal.max(object) <- value
 \S4method{cal.max}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to cal_max}
+\item{value}{is the value to assign to the \code{cal_max} field.}
 }
 \description{
-Methods that act on the ``cal_max'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{cal_max} field in the
+NIfTI/ANALYZE header.
 }
 \examples{
 \dontrun{
@@ -42,5 +44,14 @@ urlfile <- file.path(system.file("nifti", package="oro.nifti"),
                      "mniLR.nii.gz")
 mniLR <- readNIfTI(urlfile)
 cal.max(mniLR)
+}
+\author{
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

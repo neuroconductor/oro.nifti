@@ -1,14 +1,20 @@
 #' @name cal.min-methods
-#' @title Extract Image cal.min attribute
+#' @title Extract Image Attribute \code{cal.min}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to cal_min 
-#' @description Methods that act on the ``cal_min'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{cal_min} field.
+#' @description Methods that act on the \code{cal_min} field in the 
+#' NIfTI/ANALYZE header.
 #' @rdname cal_min-methods
-#' @aliases cal.min-methods 
-#' @aliases cal.min
-#' @export
-#' @examples \dontrun{
+#' @aliases cal.min-methods, cal.min
+#' @references 
+#' ANALYZE 7.5\cr 
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr 
+#' \url{http://nifti.nimh.nih.gov/}
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @examples 
+#' \dontrun{
 #' url <- "http://nifti.nimh.nih.gov/nifti-1/data/avg152T1_LR_nifti.nii.gz"
 #' urlfile <- file.path(system.file("nifti", package="oro.nifti"),
 #'                      "mniLR.nii.gz")
@@ -18,29 +24,25 @@
 #'                      "mniLR.nii.gz")
 #' mniLR <- readNIfTI(urlfile)
 #' cal.min(mniLR)
+#' 
 #' @export
 setGeneric("cal.min", function(object) standardGeneric("cal.min"))
 
-#' @name cal.min
 #' @rdname cal_min-methods
 #' @aliases cal.min,nifti-method
 #' @export
 setMethod("cal.min", "nifti", function(object) { object@"cal_min" })
 
-#' @name cal.min
 #' @rdname cal_min-methods
 #' @aliases cal.min,anlz-method
 #' @export
 setMethod("cal.min", "anlz", function(object) { object@"cal_min" })
 
-
-#' @name cal.min
 #' @rdname cal_min-methods
 #' @aliases cal.min<- 
 #' @export
 setGeneric("cal.min<-", function(object, value) { standardGeneric("cal.min<-") })
 
-#' @name cal.min
 #' @rdname cal_min-methods
 #' @aliases cal.min<-,nifti-method
 #' @export
@@ -58,7 +60,6 @@ setMethod("cal.min<-",
             return(object)
           })
 
-#' @name cal.min
 #' @rdname cal_min-methods
 #' @aliases cal.min<-,anlz-method
 #' @export
@@ -72,4 +73,3 @@ setMethod("cal.min<-",
             }
             return(object)
           })
-

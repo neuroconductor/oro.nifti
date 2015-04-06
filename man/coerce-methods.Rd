@@ -61,8 +61,8 @@ original list structure is retained.}
 }
 }
 \author{
-Andrew Thornton \email{zeripath@users.sourceforge.net}, Brandon
-Whitcher \email{bwhitcher@gmail.com}
+Andrew Thornton \email{zeripath@users.sourceforge.net},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
 }
 \seealso{
 \code{\link{as}}

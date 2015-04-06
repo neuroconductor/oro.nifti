@@ -1,14 +1,20 @@
 #' @name aux.file-methods
-#' @title Extract Image aux.file attribute
+#' @title Extract Image Attribute \code{aux.file}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to aux_file 
-#' @description Methods that act on the ``aux_file'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{aux_file} field. 
+#' @description Methods that act on the \code{aux_file} field in the 
+#' NIfTI/ANALYZE header.
 #' @rdname aux_file-methods
-#' @aliases aux.file-methods 
-#' @aliases aux.file
-#' @export
-#' @examples \dontrun{
+#' @aliases aux.file-methods, aux.file
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references 
+#' ANALYZE 7.5\cr 
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr 
+#' \url{http://nifti.nimh.nih.gov/}
+#' @examples 
+#' \dontrun{
 #' url <- "http://nifti.nimh.nih.gov/nifti-1/data/avg152T1_RL_nifti.nii.gz"
 #' urlfile <- file.path(system.file("nifti", package="oro.nifti"),
 #'                     "mniRL.nii.gz")
@@ -22,29 +28,25 @@
 #' aux.file(mniRL)
 #' aux.file(mniRL) <- "avg152T1_RL_nifti"
 #' aux.file(mniRL)
+#' 
 #' @export
 setGeneric("aux.file", function(object) standardGeneric("aux.file"))
 
-#' @name aux.file
 #' @rdname aux_file-methods
 #' @aliases aux.file,nifti-method
 #' @export
 setMethod("aux.file", "nifti", function(object) { object@"aux_file" })
 
-#' @name aux.file
 #' @rdname aux_file-methods
 #' @aliases aux.file,anlz-method
 #' @export
 setMethod("aux.file", "anlz", function(object) { object@"aux_file" })
 
-
-#' @name aux.file
 #' @rdname aux_file-methods
 #' @aliases aux.file<- 
 #' @export
 setGeneric("aux.file<-", function(object, value) { standardGeneric("aux.file<-") })
 
-#' @name aux.file
 #' @rdname aux_file-methods
 #' @aliases aux.file<-,nifti-method
 #' @export
@@ -62,7 +64,6 @@ setMethod("aux.file<-",
             return(object)
           })
 
-#' @name aux.file
 #' @rdname aux_file-methods
 #' @aliases aux.file<-,anlz-method
 #' @export
@@ -76,4 +77,3 @@ setMethod("aux.file<-",
             }
             return(object)
           })
-
