@@ -39,9 +39,9 @@
 #' 
 #' The ANALYZE class for medical imaging data.
 #' 
-#' 
 #' @name anlz-class
 #' @aliases anlz-class show,anlz-method
+#' @param object An object of class \code{anlz}. 
 #' @docType class
 #' @section Objects from the Class: Objects can be created by calls of the form
 #' \code{new("anlz", data, dim, dimnames, ...)} or by calling the \code{anlz}
@@ -126,7 +126,8 @@
 #'     \item{show}{\code{signature(object = "anlz")}: prints out a summary
 #'                 of the imaging data}
 #'   }
-#'   
+#' @rdname anlz-class
+#' @export 
 setClass("anlz",
          representation("sizeof_hdr" = "numeric",
                         "data_type" = "character",
@@ -219,6 +220,8 @@ setClass("anlz",
 #############################################################################
 ## setMethod("show", "anlz")
 #############################################################################
+#' @aliases show,anlz-method
+#' @rdname anlz-class
 setMethod("show", "anlz", function(object) {
   cat("ANALYZE 7.5 format", fill=TRUE)
   cat("  Type            :", class(object), fill=TRUE)
@@ -283,13 +286,12 @@ setValidity("anlz", function(object) {
 #' 
 #' @description Constructor for Analyze class objects.
 #' 
-#' 
 #' @aliases anlz
 #' @param img is a multidimensional array of data.
 #' @param dim is the dimension of the data (default = \code{missing}).
 #' @param datatype is an integer that denotes the type of data contained in
-#' each voxel.  See \code{convert.datatype.anlz} or the ANALYZE documentation
-#' for more details.
+#' each voxel.  See the function \code{convert.datatype.anlz} or the 
+#' ANALYZE documentation for more details.
 #' @param \dots allows for additional \sQuote{slots} to be specified.
 #' @return An object of class \code{anlz}.
 #' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
@@ -337,37 +339,3 @@ anlz <- function(img=array(0, dim=rep(1,4)), dim, datatype=2, ...) {
   validANALYZE(obj)
   return(obj)
 }
-
-#############################################################################
-## is.anlz()
-#############################################################################
-
-
-#' @name is.anlz
-#' 
-#' @title check object
-#' 
-#' @description Check whether object is of class \code{\linkS4class{anlz}}
-#' 
-#' @param x is an object to be checked.
-#' @return Logical indicating whether object is of class
-#' \code{\linkS4class{anlz}}
-#' @author Karsten Tabelow \email{karsten.tabelow@@wias-berlin.de}
-#' @seealso \code{\linkS4class{anlz}}
-#' @references ANALYZE 7.5\cr \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}
-#' @export is.anlz
-#' @rdname is_anlz
-is.anlz <- function(x) {
-  if (!is(x, "anlz")) {
-    return(FALSE)
-  } else {
-    return (TRUE)
-  }
-}
-
-#############################################################################
-## descrip() and descrip<-()
-#############################################################################
-
-
-
