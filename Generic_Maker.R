@@ -1,4 +1,3 @@
-
 makefunc = function(funcname, type="numeric", ex_text = NULL, 
                     write=FALSE, remove=FALSE){
   x = readLines('Generic_Function.R')
