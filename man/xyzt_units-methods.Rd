@@ -2,6 +2,13 @@
 % Please edit documentation in R/xyzt_units.R
 \docType{methods}
 \name{xyzt_units-methods}
+\alias{xyzt.units}
+\alias{xyzt.units,}
+\alias{xyzt.units,anlz-method}
+\alias{xyzt.units,nifti-method}
+\alias{xyzt.units-methods}
+\alias{xyzt.units<-}
+\alias{xyzt.units<-,nifti-method}
 \alias{xyzt_units}
 \alias{xyzt_units,anlz-method}
 \alias{xyzt_units,nifti-method}
@@ -9,7 +16,7 @@
 \alias{xyzt_units<-}
 \alias{xyzt_units<-,anlz-method}
 \alias{xyzt_units<-,nifti-method}
-\title{Extract Image xyzt_units attribute}
+\title{Extract Image Attribute \code{xyzt_units}}
 \usage{
 xyzt_units(object)
 
@@ -22,13 +29,38 @@ xyzt_units(object) <- value
 \S4method{xyzt_units}{nifti}(object) <- value
 
 \S4method{xyzt_units}{anlz}(object) <- value
+
+xyzt.units(object)
+
+\S4method{xyzt.units}{nifti}(object)
+
+\S4method{xyzt.units}{anlz}(object)
+
+xyzt.units(object) <- value
+
+\S4method{xyzt.units}{nifti}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to xyzt_units}
+\item{value}{is the value to assign to the \code{xyzt_units} field.}
 }
 \description{
-Methods that act on the ``xyzt_units'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{xyzt_units} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

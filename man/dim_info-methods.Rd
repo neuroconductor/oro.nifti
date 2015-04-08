@@ -2,7 +2,12 @@
 % Please edit documentation in R/dim_info.R
 \docType{methods}
 \name{dim_info-methods}
-\alias{dim_info}
+\alias{dim.info}
+\alias{dim.info,anlz-method}
+\alias{dim.info,nifti-method}
+\alias{dim.info<-}
+\alias{dim.info<-,anlz-method}
+\alias{dim.info<-,nifti-method}
 \alias{dim_info,anlz-method}
 \alias{dim_info,nifti-method}
 \alias{dim_info-methods}
@@ -22,13 +27,26 @@ dim_info(object) <- value
 \S4method{dim_info}{nifti}(object) <- value
 
 \S4method{dim_info}{anlz}(object) <- value
+
+dim.info(object)
+
+\S4method{dim.info}{nifti}(object)
+
+\S4method{dim.info}{anlz}(object)
+
+dim.info(object) <- value
+
+\S4method{dim.info}{nifti}(object) <- value
+
+\S4method{dim.info}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to dim_info}
+\item{value}{is the value to assign to \code{dim_info}.}
 }
 \description{
-Methods that act on the ``dim_info'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{dim_info} field in the
+NIfTI/ANALYZE header.
 }
 

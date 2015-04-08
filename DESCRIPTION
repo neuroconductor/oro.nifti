@@ -13,11 +13,12 @@ Authors@R: c(person("Brandon", "Whitcher", role = c("aut", "cre"),
 Description: Functions for the input/output and visualization of
     medical imaging data that follow either the ANALYZE, NIfTI or AFNI
     formats.  This package is part of the Rigorous Analytics bundle.
-Depends:
+Depends: 
     R (>= 2.14.0)
-Suggests:
-    XML
-Imports:
+Suggests: 
+    XML,
+    testthat
+Imports: 
     bitops,
     splines,
     graphics,
@@ -32,7 +33,7 @@ URL:
   http://rigorousanalytics.blogspot.com
 LazyData: yes
 ZipData: yes
-Collate:
+Collate: 
     'auditTrail.R'
     'niftiS4.R'
     'analyzeS4.R'

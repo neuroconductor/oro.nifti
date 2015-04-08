@@ -7,6 +7,7 @@
 #' NIfTI/ANALYZE header.
 #' @rdname bitpix-methods
 #' @aliases bitpix-methods, bitpix
+#' @author John Muschelli \email{muschellij2@@gmail.com}
 #' @references 
 #' ANALYZE 7.5\cr 
 #' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
