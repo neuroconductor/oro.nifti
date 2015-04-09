@@ -23,6 +23,18 @@ cal.min(object) <- value
 \S4method{cal.min}{nifti}(object) <- value
 
 \S4method{cal.min}{anlz}(object) <- value
+
+cal.min(object)
+
+\S4method{cal.min}{nifti}(object)
+
+\S4method{cal.min}{anlz}(object)
+
+cal.min(object) <- value
+
+\S4method{cal.min}{nifti}(object) <- value
+
+\S4method{cal.min}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}
@@ -32,6 +44,10 @@ cal.min(object) <- value
 \description{
 Methods that act on the \code{cal_min} field in the
 NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
 }
 \examples{
 \dontrun{
@@ -46,6 +62,7 @@ mniLR <- readNIfTI(urlfile)
 cal.min(mniLR)
 }
 \author{
+John Muschelli \email{muschellij2@gmail.com},\cr
 Brandon Whitcher \email{bwhitcher@gmail.com}
 }
 \references{

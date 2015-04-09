@@ -6,10 +6,11 @@
 \alias{funused3,anlz-method}
 \alias{funused3,nifti-method}
 \alias{funused3-methods}
+\alias{funused3-methods,}
 \alias{funused3<-}
 \alias{funused3<-,anlz-method}
 \alias{funused3<-,nifti-method}
-\title{Extract Image funused3 attribute}
+\title{Extract Image Attribute \code{funused3}}
 \usage{
 funused3(object)
 
@@ -24,11 +25,26 @@ funused3(object) <- value
 \S4method{funused3}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to funused3}
+\item{value}{is the value to assign to the \code{funused3} field.}
 }
 \description{
-Methods that act on the ``funused3'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{funused3} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

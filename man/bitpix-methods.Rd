@@ -33,8 +33,13 @@ bitpix(object) <- value
 Methods that act on the \code{bitpix} field in the
 NIfTI/ANALYZE header.
 }
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
 \author{
-John Muschelli \email{muschellij2@gmail.com}
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
 }
 \references{
 ANALYZE 7.5\cr

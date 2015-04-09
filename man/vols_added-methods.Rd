@@ -2,14 +2,21 @@
 % Please edit documentation in R/vols_added.R
 \docType{methods}
 \name{vols_added-methods}
+\alias{vols.added}
+\alias{vols.added,anlz-method}
+\alias{vols.added,nifti-method}
+\alias{vols.added<-}
+\alias{vols.added<-,anlz-method}
+\alias{vols.added<-,nifti-method}
 \alias{vols_added}
 \alias{vols_added,anlz-method}
 \alias{vols_added,nifti-method}
 \alias{vols_added-methods}
+\alias{vols_added-methods,}
 \alias{vols_added<-}
 \alias{vols_added<-,anlz-method}
 \alias{vols_added<-,nifti-method}
-\title{Extract Image vols_added attribute}
+\title{Extract Image Attribute \code{vols_added}}
 \usage{
 vols_added(object)
 
@@ -22,13 +29,40 @@ vols_added(object) <- value
 \S4method{vols_added}{nifti}(object) <- value
 
 \S4method{vols_added}{anlz}(object) <- value
+
+vols.added(object)
+
+\S4method{vols.added}{nifti}(object)
+
+\S4method{vols.added}{anlz}(object)
+
+vols.added(object) <- value
+
+\S4method{vols.added}{nifti}(object) <- value
+
+\S4method{vols.added}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to vols_added}
+\item{value}{is the value to assign to the \code{vols_added} field.}
 }
 \description{
-Methods that act on the ``vols_added'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{vols_added} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

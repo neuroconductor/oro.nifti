@@ -1,37 +1,41 @@
 #' @name generated-methods
-#' @title Extract Image generated attribute
+#' @title Extract Image Attribute \code{generated}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to generated 
-#' @description Methods that act on the ``generated'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{generated} field.  
+#' @description Methods that act on the \code{generated} field in the
+#' NIfTI/ANALYZE header.
 #' @rdname generated-methods
-#' @aliases generated-methods 
-#' @aliases generated
-#' @export
+#' @aliases generated-methods, generated
+#' @details See documentation on the ANALYZE and/or NIfTI data standards for
+#' more details.
+#' @author John Muschelli \email{muschellij2@@gmail.com},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references
+#' ANALYZE 7.5\cr
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr
+#' \url{http://nifti.nimh.nih.gov/}
 #'
 #' @export
 setGeneric("generated", function(object) standardGeneric("generated"))
 
-#' @name generated
 #' @rdname generated-methods
 #' @aliases generated,nifti-method
 #' @export
 setMethod("generated", "nifti", function(object) { object@"generated" })
 
-#' @name generated
 #' @rdname generated-methods
 #' @aliases generated,anlz-method
 #' @export
 setMethod("generated", "anlz", function(object) { object@"generated" })
 
 
-#' @name generated
 #' @rdname generated-methods
 #' @aliases generated<- 
 #' @export
 setGeneric("generated<-", function(object, value) { standardGeneric("generated<-") })
 
-#' @name generated
 #' @rdname generated-methods
 #' @aliases generated<-,nifti-method
 #' @export
@@ -49,7 +53,6 @@ setMethod("generated<-",
             return(object)
           })
 
-#' @name generated
 #' @rdname generated-methods
 #' @aliases generated<-,anlz-method
 #' @export
@@ -63,4 +66,3 @@ setMethod("generated<-",
             }
             return(object)
           })
-

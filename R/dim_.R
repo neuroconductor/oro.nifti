@@ -1,37 +1,41 @@
 #' @name dim_-methods
-#' @title Extract Image dim_ attribute
+#' @title Extract Image Attribute \code{dim_}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to dim_ 
-#' @description Methods that act on the ``dim_'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{dim_} field.  
+#' @description Methods that act on the \code{dim_} field in the
+#' NIfTI/ANALYZE header.
 #' @rdname dim_-methods
-#' @aliases dim_-methods 
-#' @aliases dim_
-#' @export
+#' @aliases dim_-methods, dim_
+#' @details See documentation on the ANALYZE and/or NIfTI data standards for
+#' more details.
+#' @author John Muschelli \email{muschellij2@@gmail.com},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references
+#' ANALYZE 7.5\cr
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr
+#' \url{http://nifti.nimh.nih.gov/}
 #'
 #' @export
 setGeneric("dim_", function(object) standardGeneric("dim_"))
 
-#' @name dim_
 #' @rdname dim_-methods
 #' @aliases dim_,nifti-method
 #' @export
 setMethod("dim_", "nifti", function(object) { object@"dim_" })
 
-#' @name dim_
 #' @rdname dim_-methods
 #' @aliases dim_,anlz-method
 #' @export
 setMethod("dim_", "anlz", function(object) { object@"dim_" })
 
 
-#' @name dim_
 #' @rdname dim_-methods
 #' @aliases dim_<- 
 #' @export
 setGeneric("dim_<-", function(object, value) { standardGeneric("dim_<-") })
 
-#' @name dim_
 #' @rdname dim_-methods
 #' @aliases dim_<-,nifti-method
 #' @export
@@ -49,7 +53,6 @@ setMethod("dim_<-",
             return(object)
           })
 
-#' @name dim_
 #' @rdname dim_-methods
 #' @aliases dim_<-,anlz-method
 #' @export
@@ -63,4 +66,3 @@ setMethod("dim_<-",
             }
             return(object)
           })
-

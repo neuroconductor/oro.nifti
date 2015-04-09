@@ -2,14 +2,21 @@
 % Please edit documentation in R/scl_slope.R
 \docType{methods}
 \name{scl_slope-methods}
+\alias{scl.slope}
+\alias{scl.slope,anlz-method}
+\alias{scl.slope,nifti-method}
+\alias{scl.slope<-}
+\alias{scl.slope<-,anlz-method}
+\alias{scl.slope<-,nifti-method}
 \alias{scl_slope}
 \alias{scl_slope,anlz-method}
 \alias{scl_slope,nifti-method}
 \alias{scl_slope-methods}
+\alias{scl_slope-methods,}
 \alias{scl_slope<-}
 \alias{scl_slope<-,anlz-method}
 \alias{scl_slope<-,nifti-method}
-\title{Extract Image scl_slope attribute}
+\title{Extract Image Attribute \code{scl_slope}}
 \usage{
 scl_slope(object)
 
@@ -22,13 +29,40 @@ scl_slope(object) <- value
 \S4method{scl_slope}{nifti}(object) <- value
 
 \S4method{scl_slope}{anlz}(object) <- value
+
+scl.slope(object)
+
+\S4method{scl.slope}{nifti}(object)
+
+\S4method{scl.slope}{anlz}(object)
+
+scl.slope(object) <- value
+
+\S4method{scl.slope}{nifti}(object) <- value
+
+\S4method{scl.slope}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to scl_slope}
+\item{value}{is the value to assign to the \code{scl_slope} field.}
 }
 \description{
-Methods that act on the ``scl_slope'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{scl_slope} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

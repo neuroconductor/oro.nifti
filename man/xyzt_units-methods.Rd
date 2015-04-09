@@ -3,16 +3,16 @@
 \docType{methods}
 \name{xyzt_units-methods}
 \alias{xyzt.units}
-\alias{xyzt.units,}
 \alias{xyzt.units,anlz-method}
 \alias{xyzt.units,nifti-method}
-\alias{xyzt.units-methods}
 \alias{xyzt.units<-}
+\alias{xyzt.units<-,anlz-method}
 \alias{xyzt.units<-,nifti-method}
 \alias{xyzt_units}
 \alias{xyzt_units,anlz-method}
 \alias{xyzt_units,nifti-method}
 \alias{xyzt_units-methods}
+\alias{xyzt_units-methods,}
 \alias{xyzt_units<-}
 \alias{xyzt_units<-,anlz-method}
 \alias{xyzt_units<-,nifti-method}
@@ -39,6 +39,8 @@ xyzt.units(object)
 xyzt.units(object) <- value
 
 \S4method{xyzt.units}{nifti}(object) <- value
+
+\S4method{xyzt.units}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

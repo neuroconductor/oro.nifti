@@ -1,37 +1,41 @@
 #' @name orient-methods
-#' @title Extract Image orient attribute
+#' @title Extract Image Attribute \code{orient}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to orient 
-#' @description Methods that act on the ``orient'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{orient} field.  
+#' @description Methods that act on the \code{orient} field in the
+#' NIfTI/ANALYZE header.
 #' @rdname orient-methods
-#' @aliases orient-methods 
-#' @aliases orient
-#' @export
+#' @aliases orient-methods, orient
+#' @details See documentation on the ANALYZE and/or NIfTI data standards for
+#' more details.
+#' @author John Muschelli \email{muschellij2@@gmail.com},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references
+#' ANALYZE 7.5\cr
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr
+#' \url{http://nifti.nimh.nih.gov/}
 #'
 #' @export
 setGeneric("orient", function(object) standardGeneric("orient"))
 
-#' @name orient
 #' @rdname orient-methods
 #' @aliases orient,nifti-method
 #' @export
 setMethod("orient", "nifti", function(object) { object@"orient" })
 
-#' @name orient
 #' @rdname orient-methods
 #' @aliases orient,anlz-method
 #' @export
 setMethod("orient", "anlz", function(object) { object@"orient" })
 
 
-#' @name orient
 #' @rdname orient-methods
 #' @aliases orient<- 
 #' @export
 setGeneric("orient<-", function(object, value) { standardGeneric("orient<-") })
 
-#' @name orient
 #' @rdname orient-methods
 #' @aliases orient<-,nifti-method
 #' @export
@@ -49,7 +53,6 @@ setMethod("orient<-",
             return(object)
           })
 
-#' @name orient
 #' @rdname orient-methods
 #' @aliases orient<-,anlz-method
 #' @export
@@ -63,4 +66,3 @@ setMethod("orient<-",
             }
             return(object)
           })
-

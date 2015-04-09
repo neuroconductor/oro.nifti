@@ -2,14 +2,21 @@
 % Please edit documentation in R/slice_code.R
 \docType{methods}
 \name{slice_code-methods}
+\alias{slice.code}
+\alias{slice.code,anlz-method}
+\alias{slice.code,nifti-method}
+\alias{slice.code<-}
+\alias{slice.code<-,anlz-method}
+\alias{slice.code<-,nifti-method}
 \alias{slice_code}
 \alias{slice_code,anlz-method}
 \alias{slice_code,nifti-method}
 \alias{slice_code-methods}
+\alias{slice_code-methods,}
 \alias{slice_code<-}
 \alias{slice_code<-,anlz-method}
 \alias{slice_code<-,nifti-method}
-\title{Extract Image slice_code attribute}
+\title{Extract Image Attribute \code{slice_code}}
 \usage{
 slice_code(object)
 
@@ -22,13 +29,40 @@ slice_code(object) <- value
 \S4method{slice_code}{nifti}(object) <- value
 
 \S4method{slice_code}{anlz}(object) <- value
+
+slice.code(object)
+
+\S4method{slice.code}{nifti}(object)
+
+\S4method{slice.code}{anlz}(object)
+
+slice.code(object) <- value
+
+\S4method{slice.code}{nifti}(object) <- value
+
+\S4method{slice.code}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to slice_code}
+\item{value}{is the value to assign to the \code{slice_code} field.}
 }
 \description{
-Methods that act on the ``slice_code'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{slice_code} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

@@ -2,14 +2,21 @@
 % Please edit documentation in R/vox_offset.R
 \docType{methods}
 \name{vox_offset-methods}
+\alias{vox.offset}
+\alias{vox.offset,anlz-method}
+\alias{vox.offset,nifti-method}
+\alias{vox.offset<-}
+\alias{vox.offset<-,anlz-method}
+\alias{vox.offset<-,nifti-method}
 \alias{vox_offset}
 \alias{vox_offset,anlz-method}
 \alias{vox_offset,nifti-method}
 \alias{vox_offset-methods}
+\alias{vox_offset-methods,}
 \alias{vox_offset<-}
 \alias{vox_offset<-,anlz-method}
 \alias{vox_offset<-,nifti-method}
-\title{Extract Image vox_offset attribute}
+\title{Extract Image Attribute \code{vox_offset}}
 \usage{
 vox_offset(object)
 
@@ -22,13 +29,40 @@ vox_offset(object) <- value
 \S4method{vox_offset}{nifti}(object) <- value
 
 \S4method{vox_offset}{anlz}(object) <- value
+
+vox.offset(object)
+
+\S4method{vox.offset}{nifti}(object)
+
+\S4method{vox.offset}{anlz}(object)
+
+vox.offset(object) <- value
+
+\S4method{vox.offset}{nifti}(object) <- value
+
+\S4method{vox.offset}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to vox_offset}
+\item{value}{is the value to assign to the \code{vox_offset} field.}
 }
 \description{
-Methods that act on the ``vox_offset'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{vox_offset} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

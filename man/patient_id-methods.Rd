@@ -2,14 +2,21 @@
 % Please edit documentation in R/patient_id.R
 \docType{methods}
 \name{patient_id-methods}
+\alias{patient.id}
+\alias{patient.id,anlz-method}
+\alias{patient.id,nifti-method}
+\alias{patient.id<-}
+\alias{patient.id<-,anlz-method}
+\alias{patient.id<-,nifti-method}
 \alias{patient_id}
 \alias{patient_id,anlz-method}
 \alias{patient_id,nifti-method}
 \alias{patient_id-methods}
+\alias{patient_id-methods,}
 \alias{patient_id<-}
 \alias{patient_id<-,anlz-method}
 \alias{patient_id<-,nifti-method}
-\title{Extract Image patient_id attribute}
+\title{Extract Image Attribute \code{patient_id}}
 \usage{
 patient_id(object)
 
@@ -22,13 +29,40 @@ patient_id(object) <- value
 \S4method{patient_id}{nifti}(object) <- value
 
 \S4method{patient_id}{anlz}(object) <- value
+
+patient.id(object)
+
+\S4method{patient.id}{nifti}(object)
+
+\S4method{patient.id}{anlz}(object)
+
+patient.id(object) <- value
+
+\S4method{patient.id}{nifti}(object) <- value
+
+\S4method{patient.id}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to patient_id}
+\item{value}{is the value to assign to the \code{patient_id} field.}
 }
 \description{
-Methods that act on the ``patient_id'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{patient_id} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

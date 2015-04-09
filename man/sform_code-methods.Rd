@@ -2,14 +2,21 @@
 % Please edit documentation in R/sform_code.R
 \docType{methods}
 \name{sform_code-methods}
+\alias{sform.code}
+\alias{sform.code,anlz-method}
+\alias{sform.code,nifti-method}
+\alias{sform.code<-}
+\alias{sform.code<-,anlz-method}
+\alias{sform.code<-,nifti-method}
 \alias{sform_code}
 \alias{sform_code,anlz-method}
 \alias{sform_code,nifti-method}
 \alias{sform_code-methods}
+\alias{sform_code-methods,}
 \alias{sform_code<-}
 \alias{sform_code<-,anlz-method}
 \alias{sform_code<-,nifti-method}
-\title{Extract Image sform_code attribute}
+\title{Extract Image Attribute \code{sform_code}}
 \usage{
 sform_code(object)
 
@@ -22,13 +29,40 @@ sform_code(object) <- value
 \S4method{sform_code}{nifti}(object) <- value
 
 \S4method{sform_code}{anlz}(object) <- value
+
+sform.code(object)
+
+\S4method{sform.code}{nifti}(object)
+
+\S4method{sform.code}{anlz}(object)
+
+sform.code(object) <- value
+
+\S4method{sform.code}{nifti}(object) <- value
+
+\S4method{sform.code}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to sform_code}
+\item{value}{is the value to assign to the \code{sform_code} field.}
 }
 \description{
-Methods that act on the ``sform_code'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{sform_code} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

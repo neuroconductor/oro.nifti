@@ -6,10 +6,11 @@
 \alias{exp_date,anlz-method}
 \alias{exp_date,nifti-method}
 \alias{exp_date-methods}
+\alias{exp_date-methods,}
 \alias{exp_date<-}
 \alias{exp_date<-,anlz-method}
 \alias{exp_date<-,nifti-method}
-\title{Extract Image exp_date attribute}
+\title{Extract Image Attribute \code{exp_date}}
 \usage{
 exp_date(object)
 
@@ -24,11 +25,26 @@ exp_date(object) <- value
 \S4method{exp_date}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to exp_date}
+\item{value}{is the value to assign to the \code{exp_date} field.}
 }
 \description{
-Methods that act on the ``exp_date'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{exp_date} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

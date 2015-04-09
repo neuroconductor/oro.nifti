@@ -2,14 +2,21 @@
 % Please edit documentation in R/qoffset_z.R
 \docType{methods}
 \name{qoffset_z-methods}
+\alias{qoffset.z}
+\alias{qoffset.z,anlz-method}
+\alias{qoffset.z,nifti-method}
+\alias{qoffset.z<-}
+\alias{qoffset.z<-,anlz-method}
+\alias{qoffset.z<-,nifti-method}
 \alias{qoffset_z}
 \alias{qoffset_z,anlz-method}
 \alias{qoffset_z,nifti-method}
 \alias{qoffset_z-methods}
+\alias{qoffset_z-methods,}
 \alias{qoffset_z<-}
 \alias{qoffset_z<-,anlz-method}
 \alias{qoffset_z<-,nifti-method}
-\title{Extract Image qoffset_z attribute}
+\title{Extract Image Attribute \code{qoffset_z}}
 \usage{
 qoffset_z(object)
 
@@ -22,13 +29,40 @@ qoffset_z(object) <- value
 \S4method{qoffset_z}{nifti}(object) <- value
 
 \S4method{qoffset_z}{anlz}(object) <- value
+
+qoffset.z(object)
+
+\S4method{qoffset.z}{nifti}(object)
+
+\S4method{qoffset.z}{anlz}(object)
+
+qoffset.z(object) <- value
+
+\S4method{qoffset.z}{nifti}(object) <- value
+
+\S4method{qoffset.z}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to qoffset_z}
+\item{value}{is the value to assign to the \code{qoffset_z} field.}
 }
 \description{
-Methods that act on the ``qoffset_z'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{qoffset_z} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

@@ -1,13 +1,21 @@
 #' @name descrip-methods
-#' @title Extract Image descrip attribute
+#' @title Extract Image Attribute \code{descrip}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to descrip 
-#' @description Methods that act on the ``descrip'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{descrip} field.  
+#' @description Methods that act on the \code{descrip} field in the
+#' NIfTI/ANALYZE header.
 #' @rdname descrip-methods
-#' @aliases descrip-methods 
-#' @aliases descrip
-#' @export
+#' @aliases descrip-methods, descrip
+#' @details See documentation on the ANALYZE and/or NIfTI data standards for
+#' more details.
+#' @author John Muschelli \email{muschellij2@@gmail.com},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references
+#' ANALYZE 7.5\cr
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr
+#' \url{http://nifti.nimh.nih.gov/}
 #' @examples \dontrun{
 #' url <- "http://nifti.nimh.nih.gov/nifti-1/data/avg152T1_LR_nifti.nii.gz"
 #' urlfile <- file.path(system.file("nifti", package="oro.nifti"),
@@ -25,26 +33,22 @@
 #' @export
 setGeneric("descrip", function(object) standardGeneric("descrip"))
 
-#' @name descrip
 #' @rdname descrip-methods
 #' @aliases descrip,nifti-method
 #' @export
 setMethod("descrip", "nifti", function(object) { object@"descrip" })
 
-#' @name descrip
 #' @rdname descrip-methods
 #' @aliases descrip,anlz-method
 #' @export
 setMethod("descrip", "anlz", function(object) { object@"descrip" })
 
 
-#' @name descrip
 #' @rdname descrip-methods
 #' @aliases descrip<- 
 #' @export
 setGeneric("descrip<-", function(object, value) { standardGeneric("descrip<-") })
 
-#' @name descrip
 #' @rdname descrip-methods
 #' @aliases descrip<-,nifti-method
 #' @export
@@ -62,7 +66,6 @@ setMethod("descrip<-",
             return(object)
           })
 
-#' @name descrip
 #' @rdname descrip-methods
 #' @aliases descrip<-,anlz-method
 #' @export
@@ -76,4 +79,3 @@ setMethod("descrip<-",
             }
             return(object)
           })
-

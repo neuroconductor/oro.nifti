@@ -1,37 +1,41 @@
 #' @name magic-methods
-#' @title Extract Image magic attribute
+#' @title Extract Image Attribute \code{magic}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to magic 
-#' @description Methods that act on the ``magic'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{magic} field.  
+#' @description Methods that act on the \code{magic} field in the
+#' NIfTI/ANALYZE header.
 #' @rdname magic-methods
-#' @aliases magic-methods 
-#' @aliases magic
-#' @export
+#' @aliases magic-methods, magic
+#' @details See documentation on the ANALYZE and/or NIfTI data standards for
+#' more details.
+#' @author John Muschelli \email{muschellij2@@gmail.com},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references
+#' ANALYZE 7.5\cr
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr
+#' \url{http://nifti.nimh.nih.gov/}
 #'
 #' @export
 setGeneric("magic", function(object) standardGeneric("magic"))
 
-#' @name magic
 #' @rdname magic-methods
 #' @aliases magic,nifti-method
 #' @export
 setMethod("magic", "nifti", function(object) { object@"magic" })
 
-#' @name magic
 #' @rdname magic-methods
 #' @aliases magic,anlz-method
 #' @export
 setMethod("magic", "anlz", function(object) { object@"magic" })
 
 
-#' @name magic
 #' @rdname magic-methods
 #' @aliases magic<- 
 #' @export
 setGeneric("magic<-", function(object, value) { standardGeneric("magic<-") })
 
-#' @name magic
 #' @rdname magic-methods
 #' @aliases magic<-,nifti-method
 #' @export
@@ -49,7 +53,6 @@ setMethod("magic<-",
             return(object)
           })
 
-#' @name magic
 #' @rdname magic-methods
 #' @aliases magic<-,anlz-method
 #' @export
@@ -63,4 +66,3 @@ setMethod("magic<-",
             }
             return(object)
           })
-

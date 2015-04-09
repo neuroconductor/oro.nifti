@@ -1,37 +1,41 @@
 #' @name omin-methods
-#' @title Extract Image omin attribute
+#' @title Extract Image Attribute \code{omin}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to omin 
-#' @description Methods that act on the ``omin'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{omin} field.  
+#' @description Methods that act on the \code{omin} field in the
+#' NIfTI/ANALYZE header.
 #' @rdname omin-methods
-#' @aliases omin-methods 
-#' @aliases omin
-#' @export
+#' @aliases omin-methods, omin
+#' @details See documentation on the ANALYZE and/or NIfTI data standards for
+#' more details.
+#' @author John Muschelli \email{muschellij2@@gmail.com},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references
+#' ANALYZE 7.5\cr
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr
+#' \url{http://nifti.nimh.nih.gov/}
 #'
 #' @export
 setGeneric("omin", function(object) standardGeneric("omin"))
 
-#' @name omin
 #' @rdname omin-methods
 #' @aliases omin,nifti-method
 #' @export
 setMethod("omin", "nifti", function(object) { object@"omin" })
 
-#' @name omin
 #' @rdname omin-methods
 #' @aliases omin,anlz-method
 #' @export
 setMethod("omin", "anlz", function(object) { object@"omin" })
 
 
-#' @name omin
 #' @rdname omin-methods
 #' @aliases omin<- 
 #' @export
 setGeneric("omin<-", function(object, value) { standardGeneric("omin<-") })
 
-#' @name omin
 #' @rdname omin-methods
 #' @aliases omin<-,nifti-method
 #' @export
@@ -49,7 +53,6 @@ setMethod("omin<-",
             return(object)
           })
 
-#' @name omin
 #' @rdname omin-methods
 #' @aliases omin<-,anlz-method
 #' @export
@@ -63,4 +66,3 @@ setMethod("omin<-",
             }
             return(object)
           })
-

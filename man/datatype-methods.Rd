@@ -6,10 +6,11 @@
 \alias{datatype,anlz-method}
 \alias{datatype,nifti-method}
 \alias{datatype-methods}
+\alias{datatype-methods,}
 \alias{datatype<-}
 \alias{datatype<-,anlz-method}
 \alias{datatype<-,nifti-method}
-\title{Extract Image datatype attribute}
+\title{Extract Image Attribute \code{datatype}}
 \usage{
 datatype(object)
 
@@ -24,11 +25,26 @@ datatype(object) <- value
 \S4method{datatype}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to datatype}
+\item{value}{is the value to assign to the \code{datatype} field.}
 }
 \description{
-Methods that act on the ``datatype'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{datatype} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

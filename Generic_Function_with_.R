@@ -66,3 +66,55 @@ setMethod("%%<-",
             }
             return(object)
           })
+
+#' @rdname %ff%-methods
+#' @aliases %.%,nifti-method
+#' @export
+setGeneric("%.%", function(object) standardGeneric("%.%"))
+
+#' @rdname %ff%-methods
+#' @aliases %.%,nifti-method
+#' @export
+setMethod("%.%", "nifti", function(object) { object@"%ff%" })
+
+#' @rdname %ff%-methods
+#' @aliases %.%,anlz-method
+#' @export
+setMethod("%.%", "anlz", function(object) { object@"%ff%" })
+
+
+#' @rdname %ff%-methods
+#' @aliases %.%<- 
+#' @export
+setGeneric("%.%<-", function(object, value) { standardGeneric("%.%<-") })
+
+#' @rdname %ff%-methods
+#' @aliases %.%<-,nifti-method
+#' @export
+setMethod("%.%<-", 
+          signature(object="nifti"), 
+          function(object, value) { 
+            if ( "%ff%" %in% slotNames(object) ){
+              object@"%ff%" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("%ff% <-", value))               
+            } else {
+              warning("%ff% is not in slotNames of object")
+            }                       
+            return(object)
+          })
+
+#' @rdname %ff%-methods
+#' @aliases %.%<-,anlz-method
+#' @export
+setMethod("%.%<-", 
+          signature(object="anlz"), 
+          function(object, value) { 
+            if ( "%ff%" %in% slotNames(object) ){
+              object@"%ff%" <- value
+            } else {
+              warning("%ff% is not in slotNames of object")
+            }
+            return(object)
+          })

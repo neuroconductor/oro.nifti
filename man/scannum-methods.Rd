@@ -6,10 +6,11 @@
 \alias{scannum,anlz-method}
 \alias{scannum,nifti-method}
 \alias{scannum-methods}
+\alias{scannum-methods,}
 \alias{scannum<-}
 \alias{scannum<-,anlz-method}
 \alias{scannum<-,nifti-method}
-\title{Extract Image scannum attribute}
+\title{Extract Image Attribute \code{scannum}}
 \usage{
 scannum(object)
 
@@ -24,11 +25,26 @@ scannum(object) <- value
 \S4method{scannum}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to scannum}
+\item{value}{is the value to assign to the \code{scannum} field.}
 }
 \description{
-Methods that act on the ``scannum'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{scannum} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

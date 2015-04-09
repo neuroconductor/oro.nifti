@@ -2,14 +2,21 @@
 % Please edit documentation in R/intent_p2.R
 \docType{methods}
 \name{intent_p2-methods}
+\alias{intent.p2}
+\alias{intent.p2,anlz-method}
+\alias{intent.p2,nifti-method}
+\alias{intent.p2<-}
+\alias{intent.p2<-,anlz-method}
+\alias{intent.p2<-,nifti-method}
 \alias{intent_p2}
 \alias{intent_p2,anlz-method}
 \alias{intent_p2,nifti-method}
 \alias{intent_p2-methods}
+\alias{intent_p2-methods,}
 \alias{intent_p2<-}
 \alias{intent_p2<-,anlz-method}
 \alias{intent_p2<-,nifti-method}
-\title{Extract Image intent_p2 attribute}
+\title{Extract Image Attribute \code{intent_p2}}
 \usage{
 intent_p2(object)
 
@@ -22,13 +29,40 @@ intent_p2(object) <- value
 \S4method{intent_p2}{nifti}(object) <- value
 
 \S4method{intent_p2}{anlz}(object) <- value
+
+intent.p2(object)
+
+\S4method{intent.p2}{nifti}(object)
+
+\S4method{intent.p2}{anlz}(object)
+
+intent.p2(object) <- value
+
+\S4method{intent.p2}{nifti}(object) <- value
+
+\S4method{intent.p2}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to intent_p2}
+\item{value}{is the value to assign to the \code{intent_p2} field.}
 }
 \description{
-Methods that act on the ``intent_p2'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{intent_p2} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

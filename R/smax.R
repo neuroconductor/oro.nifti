@@ -1,37 +1,41 @@
 #' @name smax-methods
-#' @title Extract Image smax attribute
+#' @title Extract Image Attribute \code{smax}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to smax 
-#' @description Methods that act on the ``smax'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{smax} field.  
+#' @description Methods that act on the \code{smax} field in the
+#' NIfTI/ANALYZE header.
 #' @rdname smax-methods
-#' @aliases smax-methods 
-#' @aliases smax
-#' @export
+#' @aliases smax-methods, smax
+#' @details See documentation on the ANALYZE and/or NIfTI data standards for
+#' more details.
+#' @author John Muschelli \email{muschellij2@@gmail.com},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references
+#' ANALYZE 7.5\cr
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr
+#' \url{http://nifti.nimh.nih.gov/}
 #'
 #' @export
 setGeneric("smax", function(object) standardGeneric("smax"))
 
-#' @name smax
 #' @rdname smax-methods
 #' @aliases smax,nifti-method
 #' @export
 setMethod("smax", "nifti", function(object) { object@"smax" })
 
-#' @name smax
 #' @rdname smax-methods
 #' @aliases smax,anlz-method
 #' @export
 setMethod("smax", "anlz", function(object) { object@"smax" })
 
 
-#' @name smax
 #' @rdname smax-methods
 #' @aliases smax<- 
 #' @export
 setGeneric("smax<-", function(object, value) { standardGeneric("smax<-") })
 
-#' @name smax
 #' @rdname smax-methods
 #' @aliases smax<-,nifti-method
 #' @export
@@ -49,7 +53,6 @@ setMethod("smax<-",
             return(object)
           })
 
-#' @name smax
 #' @rdname smax-methods
 #' @aliases smax<-,anlz-method
 #' @export
@@ -63,4 +66,3 @@ setMethod("smax<-",
             }
             return(object)
           })
-

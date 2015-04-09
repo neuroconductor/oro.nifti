@@ -2,14 +2,21 @@
 % Please edit documentation in R/quatern_d.R
 \docType{methods}
 \name{quatern_d-methods}
+\alias{quatern.d}
+\alias{quatern.d,anlz-method}
+\alias{quatern.d,nifti-method}
+\alias{quatern.d<-}
+\alias{quatern.d<-,anlz-method}
+\alias{quatern.d<-,nifti-method}
 \alias{quatern_d}
 \alias{quatern_d,anlz-method}
 \alias{quatern_d,nifti-method}
 \alias{quatern_d-methods}
+\alias{quatern_d-methods,}
 \alias{quatern_d<-}
 \alias{quatern_d<-,anlz-method}
 \alias{quatern_d<-,nifti-method}
-\title{Extract Image quatern_d attribute}
+\title{Extract Image Attribute \code{quatern_d}}
 \usage{
 quatern_d(object)
 
@@ -22,13 +29,40 @@ quatern_d(object) <- value
 \S4method{quatern_d}{nifti}(object) <- value
 
 \S4method{quatern_d}{anlz}(object) <- value
+
+quatern.d(object)
+
+\S4method{quatern.d}{nifti}(object)
+
+\S4method{quatern.d}{anlz}(object)
+
+quatern.d(object) <- value
+
+\S4method{quatern.d}{nifti}(object) <- value
+
+\S4method{quatern.d}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to quatern_d}
+\item{value}{is the value to assign to the \code{quatern_d} field.}
 }
 \description{
-Methods that act on the ``quatern_d'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{quatern_d} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

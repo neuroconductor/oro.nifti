@@ -23,6 +23,18 @@ cal.max(object) <- value
 \S4method{cal.max}{nifti}(object) <- value
 
 \S4method{cal.max}{anlz}(object) <- value
+
+cal.max(object)
+
+\S4method{cal.max}{nifti}(object)
+
+\S4method{cal.max}{anlz}(object)
+
+cal.max(object) <- value
+
+\S4method{cal.max}{nifti}(object) <- value
+
+\S4method{cal.max}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}
@@ -32,6 +44,10 @@ cal.max(object) <- value
 \description{
 Methods that act on the \code{cal_max} field in the
 NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
 }
 \examples{
 \dontrun{
@@ -46,6 +62,7 @@ mniLR <- readNIfTI(urlfile)
 cal.max(mniLR)
 }
 \author{
+John Muschelli \email{muschellij2@gmail.com},\cr
 Brandon Whitcher \email{bwhitcher@gmail.com}
 }
 \references{

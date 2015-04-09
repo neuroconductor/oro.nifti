@@ -6,10 +6,11 @@
 \alias{extents,anlz-method}
 \alias{extents,nifti-method}
 \alias{extents-methods}
+\alias{extents-methods,}
 \alias{extents<-}
 \alias{extents<-,anlz-method}
 \alias{extents<-,nifti-method}
-\title{Extract Image extents attribute}
+\title{Extract Image Attribute \code{extents}}
 \usage{
 extents(object)
 
@@ -24,11 +25,26 @@ extents(object) <- value
 \S4method{extents}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to extents}
+\item{value}{is the value to assign to the \code{extents} field.}
 }
 \description{
-Methods that act on the ``extents'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{extents} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

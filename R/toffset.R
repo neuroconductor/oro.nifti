@@ -1,37 +1,41 @@
 #' @name toffset-methods
-#' @title Extract Image toffset attribute
+#' @title Extract Image Attribute \code{toffset}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to toffset 
-#' @description Methods that act on the ``toffset'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{toffset} field.  
+#' @description Methods that act on the \code{toffset} field in the
+#' NIfTI/ANALYZE header.
 #' @rdname toffset-methods
-#' @aliases toffset-methods 
-#' @aliases toffset
-#' @export
+#' @aliases toffset-methods, toffset
+#' @details See documentation on the ANALYZE and/or NIfTI data standards for
+#' more details.
+#' @author John Muschelli \email{muschellij2@@gmail.com},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references
+#' ANALYZE 7.5\cr
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr
+#' \url{http://nifti.nimh.nih.gov/}
 #'
 #' @export
 setGeneric("toffset", function(object) standardGeneric("toffset"))
 
-#' @name toffset
 #' @rdname toffset-methods
 #' @aliases toffset,nifti-method
 #' @export
 setMethod("toffset", "nifti", function(object) { object@"toffset" })
 
-#' @name toffset
 #' @rdname toffset-methods
 #' @aliases toffset,anlz-method
 #' @export
 setMethod("toffset", "anlz", function(object) { object@"toffset" })
 
 
-#' @name toffset
 #' @rdname toffset-methods
 #' @aliases toffset<- 
 #' @export
 setGeneric("toffset<-", function(object, value) { standardGeneric("toffset<-") })
 
-#' @name toffset
 #' @rdname toffset-methods
 #' @aliases toffset<-,nifti-method
 #' @export
@@ -49,7 +53,6 @@ setMethod("toffset<-",
             return(object)
           })
 
-#' @name toffset
 #' @rdname toffset-methods
 #' @aliases toffset<-,anlz-method
 #' @export
@@ -63,4 +66,3 @@ setMethod("toffset<-",
             }
             return(object)
           })
-

@@ -6,10 +6,11 @@
 \alias{unused1,anlz-method}
 \alias{unused1,nifti-method}
 \alias{unused1-methods}
+\alias{unused1-methods,}
 \alias{unused1<-}
 \alias{unused1<-,anlz-method}
 \alias{unused1<-,nifti-method}
-\title{Extract Image unused1 attribute}
+\title{Extract Image Attribute \code{unused1}}
 \usage{
 unused1(object)
 
@@ -24,11 +25,26 @@ unused1(object) <- value
 \S4method{unused1}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to unused1}
+\item{value}{is the value to assign to the \code{unused1} field.}
 }
 \description{
-Methods that act on the ``unused1'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{unused1} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

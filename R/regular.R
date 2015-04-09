@@ -1,37 +1,41 @@
 #' @name regular-methods
-#' @title Extract Image regular attribute
+#' @title Extract Image Attribute \code{regular}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to regular 
-#' @description Methods that act on the ``regular'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{regular} field.  
+#' @description Methods that act on the \code{regular} field in the
+#' NIfTI/ANALYZE header.
 #' @rdname regular-methods
-#' @aliases regular-methods 
-#' @aliases regular
-#' @export
+#' @aliases regular-methods, regular
+#' @details See documentation on the ANALYZE and/or NIfTI data standards for
+#' more details.
+#' @author John Muschelli \email{muschellij2@@gmail.com},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references
+#' ANALYZE 7.5\cr
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr
+#' \url{http://nifti.nimh.nih.gov/}
 #'
 #' @export
 setGeneric("regular", function(object) standardGeneric("regular"))
 
-#' @name regular
 #' @rdname regular-methods
 #' @aliases regular,nifti-method
 #' @export
 setMethod("regular", "nifti", function(object) { object@"regular" })
 
-#' @name regular
 #' @rdname regular-methods
 #' @aliases regular,anlz-method
 #' @export
 setMethod("regular", "anlz", function(object) { object@"regular" })
 
 
-#' @name regular
 #' @rdname regular-methods
 #' @aliases regular<- 
 #' @export
 setGeneric("regular<-", function(object, value) { standardGeneric("regular<-") })
 
-#' @name regular
 #' @rdname regular-methods
 #' @aliases regular<-,nifti-method
 #' @export
@@ -49,7 +53,6 @@ setMethod("regular<-",
             return(object)
           })
 
-#' @name regular
 #' @rdname regular-methods
 #' @aliases regular<-,anlz-method
 #' @export
@@ -63,4 +66,3 @@ setMethod("regular<-",
             }
             return(object)
           })
-

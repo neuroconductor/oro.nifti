@@ -1,37 +1,41 @@
 #' @name compressed-methods
-#' @title Extract Image compressed attribute
+#' @title Extract Image Attribute \code{compressed}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to compressed 
-#' @description Methods that act on the ``compressed'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{compressed} field.  
+#' @description Methods that act on the \code{compressed} field in the
+#' NIfTI/ANALYZE header.
 #' @rdname compressed-methods
-#' @aliases compressed-methods 
-#' @aliases compressed
-#' @export
+#' @aliases compressed-methods, compressed
+#' @details See documentation on the ANALYZE and/or NIfTI data standards for
+#' more details.
+#' @author John Muschelli \email{muschellij2@@gmail.com},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references
+#' ANALYZE 7.5\cr
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr
+#' \url{http://nifti.nimh.nih.gov/}
 #'
 #' @export
 setGeneric("compressed", function(object) standardGeneric("compressed"))
 
-#' @name compressed
 #' @rdname compressed-methods
 #' @aliases compressed,nifti-method
 #' @export
 setMethod("compressed", "nifti", function(object) { object@"compressed" })
 
-#' @name compressed
 #' @rdname compressed-methods
 #' @aliases compressed,anlz-method
 #' @export
 setMethod("compressed", "anlz", function(object) { object@"compressed" })
 
 
-#' @name compressed
 #' @rdname compressed-methods
 #' @aliases compressed<- 
 #' @export
 setGeneric("compressed<-", function(object, value) { standardGeneric("compressed<-") })
 
-#' @name compressed
 #' @rdname compressed-methods
 #' @aliases compressed<-,nifti-method
 #' @export
@@ -49,7 +53,6 @@ setMethod("compressed<-",
             return(object)
           })
 
-#' @name compressed
 #' @rdname compressed-methods
 #' @aliases compressed<-,anlz-method
 #' @export
@@ -63,4 +66,3 @@ setMethod("compressed<-",
             }
             return(object)
           })
-

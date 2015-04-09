@@ -2,14 +2,21 @@
 % Please edit documentation in R/data_type.R
 \docType{methods}
 \name{data_type-methods}
+\alias{data.type}
+\alias{data.type,anlz-method}
+\alias{data.type,nifti-method}
+\alias{data.type<-}
+\alias{data.type<-,anlz-method}
+\alias{data.type<-,nifti-method}
 \alias{data_type}
 \alias{data_type,anlz-method}
 \alias{data_type,nifti-method}
 \alias{data_type-methods}
+\alias{data_type-methods,}
 \alias{data_type<-}
 \alias{data_type<-,anlz-method}
 \alias{data_type<-,nifti-method}
-\title{Extract Image data_type attribute}
+\title{Extract Image Attribute \code{data_type}}
 \usage{
 data_type(object)
 
@@ -22,13 +29,40 @@ data_type(object) <- value
 \S4method{data_type}{nifti}(object) <- value
 
 \S4method{data_type}{anlz}(object) <- value
+
+data.type(object)
+
+\S4method{data.type}{nifti}(object)
+
+\S4method{data.type}{anlz}(object)
+
+data.type(object) <- value
+
+\S4method{data.type}{nifti}(object) <- value
+
+\S4method{data.type}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to data_type}
+\item{value}{is the value to assign to the \code{data_type} field.}
 }
 \description{
-Methods that act on the ``data_type'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{data_type} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

@@ -2,14 +2,21 @@
 % Please edit documentation in R/field_skip.R
 \docType{methods}
 \name{field_skip-methods}
+\alias{field.skip}
+\alias{field.skip,anlz-method}
+\alias{field.skip,nifti-method}
+\alias{field.skip<-}
+\alias{field.skip<-,anlz-method}
+\alias{field.skip<-,nifti-method}
 \alias{field_skip}
 \alias{field_skip,anlz-method}
 \alias{field_skip,nifti-method}
 \alias{field_skip-methods}
+\alias{field_skip-methods,}
 \alias{field_skip<-}
 \alias{field_skip<-,anlz-method}
 \alias{field_skip<-,nifti-method}
-\title{Extract Image field_skip attribute}
+\title{Extract Image Attribute \code{field_skip}}
 \usage{
 field_skip(object)
 
@@ -22,13 +29,40 @@ field_skip(object) <- value
 \S4method{field_skip}{nifti}(object) <- value
 
 \S4method{field_skip}{anlz}(object) <- value
+
+field.skip(object)
+
+\S4method{field.skip}{nifti}(object)
+
+\S4method{field.skip}{anlz}(object)
+
+field.skip(object) <- value
+
+\S4method{field.skip}{nifti}(object) <- value
+
+\S4method{field.skip}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to field_skip}
+\item{value}{is the value to assign to the \code{field_skip} field.}
 }
 \description{
-Methods that act on the ``field_skip'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{field_skip} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

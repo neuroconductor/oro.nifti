@@ -2,14 +2,21 @@
 % Please edit documentation in R/intent_name.R
 \docType{methods}
 \name{intent_name-methods}
+\alias{intent.name}
+\alias{intent.name,anlz-method}
+\alias{intent.name,nifti-method}
+\alias{intent.name<-}
+\alias{intent.name<-,anlz-method}
+\alias{intent.name<-,nifti-method}
 \alias{intent_name}
 \alias{intent_name,anlz-method}
 \alias{intent_name,nifti-method}
 \alias{intent_name-methods}
+\alias{intent_name-methods,}
 \alias{intent_name<-}
 \alias{intent_name<-,anlz-method}
 \alias{intent_name<-,nifti-method}
-\title{Extract Image intent_name attribute}
+\title{Extract Image Attribute \code{intent_name}}
 \usage{
 intent_name(object)
 
@@ -22,13 +29,40 @@ intent_name(object) <- value
 \S4method{intent_name}{nifti}(object) <- value
 
 \S4method{intent_name}{anlz}(object) <- value
+
+intent.name(object)
+
+\S4method{intent.name}{nifti}(object)
+
+\S4method{intent.name}{anlz}(object)
+
+intent.name(object) <- value
+
+\S4method{intent.name}{nifti}(object) <- value
+
+\S4method{intent.name}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to intent_name}
+\item{value}{is the value to assign to the \code{intent_name} field.}
 }
 \description{
-Methods that act on the ``intent_name'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{intent_name} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

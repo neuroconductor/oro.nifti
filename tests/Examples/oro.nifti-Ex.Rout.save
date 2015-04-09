@@ -456,9 +456,9 @@ ANALYZE 7.5 format
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: descrip-methods
-> ### Title: Extract Image descrip attribute
+> ### Title: Extract Image Attribute 'descrip'
 > ### Aliases: descrip descrip,anlz-method descrip,nifti-method
-> ###   descrip-methods descrip<- descrip<-,anlz-method
+> ###   descrip-methods descrip-methods, descrip<- descrip<-,anlz-method
 > ###   descrip<-,nifti-method
 > 
 > ### ** Examples
@@ -946,9 +946,9 @@ Class:   numeric   numeric character
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: pixdim-methods
-> ### Title: Extract Image pixdim attribute
+> ### Title: Extract Image Attribute 'pixdim'
 > ### Aliases: pixdim pixdim,anlz-method pixdim,nifti-method pixdim-methods
-> ###   pixdim<- pixdim<-,anlz-method pixdim<-,nifti-method
+> ###   pixdim-methods, pixdim<- pixdim<-,anlz-method pixdim<-,nifti-method
 > 
 > ### ** Examples
 > 
@@ -1306,7 +1306,7 @@ QForm_code and SForm_code unset: Orientation by Method 1.
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  9.636 0.144 9.793 0 0 
+Time elapsed:  10.013 0.115 10.142 0 0 
 > grDevices::dev.off()
 null device 
           1 

@@ -2,14 +2,21 @@
 % Please edit documentation in R/scl_inter.R
 \docType{methods}
 \name{scl_inter-methods}
+\alias{scl.inter}
+\alias{scl.inter,anlz-method}
+\alias{scl.inter,nifti-method}
+\alias{scl.inter<-}
+\alias{scl.inter<-,anlz-method}
+\alias{scl.inter<-,nifti-method}
 \alias{scl_inter}
 \alias{scl_inter,anlz-method}
 \alias{scl_inter,nifti-method}
 \alias{scl_inter-methods}
+\alias{scl_inter-methods,}
 \alias{scl_inter<-}
 \alias{scl_inter<-,anlz-method}
 \alias{scl_inter<-,nifti-method}
-\title{Extract Image scl_inter attribute}
+\title{Extract Image Attribute \code{scl_inter}}
 \usage{
 scl_inter(object)
 
@@ -22,13 +29,40 @@ scl_inter(object) <- value
 \S4method{scl_inter}{nifti}(object) <- value
 
 \S4method{scl_inter}{anlz}(object) <- value
+
+scl.inter(object)
+
+\S4method{scl.inter}{nifti}(object)
+
+\S4method{scl.inter}{anlz}(object)
+
+scl.inter(object) <- value
+
+\S4method{scl.inter}{nifti}(object) <- value
+
+\S4method{scl.inter}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to scl_inter}
+\item{value}{is the value to assign to the \code{scl_inter} field.}
 }
 \description{
-Methods that act on the ``scl_inter'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{scl_inter} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

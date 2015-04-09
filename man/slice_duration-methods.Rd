@@ -2,14 +2,21 @@
 % Please edit documentation in R/slice_duration.R
 \docType{methods}
 \name{slice_duration-methods}
+\alias{slice.duration}
+\alias{slice.duration,anlz-method}
+\alias{slice.duration,nifti-method}
+\alias{slice.duration<-}
+\alias{slice.duration<-,anlz-method}
+\alias{slice.duration<-,nifti-method}
 \alias{slice_duration}
 \alias{slice_duration,anlz-method}
 \alias{slice_duration,nifti-method}
 \alias{slice_duration-methods}
+\alias{slice_duration-methods,}
 \alias{slice_duration<-}
 \alias{slice_duration<-,anlz-method}
 \alias{slice_duration<-,nifti-method}
-\title{Extract Image slice_duration attribute}
+\title{Extract Image Attribute \code{slice_duration}}
 \usage{
 slice_duration(object)
 
@@ -22,13 +29,40 @@ slice_duration(object) <- value
 \S4method{slice_duration}{nifti}(object) <- value
 
 \S4method{slice_duration}{anlz}(object) <- value
+
+slice.duration(object)
+
+\S4method{slice.duration}{nifti}(object)
+
+\S4method{slice.duration}{anlz}(object)
+
+slice.duration(object) <- value
+
+\S4method{slice.duration}{nifti}(object) <- value
+
+\S4method{slice.duration}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to slice_duration}
+\item{value}{is the value to assign to the \code{slice_duration} field.}
 }
 \description{
-Methods that act on the ``slice_duration'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{slice_duration} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

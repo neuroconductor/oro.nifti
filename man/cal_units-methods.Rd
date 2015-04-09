@@ -2,14 +2,21 @@
 % Please edit documentation in R/cal_units.R
 \docType{methods}
 \name{cal_units-methods}
+\alias{cal.units}
+\alias{cal.units,anlz-method}
+\alias{cal.units,nifti-method}
+\alias{cal.units<-}
+\alias{cal.units<-,anlz-method}
+\alias{cal.units<-,nifti-method}
 \alias{cal_units}
 \alias{cal_units,anlz-method}
 \alias{cal_units,nifti-method}
 \alias{cal_units-methods}
+\alias{cal_units-methods,}
 \alias{cal_units<-}
 \alias{cal_units<-,anlz-method}
 \alias{cal_units<-,nifti-method}
-\title{Extract Image cal_units attribute}
+\title{Extract Image Attribute \code{cal_units}}
 \usage{
 cal_units(object)
 
@@ -22,13 +29,40 @@ cal_units(object) <- value
 \S4method{cal_units}{nifti}(object) <- value
 
 \S4method{cal_units}{anlz}(object) <- value
+
+cal.units(object)
+
+\S4method{cal.units}{nifti}(object)
+
+\S4method{cal.units}{anlz}(object)
+
+cal.units(object) <- value
+
+\S4method{cal.units}{nifti}(object) <- value
+
+\S4method{cal.units}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to cal_units}
+\item{value}{is the value to assign to the \code{cal_units} field.}
 }
 \description{
-Methods that act on the ``cal_units'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{cal_units} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

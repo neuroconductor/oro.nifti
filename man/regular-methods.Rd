@@ -6,10 +6,11 @@
 \alias{regular,anlz-method}
 \alias{regular,nifti-method}
 \alias{regular-methods}
+\alias{regular-methods,}
 \alias{regular<-}
 \alias{regular<-,anlz-method}
 \alias{regular<-,nifti-method}
-\title{Extract Image regular attribute}
+\title{Extract Image Attribute \code{regular}}
 \usage{
 regular(object)
 
@@ -24,11 +25,26 @@ regular(object) <- value
 \S4method{regular}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to regular}
+\item{value}{is the value to assign to the \code{regular} field.}
 }
 \description{
-Methods that act on the ``regular'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{regular} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

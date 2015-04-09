@@ -2,14 +2,21 @@
 % Please edit documentation in R/session_error.R
 \docType{methods}
 \name{session_error-methods}
+\alias{session.error}
+\alias{session.error,anlz-method}
+\alias{session.error,nifti-method}
+\alias{session.error<-}
+\alias{session.error<-,anlz-method}
+\alias{session.error<-,nifti-method}
 \alias{session_error}
 \alias{session_error,anlz-method}
 \alias{session_error,nifti-method}
 \alias{session_error-methods}
+\alias{session_error-methods,}
 \alias{session_error<-}
 \alias{session_error<-,anlz-method}
 \alias{session_error<-,nifti-method}
-\title{Extract Image session_error attribute}
+\title{Extract Image Attribute \code{session_error}}
 \usage{
 session_error(object)
 
@@ -22,13 +29,40 @@ session_error(object) <- value
 \S4method{session_error}{nifti}(object) <- value
 
 \S4method{session_error}{anlz}(object) <- value
+
+session.error(object)
+
+\S4method{session.error}{nifti}(object)
+
+\S4method{session.error}{anlz}(object)
+
+session.error(object) <- value
+
+\S4method{session.error}{nifti}(object) <- value
+
+\S4method{session.error}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to session_error}
+\item{value}{is the value to assign to the \code{session_error} field.}
 }
 \description{
-Methods that act on the ``session_error'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{session_error} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

@@ -2,14 +2,21 @@
 % Please edit documentation in R/db_name.R
 \docType{methods}
 \name{db_name-methods}
+\alias{db.name}
+\alias{db.name,anlz-method}
+\alias{db.name,nifti-method}
+\alias{db.name<-}
+\alias{db.name<-,anlz-method}
+\alias{db.name<-,nifti-method}
 \alias{db_name}
 \alias{db_name,anlz-method}
 \alias{db_name,nifti-method}
 \alias{db_name-methods}
+\alias{db_name-methods,}
 \alias{db_name<-}
 \alias{db_name<-,anlz-method}
 \alias{db_name<-,nifti-method}
-\title{Extract Image db_name attribute}
+\title{Extract Image Attribute \code{db_name}}
 \usage{
 db_name(object)
 
@@ -22,13 +29,40 @@ db_name(object) <- value
 \S4method{db_name}{nifti}(object) <- value
 
 \S4method{db_name}{anlz}(object) <- value
+
+db.name(object)
+
+\S4method{db.name}{nifti}(object)
+
+\S4method{db.name}{anlz}(object)
+
+db.name(object) <- value
+
+\S4method{db.name}{nifti}(object) <- value
+
+\S4method{db.name}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to db_name}
+\item{value}{is the value to assign to the \code{db_name} field.}
 }
 \description{
-Methods that act on the ``db_name'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{db_name} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

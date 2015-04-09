@@ -2,14 +2,21 @@
 % Please edit documentation in R/srow_y.R
 \docType{methods}
 \name{srow_y-methods}
+\alias{srow.y}
+\alias{srow.y,anlz-method}
+\alias{srow.y,nifti-method}
+\alias{srow.y<-}
+\alias{srow.y<-,anlz-method}
+\alias{srow.y<-,nifti-method}
 \alias{srow_y}
 \alias{srow_y,anlz-method}
 \alias{srow_y,nifti-method}
 \alias{srow_y-methods}
+\alias{srow_y-methods,}
 \alias{srow_y<-}
 \alias{srow_y<-,anlz-method}
 \alias{srow_y<-,nifti-method}
-\title{Extract Image srow_y attribute}
+\title{Extract Image Attribute \code{srow_y}}
 \usage{
 srow_y(object)
 
@@ -22,13 +29,40 @@ srow_y(object) <- value
 \S4method{srow_y}{nifti}(object) <- value
 
 \S4method{srow_y}{anlz}(object) <- value
+
+srow.y(object)
+
+\S4method{srow.y}{nifti}(object)
+
+\S4method{srow.y}{anlz}(object)
+
+srow.y(object) <- value
+
+\S4method{srow.y}{nifti}(object) <- value
+
+\S4method{srow.y}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to srow_y}
+\item{value}{is the value to assign to the \code{srow_y} field.}
 }
 \description{
-Methods that act on the ``srow_y'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{srow_y} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

@@ -6,10 +6,11 @@
 \alias{glmin,anlz-method}
 \alias{glmin,nifti-method}
 \alias{glmin-methods}
+\alias{glmin-methods,}
 \alias{glmin<-}
 \alias{glmin<-,anlz-method}
 \alias{glmin<-,nifti-method}
-\title{Extract Image glmin attribute}
+\title{Extract Image Attribute \code{glmin}}
 \usage{
 glmin(object)
 
@@ -24,11 +25,26 @@ glmin(object) <- value
 \S4method{glmin}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to glmin}
+\item{value}{is the value to assign to the \code{glmin} field.}
 }
 \description{
-Methods that act on the ``glmin'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{glmin} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

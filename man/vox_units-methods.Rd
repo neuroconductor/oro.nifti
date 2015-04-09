@@ -2,14 +2,21 @@
 % Please edit documentation in R/vox_units.R
 \docType{methods}
 \name{vox_units-methods}
+\alias{vox.units}
+\alias{vox.units,anlz-method}
+\alias{vox.units,nifti-method}
+\alias{vox.units<-}
+\alias{vox.units<-,anlz-method}
+\alias{vox.units<-,nifti-method}
 \alias{vox_units}
 \alias{vox_units,anlz-method}
 \alias{vox_units,nifti-method}
 \alias{vox_units-methods}
+\alias{vox_units-methods,}
 \alias{vox_units<-}
 \alias{vox_units<-,anlz-method}
 \alias{vox_units<-,nifti-method}
-\title{Extract Image vox_units attribute}
+\title{Extract Image Attribute \code{vox_units}}
 \usage{
 vox_units(object)
 
@@ -22,13 +29,40 @@ vox_units(object) <- value
 \S4method{vox_units}{nifti}(object) <- value
 
 \S4method{vox_units}{anlz}(object) <- value
+
+vox.units(object)
+
+\S4method{vox.units}{nifti}(object)
+
+\S4method{vox.units}{anlz}(object)
+
+vox.units(object) <- value
+
+\S4method{vox.units}{nifti}(object) <- value
+
+\S4method{vox.units}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to vox_units}
+\item{value}{is the value to assign to the \code{vox_units} field.}
 }
 \description{
-Methods that act on the ``vox_units'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{vox_units} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

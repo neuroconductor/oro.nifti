@@ -1,37 +1,41 @@
 #' @name omax-methods
-#' @title Extract Image omax attribute
+#' @title Extract Image Attribute \code{omax}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to omax 
-#' @description Methods that act on the ``omax'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{omax} field.  
+#' @description Methods that act on the \code{omax} field in the
+#' NIfTI/ANALYZE header.
 #' @rdname omax-methods
-#' @aliases omax-methods 
-#' @aliases omax
-#' @export
+#' @aliases omax-methods, omax
+#' @details See documentation on the ANALYZE and/or NIfTI data standards for
+#' more details.
+#' @author John Muschelli \email{muschellij2@@gmail.com},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references
+#' ANALYZE 7.5\cr
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr
+#' \url{http://nifti.nimh.nih.gov/}
 #'
 #' @export
 setGeneric("omax", function(object) standardGeneric("omax"))
 
-#' @name omax
 #' @rdname omax-methods
 #' @aliases omax,nifti-method
 #' @export
 setMethod("omax", "nifti", function(object) { object@"omax" })
 
-#' @name omax
 #' @rdname omax-methods
 #' @aliases omax,anlz-method
 #' @export
 setMethod("omax", "anlz", function(object) { object@"omax" })
 
 
-#' @name omax
 #' @rdname omax-methods
 #' @aliases omax<- 
 #' @export
 setGeneric("omax<-", function(object, value) { standardGeneric("omax<-") })
 
-#' @name omax
 #' @rdname omax-methods
 #' @aliases omax<-,nifti-method
 #' @export
@@ -49,7 +53,6 @@ setMethod("omax<-",
             return(object)
           })
 
-#' @name omax
 #' @rdname omax-methods
 #' @aliases omax<-,anlz-method
 #' @export
@@ -63,4 +66,3 @@ setMethod("omax<-",
             }
             return(object)
           })
-

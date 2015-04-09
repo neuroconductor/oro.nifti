@@ -2,14 +2,21 @@
 % Please edit documentation in R/intent_p3.R
 \docType{methods}
 \name{intent_p3-methods}
+\alias{intent.p3}
+\alias{intent.p3,anlz-method}
+\alias{intent.p3,nifti-method}
+\alias{intent.p3<-}
+\alias{intent.p3<-,anlz-method}
+\alias{intent.p3<-,nifti-method}
 \alias{intent_p3}
 \alias{intent_p3,anlz-method}
 \alias{intent_p3,nifti-method}
 \alias{intent_p3-methods}
+\alias{intent_p3-methods,}
 \alias{intent_p3<-}
 \alias{intent_p3<-,anlz-method}
 \alias{intent_p3<-,nifti-method}
-\title{Extract Image intent_p3 attribute}
+\title{Extract Image Attribute \code{intent_p3}}
 \usage{
 intent_p3(object)
 
@@ -22,13 +29,40 @@ intent_p3(object) <- value
 \S4method{intent_p3}{nifti}(object) <- value
 
 \S4method{intent_p3}{anlz}(object) <- value
+
+intent.p3(object)
+
+\S4method{intent.p3}{nifti}(object)
+
+\S4method{intent.p3}{anlz}(object)
+
+intent.p3(object) <- value
+
+\S4method{intent.p3}{nifti}(object) <- value
+
+\S4method{intent.p3}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to intent_p3}
+\item{value}{is the value to assign to the \code{intent_p3} field.}
 }
 \description{
-Methods that act on the ``intent_p3'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{intent_p3} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

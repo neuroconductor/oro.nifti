@@ -23,6 +23,18 @@ aux.file(object) <- value
 \S4method{aux.file}{nifti}(object) <- value
 
 \S4method{aux.file}{anlz}(object) <- value
+
+aux.file(object)
+
+\S4method{aux.file}{nifti}(object)
+
+\S4method{aux.file}{anlz}(object)
+
+aux.file(object) <- value
+
+\S4method{aux.file}{nifti}(object) <- value
+
+\S4method{aux.file}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}
@@ -32,6 +44,10 @@ aux.file(object) <- value
 \description{
 Methods that act on the \code{aux_file} field in the
 NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
 }
 \examples{
 \dontrun{
@@ -50,6 +66,7 @@ aux.file(mniRL) <- "avg152T1_RL_nifti"
 aux.file(mniRL)
 }
 \author{
+John Muschelli \email{muschellij2@gmail.com},\cr
 Brandon Whitcher \email{bwhitcher@gmail.com}
 }
 \references{

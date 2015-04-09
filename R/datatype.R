@@ -1,37 +1,41 @@
 #' @name datatype-methods
-#' @title Extract Image datatype attribute
+#' @title Extract Image Attribute \code{datatype}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to datatype 
-#' @description Methods that act on the ``datatype'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{datatype} field.  
+#' @description Methods that act on the \code{datatype} field in the
+#' NIfTI/ANALYZE header.
 #' @rdname datatype-methods
-#' @aliases datatype-methods 
-#' @aliases datatype
-#' @export
+#' @aliases datatype-methods, datatype
+#' @details See documentation on the ANALYZE and/or NIfTI data standards for
+#' more details.
+#' @author John Muschelli \email{muschellij2@@gmail.com},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references
+#' ANALYZE 7.5\cr
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr
+#' \url{http://nifti.nimh.nih.gov/}
 #'
 #' @export
 setGeneric("datatype", function(object) standardGeneric("datatype"))
 
-#' @name datatype
 #' @rdname datatype-methods
 #' @aliases datatype,nifti-method
 #' @export
 setMethod("datatype", "nifti", function(object) { object@"datatype" })
 
-#' @name datatype
 #' @rdname datatype-methods
 #' @aliases datatype,anlz-method
 #' @export
 setMethod("datatype", "anlz", function(object) { object@"datatype" })
 
 
-#' @name datatype
 #' @rdname datatype-methods
 #' @aliases datatype<- 
 #' @export
 setGeneric("datatype<-", function(object, value) { standardGeneric("datatype<-") })
 
-#' @name datatype
 #' @rdname datatype-methods
 #' @aliases datatype<-,nifti-method
 #' @export
@@ -49,7 +53,6 @@ setMethod("datatype<-",
             return(object)
           })
 
-#' @name datatype
 #' @rdname datatype-methods
 #' @aliases datatype<-,anlz-method
 #' @export
@@ -63,4 +66,3 @@ setMethod("datatype<-",
             }
             return(object)
           })
-

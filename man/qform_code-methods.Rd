@@ -2,14 +2,21 @@
 % Please edit documentation in R/qform_code.R
 \docType{methods}
 \name{qform_code-methods}
+\alias{qform.code}
+\alias{qform.code,anlz-method}
+\alias{qform.code,nifti-method}
+\alias{qform.code<-}
+\alias{qform.code<-,anlz-method}
+\alias{qform.code<-,nifti-method}
 \alias{qform_code}
 \alias{qform_code,anlz-method}
 \alias{qform_code,nifti-method}
 \alias{qform_code-methods}
+\alias{qform_code-methods,}
 \alias{qform_code<-}
 \alias{qform_code<-,anlz-method}
 \alias{qform_code<-,nifti-method}
-\title{Extract Image qform_code attribute}
+\title{Extract Image Attribute \code{qform_code}}
 \usage{
 qform_code(object)
 
@@ -22,13 +29,40 @@ qform_code(object) <- value
 \S4method{qform_code}{nifti}(object) <- value
 
 \S4method{qform_code}{anlz}(object) <- value
+
+qform.code(object)
+
+\S4method{qform.code}{nifti}(object)
+
+\S4method{qform.code}{anlz}(object)
+
+qform.code(object) <- value
+
+\S4method{qform.code}{nifti}(object) <- value
+
+\S4method{qform.code}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to qform_code}
+\item{value}{is the value to assign to the \code{qform_code} field.}
 }
 \description{
-Methods that act on the ``qform_code'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{qform_code} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

@@ -2,17 +2,21 @@
 #' @title Extract Image Attribute \code{bitpix}
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}.
-#' @param value is the value to assign to the \code{bitpix} field.
-#' @description Methods that act on the \code{bitpix} field in the 
+#' @param value is the value to assign to the \code{bitpix} field.  
+#' @description Methods that act on the \code{bitpix} field in the
 #' NIfTI/ANALYZE header.
 #' @rdname bitpix-methods
 #' @aliases bitpix-methods, bitpix
-#' @author John Muschelli \email{muschellij2@@gmail.com}
-#' @references 
-#' ANALYZE 7.5\cr 
+#' @details See documentation on the ANALYZE and/or NIfTI data standards for
+#' more details.
+#' @author John Muschelli \email{muschellij2@@gmail.com},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references
+#' ANALYZE 7.5\cr
 #' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
-#' NIfTI-1\cr 
+#' NIfTI-1\cr
 #' \url{http://nifti.nimh.nih.gov/}
+#'
 #' @export
 setGeneric("bitpix", function(object) standardGeneric("bitpix"))
 
@@ -25,6 +29,7 @@ setMethod("bitpix", "nifti", function(object) { object@"bitpix" })
 #' @aliases bitpix,anlz-method
 #' @export
 setMethod("bitpix", "anlz", function(object) { object@"bitpix" })
+
 
 #' @rdname bitpix-methods
 #' @aliases bitpix<- 

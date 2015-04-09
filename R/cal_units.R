@@ -1,37 +1,41 @@
 #' @name cal_units-methods
-#' @title Extract Image cal_units attribute
+#' @title Extract Image Attribute \code{cal_units}
 #' @docType methods 
-#' @param object is an object of class \code{nifti} or \code{anlz}
-#' @param value Value to assign to cal_units 
-#' @description Methods that act on the ``cal_units'' in the NIfTI/ANALYZE header.
+#' @param object is an object of class \code{nifti} or \code{anlz}.
+#' @param value is the value to assign to the \code{cal_units} field.  
+#' @description Methods that act on the \code{cal_units} field in the
+#' NIfTI/ANALYZE header.
 #' @rdname cal_units-methods
-#' @aliases cal_units-methods 
-#' @aliases cal_units
-#' @export
+#' @aliases cal_units-methods, cal_units
+#' @details See documentation on the ANALYZE and/or NIfTI data standards for
+#' more details.
+#' @author John Muschelli \email{muschellij2@@gmail.com},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @references
+#' ANALYZE 7.5\cr
+#' \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+#' NIfTI-1\cr
+#' \url{http://nifti.nimh.nih.gov/}
 #'
 #' @export
 setGeneric("cal_units", function(object) standardGeneric("cal_units"))
 
-#' @name cal_units
 #' @rdname cal_units-methods
 #' @aliases cal_units,nifti-method
 #' @export
 setMethod("cal_units", "nifti", function(object) { object@"cal_units" })
 
-#' @name cal_units
 #' @rdname cal_units-methods
 #' @aliases cal_units,anlz-method
 #' @export
 setMethod("cal_units", "anlz", function(object) { object@"cal_units" })
 
 
-#' @name cal_units
 #' @rdname cal_units-methods
 #' @aliases cal_units<- 
 #' @export
 setGeneric("cal_units<-", function(object, value) { standardGeneric("cal_units<-") })
 
-#' @name cal_units
 #' @rdname cal_units-methods
 #' @aliases cal_units<-,nifti-method
 #' @export
@@ -49,7 +53,6 @@ setMethod("cal_units<-",
             return(object)
           })
 
-#' @name cal_units
 #' @rdname cal_units-methods
 #' @aliases cal_units<-,anlz-method
 #' @export
@@ -64,3 +67,54 @@ setMethod("cal_units<-",
             return(object)
           })
 
+#' @rdname cal_units-methods
+#' @aliases cal.units,nifti-method
+#' @export
+setGeneric("cal.units", function(object) standardGeneric("cal.units"))
+
+#' @rdname cal_units-methods
+#' @aliases cal.units,nifti-method
+#' @export
+setMethod("cal.units", "nifti", function(object) { object@"cal_units" })
+
+#' @rdname cal_units-methods
+#' @aliases cal.units,anlz-method
+#' @export
+setMethod("cal.units", "anlz", function(object) { object@"cal_units" })
+
+
+#' @rdname cal_units-methods
+#' @aliases cal.units<- 
+#' @export
+setGeneric("cal.units<-", function(object, value) { standardGeneric("cal.units<-") })
+
+#' @rdname cal_units-methods
+#' @aliases cal.units<-,nifti-method
+#' @export
+setMethod("cal.units<-", 
+          signature(object="nifti"), 
+          function(object, value) { 
+            if ( "cal_units" %in% slotNames(object) ){
+              object@"cal_units" <- value
+              audit.trail(object) <-
+                niftiAuditTrailEvent(object, "modification", match.call(),
+                                     paste("cal_units <-", value))               
+            } else {
+              warning("cal_units is not in slotNames of object")
+            }                       
+            return(object)
+          })
+
+#' @rdname cal_units-methods
+#' @aliases cal.units<-,anlz-method
+#' @export
+setMethod("cal.units<-", 
+          signature(object="anlz"), 
+          function(object, value) { 
+            if ( "cal_units" %in% slotNames(object) ){
+              object@"cal_units" <- value
+            } else {
+              warning("cal_units is not in slotNames of object")
+            }
+            return(object)
+          })

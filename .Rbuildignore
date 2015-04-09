@@ -4,8 +4,7 @@
 ^\.DS_Store$
 .*/\.DS_Store$
 .DS_Store$
-Generic_Maker.R
-Generic_Function.R
-Generic_Function2.R
+Generic_Maker\.R
+Generic_Function.*\.R
 ^\.travis\.yml$
-All_Generics.R
+All_Generics\.R

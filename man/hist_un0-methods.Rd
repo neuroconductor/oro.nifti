@@ -6,10 +6,11 @@
 \alias{hist_un0,anlz-method}
 \alias{hist_un0,nifti-method}
 \alias{hist_un0-methods}
+\alias{hist_un0-methods,}
 \alias{hist_un0<-}
 \alias{hist_un0<-,anlz-method}
 \alias{hist_un0<-,nifti-method}
-\title{Extract Image hist_un0 attribute}
+\title{Extract Image Attribute \code{hist_un0}}
 \usage{
 hist_un0(object)
 
@@ -24,11 +25,26 @@ hist_un0(object) <- value
 \S4method{hist_un0}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to hist_un0}
+\item{value}{is the value to assign to the \code{hist_un0} field.}
 }
 \description{
-Methods that act on the ``hist_un0'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{hist_un0} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 

@@ -6,10 +6,11 @@
 \alias{smin,anlz-method}
 \alias{smin,nifti-method}
 \alias{smin-methods}
+\alias{smin-methods,}
 \alias{smin<-}
 \alias{smin<-,anlz-method}
 \alias{smin<-,nifti-method}
-\title{Extract Image smin attribute}
+\title{Extract Image Attribute \code{smin}}
 \usage{
 smin(object)
 
@@ -24,11 +25,26 @@ smin(object) <- value
 \S4method{smin}{anlz}(object) <- value
 }
 \arguments{
-\item{object}{is an object of class \code{nifti} or \code{anlz}}
+\item{object}{is an object of class \code{nifti} or \code{anlz}.}
 
-\item{value}{Value to assign to smin}
+\item{value}{is the value to assign to the \code{smin} field.}
 }
 \description{
-Methods that act on the ``smin'' in the NIfTI/ANALYZE header.
+Methods that act on the \code{smin} field in the
+NIfTI/ANALYZE header.
+}
+\details{
+See documentation on the ANALYZE and/or NIfTI data standards for
+more details.
+}
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
+\references{
+ANALYZE 7.5\cr
+\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+NIfTI-1\cr
+\url{http://nifti.nimh.nih.gov/}
 }
 
