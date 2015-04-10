@@ -3,18 +3,14 @@
 \docType{methods}
 \name{scl_slope-methods}
 \alias{scl.slope}
-\alias{scl.slope,anlz-method}
 \alias{scl.slope,nifti-method}
 \alias{scl.slope<-}
-\alias{scl.slope<-,anlz-method}
 \alias{scl.slope<-,nifti-method}
 \alias{scl_slope}
-\alias{scl_slope,anlz-method}
 \alias{scl_slope,nifti-method}
 \alias{scl_slope-methods}
 \alias{scl_slope-methods,}
 \alias{scl_slope<-}
-\alias{scl_slope<-,anlz-method}
 \alias{scl_slope<-,nifti-method}
 \title{Extract Image Attribute \code{scl_slope}}
 \usage{
@@ -22,25 +18,17 @@ scl_slope(object)
 
 \S4method{scl_slope}{nifti}(object)
 
-\S4method{scl_slope}{anlz}(object)
-
 scl_slope(object) <- value
 
 \S4method{scl_slope}{nifti}(object) <- value
-
-\S4method{scl_slope}{anlz}(object) <- value
 
 scl.slope(object)
 
 \S4method{scl.slope}{nifti}(object)
 
-\S4method{scl.slope}{anlz}(object)
-
 scl.slope(object) <- value
 
 \S4method{scl.slope}{nifti}(object) <- value
-
-\S4method{scl.slope}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

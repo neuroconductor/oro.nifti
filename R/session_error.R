@@ -19,23 +19,18 @@
 #'
 #' @export
 setGeneric("session_error", function(object) standardGeneric("session_error"))
-
 #' @rdname session_error-methods
 #' @aliases session_error,nifti-method
 #' @export
 setMethod("session_error", "nifti", function(object) { object@"session_error" })
-
 #' @rdname session_error-methods
 #' @aliases session_error,anlz-method
 #' @export
 setMethod("session_error", "anlz", function(object) { object@"session_error" })
-
-
 #' @rdname session_error-methods
 #' @aliases session_error<- 
 #' @export
 setGeneric("session_error<-", function(object, value) { standardGeneric("session_error<-") })
-
 #' @rdname session_error-methods
 #' @aliases session_error<-,nifti-method
 #' @export
@@ -52,7 +47,6 @@ setMethod("session_error<-",
             }                       
             return(object)
           })
-
 #' @rdname session_error-methods
 #' @aliases session_error<-,anlz-method
 #' @export
@@ -66,28 +60,22 @@ setMethod("session_error<-",
             }
             return(object)
           })
-
 #' @rdname session_error-methods
 #' @aliases session.error,nifti-method
 #' @export
 setGeneric("session.error", function(object) standardGeneric("session.error"))
-
 #' @rdname session_error-methods
 #' @aliases session.error,nifti-method
 #' @export
 setMethod("session.error", "nifti", function(object) { object@"session_error" })
-
 #' @rdname session_error-methods
 #' @aliases session.error,anlz-method
 #' @export
 setMethod("session.error", "anlz", function(object) { object@"session_error" })
-
-
 #' @rdname session_error-methods
 #' @aliases session.error<- 
 #' @export
 setGeneric("session.error<-", function(object, value) { standardGeneric("session.error<-") })
-
 #' @rdname session_error-methods
 #' @aliases session.error<-,nifti-method
 #' @export
@@ -104,7 +92,6 @@ setMethod("session.error<-",
             }                       
             return(object)
           })
-
 #' @rdname session_error-methods
 #' @aliases session.error<-,anlz-method
 #' @export

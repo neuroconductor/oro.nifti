@@ -22,4 +22,12 @@
 \description{
 Operations for NIfTI Objects
 }
+\examples{
+img04 <- nifti()
+img05 <- nifti()
+img06 <- img04 + img05
+}
+\author{
+John Muschellli \email{muschellij2@gmail.com}
+}
 

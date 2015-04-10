@@ -19,40 +19,14 @@
 #'
 #' @export
 setGeneric("views", function(object) standardGeneric("views"))
-
-#' @rdname views-methods
-#' @aliases views,nifti-method
-#' @export
-setMethod("views", "nifti", function(object) { object@"views" })
-
 #' @rdname views-methods
 #' @aliases views,anlz-method
 #' @export
 setMethod("views", "anlz", function(object) { object@"views" })
-
-
 #' @rdname views-methods
 #' @aliases views<- 
 #' @export
 setGeneric("views<-", function(object, value) { standardGeneric("views<-") })
-
-#' @rdname views-methods
-#' @aliases views<-,nifti-method
-#' @export
-setMethod("views<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "views" %in% slotNames(object) ){
-              object@"views" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("views <-", value))               
-            } else {
-              warning("views is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname views-methods
 #' @aliases views<-,anlz-method
 #' @export

@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("sform_code", function(object) standardGeneric("sform_code"))
-
 #' @rdname sform_code-methods
 #' @aliases sform_code,nifti-method
 #' @export
 setMethod("sform_code", "nifti", function(object) { object@"sform_code" })
-
-#' @rdname sform_code-methods
-#' @aliases sform_code,anlz-method
-#' @export
-setMethod("sform_code", "anlz", function(object) { object@"sform_code" })
-
-
 #' @rdname sform_code-methods
 #' @aliases sform_code<- 
 #' @export
 setGeneric("sform_code<-", function(object, value) { standardGeneric("sform_code<-") })
-
 #' @rdname sform_code-methods
 #' @aliases sform_code<-,nifti-method
 #' @export
@@ -52,42 +43,18 @@ setMethod("sform_code<-",
             }                       
             return(object)
           })
-
-#' @rdname sform_code-methods
-#' @aliases sform_code<-,anlz-method
-#' @export
-setMethod("sform_code<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "sform_code" %in% slotNames(object) ){
-              object@"sform_code" <- value
-            } else {
-              warning("sform_code is not in slotNames of object")
-            }
-            return(object)
-          })
-
 #' @rdname sform_code-methods
 #' @aliases sform.code,nifti-method
 #' @export
 setGeneric("sform.code", function(object) standardGeneric("sform.code"))
-
 #' @rdname sform_code-methods
 #' @aliases sform.code,nifti-method
 #' @export
 setMethod("sform.code", "nifti", function(object) { object@"sform_code" })
-
-#' @rdname sform_code-methods
-#' @aliases sform.code,anlz-method
-#' @export
-setMethod("sform.code", "anlz", function(object) { object@"sform_code" })
-
-
 #' @rdname sform_code-methods
 #' @aliases sform.code<- 
 #' @export
 setGeneric("sform.code<-", function(object, value) { standardGeneric("sform.code<-") })
-
 #' @rdname sform_code-methods
 #' @aliases sform.code<-,nifti-method
 #' @export
@@ -102,19 +69,5 @@ setMethod("sform.code<-",
             } else {
               warning("sform_code is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname sform_code-methods
-#' @aliases sform.code<-,anlz-method
-#' @export
-setMethod("sform.code<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "sform_code" %in% slotNames(object) ){
-              object@"sform_code" <- value
-            } else {
-              warning("sform_code is not in slotNames of object")
-            }
             return(object)
           })

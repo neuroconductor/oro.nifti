@@ -4,23 +4,17 @@
 \name{dim_un0-methods}
 \alias{dim_un0}
 \alias{dim_un0,anlz-method}
-\alias{dim_un0,nifti-method}
 \alias{dim_un0-methods}
 \alias{dim_un0-methods,}
 \alias{dim_un0<-}
 \alias{dim_un0<-,anlz-method}
-\alias{dim_un0<-,nifti-method}
 \title{Extract Image Attribute \code{dim_un0}}
 \usage{
 dim_un0(object)
 
-\S4method{dim_un0}{nifti}(object)
-
 \S4method{dim_un0}{anlz}(object)
 
 dim_un0(object) <- value
-
-\S4method{dim_un0}{nifti}(object) <- value
 
 \S4method{dim_un0}{anlz}(object) <- value
 }

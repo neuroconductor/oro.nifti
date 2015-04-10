@@ -6,6 +6,13 @@
 #' @aliases Ops,nifti,nifti-method
 #' @param e1 object
 #' @param e2 object
+#' @author John Muschellli \email{muschellij2@@gmail.com}
+#' @examples
+#' 
+#' img04 <- nifti()
+#' img05 <- nifti()
+#' img06 <- img04 + img05
+#' 
 setMethod("Ops", signature(e1="nifti", e2="nifti"),
           function(e1, e2) {
             ## either use drop_img_dim and validObject or take out both

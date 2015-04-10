@@ -19,40 +19,14 @@
 #'
 #' @export
 setGeneric("patient_id", function(object) standardGeneric("patient_id"))
-
-#' @rdname patient_id-methods
-#' @aliases patient_id,nifti-method
-#' @export
-setMethod("patient_id", "nifti", function(object) { object@"patient_id" })
-
 #' @rdname patient_id-methods
 #' @aliases patient_id,anlz-method
 #' @export
 setMethod("patient_id", "anlz", function(object) { object@"patient_id" })
-
-
 #' @rdname patient_id-methods
 #' @aliases patient_id<- 
 #' @export
 setGeneric("patient_id<-", function(object, value) { standardGeneric("patient_id<-") })
-
-#' @rdname patient_id-methods
-#' @aliases patient_id<-,nifti-method
-#' @export
-setMethod("patient_id<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "patient_id" %in% slotNames(object) ){
-              object@"patient_id" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("patient_id <-", value))               
-            } else {
-              warning("patient_id is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname patient_id-methods
 #' @aliases patient_id<-,anlz-method
 #' @export
@@ -66,45 +40,18 @@ setMethod("patient_id<-",
             }
             return(object)
           })
-
 #' @rdname patient_id-methods
 #' @aliases patient.id,nifti-method
 #' @export
 setGeneric("patient.id", function(object) standardGeneric("patient.id"))
-
-#' @rdname patient_id-methods
-#' @aliases patient.id,nifti-method
-#' @export
-setMethod("patient.id", "nifti", function(object) { object@"patient_id" })
-
 #' @rdname patient_id-methods
 #' @aliases patient.id,anlz-method
 #' @export
 setMethod("patient.id", "anlz", function(object) { object@"patient_id" })
-
-
 #' @rdname patient_id-methods
 #' @aliases patient.id<- 
 #' @export
 setGeneric("patient.id<-", function(object, value) { standardGeneric("patient.id<-") })
-
-#' @rdname patient_id-methods
-#' @aliases patient.id<-,nifti-method
-#' @export
-setMethod("patient.id<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "patient_id" %in% slotNames(object) ){
-              object@"patient_id" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("patient_id <-", value))               
-            } else {
-              warning("patient_id is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname patient_id-methods
 #' @aliases patient.id<-,anlz-method
 #' @export

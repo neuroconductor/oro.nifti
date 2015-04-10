@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("intent_p3", function(object) standardGeneric("intent_p3"))
-
 #' @rdname intent_p3-methods
 #' @aliases intent_p3,nifti-method
 #' @export
 setMethod("intent_p3", "nifti", function(object) { object@"intent_p3" })
-
-#' @rdname intent_p3-methods
-#' @aliases intent_p3,anlz-method
-#' @export
-setMethod("intent_p3", "anlz", function(object) { object@"intent_p3" })
-
-
 #' @rdname intent_p3-methods
 #' @aliases intent_p3<- 
 #' @export
 setGeneric("intent_p3<-", function(object, value) { standardGeneric("intent_p3<-") })
-
 #' @rdname intent_p3-methods
 #' @aliases intent_p3<-,nifti-method
 #' @export
@@ -52,42 +43,18 @@ setMethod("intent_p3<-",
             }                       
             return(object)
           })
-
-#' @rdname intent_p3-methods
-#' @aliases intent_p3<-,anlz-method
-#' @export
-setMethod("intent_p3<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "intent_p3" %in% slotNames(object) ){
-              object@"intent_p3" <- value
-            } else {
-              warning("intent_p3 is not in slotNames of object")
-            }
-            return(object)
-          })
-
 #' @rdname intent_p3-methods
 #' @aliases intent.p3,nifti-method
 #' @export
 setGeneric("intent.p3", function(object) standardGeneric("intent.p3"))
-
 #' @rdname intent_p3-methods
 #' @aliases intent.p3,nifti-method
 #' @export
 setMethod("intent.p3", "nifti", function(object) { object@"intent_p3" })
-
-#' @rdname intent_p3-methods
-#' @aliases intent.p3,anlz-method
-#' @export
-setMethod("intent.p3", "anlz", function(object) { object@"intent_p3" })
-
-
 #' @rdname intent_p3-methods
 #' @aliases intent.p3<- 
 #' @export
 setGeneric("intent.p3<-", function(object, value) { standardGeneric("intent.p3<-") })
-
 #' @rdname intent_p3-methods
 #' @aliases intent.p3<-,nifti-method
 #' @export
@@ -102,19 +69,5 @@ setMethod("intent.p3<-",
             } else {
               warning("intent_p3 is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname intent_p3-methods
-#' @aliases intent.p3<-,anlz-method
-#' @export
-setMethod("intent.p3<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "intent_p3" %in% slotNames(object) ){
-              object@"intent_p3" <- value
-            } else {
-              warning("intent_p3 is not in slotNames of object")
-            }
             return(object)
           })

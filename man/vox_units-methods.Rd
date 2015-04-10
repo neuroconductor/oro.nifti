@@ -7,38 +7,27 @@
 \alias{vox.units,nifti-method}
 \alias{vox.units<-}
 \alias{vox.units<-,anlz-method}
-\alias{vox.units<-,nifti-method}
 \alias{vox_units}
 \alias{vox_units,anlz-method}
-\alias{vox_units,nifti-method}
 \alias{vox_units-methods}
 \alias{vox_units-methods,}
 \alias{vox_units<-}
 \alias{vox_units<-,anlz-method}
-\alias{vox_units<-,nifti-method}
 \title{Extract Image Attribute \code{vox_units}}
 \usage{
 vox_units(object)
-
-\S4method{vox_units}{nifti}(object)
 
 \S4method{vox_units}{anlz}(object)
 
 vox_units(object) <- value
 
-\S4method{vox_units}{nifti}(object) <- value
-
 \S4method{vox_units}{anlz}(object) <- value
 
 vox.units(object)
 
-\S4method{vox.units}{nifti}(object)
-
 \S4method{vox.units}{anlz}(object)
 
 vox.units(object) <- value
-
-\S4method{vox.units}{nifti}(object) <- value
 
 \S4method{vox.units}{anlz}(object) <- value
 }

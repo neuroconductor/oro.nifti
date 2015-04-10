@@ -19,23 +19,18 @@
 #'
 #' @export
 setGeneric("glmax", function(object) standardGeneric("glmax"))
-
 #' @rdname glmax-methods
 #' @aliases glmax,nifti-method
 #' @export
 setMethod("glmax", "nifti", function(object) { object@"glmax" })
-
 #' @rdname glmax-methods
 #' @aliases glmax,anlz-method
 #' @export
 setMethod("glmax", "anlz", function(object) { object@"glmax" })
-
-
 #' @rdname glmax-methods
 #' @aliases glmax<- 
 #' @export
 setGeneric("glmax<-", function(object, value) { standardGeneric("glmax<-") })
-
 #' @rdname glmax-methods
 #' @aliases glmax<-,nifti-method
 #' @export
@@ -52,7 +47,6 @@ setMethod("glmax<-",
             }                       
             return(object)
           })
-
 #' @rdname glmax-methods
 #' @aliases glmax<-,anlz-method
 #' @export

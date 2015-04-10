@@ -5,6 +5,12 @@
 \alias{nifti-class}
 \alias{show,nifti-method}
 \title{Class "nifti"}
+\usage{
+\S4method{show}{nifti}(object)
+}
+\arguments{
+\item{object}{An object of class \code{nifti}.}
+}
 \description{
 The NIfTI class for medical imaging data.
 }
@@ -78,36 +84,33 @@ function.
 \section{Extends}{
 
   Class \code{"\linkS4class{array}"}, from data part.\cr
-  Class \code{"\linkS4class{matrix}"}, by class "array", distance 2, with explicit test and coerce.\cr
-  Class \code{"\linkS4class{structure}"}, by class "array", distance 2.\cr
-  Class \code{"\linkS4class{vector}"}, by class "array", distance 3, with explicit coerce.\cr
-  Class \code{"\linkS4class{vector}"}, by class "array", distance 5, with explicit test and coerce.
+  Class \code{"\linkS4class{matrix}"}, by class \dQuote{array}, distance 2,
+  with explicit test and coerce.\cr
+  Class \code{"\linkS4class{structure}"}, by class \dQuote{array}, distance
+  2.\cr
+  Class \code{"\linkS4class{vector}"}, by class \dQuote{array}, distance 3,
+  with explicit coerce.\cr
+  Class \code{"\linkS4class{vector}"}, by class \dQuote{array}, distance 5,
+  with explicit test and coerce.
 }
 
 \section{Methods}{
 
   \describe{
-    \item{aux.file<-}{\code{signature(x = "nifti")}: replaces the
-                      \dQuote{auxiliary file} field}
-    \item{aux.file}{\code{signature(object = "nifti")}: returns the
-                    \dQuote{auxiliary file} field}
-    \item{descrip<-}{\code{signature(x = "nifti")}: replaces the
-                     \dQuote{description} field}
-    \item{descrip}{\code{signature(object = "nifti")}: returns the
-                   \dQuote{description} field}
-    \item{image}{\code{signature(x = "nifti")}: diplays the image(s)}
-    \item{orthographic}{\code{signature(x = "nifti")}: displays the image(s)}
+    \item{image}{\code{signature(x = "nifti")}: diplays the image(s).}
+    \item{orthographic}{\code{signature(x = "nifti")}: displays the image(s).}
     \item{overlay}{\code{signature(x = "nifti", y = "nifti")}: displays
-                   the image(s)}
+                   the image(s).}
     \item{show}{\code{signature(object = "nifti")}: prints out a summary
-                of the imaging data}
+                of the imaging data.}
   }
 }
 \examples{
 showClass("nifti")
 }
 \author{
-Brandon Whitcher \email{bwhitcher@gmail.com}
+Brandon Whitcher \email{bwhitcher@gmail.com},\cr Andrew Thornton
+\email{zeripath@users.sourcefore.net}
 }
 \references{
 NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}

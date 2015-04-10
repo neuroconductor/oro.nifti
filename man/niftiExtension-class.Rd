@@ -5,8 +5,8 @@
 \alias{niftiExtension-class}
 \title{Class "niftiExtension"}
 \description{
-An extension of the NIfTI class that allows \dQuote{extensions} that conform
-to the NIfTI data standard.
+An extension of the NIfTI class that allows \dQuote{extensions}
+that conform to the NIfTI data standard.
 }
 \section{Objects from the Class}{
  Objects can be created by calls of the form

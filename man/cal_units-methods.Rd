@@ -7,38 +7,27 @@
 \alias{cal.units,nifti-method}
 \alias{cal.units<-}
 \alias{cal.units<-,anlz-method}
-\alias{cal.units<-,nifti-method}
 \alias{cal_units}
 \alias{cal_units,anlz-method}
-\alias{cal_units,nifti-method}
 \alias{cal_units-methods}
 \alias{cal_units-methods,}
 \alias{cal_units<-}
 \alias{cal_units<-,anlz-method}
-\alias{cal_units<-,nifti-method}
 \title{Extract Image Attribute \code{cal_units}}
 \usage{
 cal_units(object)
-
-\S4method{cal_units}{nifti}(object)
 
 \S4method{cal_units}{anlz}(object)
 
 cal_units(object) <- value
 
-\S4method{cal_units}{nifti}(object) <- value
-
 \S4method{cal_units}{anlz}(object) <- value
 
 cal.units(object)
 
-\S4method{cal.units}{nifti}(object)
-
 \S4method{cal.units}{anlz}(object)
 
 cal.units(object) <- value
-
-\S4method{cal.units}{nifti}(object) <- value
 
 \S4method{cal.units}{anlz}(object) <- value
 }

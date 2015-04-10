@@ -4,23 +4,17 @@
 \name{compressed-methods}
 \alias{compressed}
 \alias{compressed,anlz-method}
-\alias{compressed,nifti-method}
 \alias{compressed-methods}
 \alias{compressed-methods,}
 \alias{compressed<-}
 \alias{compressed<-,anlz-method}
-\alias{compressed<-,nifti-method}
 \title{Extract Image Attribute \code{compressed}}
 \usage{
 compressed(object)
 
-\S4method{compressed}{nifti}(object)
-
 \S4method{compressed}{anlz}(object)
 
 compressed(object) <- value
-
-\S4method{compressed}{nifti}(object) <- value
 
 \S4method{compressed}{anlz}(object) <- value
 }

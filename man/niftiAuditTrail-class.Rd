@@ -11,6 +11,14 @@ An extension of the NIfTI class that adds an audit trail in XML format.
  Objects can be created by calls of the form
 \code{new("niftiAuditTrail", data, dim, dimnames, ...)}.
 }
+
+\section{Methods}{
+
+  \describe{
+    \item{show}{\code{signature(object = "niftiAuditTrail")}: prints out a
+                summary of the imaging data.}
+  }
+}
 \examples{
 showClass("niftiAuditTrail")
 }

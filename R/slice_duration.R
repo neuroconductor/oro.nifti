@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("slice_duration", function(object) standardGeneric("slice_duration"))
-
 #' @rdname slice_duration-methods
 #' @aliases slice_duration,nifti-method
 #' @export
 setMethod("slice_duration", "nifti", function(object) { object@"slice_duration" })
-
-#' @rdname slice_duration-methods
-#' @aliases slice_duration,anlz-method
-#' @export
-setMethod("slice_duration", "anlz", function(object) { object@"slice_duration" })
-
-
 #' @rdname slice_duration-methods
 #' @aliases slice_duration<- 
 #' @export
 setGeneric("slice_duration<-", function(object, value) { standardGeneric("slice_duration<-") })
-
 #' @rdname slice_duration-methods
 #' @aliases slice_duration<-,nifti-method
 #' @export
@@ -52,42 +43,18 @@ setMethod("slice_duration<-",
             }                       
             return(object)
           })
-
-#' @rdname slice_duration-methods
-#' @aliases slice_duration<-,anlz-method
-#' @export
-setMethod("slice_duration<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "slice_duration" %in% slotNames(object) ){
-              object@"slice_duration" <- value
-            } else {
-              warning("slice_duration is not in slotNames of object")
-            }
-            return(object)
-          })
-
 #' @rdname slice_duration-methods
 #' @aliases slice.duration,nifti-method
 #' @export
 setGeneric("slice.duration", function(object) standardGeneric("slice.duration"))
-
 #' @rdname slice_duration-methods
 #' @aliases slice.duration,nifti-method
 #' @export
 setMethod("slice.duration", "nifti", function(object) { object@"slice_duration" })
-
-#' @rdname slice_duration-methods
-#' @aliases slice.duration,anlz-method
-#' @export
-setMethod("slice.duration", "anlz", function(object) { object@"slice_duration" })
-
-
 #' @rdname slice_duration-methods
 #' @aliases slice.duration<- 
 #' @export
 setGeneric("slice.duration<-", function(object, value) { standardGeneric("slice.duration<-") })
-
 #' @rdname slice_duration-methods
 #' @aliases slice.duration<-,nifti-method
 #' @export
@@ -102,19 +69,5 @@ setMethod("slice.duration<-",
             } else {
               warning("slice_duration is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname slice_duration-methods
-#' @aliases slice.duration<-,anlz-method
-#' @export
-setMethod("slice.duration<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "slice_duration" %in% slotNames(object) ){
-              object@"slice_duration" <- value
-            } else {
-              warning("slice_duration is not in slotNames of object")
-            }
             return(object)
           })

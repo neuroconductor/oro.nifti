@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("qform_code", function(object) standardGeneric("qform_code"))
-
 #' @rdname qform_code-methods
 #' @aliases qform_code,nifti-method
 #' @export
 setMethod("qform_code", "nifti", function(object) { object@"qform_code" })
-
-#' @rdname qform_code-methods
-#' @aliases qform_code,anlz-method
-#' @export
-setMethod("qform_code", "anlz", function(object) { object@"qform_code" })
-
-
 #' @rdname qform_code-methods
 #' @aliases qform_code<- 
 #' @export
 setGeneric("qform_code<-", function(object, value) { standardGeneric("qform_code<-") })
-
 #' @rdname qform_code-methods
 #' @aliases qform_code<-,nifti-method
 #' @export
@@ -52,42 +43,18 @@ setMethod("qform_code<-",
             }                       
             return(object)
           })
-
-#' @rdname qform_code-methods
-#' @aliases qform_code<-,anlz-method
-#' @export
-setMethod("qform_code<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "qform_code" %in% slotNames(object) ){
-              object@"qform_code" <- value
-            } else {
-              warning("qform_code is not in slotNames of object")
-            }
-            return(object)
-          })
-
 #' @rdname qform_code-methods
 #' @aliases qform.code,nifti-method
 #' @export
 setGeneric("qform.code", function(object) standardGeneric("qform.code"))
-
 #' @rdname qform_code-methods
 #' @aliases qform.code,nifti-method
 #' @export
 setMethod("qform.code", "nifti", function(object) { object@"qform_code" })
-
-#' @rdname qform_code-methods
-#' @aliases qform.code,anlz-method
-#' @export
-setMethod("qform.code", "anlz", function(object) { object@"qform_code" })
-
-
 #' @rdname qform_code-methods
 #' @aliases qform.code<- 
 #' @export
 setGeneric("qform.code<-", function(object, value) { standardGeneric("qform.code<-") })
-
 #' @rdname qform_code-methods
 #' @aliases qform.code<-,nifti-method
 #' @export
@@ -102,19 +69,5 @@ setMethod("qform.code<-",
             } else {
               warning("qform_code is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname qform_code-methods
-#' @aliases qform.code<-,anlz-method
-#' @export
-setMethod("qform.code<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "qform_code" %in% slotNames(object) ){
-              object@"qform_code" <- value
-            } else {
-              warning("qform_code is not in slotNames of object")
-            }
             return(object)
           })

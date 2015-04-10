@@ -3,18 +3,14 @@
 \docType{methods}
 \name{quatern_d-methods}
 \alias{quatern.d}
-\alias{quatern.d,anlz-method}
 \alias{quatern.d,nifti-method}
 \alias{quatern.d<-}
-\alias{quatern.d<-,anlz-method}
 \alias{quatern.d<-,nifti-method}
 \alias{quatern_d}
-\alias{quatern_d,anlz-method}
 \alias{quatern_d,nifti-method}
 \alias{quatern_d-methods}
 \alias{quatern_d-methods,}
 \alias{quatern_d<-}
-\alias{quatern_d<-,anlz-method}
 \alias{quatern_d<-,nifti-method}
 \title{Extract Image Attribute \code{quatern_d}}
 \usage{
@@ -22,25 +18,17 @@ quatern_d(object)
 
 \S4method{quatern_d}{nifti}(object)
 
-\S4method{quatern_d}{anlz}(object)
-
 quatern_d(object) <- value
 
 \S4method{quatern_d}{nifti}(object) <- value
-
-\S4method{quatern_d}{anlz}(object) <- value
 
 quatern.d(object)
 
 \S4method{quatern.d}{nifti}(object)
 
-\S4method{quatern.d}{anlz}(object)
-
 quatern.d(object) <- value
 
 \S4method{quatern.d}{nifti}(object) <- value
-
-\S4method{quatern.d}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

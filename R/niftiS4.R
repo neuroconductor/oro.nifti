@@ -32,7 +32,7 @@
 ##
 
 #############################################################################
-## setClass("nifti")
+## setClass("niftiExtensionSection")
 #############################################################################
 #' @title Class "niftiExtensionSection"
 #' 
@@ -62,20 +62,21 @@ setClass("niftiExtensionSection",
                    edata=""))
 
 #############################################################################
-## setMethod("show", "nifti")
+## setClass("nifti")
 #############################################################################
 #' @name nifti-class
 #' @title Class "nifti"
 #' 
 #' @description The NIfTI class for medical imaging data.
 #' 
-#' 
 #' @aliases nifti-class show,nifti-method
+#' @param object An object of class \code{nifti}. 
 #' @docType class
 #' @section Objects from the Class: Objects can be created by calls of the form
 #' \code{new("nifti", data, dim, dimnames, ...)} or by calling the \code{nifti}
 #' function.
-#' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
+#' @author Brandon Whitcher \email{bwhitcher@@gmail.com},\cr Andrew Thornton
+#' \email{zeripath@@users.sourcefore.net}
 #' @seealso \code{\linkS4class{anlz}}, \code{\linkS4class{niftiExtension}},
 #' \code{\linkS4class{niftiAuditTrail}}
 #' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
@@ -143,27 +144,23 @@ setClass("niftiExtensionSection",
 #'   }
 #' @section Extends:
 #'   Class \code{"\linkS4class{array}"}, from data part.\cr
-#'   Class \code{"\linkS4class{matrix}"}, by class "array", distance 2, with explicit test and coerce.\cr
-#'   Class \code{"\linkS4class{structure}"}, by class "array", distance 2.\cr
-#'   Class \code{"\linkS4class{vector}"}, by class "array", distance 3, with explicit coerce.\cr
-#'   Class \code{"\linkS4class{vector}"}, by class "array", distance 5, with explicit test and coerce.
+#'   Class \code{"\linkS4class{matrix}"}, by class \dQuote{array}, distance 2,
+#'   with explicit test and coerce.\cr
+#'   Class \code{"\linkS4class{structure}"}, by class \dQuote{array}, distance
+#'   2.\cr
+#'   Class \code{"\linkS4class{vector}"}, by class \dQuote{array}, distance 3,
+#'   with explicit coerce.\cr
+#'   Class \code{"\linkS4class{vector}"}, by class \dQuote{array}, distance 5,
+#'   with explicit test and coerce.
 #' 
 #' @section Methods:
 #'   \describe{
-#'     \item{aux.file<-}{\code{signature(x = "nifti")}: replaces the
-#'                       \dQuote{auxiliary file} field} 
-#'     \item{aux.file}{\code{signature(object = "nifti")}: returns the
-#'                     \dQuote{auxiliary file} field}
-#'     \item{descrip<-}{\code{signature(x = "nifti")}: replaces the
-#'                      \dQuote{description} field}
-#'     \item{descrip}{\code{signature(object = "nifti")}: returns the
-#'                    \dQuote{description} field}
-#'     \item{image}{\code{signature(x = "nifti")}: diplays the image(s)}
-#'     \item{orthographic}{\code{signature(x = "nifti")}: displays the image(s)}
+#'     \item{image}{\code{signature(x = "nifti")}: diplays the image(s).}
+#'     \item{orthographic}{\code{signature(x = "nifti")}: displays the image(s).}
 #'     \item{overlay}{\code{signature(x = "nifti", y = "nifti")}: displays
-#'                    the image(s)}
+#'                    the image(s).}
 #'     \item{show}{\code{signature(object = "nifti")}: prints out a summary
-#'                 of the imaging data}
+#'                 of the imaging data.}
 #'   }
 #' @export
 setClass("nifti",
@@ -211,7 +208,7 @@ setClass("nifti",
                         "intent_name"="character",
                         "magic"="character",
                         "extender"="vector",
-			"reoriented"="logical"),
+                        "reoriented"="logical"),
          prototype("sizeof_hdr"=348,
                    "data_type"="",
                    "db_name"="",
@@ -255,63 +252,15 @@ setClass("nifti",
                    "srow_z"=numeric(4),
                    "intent_name"="",
                    "magic"="n+1",
-		   "extender"=numeric(4),
-		   "reoriented"=FALSE),
+                   "extender"=numeric(4),
+                   "reoriented"=FALSE),
          contains="array")
 
 #############################################################################
-## setClass("niftiExtension")
+## setMethod("show", "nifti")
 #############################################################################
-#' @title Class "niftiExtension"
-#' 
-#' @description An extension of the NIfTI class that allows \dQuote{extensions} that conform
-#' to the NIfTI data standard.
-#' 
-#' 
-#' @name niftiExtension-class
-#' @docType class
-#' @section Objects from the Class: Objects can be created by calls of the form
-#' \code{new("niftiExtension", data, dim, dimnames, ...)}.
-#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}
-#' @seealso \code{\linkS4class{nifti}}, \code{\linkS4class{niftiAuditTrail}}
-#' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
-#' @keywords classes
-#' @examples
-#' showClass("niftiExtension")
-#' @export
-setClass("niftiExtension",
-         representation(extensions="list"),
-         prototype(extensions=list()),
-         contains="nifti")
-
-#############################################################################
-## setClass("niftiAuditTrail")
-#############################################################################
-#' @title Class "niftiAuditTrail"
-#' 
-#' @description An extension of the NIfTI class that adds an audit trail in XML format.
-#' 
-#' 
-#' @name niftiAuditTrail-class
-#' @docType class
-#' @section Objects from the Class: Objects can be created by calls of the form
-#' \code{new("niftiAuditTrail", data, dim, dimnames, ...)}.
-#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}
-#' @seealso \code{\linkS4class{nifti}}, \code{\linkS4class{niftiExtension}}
-#' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
-#' @keywords classes
-#' @examples
-#' 
-#' showClass("niftiAuditTrail")
-#' @export
-setClass("niftiAuditTrail",
-         representation(trail="ANY"),
-         prototype(trail=newAuditTrail()),
-         contains="niftiExtension")
-
-#############################################################################
-## setClass("niftiExtensionSection")
-#############################################################################
+#' @aliases show,nifti-method
+#' @rdname nifti-class
 setMethod("show", "nifti", function(object) {
   cat("NIfTI-1 format", fill=TRUE)
   cat("  Type            :", class(object), fill=TRUE)
@@ -341,7 +290,6 @@ setMethod("show", "nifti", function(object) {
 #############################################################################
 ## setValidity("nifti")
 #############################################################################
-
 setValidity("nifti", function(object) {
   retval <- NULL
   indices <- 1 + 1:object@"dim_"[1]
@@ -402,9 +350,63 @@ setValidity("nifti", function(object) {
 })
 
 #############################################################################
+## setClass("niftiExtension")
+#############################################################################
+#' @title Class "niftiExtension"
+#' 
+#' @description An extension of the NIfTI class that allows \dQuote{extensions}
+#' that conform to the NIfTI data standard.
+#' 
+#' @name niftiExtension-class
+#' @docType class
+#' @section Objects from the Class: Objects can be created by calls of the form
+#' \code{new("niftiExtension", data, dim, dimnames, ...)}.
+#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}
+#' @seealso \code{\linkS4class{nifti}}, \code{\linkS4class{niftiAuditTrail}}
+#' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
+#' @keywords classes
+#' @examples
+#' showClass("niftiExtension")
+#' @export
+setClass("niftiExtension",
+         representation(extensions="list"),
+         prototype(extensions=list()),
+         contains="nifti")
+
+#############################################################################
+## setClass("niftiAuditTrail")
+#############################################################################
+#' @title Class "niftiAuditTrail"
+#' 
+#' @description An extension of the NIfTI class that adds an audit trail in XML format.
+#' 
+#' @name niftiAuditTrail-class
+#' @docType class
+#' @section Objects from the Class: Objects can be created by calls of the form
+#' \code{new("niftiAuditTrail", data, dim, dimnames, ...)}.
+#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}
+#' @seealso \code{\linkS4class{nifti}}, \code{\linkS4class{niftiExtension}}
+#' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
+#' @section Methods:
+#'   \describe{
+#'     \item{show}{\code{signature(object = "niftiAuditTrail")}: prints out a
+#'                 summary of the imaging data.}
+#'   }
+#' @keywords classes
+#' @examples
+#' 
+#' showClass("niftiAuditTrail")
+#' 
+#' @rdname niftiAuditTrail-class
+#' @export
+setClass("niftiAuditTrail",
+         representation(trail="ANY"),
+         prototype(trail=newAuditTrail()),
+         contains="niftiExtension")
+
+#############################################################################
 ## setValidity("niftiExtension")
 #############################################################################
-
 setValidity("niftiExtension", function(object) {
   ## Allegedly setValidity will always check for superclasses.
   ## So we need only check that the list is empty or only contains
@@ -431,7 +433,6 @@ setValidity("niftiExtension", function(object) {
 #############################################################################
 ## setValidity("niftiExtensionSection")
 #############################################################################
-
 setValidity("niftiExtensionSection", function(object) {
   retval <- NULL
   if (object@esize %% 16 != 0) {

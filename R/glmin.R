@@ -19,23 +19,18 @@
 #'
 #' @export
 setGeneric("glmin", function(object) standardGeneric("glmin"))
-
 #' @rdname glmin-methods
 #' @aliases glmin,nifti-method
 #' @export
 setMethod("glmin", "nifti", function(object) { object@"glmin" })
-
 #' @rdname glmin-methods
 #' @aliases glmin,anlz-method
 #' @export
 setMethod("glmin", "anlz", function(object) { object@"glmin" })
-
-
 #' @rdname glmin-methods
 #' @aliases glmin<- 
 #' @export
 setGeneric("glmin<-", function(object, value) { standardGeneric("glmin<-") })
-
 #' @rdname glmin-methods
 #' @aliases glmin<-,nifti-method
 #' @export
@@ -52,7 +47,6 @@ setMethod("glmin<-",
             }                       
             return(object)
           })
-
 #' @rdname glmin-methods
 #' @aliases glmin<-,anlz-method
 #' @export

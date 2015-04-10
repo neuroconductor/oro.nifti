@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("extender", function(object) standardGeneric("extender"))
-
 #' @rdname extender-methods
 #' @aliases extender,nifti-method
 #' @export
 setMethod("extender", "nifti", function(object) { object@"extender" })
-
-#' @rdname extender-methods
-#' @aliases extender,anlz-method
-#' @export
-setMethod("extender", "anlz", function(object) { object@"extender" })
-
-
 #' @rdname extender-methods
 #' @aliases extender<- 
 #' @export
 setGeneric("extender<-", function(object, value) { standardGeneric("extender<-") })
-
 #' @rdname extender-methods
 #' @aliases extender<-,nifti-method
 #' @export
@@ -50,19 +41,5 @@ setMethod("extender<-",
             } else {
               warning("extender is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname extender-methods
-#' @aliases extender<-,anlz-method
-#' @export
-setMethod("extender<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "extender" %in% slotNames(object) ){
-              object@"extender" <- value
-            } else {
-              warning("extender is not in slotNames of object")
-            }
             return(object)
           })

@@ -3,18 +3,14 @@
 \docType{methods}
 \name{qoffset_x-methods}
 \alias{qoffset.x}
-\alias{qoffset.x,anlz-method}
 \alias{qoffset.x,nifti-method}
 \alias{qoffset.x<-}
-\alias{qoffset.x<-,anlz-method}
 \alias{qoffset.x<-,nifti-method}
 \alias{qoffset_x}
-\alias{qoffset_x,anlz-method}
 \alias{qoffset_x,nifti-method}
 \alias{qoffset_x-methods}
 \alias{qoffset_x-methods,}
 \alias{qoffset_x<-}
-\alias{qoffset_x<-,anlz-method}
 \alias{qoffset_x<-,nifti-method}
 \title{Extract Image Attribute \code{qoffset_x}}
 \usage{
@@ -22,25 +18,17 @@ qoffset_x(object)
 
 \S4method{qoffset_x}{nifti}(object)
 
-\S4method{qoffset_x}{anlz}(object)
-
 qoffset_x(object) <- value
 
 \S4method{qoffset_x}{nifti}(object) <- value
-
-\S4method{qoffset_x}{anlz}(object) <- value
 
 qoffset.x(object)
 
 \S4method{qoffset.x}{nifti}(object)
 
-\S4method{qoffset.x}{anlz}(object)
-
 qoffset.x(object) <- value
 
 \S4method{qoffset.x}{nifti}(object) <- value
-
-\S4method{qoffset.x}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

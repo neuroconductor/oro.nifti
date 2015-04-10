@@ -19,23 +19,18 @@
 #'
 #' @export
 setGeneric("db_name", function(object) standardGeneric("db_name"))
-
 #' @rdname db_name-methods
 #' @aliases db_name,nifti-method
 #' @export
 setMethod("db_name", "nifti", function(object) { object@"db_name" })
-
 #' @rdname db_name-methods
 #' @aliases db_name,anlz-method
 #' @export
 setMethod("db_name", "anlz", function(object) { object@"db_name" })
-
-
 #' @rdname db_name-methods
 #' @aliases db_name<- 
 #' @export
 setGeneric("db_name<-", function(object, value) { standardGeneric("db_name<-") })
-
 #' @rdname db_name-methods
 #' @aliases db_name<-,nifti-method
 #' @export
@@ -52,7 +47,6 @@ setMethod("db_name<-",
             }                       
             return(object)
           })
-
 #' @rdname db_name-methods
 #' @aliases db_name<-,anlz-method
 #' @export
@@ -66,28 +60,22 @@ setMethod("db_name<-",
             }
             return(object)
           })
-
 #' @rdname db_name-methods
 #' @aliases db.name,nifti-method
 #' @export
 setGeneric("db.name", function(object) standardGeneric("db.name"))
-
 #' @rdname db_name-methods
 #' @aliases db.name,nifti-method
 #' @export
 setMethod("db.name", "nifti", function(object) { object@"db_name" })
-
 #' @rdname db_name-methods
 #' @aliases db.name,anlz-method
 #' @export
 setMethod("db.name", "anlz", function(object) { object@"db_name" })
-
-
 #' @rdname db_name-methods
 #' @aliases db.name<- 
 #' @export
 setGeneric("db.name<-", function(object, value) { standardGeneric("db.name<-") })
-
 #' @rdname db_name-methods
 #' @aliases db.name<-,nifti-method
 #' @export
@@ -104,7 +92,6 @@ setMethod("db.name<-",
             }                       
             return(object)
           })
-
 #' @rdname db_name-methods
 #' @aliases db.name<-,anlz-method
 #' @export

@@ -3,12 +3,10 @@
 \docType{methods}
 \name{dim_info-methods}
 \alias{dim_info}
-\alias{dim_info,anlz-method}
 \alias{dim_info,nifti-method}
 \alias{dim_info-methods}
 \alias{dim_info-methods,}
 \alias{dim_info<-}
-\alias{dim_info<-,anlz-method}
 \alias{dim_info<-,nifti-method}
 \title{Extract Image Attribute \code{dim_info}}
 \usage{
@@ -16,13 +14,9 @@ dim_info(object)
 
 \S4method{dim_info}{nifti}(object)
 
-\S4method{dim_info}{anlz}(object)
-
 dim_info(object) <- value
 
 \S4method{dim_info}{nifti}(object) <- value
-
-\S4method{dim_info}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

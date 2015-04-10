@@ -4,23 +4,17 @@
 \name{smin-methods}
 \alias{smin}
 \alias{smin,anlz-method}
-\alias{smin,nifti-method}
 \alias{smin-methods}
 \alias{smin-methods,}
 \alias{smin<-}
 \alias{smin<-,anlz-method}
-\alias{smin<-,nifti-method}
 \title{Extract Image Attribute \code{smin}}
 \usage{
 smin(object)
 
-\S4method{smin}{nifti}(object)
-
 \S4method{smin}{anlz}(object)
 
 smin(object) <- value
-
-\S4method{smin}{nifti}(object) <- value
 
 \S4method{smin}{anlz}(object) <- value
 }

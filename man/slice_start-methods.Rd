@@ -3,18 +3,14 @@
 \docType{methods}
 \name{slice_start-methods}
 \alias{slice.start}
-\alias{slice.start,anlz-method}
 \alias{slice.start,nifti-method}
 \alias{slice.start<-}
-\alias{slice.start<-,anlz-method}
 \alias{slice.start<-,nifti-method}
 \alias{slice_start}
-\alias{slice_start,anlz-method}
 \alias{slice_start,nifti-method}
 \alias{slice_start-methods}
 \alias{slice_start-methods,}
 \alias{slice_start<-}
-\alias{slice_start<-,anlz-method}
 \alias{slice_start<-,nifti-method}
 \title{Extract Image Attribute \code{slice_start}}
 \usage{
@@ -22,25 +18,17 @@ slice_start(object)
 
 \S4method{slice_start}{nifti}(object)
 
-\S4method{slice_start}{anlz}(object)
-
 slice_start(object) <- value
 
 \S4method{slice_start}{nifti}(object) <- value
-
-\S4method{slice_start}{anlz}(object) <- value
 
 slice.start(object)
 
 \S4method{slice.start}{nifti}(object)
 
-\S4method{slice.start}{anlz}(object)
-
 slice.start(object) <- value
 
 \S4method{slice.start}{nifti}(object) <- value
-
-\S4method{slice.start}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

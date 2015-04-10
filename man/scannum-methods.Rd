@@ -4,23 +4,17 @@
 \name{scannum-methods}
 \alias{scannum}
 \alias{scannum,anlz-method}
-\alias{scannum,nifti-method}
 \alias{scannum-methods}
 \alias{scannum-methods,}
 \alias{scannum<-}
 \alias{scannum<-,anlz-method}
-\alias{scannum<-,nifti-method}
 \title{Extract Image Attribute \code{scannum}}
 \usage{
 scannum(object)
 
-\S4method{scannum}{nifti}(object)
-
 \S4method{scannum}{anlz}(object)
 
 scannum(object) <- value
-
-\S4method{scannum}{nifti}(object) <- value
 
 \S4method{scannum}{anlz}(object) <- value
 }

@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("scl_slope", function(object) standardGeneric("scl_slope"))
-
 #' @rdname scl_slope-methods
 #' @aliases scl_slope,nifti-method
 #' @export
 setMethod("scl_slope", "nifti", function(object) { object@"scl_slope" })
-
-#' @rdname scl_slope-methods
-#' @aliases scl_slope,anlz-method
-#' @export
-setMethod("scl_slope", "anlz", function(object) { object@"scl_slope" })
-
-
 #' @rdname scl_slope-methods
 #' @aliases scl_slope<- 
 #' @export
 setGeneric("scl_slope<-", function(object, value) { standardGeneric("scl_slope<-") })
-
 #' @rdname scl_slope-methods
 #' @aliases scl_slope<-,nifti-method
 #' @export
@@ -52,42 +43,18 @@ setMethod("scl_slope<-",
             }                       
             return(object)
           })
-
-#' @rdname scl_slope-methods
-#' @aliases scl_slope<-,anlz-method
-#' @export
-setMethod("scl_slope<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "scl_slope" %in% slotNames(object) ){
-              object@"scl_slope" <- value
-            } else {
-              warning("scl_slope is not in slotNames of object")
-            }
-            return(object)
-          })
-
 #' @rdname scl_slope-methods
 #' @aliases scl.slope,nifti-method
 #' @export
 setGeneric("scl.slope", function(object) standardGeneric("scl.slope"))
-
 #' @rdname scl_slope-methods
 #' @aliases scl.slope,nifti-method
 #' @export
 setMethod("scl.slope", "nifti", function(object) { object@"scl_slope" })
-
-#' @rdname scl_slope-methods
-#' @aliases scl.slope,anlz-method
-#' @export
-setMethod("scl.slope", "anlz", function(object) { object@"scl_slope" })
-
-
 #' @rdname scl_slope-methods
 #' @aliases scl.slope<- 
 #' @export
 setGeneric("scl.slope<-", function(object, value) { standardGeneric("scl.slope<-") })
-
 #' @rdname scl_slope-methods
 #' @aliases scl.slope<-,nifti-method
 #' @export
@@ -102,19 +69,5 @@ setMethod("scl.slope<-",
             } else {
               warning("scl_slope is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname scl_slope-methods
-#' @aliases scl.slope<-,anlz-method
-#' @export
-setMethod("scl.slope<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "scl_slope" %in% slotNames(object) ){
-              object@"scl_slope" <- value
-            } else {
-              warning("scl_slope is not in slotNames of object")
-            }
             return(object)
           })

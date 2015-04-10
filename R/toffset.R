@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("toffset", function(object) standardGeneric("toffset"))
-
 #' @rdname toffset-methods
 #' @aliases toffset,nifti-method
 #' @export
 setMethod("toffset", "nifti", function(object) { object@"toffset" })
-
-#' @rdname toffset-methods
-#' @aliases toffset,anlz-method
-#' @export
-setMethod("toffset", "anlz", function(object) { object@"toffset" })
-
-
 #' @rdname toffset-methods
 #' @aliases toffset<- 
 #' @export
 setGeneric("toffset<-", function(object, value) { standardGeneric("toffset<-") })
-
 #' @rdname toffset-methods
 #' @aliases toffset<-,nifti-method
 #' @export
@@ -50,19 +41,5 @@ setMethod("toffset<-",
             } else {
               warning("toffset is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname toffset-methods
-#' @aliases toffset<-,anlz-method
-#' @export
-setMethod("toffset<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "toffset" %in% slotNames(object) ){
-              object@"toffset" <- value
-            } else {
-              warning("toffset is not in slotNames of object")
-            }
             return(object)
           })

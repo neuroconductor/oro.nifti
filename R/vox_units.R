@@ -19,40 +19,14 @@
 #'
 #' @export
 setGeneric("vox_units", function(object) standardGeneric("vox_units"))
-
-#' @rdname vox_units-methods
-#' @aliases vox_units,nifti-method
-#' @export
-setMethod("vox_units", "nifti", function(object) { object@"vox_units" })
-
 #' @rdname vox_units-methods
 #' @aliases vox_units,anlz-method
 #' @export
 setMethod("vox_units", "anlz", function(object) { object@"vox_units" })
-
-
 #' @rdname vox_units-methods
 #' @aliases vox_units<- 
 #' @export
 setGeneric("vox_units<-", function(object, value) { standardGeneric("vox_units<-") })
-
-#' @rdname vox_units-methods
-#' @aliases vox_units<-,nifti-method
-#' @export
-setMethod("vox_units<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "vox_units" %in% slotNames(object) ){
-              object@"vox_units" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("vox_units <-", value))               
-            } else {
-              warning("vox_units is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname vox_units-methods
 #' @aliases vox_units<-,anlz-method
 #' @export
@@ -66,45 +40,18 @@ setMethod("vox_units<-",
             }
             return(object)
           })
-
 #' @rdname vox_units-methods
 #' @aliases vox.units,nifti-method
 #' @export
 setGeneric("vox.units", function(object) standardGeneric("vox.units"))
-
-#' @rdname vox_units-methods
-#' @aliases vox.units,nifti-method
-#' @export
-setMethod("vox.units", "nifti", function(object) { object@"vox_units" })
-
 #' @rdname vox_units-methods
 #' @aliases vox.units,anlz-method
 #' @export
 setMethod("vox.units", "anlz", function(object) { object@"vox_units" })
-
-
 #' @rdname vox_units-methods
 #' @aliases vox.units<- 
 #' @export
 setGeneric("vox.units<-", function(object, value) { standardGeneric("vox.units<-") })
-
-#' @rdname vox_units-methods
-#' @aliases vox.units<-,nifti-method
-#' @export
-setMethod("vox.units<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "vox_units" %in% slotNames(object) ){
-              object@"vox_units" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("vox_units <-", value))               
-            } else {
-              warning("vox_units is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname vox_units-methods
 #' @aliases vox.units<-,anlz-method
 #' @export

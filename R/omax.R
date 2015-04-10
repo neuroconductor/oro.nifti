@@ -19,40 +19,14 @@
 #'
 #' @export
 setGeneric("omax", function(object) standardGeneric("omax"))
-
-#' @rdname omax-methods
-#' @aliases omax,nifti-method
-#' @export
-setMethod("omax", "nifti", function(object) { object@"omax" })
-
 #' @rdname omax-methods
 #' @aliases omax,anlz-method
 #' @export
 setMethod("omax", "anlz", function(object) { object@"omax" })
-
-
 #' @rdname omax-methods
 #' @aliases omax<- 
 #' @export
 setGeneric("omax<-", function(object, value) { standardGeneric("omax<-") })
-
-#' @rdname omax-methods
-#' @aliases omax<-,nifti-method
-#' @export
-setMethod("omax<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "omax" %in% slotNames(object) ){
-              object@"omax" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("omax <-", value))               
-            } else {
-              warning("omax is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname omax-methods
 #' @aliases omax<-,anlz-method
 #' @export

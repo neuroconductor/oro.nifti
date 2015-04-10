@@ -32,23 +32,18 @@
 #' }
 #' @export
 setGeneric("descrip", function(object) standardGeneric("descrip"))
-
 #' @rdname descrip-methods
 #' @aliases descrip,nifti-method
 #' @export
 setMethod("descrip", "nifti", function(object) { object@"descrip" })
-
 #' @rdname descrip-methods
 #' @aliases descrip,anlz-method
 #' @export
 setMethod("descrip", "anlz", function(object) { object@"descrip" })
-
-
 #' @rdname descrip-methods
 #' @aliases descrip<- 
 #' @export
 setGeneric("descrip<-", function(object, value) { standardGeneric("descrip<-") })
-
 #' @rdname descrip-methods
 #' @aliases descrip<-,nifti-method
 #' @export
@@ -65,7 +60,6 @@ setMethod("descrip<-",
             }                       
             return(object)
           })
-
 #' @rdname descrip-methods
 #' @aliases descrip<-,anlz-method
 #' @export

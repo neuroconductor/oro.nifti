@@ -4,23 +4,17 @@
 \name{exp_date-methods}
 \alias{exp_date}
 \alias{exp_date,anlz-method}
-\alias{exp_date,nifti-method}
 \alias{exp_date-methods}
 \alias{exp_date-methods,}
 \alias{exp_date<-}
 \alias{exp_date<-,anlz-method}
-\alias{exp_date<-,nifti-method}
 \title{Extract Image Attribute \code{exp_date}}
 \usage{
 exp_date(object)
 
-\S4method{exp_date}{nifti}(object)
-
 \S4method{exp_date}{anlz}(object)
 
 exp_date(object) <- value
-
-\S4method{exp_date}{nifti}(object) <- value
 
 \S4method{exp_date}{anlz}(object) <- value
 }

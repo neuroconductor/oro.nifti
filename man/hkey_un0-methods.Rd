@@ -7,38 +7,27 @@
 \alias{hkey.un0,nifti-method}
 \alias{hkey.un0<-}
 \alias{hkey.un0<-,anlz-method}
-\alias{hkey.un0<-,nifti-method}
 \alias{hkey_un0}
 \alias{hkey_un0,anlz-method}
-\alias{hkey_un0,nifti-method}
 \alias{hkey_un0-methods}
 \alias{hkey_un0-methods,}
 \alias{hkey_un0<-}
 \alias{hkey_un0<-,anlz-method}
-\alias{hkey_un0<-,nifti-method}
 \title{Extract Image Attribute \code{hkey_un0}}
 \usage{
 hkey_un0(object)
-
-\S4method{hkey_un0}{nifti}(object)
 
 \S4method{hkey_un0}{anlz}(object)
 
 hkey_un0(object) <- value
 
-\S4method{hkey_un0}{nifti}(object) <- value
-
 \S4method{hkey_un0}{anlz}(object) <- value
 
 hkey.un0(object)
 
-\S4method{hkey.un0}{nifti}(object)
-
 \S4method{hkey.un0}{anlz}(object)
 
 hkey.un0(object) <- value
-
-\S4method{hkey.un0}{nifti}(object) <- value
 
 \S4method{hkey.un0}{anlz}(object) <- value
 }

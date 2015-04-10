@@ -7,38 +7,27 @@
 \alias{vols.added,nifti-method}
 \alias{vols.added<-}
 \alias{vols.added<-,anlz-method}
-\alias{vols.added<-,nifti-method}
 \alias{vols_added}
 \alias{vols_added,anlz-method}
-\alias{vols_added,nifti-method}
 \alias{vols_added-methods}
 \alias{vols_added-methods,}
 \alias{vols_added<-}
 \alias{vols_added<-,anlz-method}
-\alias{vols_added<-,nifti-method}
 \title{Extract Image Attribute \code{vols_added}}
 \usage{
 vols_added(object)
-
-\S4method{vols_added}{nifti}(object)
 
 \S4method{vols_added}{anlz}(object)
 
 vols_added(object) <- value
 
-\S4method{vols_added}{nifti}(object) <- value
-
 \S4method{vols_added}{anlz}(object) <- value
 
 vols.added(object)
 
-\S4method{vols.added}{nifti}(object)
-
 \S4method{vols.added}{anlz}(object)
 
 vols.added(object) <- value
-
-\S4method{vols.added}{nifti}(object) <- value
 
 \S4method{vols.added}{anlz}(object) <- value
 }

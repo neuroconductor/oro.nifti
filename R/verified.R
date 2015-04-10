@@ -19,40 +19,14 @@
 #'
 #' @export
 setGeneric("verified", function(object) standardGeneric("verified"))
-
-#' @rdname verified-methods
-#' @aliases verified,nifti-method
-#' @export
-setMethod("verified", "nifti", function(object) { object@"verified" })
-
 #' @rdname verified-methods
 #' @aliases verified,anlz-method
 #' @export
 setMethod("verified", "anlz", function(object) { object@"verified" })
-
-
 #' @rdname verified-methods
 #' @aliases verified<- 
 #' @export
 setGeneric("verified<-", function(object, value) { standardGeneric("verified<-") })
-
-#' @rdname verified-methods
-#' @aliases verified<-,nifti-method
-#' @export
-setMethod("verified<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "verified" %in% slotNames(object) ){
-              object@"verified" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("verified <-", value))               
-            } else {
-              warning("verified is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname verified-methods
 #' @aliases verified<-,anlz-method
 #' @export

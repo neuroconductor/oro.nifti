@@ -909,6 +909,25 @@ Class:   numeric   numeric character
 > 
 > 
 > cleanEx()
+> nameEx("niftiops")
+> ### * niftiops
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: niftiops
+> ### Title: Operations for NIfTI Objects
+> ### Aliases: Ops,nifti,nifti-method Ops,nifti,numeric-method
+> ###   Ops,numeric,nifti-method niftiops
+> 
+> ### ** Examples
+> 
+> img04 <- nifti()
+> img05 <- nifti()
+> img06 <- img04 + img05
+> 
+> 
+> 
+> cleanEx()
 > nameEx("orientation-methods")
 > ### * orientation-methods
 > 
@@ -1306,7 +1325,7 @@ QForm_code and SForm_code unset: Orientation by Method 1.
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  10.013 0.115 10.142 0 0 
+Time elapsed:  9.924 0.156 10.093 0 0 
 > grDevices::dev.off()
 null device 
           1 

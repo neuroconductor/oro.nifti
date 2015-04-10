@@ -4,23 +4,17 @@
 \name{omax-methods}
 \alias{omax}
 \alias{omax,anlz-method}
-\alias{omax,nifti-method}
 \alias{omax-methods}
 \alias{omax-methods,}
 \alias{omax<-}
 \alias{omax<-,anlz-method}
-\alias{omax<-,nifti-method}
 \title{Extract Image Attribute \code{omax}}
 \usage{
 omax(object)
 
-\S4method{omax}{nifti}(object)
-
 \S4method{omax}{anlz}(object)
 
 omax(object) <- value
-
-\S4method{omax}{nifti}(object) <- value
 
 \S4method{omax}{anlz}(object) <- value
 }

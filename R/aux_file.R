@@ -32,23 +32,18 @@
 #' aux.file(mniRL)
 #' @export
 setGeneric("aux.file", function(object) standardGeneric("aux.file"))
-
 #' @rdname aux_file-methods
 #' @aliases aux.file,nifti-method
 #' @export
 setMethod("aux.file", "nifti", function(object) { object@"aux_file" })
-
 #' @rdname aux_file-methods
 #' @aliases aux.file,anlz-method
 #' @export
 setMethod("aux.file", "anlz", function(object) { object@"aux_file" })
-
-
 #' @rdname aux_file-methods
 #' @aliases aux.file<- 
 #' @export
 setGeneric("aux.file<-", function(object, value) { standardGeneric("aux.file<-") })
-
 #' @rdname aux_file-methods
 #' @aliases aux.file<-,nifti-method
 #' @export
@@ -65,7 +60,6 @@ setMethod("aux.file<-",
             }                       
             return(object)
           })
-
 #' @rdname aux_file-methods
 #' @aliases aux.file<-,anlz-method
 #' @export
@@ -79,28 +73,22 @@ setMethod("aux.file<-",
             }
             return(object)
           })
-
 #' @rdname aux_file-methods
 #' @aliases aux.file,nifti-method
 #' @export
 setGeneric("aux.file", function(object) standardGeneric("aux.file"))
-
 #' @rdname aux_file-methods
 #' @aliases aux.file,nifti-method
 #' @export
 setMethod("aux.file", "nifti", function(object) { object@"aux_file" })
-
 #' @rdname aux_file-methods
 #' @aliases aux.file,anlz-method
 #' @export
 setMethod("aux.file", "anlz", function(object) { object@"aux_file" })
-
-
 #' @rdname aux_file-methods
 #' @aliases aux.file<- 
 #' @export
 setGeneric("aux.file<-", function(object, value) { standardGeneric("aux.file<-") })
-
 #' @rdname aux_file-methods
 #' @aliases aux.file<-,nifti-method
 #' @export
@@ -117,7 +105,6 @@ setMethod("aux.file<-",
             }                       
             return(object)
           })
-
 #' @rdname aux_file-methods
 #' @aliases aux.file<-,anlz-method
 #' @export

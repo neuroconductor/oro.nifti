@@ -7,38 +7,27 @@
 \alias{patient.id,nifti-method}
 \alias{patient.id<-}
 \alias{patient.id<-,anlz-method}
-\alias{patient.id<-,nifti-method}
 \alias{patient_id}
 \alias{patient_id,anlz-method}
-\alias{patient_id,nifti-method}
 \alias{patient_id-methods}
 \alias{patient_id-methods,}
 \alias{patient_id<-}
 \alias{patient_id<-,anlz-method}
-\alias{patient_id<-,nifti-method}
 \title{Extract Image Attribute \code{patient_id}}
 \usage{
 patient_id(object)
-
-\S4method{patient_id}{nifti}(object)
 
 \S4method{patient_id}{anlz}(object)
 
 patient_id(object) <- value
 
-\S4method{patient_id}{nifti}(object) <- value
-
 \S4method{patient_id}{anlz}(object) <- value
 
 patient.id(object)
 
-\S4method{patient.id}{nifti}(object)
-
 \S4method{patient.id}{anlz}(object)
 
 patient.id(object) <- value
-
-\S4method{patient.id}{nifti}(object) <- value
 
 \S4method{patient.id}{anlz}(object) <- value
 }

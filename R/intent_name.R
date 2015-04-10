@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("intent_name", function(object) standardGeneric("intent_name"))
-
 #' @rdname intent_name-methods
 #' @aliases intent_name,nifti-method
 #' @export
 setMethod("intent_name", "nifti", function(object) { object@"intent_name" })
-
-#' @rdname intent_name-methods
-#' @aliases intent_name,anlz-method
-#' @export
-setMethod("intent_name", "anlz", function(object) { object@"intent_name" })
-
-
 #' @rdname intent_name-methods
 #' @aliases intent_name<- 
 #' @export
 setGeneric("intent_name<-", function(object, value) { standardGeneric("intent_name<-") })
-
 #' @rdname intent_name-methods
 #' @aliases intent_name<-,nifti-method
 #' @export
@@ -52,42 +43,18 @@ setMethod("intent_name<-",
             }                       
             return(object)
           })
-
-#' @rdname intent_name-methods
-#' @aliases intent_name<-,anlz-method
-#' @export
-setMethod("intent_name<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "intent_name" %in% slotNames(object) ){
-              object@"intent_name" <- value
-            } else {
-              warning("intent_name is not in slotNames of object")
-            }
-            return(object)
-          })
-
 #' @rdname intent_name-methods
 #' @aliases intent.name,nifti-method
 #' @export
 setGeneric("intent.name", function(object) standardGeneric("intent.name"))
-
 #' @rdname intent_name-methods
 #' @aliases intent.name,nifti-method
 #' @export
 setMethod("intent.name", "nifti", function(object) { object@"intent_name" })
-
-#' @rdname intent_name-methods
-#' @aliases intent.name,anlz-method
-#' @export
-setMethod("intent.name", "anlz", function(object) { object@"intent_name" })
-
-
 #' @rdname intent_name-methods
 #' @aliases intent.name<- 
 #' @export
 setGeneric("intent.name<-", function(object, value) { standardGeneric("intent.name<-") })
-
 #' @rdname intent_name-methods
 #' @aliases intent.name<-,nifti-method
 #' @export
@@ -102,19 +69,5 @@ setMethod("intent.name<-",
             } else {
               warning("intent_name is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname intent_name-methods
-#' @aliases intent.name<-,anlz-method
-#' @export
-setMethod("intent.name<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "intent_name" %in% slotNames(object) ){
-              object@"intent_name" <- value
-            } else {
-              warning("intent_name is not in slotNames of object")
-            }
             return(object)
           })

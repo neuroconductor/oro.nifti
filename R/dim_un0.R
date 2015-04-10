@@ -19,40 +19,14 @@
 #'
 #' @export
 setGeneric("dim_un0", function(object) standardGeneric("dim_un0"))
-
-#' @rdname dim_un0-methods
-#' @aliases dim_un0,nifti-method
-#' @export
-setMethod("dim_un0", "nifti", function(object) { object@"dim_un0" })
-
 #' @rdname dim_un0-methods
 #' @aliases dim_un0,anlz-method
 #' @export
 setMethod("dim_un0", "anlz", function(object) { object@"dim_un0" })
-
-
 #' @rdname dim_un0-methods
 #' @aliases dim_un0<- 
 #' @export
 setGeneric("dim_un0<-", function(object, value) { standardGeneric("dim_un0<-") })
-
-#' @rdname dim_un0-methods
-#' @aliases dim_un0<-,nifti-method
-#' @export
-setMethod("dim_un0<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "dim_un0" %in% slotNames(object) ){
-              object@"dim_un0" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("dim_un0 <-", value))               
-            } else {
-              warning("dim_un0 is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname dim_un0-methods
 #' @aliases dim_un0<-,anlz-method
 #' @export

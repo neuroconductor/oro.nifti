@@ -19,40 +19,14 @@
 #'
 #' @export
 setGeneric("cal_units", function(object) standardGeneric("cal_units"))
-
-#' @rdname cal_units-methods
-#' @aliases cal_units,nifti-method
-#' @export
-setMethod("cal_units", "nifti", function(object) { object@"cal_units" })
-
 #' @rdname cal_units-methods
 #' @aliases cal_units,anlz-method
 #' @export
 setMethod("cal_units", "anlz", function(object) { object@"cal_units" })
-
-
 #' @rdname cal_units-methods
 #' @aliases cal_units<- 
 #' @export
 setGeneric("cal_units<-", function(object, value) { standardGeneric("cal_units<-") })
-
-#' @rdname cal_units-methods
-#' @aliases cal_units<-,nifti-method
-#' @export
-setMethod("cal_units<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "cal_units" %in% slotNames(object) ){
-              object@"cal_units" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("cal_units <-", value))               
-            } else {
-              warning("cal_units is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname cal_units-methods
 #' @aliases cal_units<-,anlz-method
 #' @export
@@ -66,45 +40,18 @@ setMethod("cal_units<-",
             }
             return(object)
           })
-
 #' @rdname cal_units-methods
 #' @aliases cal.units,nifti-method
 #' @export
 setGeneric("cal.units", function(object) standardGeneric("cal.units"))
-
-#' @rdname cal_units-methods
-#' @aliases cal.units,nifti-method
-#' @export
-setMethod("cal.units", "nifti", function(object) { object@"cal_units" })
-
 #' @rdname cal_units-methods
 #' @aliases cal.units,anlz-method
 #' @export
 setMethod("cal.units", "anlz", function(object) { object@"cal_units" })
-
-
 #' @rdname cal_units-methods
 #' @aliases cal.units<- 
 #' @export
 setGeneric("cal.units<-", function(object, value) { standardGeneric("cal.units<-") })
-
-#' @rdname cal_units-methods
-#' @aliases cal.units<-,nifti-method
-#' @export
-setMethod("cal.units<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "cal_units" %in% slotNames(object) ){
-              object@"cal_units" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("cal_units <-", value))               
-            } else {
-              warning("cal_units is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname cal_units-methods
 #' @aliases cal.units<-,anlz-method
 #' @export

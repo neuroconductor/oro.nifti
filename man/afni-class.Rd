@@ -82,13 +82,14 @@ The AFNI class for medical imaging data.
 \section{Extends}{
 
   Class \code{"\linkS4class{array}"}, from data part.\cr
-  Class \code{"\linkS4class{matrix}"}, by class "array", distance 2, with
-  explicit test and coerce.\cr
-  Class \code{"\linkS4class{structure}"}, by class "array", distance 2.\cr
-  Class \code{"\linkS4class{vector}"}, by class "array", distance 3, with
-  explicit coerce.\cr
-  Class \code{"\linkS4class{vector}"}, by class "array", distance 5, with
-  explicit test and coerce.
+  Class \code{"\linkS4class{matrix}"}, by class \dQuote{array}, distance 2,
+  with explicit test and coerce.\cr
+  Class \code{"\linkS4class{structure}"}, by class \dQuote{array}, distance
+  2.\cr
+  Class \code{"\linkS4class{vector}"}, by class \dQuote{array}, distance 3,
+  with explicit coerce.\cr
+  Class \code{"\linkS4class{vector}"}, by class \dQuote{array}, distance 5,
+  with explicit test and coerce.
 }
 \examples{
 showClass("afni")

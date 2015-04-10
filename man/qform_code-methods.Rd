@@ -3,18 +3,14 @@
 \docType{methods}
 \name{qform_code-methods}
 \alias{qform.code}
-\alias{qform.code,anlz-method}
 \alias{qform.code,nifti-method}
 \alias{qform.code<-}
-\alias{qform.code<-,anlz-method}
 \alias{qform.code<-,nifti-method}
 \alias{qform_code}
-\alias{qform_code,anlz-method}
 \alias{qform_code,nifti-method}
 \alias{qform_code-methods}
 \alias{qform_code-methods,}
 \alias{qform_code<-}
-\alias{qform_code<-,anlz-method}
 \alias{qform_code<-,nifti-method}
 \title{Extract Image Attribute \code{qform_code}}
 \usage{
@@ -22,25 +18,17 @@ qform_code(object)
 
 \S4method{qform_code}{nifti}(object)
 
-\S4method{qform_code}{anlz}(object)
-
 qform_code(object) <- value
 
 \S4method{qform_code}{nifti}(object) <- value
-
-\S4method{qform_code}{anlz}(object) <- value
 
 qform.code(object)
 
 \S4method{qform.code}{nifti}(object)
 
-\S4method{qform.code}{anlz}(object)
-
 qform.code(object) <- value
 
 \S4method{qform.code}{nifti}(object) <- value
-
-\S4method{qform.code}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

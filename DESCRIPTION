@@ -94,7 +94,6 @@ Collate:
     'quatern_d.R'
     'quaternion.R'
     'regular.R'
-    'reoriented.R'
     'session_error.R'
     'sizeof_hdr.R'
     'slice_code.R'

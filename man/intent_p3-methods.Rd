@@ -3,18 +3,14 @@
 \docType{methods}
 \name{intent_p3-methods}
 \alias{intent.p3}
-\alias{intent.p3,anlz-method}
 \alias{intent.p3,nifti-method}
 \alias{intent.p3<-}
-\alias{intent.p3<-,anlz-method}
 \alias{intent.p3<-,nifti-method}
 \alias{intent_p3}
-\alias{intent_p3,anlz-method}
 \alias{intent_p3,nifti-method}
 \alias{intent_p3-methods}
 \alias{intent_p3-methods,}
 \alias{intent_p3<-}
-\alias{intent_p3<-,anlz-method}
 \alias{intent_p3<-,nifti-method}
 \title{Extract Image Attribute \code{intent_p3}}
 \usage{
@@ -22,25 +18,17 @@ intent_p3(object)
 
 \S4method{intent_p3}{nifti}(object)
 
-\S4method{intent_p3}{anlz}(object)
-
 intent_p3(object) <- value
 
 \S4method{intent_p3}{nifti}(object) <- value
-
-\S4method{intent_p3}{anlz}(object) <- value
 
 intent.p3(object)
 
 \S4method{intent.p3}{nifti}(object)
 
-\S4method{intent.p3}{anlz}(object)
-
 intent.p3(object) <- value
 
 \S4method{intent.p3}{nifti}(object) <- value
-
-\S4method{intent.p3}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

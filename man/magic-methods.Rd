@@ -3,12 +3,10 @@
 \docType{methods}
 \name{magic-methods}
 \alias{magic}
-\alias{magic,anlz-method}
 \alias{magic,nifti-method}
 \alias{magic-methods}
 \alias{magic-methods,}
 \alias{magic<-}
-\alias{magic<-,anlz-method}
 \alias{magic<-,nifti-method}
 \title{Extract Image Attribute \code{magic}}
 \usage{
@@ -16,13 +14,9 @@ magic(object)
 
 \S4method{magic}{nifti}(object)
 
-\S4method{magic}{anlz}(object)
-
 magic(object) <- value
 
 \S4method{magic}{nifti}(object) <- value
-
-\S4method{magic}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

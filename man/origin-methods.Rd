@@ -4,23 +4,17 @@
 \name{origin-methods}
 \alias{origin}
 \alias{origin,anlz-method}
-\alias{origin,nifti-method}
 \alias{origin-methods}
 \alias{origin-methods,}
 \alias{origin<-}
 \alias{origin<-,anlz-method}
-\alias{origin<-,nifti-method}
 \title{Extract Image Attribute \code{origin}}
 \usage{
 origin(object)
 
-\S4method{origin}{nifti}(object)
-
 \S4method{origin}{anlz}(object)
 
 origin(object) <- value
-
-\S4method{origin}{nifti}(object) <- value
 
 \S4method{origin}{anlz}(object) <- value
 }

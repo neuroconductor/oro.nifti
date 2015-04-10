@@ -1,17 +1,49 @@
 makefunc = function(funcname, type="numeric", ex_text = NULL, 
                     write = FALSE, remove = FALSE) {
   cat("#", funcname, fill = TRUE)
-  if (grepl("[_]|[.]", funcname) && ! funcname %in% fields$S3) {
-    x = readLines('Generic_Function_with_.R')
-    f_no_dot = gsub("[.]", "_", funcname)
-    f_dot = gsub("[_]", ".", funcname)
-    x = gsub("%ff%", f_no_dot, x)
-    x = gsub("%.%", f_dot, x)
-  } else {
-    x = readLines('Generic_Function.R')
-    f_no_dot = funcname
-    x = gsub("%ff%", f_no_dot, x)
+  x = readLines("Generic_Function.R")
+  f_no_dot = gsub("[.]", "_", funcname)
+  f_dot = gsub("[_]", ".", funcname)
+  if (f_no_dot %in% fields$nifti) {
+    x = c(x, readLines("Generic_nifti_accessor.R"))
   }
+  if (f_no_dot %in% fields$analyze) {
+    x = c(x, readLines("Generic_analyze_accessor.R"))
+  }
+  if ((f_no_dot %in% fields$nifti || f_no_dot %in% fields$analyze) && 
+      funcname != "sizeof_hdr") {
+    x = c(x, readLines("Generic_replacement.R"))
+    if (f_no_dot %in% fields$nifti) {
+      x = c(x, readLines("Generic_nifti_replacement.R"))
+    }
+    if (f_no_dot %in% fields$analyze) {
+      x = c(x, readLines("Generic_analyze_replacement.R"))
+    }
+  } else {
+    print("Holy Shit!")
+    # x = sub("#' @param value is the value to assign to the \\code\\{%ff%\\} field.", "#'", x)
+    x = sub("#' @param value.*", "#'", x)
+  }
+  if (grepl("[_]|[.]", funcname) && ! f_no_dot %in% fields$S3) {
+    x = c(x, readLines("Generic_accessor_.R"))
+    if (f_no_dot %in% fields$nifti) {
+      x = c(x, readLines("Generic_nifti_accessor_.R"))
+    }
+    if (f_no_dot %in% fields$analyze) {
+      x = c(x, readLines("Generic_analyze_accessor_.R"))
+    }
+  }
+  if (grepl("[_]|[.]", funcname) && ! f_no_dot %in% fields$S3 && f_no_dot != "sizeof_hdr") {
+    x = c(x, readLines("Generic_replacement_.R"))
+    if (f_no_dot %in% fields$nifti) {
+      x = c(x, readLines("Generic_nifti_replacement_.R"))
+    }
+    if (f_no_dot %in% fields$analyze) {
+      x = c(x, readLines("Generic_analyze_replacement_.R"))
+    }
+  }  
+  x = gsub("%ff%", f_no_dot, x)
+  x = gsub("%.%", f_dot, x)
   x = gsub("%%", funcname, x)
   x = gsub("%type", type, x)
   if (! is.null(ex_text)) {
@@ -22,9 +54,13 @@ makefunc = function(funcname, type="numeric", ex_text = NULL,
   } else {
     x = gsub("%example%", "#'", x)
   }
-  if (write) writeLines(text = x, con = paste0("R/", f_no_dot, ".R"))
-  if (remove) file.remove(paste0("R/", f_no_dot, ".R"))
-  return(TRUE)
+  if (write) {
+    writeLines(text = x, con = paste0("R/", f_no_dot, ".R"))
+  }
+  if (remove) {
+    file.remove(paste0("R/", f_no_dot, ".R"))
+  }
+  invisible()
 }
 
 remove <- FALSE
@@ -156,7 +192,7 @@ makefunc("srow_z", write=TRUE, remove=remove)
 makefunc("intent_name", write=TRUE, remove=remove)
 makefunc("magic", write=TRUE, remove=remove)
 makefunc("extender", write=TRUE, remove=remove)
-makefunc("reoriented", write=TRUE, remove=remove)
+# makefunc("reoriented", write=TRUE, remove=remove)
 ##
 ## ANALYZE header fields
 ##

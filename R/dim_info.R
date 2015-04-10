@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("dim_info", function(object) standardGeneric("dim_info"))
-
 #' @rdname dim_info-methods
 #' @aliases dim_info,nifti-method
 #' @export
 setMethod("dim_info", "nifti", function(object) { object@"dim_info" })
-
-#' @rdname dim_info-methods
-#' @aliases dim_info,anlz-method
-#' @export
-setMethod("dim_info", "anlz", function(object) { object@"dim_info" })
-
-
 #' @rdname dim_info-methods
 #' @aliases dim_info<- 
 #' @export
 setGeneric("dim_info<-", function(object, value) { standardGeneric("dim_info<-") })
-
 #' @rdname dim_info-methods
 #' @aliases dim_info<-,nifti-method
 #' @export
@@ -50,19 +41,5 @@ setMethod("dim_info<-",
             } else {
               warning("dim_info is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname dim_info-methods
-#' @aliases dim_info<-,anlz-method
-#' @export
-setMethod("dim_info<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "dim_info" %in% slotNames(object) ){
-              object@"dim_info" <- value
-            } else {
-              warning("dim_info is not in slotNames of object")
-            }
             return(object)
           })

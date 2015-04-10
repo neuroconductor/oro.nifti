@@ -3,18 +3,14 @@
 \docType{methods}
 \name{intent_name-methods}
 \alias{intent.name}
-\alias{intent.name,anlz-method}
 \alias{intent.name,nifti-method}
 \alias{intent.name<-}
-\alias{intent.name<-,anlz-method}
 \alias{intent.name<-,nifti-method}
 \alias{intent_name}
-\alias{intent_name,anlz-method}
 \alias{intent_name,nifti-method}
 \alias{intent_name-methods}
 \alias{intent_name-methods,}
 \alias{intent_name<-}
-\alias{intent_name<-,anlz-method}
 \alias{intent_name<-,nifti-method}
 \title{Extract Image Attribute \code{intent_name}}
 \usage{
@@ -22,25 +18,17 @@ intent_name(object)
 
 \S4method{intent_name}{nifti}(object)
 
-\S4method{intent_name}{anlz}(object)
-
 intent_name(object) <- value
 
 \S4method{intent_name}{nifti}(object) <- value
-
-\S4method{intent_name}{anlz}(object) <- value
 
 intent.name(object)
 
 \S4method{intent.name}{nifti}(object)
 
-\S4method{intent.name}{anlz}(object)
-
 intent.name(object) <- value
 
 \S4method{intent.name}{nifti}(object) <- value
-
-\S4method{intent.name}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

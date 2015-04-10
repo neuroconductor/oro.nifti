@@ -3,18 +3,14 @@
 \docType{methods}
 \name{sform_code-methods}
 \alias{sform.code}
-\alias{sform.code,anlz-method}
 \alias{sform.code,nifti-method}
 \alias{sform.code<-}
-\alias{sform.code<-,anlz-method}
 \alias{sform.code<-,nifti-method}
 \alias{sform_code}
-\alias{sform_code,anlz-method}
 \alias{sform_code,nifti-method}
 \alias{sform_code-methods}
 \alias{sform_code-methods,}
 \alias{sform_code<-}
-\alias{sform_code<-,anlz-method}
 \alias{sform_code<-,nifti-method}
 \title{Extract Image Attribute \code{sform_code}}
 \usage{
@@ -22,25 +18,17 @@ sform_code(object)
 
 \S4method{sform_code}{nifti}(object)
 
-\S4method{sform_code}{anlz}(object)
-
 sform_code(object) <- value
 
 \S4method{sform_code}{nifti}(object) <- value
-
-\S4method{sform_code}{anlz}(object) <- value
 
 sform.code(object)
 
 \S4method{sform.code}{nifti}(object)
 
-\S4method{sform.code}{anlz}(object)
-
 sform.code(object) <- value
 
 \S4method{sform.code}{nifti}(object) <- value
-
-\S4method{sform.code}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

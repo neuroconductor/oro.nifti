@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("qoffset_x", function(object) standardGeneric("qoffset_x"))
-
 #' @rdname qoffset_x-methods
 #' @aliases qoffset_x,nifti-method
 #' @export
 setMethod("qoffset_x", "nifti", function(object) { object@"qoffset_x" })
-
-#' @rdname qoffset_x-methods
-#' @aliases qoffset_x,anlz-method
-#' @export
-setMethod("qoffset_x", "anlz", function(object) { object@"qoffset_x" })
-
-
 #' @rdname qoffset_x-methods
 #' @aliases qoffset_x<- 
 #' @export
 setGeneric("qoffset_x<-", function(object, value) { standardGeneric("qoffset_x<-") })
-
 #' @rdname qoffset_x-methods
 #' @aliases qoffset_x<-,nifti-method
 #' @export
@@ -52,42 +43,18 @@ setMethod("qoffset_x<-",
             }                       
             return(object)
           })
-
-#' @rdname qoffset_x-methods
-#' @aliases qoffset_x<-,anlz-method
-#' @export
-setMethod("qoffset_x<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "qoffset_x" %in% slotNames(object) ){
-              object@"qoffset_x" <- value
-            } else {
-              warning("qoffset_x is not in slotNames of object")
-            }
-            return(object)
-          })
-
 #' @rdname qoffset_x-methods
 #' @aliases qoffset.x,nifti-method
 #' @export
 setGeneric("qoffset.x", function(object) standardGeneric("qoffset.x"))
-
 #' @rdname qoffset_x-methods
 #' @aliases qoffset.x,nifti-method
 #' @export
 setMethod("qoffset.x", "nifti", function(object) { object@"qoffset_x" })
-
-#' @rdname qoffset_x-methods
-#' @aliases qoffset.x,anlz-method
-#' @export
-setMethod("qoffset.x", "anlz", function(object) { object@"qoffset_x" })
-
-
 #' @rdname qoffset_x-methods
 #' @aliases qoffset.x<- 
 #' @export
 setGeneric("qoffset.x<-", function(object, value) { standardGeneric("qoffset.x<-") })
-
 #' @rdname qoffset_x-methods
 #' @aliases qoffset.x<-,nifti-method
 #' @export
@@ -102,19 +69,5 @@ setMethod("qoffset.x<-",
             } else {
               warning("qoffset_x is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname qoffset_x-methods
-#' @aliases qoffset.x<-,anlz-method
-#' @export
-setMethod("qoffset.x<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "qoffset_x" %in% slotNames(object) ){
-              object@"qoffset_x" <- value
-            } else {
-              warning("qoffset_x is not in slotNames of object")
-            }
             return(object)
           })

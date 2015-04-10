@@ -4,23 +4,17 @@
 \name{start_field-methods}
 \alias{start_field}
 \alias{start_field,anlz-method}
-\alias{start_field,nifti-method}
 \alias{start_field-methods}
 \alias{start_field-methods,}
 \alias{start_field<-}
 \alias{start_field<-,anlz-method}
-\alias{start_field<-,nifti-method}
 \title{Extract Image Attribute \code{start_field}}
 \usage{
 start_field(object)
 
-\S4method{start_field}{nifti}(object)
-
 \S4method{start_field}{anlz}(object)
 
 start_field(object) <- value
-
-\S4method{start_field}{nifti}(object) <- value
 
 \S4method{start_field}{anlz}(object) <- value
 }

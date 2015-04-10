@@ -19,40 +19,14 @@
 #'
 #' @export
 setGeneric("funused1", function(object) standardGeneric("funused1"))
-
-#' @rdname funused1-methods
-#' @aliases funused1,nifti-method
-#' @export
-setMethod("funused1", "nifti", function(object) { object@"funused1" })
-
 #' @rdname funused1-methods
 #' @aliases funused1,anlz-method
 #' @export
 setMethod("funused1", "anlz", function(object) { object@"funused1" })
-
-
 #' @rdname funused1-methods
 #' @aliases funused1<- 
 #' @export
 setGeneric("funused1<-", function(object, value) { standardGeneric("funused1<-") })
-
-#' @rdname funused1-methods
-#' @aliases funused1<-,nifti-method
-#' @export
-setMethod("funused1<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "funused1" %in% slotNames(object) ){
-              object@"funused1" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("funused1 <-", value))               
-            } else {
-              warning("funused1 is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname funused1-methods
 #' @aliases funused1<-,anlz-method
 #' @export

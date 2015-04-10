@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("slice_end", function(object) standardGeneric("slice_end"))
-
 #' @rdname slice_end-methods
 #' @aliases slice_end,nifti-method
 #' @export
 setMethod("slice_end", "nifti", function(object) { object@"slice_end" })
-
-#' @rdname slice_end-methods
-#' @aliases slice_end,anlz-method
-#' @export
-setMethod("slice_end", "anlz", function(object) { object@"slice_end" })
-
-
 #' @rdname slice_end-methods
 #' @aliases slice_end<- 
 #' @export
 setGeneric("slice_end<-", function(object, value) { standardGeneric("slice_end<-") })
-
 #' @rdname slice_end-methods
 #' @aliases slice_end<-,nifti-method
 #' @export
@@ -52,42 +43,18 @@ setMethod("slice_end<-",
             }                       
             return(object)
           })
-
-#' @rdname slice_end-methods
-#' @aliases slice_end<-,anlz-method
-#' @export
-setMethod("slice_end<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "slice_end" %in% slotNames(object) ){
-              object@"slice_end" <- value
-            } else {
-              warning("slice_end is not in slotNames of object")
-            }
-            return(object)
-          })
-
 #' @rdname slice_end-methods
 #' @aliases slice.end,nifti-method
 #' @export
 setGeneric("slice.end", function(object) standardGeneric("slice.end"))
-
 #' @rdname slice_end-methods
 #' @aliases slice.end,nifti-method
 #' @export
 setMethod("slice.end", "nifti", function(object) { object@"slice_end" })
-
-#' @rdname slice_end-methods
-#' @aliases slice.end,anlz-method
-#' @export
-setMethod("slice.end", "anlz", function(object) { object@"slice_end" })
-
-
 #' @rdname slice_end-methods
 #' @aliases slice.end<- 
 #' @export
 setGeneric("slice.end<-", function(object, value) { standardGeneric("slice.end<-") })
-
 #' @rdname slice_end-methods
 #' @aliases slice.end<-,nifti-method
 #' @export
@@ -102,19 +69,5 @@ setMethod("slice.end<-",
             } else {
               warning("slice_end is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname slice_end-methods
-#' @aliases slice.end<-,anlz-method
-#' @export
-setMethod("slice.end<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "slice_end" %in% slotNames(object) ){
-              object@"slice_end" <- value
-            } else {
-              warning("slice_end is not in slotNames of object")
-            }
             return(object)
           })

@@ -109,22 +109,18 @@
 #'   }
 #' @section Extends:
 #'   Class \code{"\linkS4class{array}"}, from data part.\cr
-#'   Class \code{"\linkS4class{matrix}"}, by class "array", distance 2,
+#'   Class \code{"\linkS4class{matrix}"}, by class \dQuote{array}, distance 2,
 #'   with explicit test and coerce. \cr
-#'   Class \code{"\linkS4class{structure}"}, by class "array", distance 2.\cr
-#'   Class \code{"\linkS4class{vector}"}, by class "array", distance 3,
+#'   Class \code{"\linkS4class{structure}"}, by class \dQuote{array}, distance 2.\cr
+#'   Class \code{"\linkS4class{vector}"}, by class \dQuote{array}, distance 3,
 #'   with explicit coerce.\cr
-#'   Class \code{"\linkS4class{vector}"}, by class "array", distance 5,
+#'   Class \code{"\linkS4class{vector}"}, by class \dQuote{array}, distance 5,
 #'   with explicit test and coerce.
 #' @section Methods:
 #'   \describe{
-#'     \item{descrip<-}{\code{signature(x = "anlz")}: replaces the
-#'                      \dQuote{description} field}
-#'     \item{descrip}{\code{signature(object = "anlz")}: returns the
-#'                    \dQuote{description} field}
-#'     \item{image}{\code{signature(x = "anlz")}: diplays the image(s)}
+#'     \item{image}{\code{signature(x = "anlz")}: diplays the image(s).}
 #'     \item{show}{\code{signature(object = "anlz")}: prints out a summary
-#'                 of the imaging data}
+#'                 of the imaging data.}
 #'   }
 #' @rdname anlz-class
 #' @export 

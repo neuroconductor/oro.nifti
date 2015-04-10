@@ -19,40 +19,14 @@
 #'
 #' @export
 setGeneric("origin", function(object) standardGeneric("origin"))
-
-#' @rdname origin-methods
-#' @aliases origin,nifti-method
-#' @export
-setMethod("origin", "nifti", function(object) { object@"origin" })
-
 #' @rdname origin-methods
 #' @aliases origin,anlz-method
 #' @export
 setMethod("origin", "anlz", function(object) { object@"origin" })
-
-
 #' @rdname origin-methods
 #' @aliases origin<- 
 #' @export
 setGeneric("origin<-", function(object, value) { standardGeneric("origin<-") })
-
-#' @rdname origin-methods
-#' @aliases origin<-,nifti-method
-#' @export
-setMethod("origin<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "origin" %in% slotNames(object) ){
-              object@"origin" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("origin <-", value))               
-            } else {
-              warning("origin is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname origin-methods
 #' @aliases origin<-,anlz-method
 #' @export

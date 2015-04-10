@@ -3,18 +3,14 @@
 \docType{methods}
 \name{srow_y-methods}
 \alias{srow.y}
-\alias{srow.y,anlz-method}
 \alias{srow.y,nifti-method}
 \alias{srow.y<-}
-\alias{srow.y<-,anlz-method}
 \alias{srow.y<-,nifti-method}
 \alias{srow_y}
-\alias{srow_y,anlz-method}
 \alias{srow_y,nifti-method}
 \alias{srow_y-methods}
 \alias{srow_y-methods,}
 \alias{srow_y<-}
-\alias{srow_y<-,anlz-method}
 \alias{srow_y<-,nifti-method}
 \title{Extract Image Attribute \code{srow_y}}
 \usage{
@@ -22,25 +18,17 @@ srow_y(object)
 
 \S4method{srow_y}{nifti}(object)
 
-\S4method{srow_y}{anlz}(object)
-
 srow_y(object) <- value
 
 \S4method{srow_y}{nifti}(object) <- value
-
-\S4method{srow_y}{anlz}(object) <- value
 
 srow.y(object)
 
 \S4method{srow.y}{nifti}(object)
 
-\S4method{srow.y}{anlz}(object)
-
 srow.y(object) <- value
 
 \S4method{srow.y}{nifti}(object) <- value
-
-\S4method{srow.y}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

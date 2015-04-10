@@ -19,40 +19,14 @@
 #'
 #' @export
 setGeneric("smax", function(object) standardGeneric("smax"))
-
-#' @rdname smax-methods
-#' @aliases smax,nifti-method
-#' @export
-setMethod("smax", "nifti", function(object) { object@"smax" })
-
 #' @rdname smax-methods
 #' @aliases smax,anlz-method
 #' @export
 setMethod("smax", "anlz", function(object) { object@"smax" })
-
-
 #' @rdname smax-methods
 #' @aliases smax<- 
 #' @export
 setGeneric("smax<-", function(object, value) { standardGeneric("smax<-") })
-
-#' @rdname smax-methods
-#' @aliases smax<-,nifti-method
-#' @export
-setMethod("smax<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "smax" %in% slotNames(object) ){
-              object@"smax" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("smax <-", value))               
-            } else {
-              warning("smax is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname smax-methods
 #' @aliases smax<-,anlz-method
 #' @export

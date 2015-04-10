@@ -19,40 +19,14 @@
 #'
 #' @export
 setGeneric("orient", function(object) standardGeneric("orient"))
-
-#' @rdname orient-methods
-#' @aliases orient,nifti-method
-#' @export
-setMethod("orient", "nifti", function(object) { object@"orient" })
-
 #' @rdname orient-methods
 #' @aliases orient,anlz-method
 #' @export
 setMethod("orient", "anlz", function(object) { object@"orient" })
-
-
 #' @rdname orient-methods
 #' @aliases orient<- 
 #' @export
 setGeneric("orient<-", function(object, value) { standardGeneric("orient<-") })
-
-#' @rdname orient-methods
-#' @aliases orient<-,nifti-method
-#' @export
-setMethod("orient<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "orient" %in% slotNames(object) ){
-              object@"orient" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("orient <-", value))               
-            } else {
-              warning("orient is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname orient-methods
 #' @aliases orient<-,anlz-method
 #' @export

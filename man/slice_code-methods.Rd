@@ -3,18 +3,14 @@
 \docType{methods}
 \name{slice_code-methods}
 \alias{slice.code}
-\alias{slice.code,anlz-method}
 \alias{slice.code,nifti-method}
 \alias{slice.code<-}
-\alias{slice.code<-,anlz-method}
 \alias{slice.code<-,nifti-method}
 \alias{slice_code}
-\alias{slice_code,anlz-method}
 \alias{slice_code,nifti-method}
 \alias{slice_code-methods}
 \alias{slice_code-methods,}
 \alias{slice_code<-}
-\alias{slice_code<-,anlz-method}
 \alias{slice_code<-,nifti-method}
 \title{Extract Image Attribute \code{slice_code}}
 \usage{
@@ -22,25 +18,17 @@ slice_code(object)
 
 \S4method{slice_code}{nifti}(object)
 
-\S4method{slice_code}{anlz}(object)
-
 slice_code(object) <- value
 
 \S4method{slice_code}{nifti}(object) <- value
-
-\S4method{slice_code}{anlz}(object) <- value
 
 slice.code(object)
 
 \S4method{slice.code}{nifti}(object)
 
-\S4method{slice.code}{anlz}(object)
-
 slice.code(object) <- value
 
 \S4method{slice.code}{nifti}(object) <- value
-
-\S4method{slice.code}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

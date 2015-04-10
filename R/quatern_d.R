@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("quatern_d", function(object) standardGeneric("quatern_d"))
-
 #' @rdname quatern_d-methods
 #' @aliases quatern_d,nifti-method
 #' @export
 setMethod("quatern_d", "nifti", function(object) { object@"quatern_d" })
-
-#' @rdname quatern_d-methods
-#' @aliases quatern_d,anlz-method
-#' @export
-setMethod("quatern_d", "anlz", function(object) { object@"quatern_d" })
-
-
 #' @rdname quatern_d-methods
 #' @aliases quatern_d<- 
 #' @export
 setGeneric("quatern_d<-", function(object, value) { standardGeneric("quatern_d<-") })
-
 #' @rdname quatern_d-methods
 #' @aliases quatern_d<-,nifti-method
 #' @export
@@ -52,42 +43,18 @@ setMethod("quatern_d<-",
             }                       
             return(object)
           })
-
-#' @rdname quatern_d-methods
-#' @aliases quatern_d<-,anlz-method
-#' @export
-setMethod("quatern_d<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "quatern_d" %in% slotNames(object) ){
-              object@"quatern_d" <- value
-            } else {
-              warning("quatern_d is not in slotNames of object")
-            }
-            return(object)
-          })
-
 #' @rdname quatern_d-methods
 #' @aliases quatern.d,nifti-method
 #' @export
 setGeneric("quatern.d", function(object) standardGeneric("quatern.d"))
-
 #' @rdname quatern_d-methods
 #' @aliases quatern.d,nifti-method
 #' @export
 setMethod("quatern.d", "nifti", function(object) { object@"quatern_d" })
-
-#' @rdname quatern_d-methods
-#' @aliases quatern.d,anlz-method
-#' @export
-setMethod("quatern.d", "anlz", function(object) { object@"quatern_d" })
-
-
 #' @rdname quatern_d-methods
 #' @aliases quatern.d<- 
 #' @export
 setGeneric("quatern.d<-", function(object, value) { standardGeneric("quatern.d<-") })
-
 #' @rdname quatern_d-methods
 #' @aliases quatern.d<-,nifti-method
 #' @export
@@ -102,19 +69,5 @@ setMethod("quatern.d<-",
             } else {
               warning("quatern_d is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname quatern_d-methods
-#' @aliases quatern.d<-,anlz-method
-#' @export
-setMethod("quatern.d<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "quatern_d" %in% slotNames(object) ){
-              object@"quatern_d" <- value
-            } else {
-              warning("quatern_d is not in slotNames of object")
-            }
             return(object)
           })

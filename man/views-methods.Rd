@@ -4,23 +4,17 @@
 \name{views-methods}
 \alias{views}
 \alias{views,anlz-method}
-\alias{views,nifti-method}
 \alias{views-methods}
 \alias{views-methods,}
 \alias{views<-}
 \alias{views<-,anlz-method}
-\alias{views<-,nifti-method}
 \title{Extract Image Attribute \code{views}}
 \usage{
 views(object)
 
-\S4method{views}{nifti}(object)
-
 \S4method{views}{anlz}(object)
 
 views(object) <- value
-
-\S4method{views}{nifti}(object) <- value
 
 \S4method{views}{anlz}(object) <- value
 }

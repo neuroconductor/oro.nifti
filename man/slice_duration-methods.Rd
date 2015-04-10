@@ -3,18 +3,14 @@
 \docType{methods}
 \name{slice_duration-methods}
 \alias{slice.duration}
-\alias{slice.duration,anlz-method}
 \alias{slice.duration,nifti-method}
 \alias{slice.duration<-}
-\alias{slice.duration<-,anlz-method}
 \alias{slice.duration<-,nifti-method}
 \alias{slice_duration}
-\alias{slice_duration,anlz-method}
 \alias{slice_duration,nifti-method}
 \alias{slice_duration-methods}
 \alias{slice_duration-methods,}
 \alias{slice_duration<-}
-\alias{slice_duration<-,anlz-method}
 \alias{slice_duration<-,nifti-method}
 \title{Extract Image Attribute \code{slice_duration}}
 \usage{
@@ -22,25 +18,17 @@ slice_duration(object)
 
 \S4method{slice_duration}{nifti}(object)
 
-\S4method{slice_duration}{anlz}(object)
-
 slice_duration(object) <- value
 
 \S4method{slice_duration}{nifti}(object) <- value
-
-\S4method{slice_duration}{anlz}(object) <- value
 
 slice.duration(object)
 
 \S4method{slice.duration}{nifti}(object)
 
-\S4method{slice.duration}{anlz}(object)
-
 slice.duration(object) <- value
 
 \S4method{slice.duration}{nifti}(object) <- value
-
-\S4method{slice.duration}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

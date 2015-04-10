@@ -7,38 +7,27 @@
 \alias{field.skip,nifti-method}
 \alias{field.skip<-}
 \alias{field.skip<-,anlz-method}
-\alias{field.skip<-,nifti-method}
 \alias{field_skip}
 \alias{field_skip,anlz-method}
-\alias{field_skip,nifti-method}
 \alias{field_skip-methods}
 \alias{field_skip-methods,}
 \alias{field_skip<-}
 \alias{field_skip<-,anlz-method}
-\alias{field_skip<-,nifti-method}
 \title{Extract Image Attribute \code{field_skip}}
 \usage{
 field_skip(object)
-
-\S4method{field_skip}{nifti}(object)
 
 \S4method{field_skip}{anlz}(object)
 
 field_skip(object) <- value
 
-\S4method{field_skip}{nifti}(object) <- value
-
 \S4method{field_skip}{anlz}(object) <- value
 
 field.skip(object)
 
-\S4method{field.skip}{nifti}(object)
-
 \S4method{field.skip}{anlz}(object)
 
 field.skip(object) <- value
-
-\S4method{field.skip}{nifti}(object) <- value
 
 \S4method{field.skip}{anlz}(object) <- value
 }

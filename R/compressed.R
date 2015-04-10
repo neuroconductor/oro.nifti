@@ -19,40 +19,14 @@
 #'
 #' @export
 setGeneric("compressed", function(object) standardGeneric("compressed"))
-
-#' @rdname compressed-methods
-#' @aliases compressed,nifti-method
-#' @export
-setMethod("compressed", "nifti", function(object) { object@"compressed" })
-
 #' @rdname compressed-methods
 #' @aliases compressed,anlz-method
 #' @export
 setMethod("compressed", "anlz", function(object) { object@"compressed" })
-
-
 #' @rdname compressed-methods
 #' @aliases compressed<- 
 #' @export
 setGeneric("compressed<-", function(object, value) { standardGeneric("compressed<-") })
-
-#' @rdname compressed-methods
-#' @aliases compressed<-,nifti-method
-#' @export
-setMethod("compressed<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "compressed" %in% slotNames(object) ){
-              object@"compressed" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("compressed <-", value))               
-            } else {
-              warning("compressed is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname compressed-methods
 #' @aliases compressed<-,anlz-method
 #' @export

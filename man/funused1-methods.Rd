@@ -4,23 +4,17 @@
 \name{funused1-methods}
 \alias{funused1}
 \alias{funused1,anlz-method}
-\alias{funused1,nifti-method}
 \alias{funused1-methods}
 \alias{funused1-methods,}
 \alias{funused1<-}
 \alias{funused1<-,anlz-method}
-\alias{funused1<-,nifti-method}
 \title{Extract Image Attribute \code{funused1}}
 \usage{
 funused1(object)
 
-\S4method{funused1}{nifti}(object)
-
 \S4method{funused1}{anlz}(object)
 
 funused1(object) <- value
-
-\S4method{funused1}{nifti}(object) <- value
 
 \S4method{funused1}{anlz}(object) <- value
 }

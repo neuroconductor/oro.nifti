@@ -19,40 +19,14 @@
 #'
 #' @export
 setGeneric("scannum", function(object) standardGeneric("scannum"))
-
-#' @rdname scannum-methods
-#' @aliases scannum,nifti-method
-#' @export
-setMethod("scannum", "nifti", function(object) { object@"scannum" })
-
 #' @rdname scannum-methods
 #' @aliases scannum,anlz-method
 #' @export
 setMethod("scannum", "anlz", function(object) { object@"scannum" })
-
-
 #' @rdname scannum-methods
 #' @aliases scannum<- 
 #' @export
 setGeneric("scannum<-", function(object, value) { standardGeneric("scannum<-") })
-
-#' @rdname scannum-methods
-#' @aliases scannum<-,nifti-method
-#' @export
-setMethod("scannum<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "scannum" %in% slotNames(object) ){
-              object@"scannum" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("scannum <-", value))               
-            } else {
-              warning("scannum is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname scannum-methods
 #' @aliases scannum<-,anlz-method
 #' @export

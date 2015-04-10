@@ -4,23 +4,17 @@
 \name{smax-methods}
 \alias{smax}
 \alias{smax,anlz-method}
-\alias{smax,nifti-method}
 \alias{smax-methods}
 \alias{smax-methods,}
 \alias{smax<-}
 \alias{smax<-,anlz-method}
-\alias{smax<-,nifti-method}
 \title{Extract Image Attribute \code{smax}}
 \usage{
 smax(object)
 
-\S4method{smax}{nifti}(object)
-
 \S4method{smax}{anlz}(object)
 
 smax(object) <- value
-
-\S4method{smax}{nifti}(object) <- value
 
 \S4method{smax}{anlz}(object) <- value
 }

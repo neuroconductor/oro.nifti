@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("xyzt_units", function(object) standardGeneric("xyzt_units"))
-
 #' @rdname xyzt_units-methods
 #' @aliases xyzt_units,nifti-method
 #' @export
 setMethod("xyzt_units", "nifti", function(object) { object@"xyzt_units" })
-
-#' @rdname xyzt_units-methods
-#' @aliases xyzt_units,anlz-method
-#' @export
-setMethod("xyzt_units", "anlz", function(object) { object@"xyzt_units" })
-
-
 #' @rdname xyzt_units-methods
 #' @aliases xyzt_units<- 
 #' @export
 setGeneric("xyzt_units<-", function(object, value) { standardGeneric("xyzt_units<-") })
-
 #' @rdname xyzt_units-methods
 #' @aliases xyzt_units<-,nifti-method
 #' @export
@@ -52,42 +43,18 @@ setMethod("xyzt_units<-",
             }                       
             return(object)
           })
-
-#' @rdname xyzt_units-methods
-#' @aliases xyzt_units<-,anlz-method
-#' @export
-setMethod("xyzt_units<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "xyzt_units" %in% slotNames(object) ){
-              object@"xyzt_units" <- value
-            } else {
-              warning("xyzt_units is not in slotNames of object")
-            }
-            return(object)
-          })
-
 #' @rdname xyzt_units-methods
 #' @aliases xyzt.units,nifti-method
 #' @export
 setGeneric("xyzt.units", function(object) standardGeneric("xyzt.units"))
-
 #' @rdname xyzt_units-methods
 #' @aliases xyzt.units,nifti-method
 #' @export
 setMethod("xyzt.units", "nifti", function(object) { object@"xyzt_units" })
-
-#' @rdname xyzt_units-methods
-#' @aliases xyzt.units,anlz-method
-#' @export
-setMethod("xyzt.units", "anlz", function(object) { object@"xyzt_units" })
-
-
 #' @rdname xyzt_units-methods
 #' @aliases xyzt.units<- 
 #' @export
 setGeneric("xyzt.units<-", function(object, value) { standardGeneric("xyzt.units<-") })
-
 #' @rdname xyzt_units-methods
 #' @aliases xyzt.units<-,nifti-method
 #' @export
@@ -102,19 +69,5 @@ setMethod("xyzt.units<-",
             } else {
               warning("xyzt_units is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname xyzt_units-methods
-#' @aliases xyzt.units<-,anlz-method
-#' @export
-setMethod("xyzt.units<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "xyzt_units" %in% slotNames(object) ){
-              object@"xyzt_units" <- value
-            } else {
-              warning("xyzt_units is not in slotNames of object")
-            }
             return(object)
           })

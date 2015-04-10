@@ -4,23 +4,17 @@
 \name{exp_time-methods}
 \alias{exp_time}
 \alias{exp_time,anlz-method}
-\alias{exp_time,nifti-method}
 \alias{exp_time-methods}
 \alias{exp_time-methods,}
 \alias{exp_time<-}
 \alias{exp_time<-,anlz-method}
-\alias{exp_time<-,nifti-method}
 \title{Extract Image Attribute \code{exp_time}}
 \usage{
 exp_time(object)
 
-\S4method{exp_time}{nifti}(object)
-
 \S4method{exp_time}{anlz}(object)
 
 exp_time(object) <- value
-
-\S4method{exp_time}{nifti}(object) <- value
 
 \S4method{exp_time}{anlz}(object) <- value
 }

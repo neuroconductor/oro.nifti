@@ -4,23 +4,17 @@
 \name{hist_un0-methods}
 \alias{hist_un0}
 \alias{hist_un0,anlz-method}
-\alias{hist_un0,nifti-method}
 \alias{hist_un0-methods}
 \alias{hist_un0-methods,}
 \alias{hist_un0<-}
 \alias{hist_un0<-,anlz-method}
-\alias{hist_un0<-,nifti-method}
 \title{Extract Image Attribute \code{hist_un0}}
 \usage{
 hist_un0(object)
 
-\S4method{hist_un0}{nifti}(object)
-
 \S4method{hist_un0}{anlz}(object)
 
 hist_un0(object) <- value
-
-\S4method{hist_un0}{nifti}(object) <- value
 
 \S4method{hist_un0}{anlz}(object) <- value
 }

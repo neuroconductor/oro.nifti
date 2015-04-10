@@ -19,40 +19,14 @@
 #'
 #' @export
 setGeneric("exp_date", function(object) standardGeneric("exp_date"))
-
-#' @rdname exp_date-methods
-#' @aliases exp_date,nifti-method
-#' @export
-setMethod("exp_date", "nifti", function(object) { object@"exp_date" })
-
 #' @rdname exp_date-methods
 #' @aliases exp_date,anlz-method
 #' @export
 setMethod("exp_date", "anlz", function(object) { object@"exp_date" })
-
-
 #' @rdname exp_date-methods
 #' @aliases exp_date<- 
 #' @export
 setGeneric("exp_date<-", function(object, value) { standardGeneric("exp_date<-") })
-
-#' @rdname exp_date-methods
-#' @aliases exp_date<-,nifti-method
-#' @export
-setMethod("exp_date<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "exp_date" %in% slotNames(object) ){
-              object@"exp_date" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("exp_date <-", value))               
-            } else {
-              warning("exp_date is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname exp_date-methods
 #' @aliases exp_date<-,anlz-method
 #' @export

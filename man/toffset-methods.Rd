@@ -3,12 +3,10 @@
 \docType{methods}
 \name{toffset-methods}
 \alias{toffset}
-\alias{toffset,anlz-method}
 \alias{toffset,nifti-method}
 \alias{toffset-methods}
 \alias{toffset-methods,}
 \alias{toffset<-}
-\alias{toffset<-,anlz-method}
 \alias{toffset<-,nifti-method}
 \title{Extract Image Attribute \code{toffset}}
 \usage{
@@ -16,13 +14,9 @@ toffset(object)
 
 \S4method{toffset}{nifti}(object)
 
-\S4method{toffset}{anlz}(object)
-
 toffset(object) <- value
 
 \S4method{toffset}{nifti}(object) <- value
-
-\S4method{toffset}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

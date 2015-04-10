@@ -19,23 +19,18 @@
 #'
 #' @export
 setGeneric("extents", function(object) standardGeneric("extents"))
-
 #' @rdname extents-methods
 #' @aliases extents,nifti-method
 #' @export
 setMethod("extents", "nifti", function(object) { object@"extents" })
-
 #' @rdname extents-methods
 #' @aliases extents,anlz-method
 #' @export
 setMethod("extents", "anlz", function(object) { object@"extents" })
-
-
 #' @rdname extents-methods
 #' @aliases extents<- 
 #' @export
 setGeneric("extents<-", function(object, value) { standardGeneric("extents<-") })
-
 #' @rdname extents-methods
 #' @aliases extents<-,nifti-method
 #' @export
@@ -52,7 +47,6 @@ setMethod("extents<-",
             }                       
             return(object)
           })
-
 #' @rdname extents-methods
 #' @aliases extents<-,anlz-method
 #' @export

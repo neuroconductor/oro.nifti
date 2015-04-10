@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("srow_y", function(object) standardGeneric("srow_y"))
-
 #' @rdname srow_y-methods
 #' @aliases srow_y,nifti-method
 #' @export
 setMethod("srow_y", "nifti", function(object) { object@"srow_y" })
-
-#' @rdname srow_y-methods
-#' @aliases srow_y,anlz-method
-#' @export
-setMethod("srow_y", "anlz", function(object) { object@"srow_y" })
-
-
 #' @rdname srow_y-methods
 #' @aliases srow_y<- 
 #' @export
 setGeneric("srow_y<-", function(object, value) { standardGeneric("srow_y<-") })
-
 #' @rdname srow_y-methods
 #' @aliases srow_y<-,nifti-method
 #' @export
@@ -52,42 +43,18 @@ setMethod("srow_y<-",
             }                       
             return(object)
           })
-
-#' @rdname srow_y-methods
-#' @aliases srow_y<-,anlz-method
-#' @export
-setMethod("srow_y<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "srow_y" %in% slotNames(object) ){
-              object@"srow_y" <- value
-            } else {
-              warning("srow_y is not in slotNames of object")
-            }
-            return(object)
-          })
-
 #' @rdname srow_y-methods
 #' @aliases srow.y,nifti-method
 #' @export
 setGeneric("srow.y", function(object) standardGeneric("srow.y"))
-
 #' @rdname srow_y-methods
 #' @aliases srow.y,nifti-method
 #' @export
 setMethod("srow.y", "nifti", function(object) { object@"srow_y" })
-
-#' @rdname srow_y-methods
-#' @aliases srow.y,anlz-method
-#' @export
-setMethod("srow.y", "anlz", function(object) { object@"srow_y" })
-
-
 #' @rdname srow_y-methods
 #' @aliases srow.y<- 
 #' @export
 setGeneric("srow.y<-", function(object, value) { standardGeneric("srow.y<-") })
-
 #' @rdname srow_y-methods
 #' @aliases srow.y<-,nifti-method
 #' @export
@@ -102,19 +69,5 @@ setMethod("srow.y<-",
             } else {
               warning("srow_y is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname srow_y-methods
-#' @aliases srow.y<-,anlz-method
-#' @export
-setMethod("srow.y<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "srow_y" %in% slotNames(object) ){
-              object@"srow_y" <- value
-            } else {
-              warning("srow_y is not in slotNames of object")
-            }
             return(object)
           })

@@ -19,40 +19,14 @@
 #'
 #' @export
 setGeneric("omin", function(object) standardGeneric("omin"))
-
-#' @rdname omin-methods
-#' @aliases omin,nifti-method
-#' @export
-setMethod("omin", "nifti", function(object) { object@"omin" })
-
 #' @rdname omin-methods
 #' @aliases omin,anlz-method
 #' @export
 setMethod("omin", "anlz", function(object) { object@"omin" })
-
-
 #' @rdname omin-methods
 #' @aliases omin<- 
 #' @export
 setGeneric("omin<-", function(object, value) { standardGeneric("omin<-") })
-
-#' @rdname omin-methods
-#' @aliases omin<-,nifti-method
-#' @export
-setMethod("omin<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( "omin" %in% slotNames(object) ){
-              object@"omin" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste("omin <-", value))               
-            } else {
-              warning("omin is not in slotNames of object")
-            }                       
-            return(object)
-          })
-
 #' @rdname omin-methods
 #' @aliases omin<-,anlz-method
 #' @export

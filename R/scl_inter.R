@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("scl_inter", function(object) standardGeneric("scl_inter"))
-
 #' @rdname scl_inter-methods
 #' @aliases scl_inter,nifti-method
 #' @export
 setMethod("scl_inter", "nifti", function(object) { object@"scl_inter" })
-
-#' @rdname scl_inter-methods
-#' @aliases scl_inter,anlz-method
-#' @export
-setMethod("scl_inter", "anlz", function(object) { object@"scl_inter" })
-
-
 #' @rdname scl_inter-methods
 #' @aliases scl_inter<- 
 #' @export
 setGeneric("scl_inter<-", function(object, value) { standardGeneric("scl_inter<-") })
-
 #' @rdname scl_inter-methods
 #' @aliases scl_inter<-,nifti-method
 #' @export
@@ -52,42 +43,18 @@ setMethod("scl_inter<-",
             }                       
             return(object)
           })
-
-#' @rdname scl_inter-methods
-#' @aliases scl_inter<-,anlz-method
-#' @export
-setMethod("scl_inter<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "scl_inter" %in% slotNames(object) ){
-              object@"scl_inter" <- value
-            } else {
-              warning("scl_inter is not in slotNames of object")
-            }
-            return(object)
-          })
-
 #' @rdname scl_inter-methods
 #' @aliases scl.inter,nifti-method
 #' @export
 setGeneric("scl.inter", function(object) standardGeneric("scl.inter"))
-
 #' @rdname scl_inter-methods
 #' @aliases scl.inter,nifti-method
 #' @export
 setMethod("scl.inter", "nifti", function(object) { object@"scl_inter" })
-
-#' @rdname scl_inter-methods
-#' @aliases scl.inter,anlz-method
-#' @export
-setMethod("scl.inter", "anlz", function(object) { object@"scl_inter" })
-
-
 #' @rdname scl_inter-methods
 #' @aliases scl.inter<- 
 #' @export
 setGeneric("scl.inter<-", function(object, value) { standardGeneric("scl.inter<-") })
-
 #' @rdname scl_inter-methods
 #' @aliases scl.inter<-,nifti-method
 #' @export
@@ -102,19 +69,5 @@ setMethod("scl.inter<-",
             } else {
               warning("scl_inter is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname scl_inter-methods
-#' @aliases scl.inter<-,anlz-method
-#' @export
-setMethod("scl.inter<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "scl_inter" %in% slotNames(object) ){
-              object@"scl_inter" <- value
-            } else {
-              warning("scl_inter is not in slotNames of object")
-            }
             return(object)
           })

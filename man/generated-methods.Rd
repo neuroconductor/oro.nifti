@@ -4,23 +4,17 @@
 \name{generated-methods}
 \alias{generated}
 \alias{generated,anlz-method}
-\alias{generated,nifti-method}
 \alias{generated-methods}
 \alias{generated-methods,}
 \alias{generated<-}
 \alias{generated<-,anlz-method}
-\alias{generated<-,nifti-method}
 \title{Extract Image Attribute \code{generated}}
 \usage{
 generated(object)
 
-\S4method{generated}{nifti}(object)
-
 \S4method{generated}{anlz}(object)
 
 generated(object) <- value
-
-\S4method{generated}{nifti}(object) <- value
 
 \S4method{generated}{anlz}(object) <- value
 }

@@ -4,23 +4,17 @@
 \name{verified-methods}
 \alias{verified}
 \alias{verified,anlz-method}
-\alias{verified,nifti-method}
 \alias{verified-methods}
 \alias{verified-methods,}
 \alias{verified<-}
 \alias{verified<-,anlz-method}
-\alias{verified<-,nifti-method}
 \title{Extract Image Attribute \code{verified}}
 \usage{
 verified(object)
 
-\S4method{verified}{nifti}(object)
-
 \S4method{verified}{anlz}(object)
 
 verified(object) <- value
-
-\S4method{verified}{nifti}(object) <- value
 
 \S4method{verified}{anlz}(object) <- value
 }

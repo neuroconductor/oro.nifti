@@ -19,23 +19,14 @@
 #'
 #' @export
 setGeneric("slice_code", function(object) standardGeneric("slice_code"))
-
 #' @rdname slice_code-methods
 #' @aliases slice_code,nifti-method
 #' @export
 setMethod("slice_code", "nifti", function(object) { object@"slice_code" })
-
-#' @rdname slice_code-methods
-#' @aliases slice_code,anlz-method
-#' @export
-setMethod("slice_code", "anlz", function(object) { object@"slice_code" })
-
-
 #' @rdname slice_code-methods
 #' @aliases slice_code<- 
 #' @export
 setGeneric("slice_code<-", function(object, value) { standardGeneric("slice_code<-") })
-
 #' @rdname slice_code-methods
 #' @aliases slice_code<-,nifti-method
 #' @export
@@ -52,42 +43,18 @@ setMethod("slice_code<-",
             }                       
             return(object)
           })
-
-#' @rdname slice_code-methods
-#' @aliases slice_code<-,anlz-method
-#' @export
-setMethod("slice_code<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "slice_code" %in% slotNames(object) ){
-              object@"slice_code" <- value
-            } else {
-              warning("slice_code is not in slotNames of object")
-            }
-            return(object)
-          })
-
 #' @rdname slice_code-methods
 #' @aliases slice.code,nifti-method
 #' @export
 setGeneric("slice.code", function(object) standardGeneric("slice.code"))
-
 #' @rdname slice_code-methods
 #' @aliases slice.code,nifti-method
 #' @export
 setMethod("slice.code", "nifti", function(object) { object@"slice_code" })
-
-#' @rdname slice_code-methods
-#' @aliases slice.code,anlz-method
-#' @export
-setMethod("slice.code", "anlz", function(object) { object@"slice_code" })
-
-
 #' @rdname slice_code-methods
 #' @aliases slice.code<- 
 #' @export
 setGeneric("slice.code<-", function(object, value) { standardGeneric("slice.code<-") })
-
 #' @rdname slice_code-methods
 #' @aliases slice.code<-,nifti-method
 #' @export
@@ -102,19 +69,5 @@ setMethod("slice.code<-",
             } else {
               warning("slice_code is not in slotNames of object")
             }                       
-            return(object)
-          })
-
-#' @rdname slice_code-methods
-#' @aliases slice.code<-,anlz-method
-#' @export
-setMethod("slice.code<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( "slice_code" %in% slotNames(object) ){
-              object@"slice_code" <- value
-            } else {
-              warning("slice_code is not in slotNames of object")
-            }
             return(object)
           })

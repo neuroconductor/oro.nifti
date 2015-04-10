@@ -3,18 +3,14 @@
 \docType{methods}
 \name{xyzt_units-methods}
 \alias{xyzt.units}
-\alias{xyzt.units,anlz-method}
 \alias{xyzt.units,nifti-method}
 \alias{xyzt.units<-}
-\alias{xyzt.units<-,anlz-method}
 \alias{xyzt.units<-,nifti-method}
 \alias{xyzt_units}
-\alias{xyzt_units,anlz-method}
 \alias{xyzt_units,nifti-method}
 \alias{xyzt_units-methods}
 \alias{xyzt_units-methods,}
 \alias{xyzt_units<-}
-\alias{xyzt_units<-,anlz-method}
 \alias{xyzt_units<-,nifti-method}
 \title{Extract Image Attribute \code{xyzt_units}}
 \usage{
@@ -22,25 +18,17 @@ xyzt_units(object)
 
 \S4method{xyzt_units}{nifti}(object)
 
-\S4method{xyzt_units}{anlz}(object)
-
 xyzt_units(object) <- value
 
 \S4method{xyzt_units}{nifti}(object) <- value
-
-\S4method{xyzt_units}{anlz}(object) <- value
 
 xyzt.units(object)
 
 \S4method{xyzt.units}{nifti}(object)
 
-\S4method{xyzt.units}{anlz}(object)
-
 xyzt.units(object) <- value
 
 \S4method{xyzt.units}{nifti}(object) <- value
-
-\S4method{xyzt.units}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

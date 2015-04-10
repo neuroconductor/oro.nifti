@@ -4,23 +4,17 @@
 \name{omin-methods}
 \alias{omin}
 \alias{omin,anlz-method}
-\alias{omin,nifti-method}
 \alias{omin-methods}
 \alias{omin-methods,}
 \alias{omin<-}
 \alias{omin<-,anlz-method}
-\alias{omin<-,nifti-method}
 \title{Extract Image Attribute \code{omin}}
 \usage{
 omin(object)
 
-\S4method{omin}{nifti}(object)
-
 \S4method{omin}{anlz}(object)
 
 omin(object) <- value
-
-\S4method{omin}{nifti}(object) <- value
 
 \S4method{omin}{anlz}(object) <- value
 }

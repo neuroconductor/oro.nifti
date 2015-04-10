@@ -3,18 +3,14 @@
 \docType{methods}
 \name{scl_inter-methods}
 \alias{scl.inter}
-\alias{scl.inter,anlz-method}
 \alias{scl.inter,nifti-method}
 \alias{scl.inter<-}
-\alias{scl.inter<-,anlz-method}
 \alias{scl.inter<-,nifti-method}
 \alias{scl_inter}
-\alias{scl_inter,anlz-method}
 \alias{scl_inter,nifti-method}
 \alias{scl_inter-methods}
 \alias{scl_inter-methods,}
 \alias{scl_inter<-}
-\alias{scl_inter<-,anlz-method}
 \alias{scl_inter<-,nifti-method}
 \title{Extract Image Attribute \code{scl_inter}}
 \usage{
@@ -22,25 +18,17 @@ scl_inter(object)
 
 \S4method{scl_inter}{nifti}(object)
 
-\S4method{scl_inter}{anlz}(object)
-
 scl_inter(object) <- value
 
 \S4method{scl_inter}{nifti}(object) <- value
-
-\S4method{scl_inter}{anlz}(object) <- value
 
 scl.inter(object)
 
 \S4method{scl.inter}{nifti}(object)
 
-\S4method{scl.inter}{anlz}(object)
-
 scl.inter(object) <- value
 
 \S4method{scl.inter}{nifti}(object) <- value
-
-\S4method{scl.inter}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

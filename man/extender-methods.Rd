@@ -3,12 +3,10 @@
 \docType{methods}
 \name{extender-methods}
 \alias{extender}
-\alias{extender,anlz-method}
 \alias{extender,nifti-method}
 \alias{extender-methods}
 \alias{extender-methods,}
 \alias{extender<-}
-\alias{extender<-,anlz-method}
 \alias{extender<-,nifti-method}
 \title{Extract Image Attribute \code{extender}}
 \usage{
@@ -16,13 +14,9 @@ extender(object)
 
 \S4method{extender}{nifti}(object)
 
-\S4method{extender}{anlz}(object)
-
 extender(object) <- value
 
 \S4method{extender}{nifti}(object) <- value
-
-\S4method{extender}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

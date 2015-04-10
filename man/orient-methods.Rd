@@ -4,23 +4,17 @@
 \name{orient-methods}
 \alias{orient}
 \alias{orient,anlz-method}
-\alias{orient,nifti-method}
 \alias{orient-methods}
 \alias{orient-methods,}
 \alias{orient<-}
 \alias{orient<-,anlz-method}
-\alias{orient<-,nifti-method}
 \title{Extract Image Attribute \code{orient}}
 \usage{
 orient(object)
 
-\S4method{orient}{nifti}(object)
-
 \S4method{orient}{anlz}(object)
 
 orient(object) <- value
-
-\S4method{orient}{nifti}(object) <- value
 
 \S4method{orient}{anlz}(object) <- value
 }
