@@ -40,6 +40,7 @@
   .wrapper(getFunction(paste(".", name, sep="")), name, ...)
 }
 
+#' @export
 .wrapper <- function(fun, name, nim, ...) {
   if (! is(nim, "nifti")) {
     nim <- as(nim, "nifti")
