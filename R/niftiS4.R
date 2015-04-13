@@ -1,13 +1,13 @@
 ##
 ## Copyright (c) 2009-2011 Brandon Whitcher and Volker Schmid
 ## All rights reserved.
-## 
+##
 ## Redistribution and use in source and binary forms, with or without
 ## modification, are permitted provided that the following conditions are
 ## met:
-## 
+##
 ##     * Redistributions of source code must retain the above copyright
-##       notice, this list of conditions and the following disclaimer. 
+##       notice, this list of conditions and the following disclaimer.
 ##     * Redistributions in binary form must reproduce the above
 ##       copyright notice, this list of conditions and the following
 ##       disclaimer in the documentation and/or other materials provided
@@ -15,7 +15,7 @@
 ##     * The names of the authors may not be used to endorse or promote
 ##       products derived from this software without specific prior
 ##       written permission.
-## 
+##
 ## THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 ## "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
 ## LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
@@ -27,7 +27,7 @@
 ## THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 ## (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 ## OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-## 
+##
 ## $Id: niftiS4.R 332 2010-01-29 16:54:07Z bjw34032 $
 ##
 
@@ -35,11 +35,11 @@
 ## setClass("niftiExtensionSection")
 #############################################################################
 #' @title Class "niftiExtensionSection"
-#' 
+#'
 #' @description A \code{niftiExtensionSection} contains the fields that conform
 #'   to the NIfTI standard regarding header extensions.  A \code{niftiExtension}
 #'   is composed of one or more of these objects.
-#' 
+#'
 #' @name niftiExtensionSection-class
 #' @docType class
 #' @section Objects from the Class: Objects can be created by calls of the form
@@ -50,7 +50,7 @@
 #' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
 #' @keywords classes
 #' @examples
-#' 
+#'
 #' showClass("niftiExtensionSection")
 #' @export
 setClass("niftiExtensionSection",
@@ -66,11 +66,11 @@ setClass("niftiExtensionSection",
 #############################################################################
 #' @name nifti-class
 #' @title Class "nifti"
-#' 
+#'
 #' @description The NIfTI class for medical imaging data.
-#' 
+#'
 #' @aliases nifti-class show,nifti-method
-#' @param object An object of class \code{nifti}. 
+#' @param object An object of class \code{nifti}.
 #' @docType class
 #' @section Objects from the Class: Objects can be created by calls of the form
 #' \code{new("nifti", data, dim, dimnames, ...)} or by calling the \code{nifti}
@@ -82,9 +82,9 @@ setClass("niftiExtensionSection",
 #' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
 #' @keywords classes
 #' @examples
-#' 
+#'
 #' showClass("nifti")
-#' @section Slots: 
+#' @section Slots:
 #'   \describe{
 #'     \item{\code{.Data}:}{Object of class \code{"array"} contains the
 #'                          imaging data}
@@ -152,7 +152,7 @@ setClass("niftiExtensionSection",
 #'   with explicit coerce.\cr
 #'   Class \code{"\linkS4class{vector}"}, by class \dQuote{array}, distance 5,
 #'   with explicit test and coerce.
-#' 
+#'
 #' @section Methods:
 #'   \describe{
 #'     \item{image}{\code{signature(x = "nifti")}: diplays the image(s).}
@@ -317,7 +317,7 @@ setValidity("nifti", function(object) {
   if (length(indices) != length(dim(object@.Data))) {
     retval <- c(retval, "dim[1]/img mismatch\n")
   }
-  ## 
+  ##
   if (object@"cal_min" != min(object@.Data, na.rm=TRUE) ||
       object@"cal_max" != max(object@.Data, na.rm=TRUE)) {
     retval <- c(retval, "range(img) != c(cal_min,cal_max)\n")
@@ -330,7 +330,7 @@ setValidity("nifti", function(object) {
   if (! all(object@"dim_"[indices] > 0 & pixdim(object)[indices] > 0)) {
     retval <- c(retval, "dim/pixdim mismatch\n")
   }
-  ## data dimensions should match dim 
+  ## data dimensions should match dim
   if (! isTRUE(all.equal(object@"dim_"[indices], dim(object@.Data)))) {
     retval <- c(retval, "dim/img mismatch\n")
   }
@@ -353,10 +353,10 @@ setValidity("nifti", function(object) {
 ## setClass("niftiExtension")
 #############################################################################
 #' @title Class "niftiExtension"
-#' 
+#'
 #' @description An extension of the NIfTI class that allows \dQuote{extensions}
 #' that conform to the NIfTI data standard.
-#' 
+#'
 #' @name niftiExtension-class
 #' @docType class
 #' @section Objects from the Class: Objects can be created by calls of the form
@@ -377,9 +377,9 @@ setClass("niftiExtension",
 ## setClass("niftiAuditTrail")
 #############################################################################
 #' @title Class "niftiAuditTrail"
-#' 
+#'
 #' @description An extension of the NIfTI class that adds an audit trail in XML format.
-#' 
+#'
 #' @name niftiAuditTrail-class
 #' @docType class
 #' @section Objects from the Class: Objects can be created by calls of the form
@@ -394,9 +394,9 @@ setClass("niftiExtension",
 #'   }
 #' @keywords classes
 #' @examples
-#' 
+#'
 #' showClass("niftiAuditTrail")
-#' 
+#'
 #' @rdname niftiAuditTrail-class
 #' @export
 setClass("niftiAuditTrail",
@@ -414,7 +414,7 @@ setValidity("niftiExtension", function(object) {
   retval <- NULL
   validSection <- getValidity(getClassDef("niftiExtensionSection"))
   lapply(object@"extensions",
-         function(x) { 
+         function(x) {
            if (! is(x, "niftiExtensionSection")) {
              retval <<- c(retval, paste("@extensions list contains non-niftiExtensionSection element:", class(x)))
            } else {
@@ -474,10 +474,10 @@ setValidity("niftiExtensionSection", function(object) {
 #############################################################################
 #' @name nifti
 #' @title Constructor for NIfTI
-#' 
+#'
 #' @description Constructor for NIfTI class objects.
-#' 
-#' @aliases nifti 
+#'
+#' @aliases nifti
 #' @param img is a multidimensional array of data.
 #' @param dim is the dimension of the data (default = \code{missing}).
 #' @param datatype is an integer that denotes the type of data contained in
@@ -495,9 +495,9 @@ setValidity("niftiExtensionSection", function(object) {
 #' \code{\link{convert.datatype}}
 #' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
 #' @examples
-#' 
+#'
 #' options("niftiAuditTrail"=FALSE)
-#' 
+#'
 #' nim <- nifti() # default
 #' nim
 #' nim <- nifti(datatype=4) # 2-byte integers
@@ -556,17 +556,19 @@ nifti <- function(img=array(0, dim=rep(1,4)), dim, datatype=2,
 }
 
 #' @title Extract or Replace NIfTI Audit Trail
-#' 
+#'
 #' @description Operators that act on the audit trail (XML) in the NIfTI header.
-#' 
+#'
 #' @name audit.trail-methods
 #' @aliases audit.trail-methods audit.trail,nifti-method audit.trail
 #' audit.trail<-,nifti-method audit.trail<-
 #' @docType methods
 #' @param object is of class \code{nifti}.
 #' @param value Value to assign to trail slot
-#' @section Methods: \describe{ \item{object = "nifti"}{Extract or replace
-#' NIfTI audit trail.} }
+#' @section Methods:
+#' \describe{
+#' \item{object = "nifti"}{Extract or replace NIfTI audit trail.}
+#' }
 #' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}
 #' @keywords methods
 #' @export
@@ -576,10 +578,10 @@ setGeneric("audit.trail", function(object) { standardGeneric("audit.trail") })
 #' @rdname audit_trail-methods
 #' @aliases audit.trail,nifti-method
 setMethod("audit.trail", "nifti",
-          function(object) { 
+          function(object) {
             if (getOption("niftiAuditTrail") &&
                 is(object, "niftiAuditTrail")) {
-              object@"trail" 
+              object@"trail"
             } else {
               NULL
             }
@@ -597,7 +599,7 @@ setReplaceMethod("audit.trail", "nifti",
                        object <- as(object, "niftiAuditTrail")
                      }
                      object@"trail" <- value
-                   } 
+                   }
                    return(object)
                  })
 #' @export
@@ -610,7 +612,7 @@ setReplaceMethod("[",
                    return(x)
                  })
 #' @export
-setReplaceMethod("[", signature(x="nifti", i="ANY", j="missing", value="ANY"), 
+setReplaceMethod("[", signature(x="nifti", i="ANY", j="missing", value="ANY"),
                  function(x, i, value) {
                    ## For some reason this line is slow; I don't understand it
                    x@.Data[i] <- value
@@ -627,7 +629,7 @@ setReplaceMethod("[", signature(x="nifti", i="ANY", j="missing", value="ANY"),
                  })
 #' @export
 setReplaceMethod("[",
-                 signature(x="nifti", i="numeric", j="missing", value="ANY"), 
+                 signature(x="nifti", i="numeric", j="missing", value="ANY"),
                  function(x, i, value) {
                    ## For some reason this line is slow; I don't understand it
                    x@.Data[i] <- value
@@ -637,7 +639,7 @@ setReplaceMethod("[",
                    if (any(value > x@"cal_max", na.rm=TRUE)) {
                      x@"cal_max" <- max(value, na.rm=TRUE)
                    }
-                   audit.trail(x) <- niftiAuditTrailEvent(x, "modification", 
+                   audit.trail(x) <- niftiAuditTrailEvent(x, "modification",
                                                           call=sys.call(-3))
                    return(x)
                  })
@@ -664,7 +666,7 @@ setReplaceMethod("[",
                      x@"cal_max" <- max(value, na.rm=TRUE)
                    }
                    audit.trail(x) <-
-                     niftiAuditTrailEvent(x, "modification", 
+                     niftiAuditTrailEvent(x, "modification",
                                           comment=paste("[", paste(i, j, ..., sep=", "), "] <- ", value, sep=""))
                    return(x)
                  })
@@ -674,21 +676,23 @@ setReplaceMethod("[",
 ## sform() accessor function to srow_*
 #############################################################################
 #' @title Extract NIfTI 3D Image Orientation
-#' 
+#'
 #' @description Methods that act on the \dQuote{qform} and \dQuote{sform} information in the
 #' NIfTI header.
-#' 
+#'
 #' @name orientation-methods
 #' @aliases qform-methods qform,nifti-method qform sform-methods
 #' sform,nifti-method sform
 #' @docType methods
 #' @param object is an object of class \code{nifti}.
-#' @section Methods: \describe{ \item{object = "nifti"}{Extract or replace
-#' NIfTI description.} }
+#' @section Methods:
+#' \describe{
+#' \item{object = "nifti"}{Extract or replace NIfTI description.}
+#' }
 #' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
 #' @keywords methods
 #' @examples
-#' 
+#'
 #' \dontrun{
 #' url <- "http://nifti.nimh.nih.gov/nifti-1/data/avg152T1_LR_nifti.nii.gz"
 #' urlfile <- file.path(system.file("nifti", package="oro.nifti"),

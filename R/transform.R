@@ -37,12 +37,13 @@
 ############################################################################
 #' @name performPermutation
 #' @title Transform array with orthogonal permutation matrix
-#' @description Given an orthogonal permutation matrix \eqn{T}, an array of dimensions and a
-#' one-dimensional representation of data.  It will return a transformed array
-#' with the transformed dimensions.
+#'
+#' @description Given an orthogonal permutation matrix \eqn{T}, an array of
+#' dimensions and a one-dimensional representation of data.  It will return a
+#' transformed array with the transformed dimensions.
 #' 
-#' @details This function is mainly used by the \code{\link{reorient}} function to
-#' transform nifti data into neuroradiological convention.
+#' @details This function is mainly used by the \code{\link{reorient}} function
+#' to transform nifti data into neuroradiological convention.
 #' 
 #' @param T is an orthogonal matrix.
 #' @param real.dimensions is a one-dimensional array, representing the length
@@ -57,16 +58,16 @@
 #' @rdname performPermutation
 performPermutation <- function(T, real.dimensions, data, verbose=FALSE) {
   workingdims <- (
-                  function(r) {
-                    lr <- length(r)
-                    if (lr <= 5) {
-                      c(r, rep(1, 5 - lr))
-                    } else {
-                      stop("array has dim > 5")
-                    }
-                  }
-                  )(real.dimensions) # An anonymous function
-
+    function(r) {
+      lr <- length(r)
+      if (lr <= 5) {
+        c(r, rep(1, 5 - lr))
+      } else {
+        stop("array has dim > 5")
+      }
+    }
+  )(real.dimensions) # An anonymous function
+  
   if (verbose) {
     cat(" ## performPermutation", fill=TRUE)
     cat("  trans =", fill=TRUE)
@@ -83,10 +84,10 @@ performPermutation <- function(T, real.dimensions, data, verbose=FALSE) {
     if (length(perms) != length(workingdims)) {
       perms <- (c(perms, (length(perms)+1):length(workingdims)))
     }
-    reverselist <- c(trans %*% rep(1,3) < 0,
-                     rep(FALSE, length(workingdims)-3))
+    reverselist <- c(trans %*% rep(1,3) < 0, 
+                     rep(FALSE, length(workingdims) - 3))
     if (any(reverselist[2:length(reverselist)]) || 
-	any(perms != 1:length(perms))) {
+          any(perms != 1:length(perms))) {
       if (verbose) {
         cat(" ## if(any(reverselist[2...", fill=TRUE)
       }
@@ -97,16 +98,16 @@ performPermutation <- function(T, real.dimensions, data, verbose=FALSE) {
       ## Now if we have to do a permutation or reverse more than the first
       ## index we will be going slow anyway, so...
       prs <- (
-              function(reverse, dims) {
-                function(x) { 
-                  if (reverse[x]) {
-                    rev(1:dims[x])
-                  } else {
-                    1:dims[x]
-                  }
-                }
-              }
-              )(reverselist, workingdims) # An anonymous function
+        function(reverse, dims) {
+          function(x) { 
+            if (reverse[x]) {
+              rev(1:dims[x])
+            } else {
+              1:dims[x]
+            }
+          }
+        }
+      )(reverselist, workingdims) # An anonymous function
       translatedData <- translatedData[prs(1), prs(2), prs(3), prs(4), prs(5),
                                        drop=FALSE]
       out <- array(aperm(translatedData, perms), real.dimensions)
@@ -141,10 +142,11 @@ performPermutation <- function(T, real.dimensions, data, verbose=FALSE) {
 #' @name reorient
 #' @title Reorient Image using NIfTI header
 #' 
-#' @description Transforms in the NIfTI header are parsed and normalized versions of these
-#' transforms are applied.
+#' @description Transforms in the NIfTI header are parsed and normalized
+#' versions of these transforms are applied.
 #' 
-#' @details This function utilizes the \code{performPermutation} function internally.
+#' @details This function utilizes the \code{performPermutation} function
+#' internally.
 #' 
 #' @aliases reorient inverseReorient
 #' @param nim is an object of class \code{nifti}.
@@ -154,13 +156,13 @@ performPermutation <- function(T, real.dimensions, data, verbose=FALSE) {
 #' @param invert stores the inverse transform.
 #' @param tol is a very small value used to judge if a number is essentially
 #' zero.
-#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net} and Brandon
-#' Whitcher \email{bwhitcher@@gmail.com}
+#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
 #' @seealso \code{\link{performPermutation}}
 #' @rdname reorient
 #' @export
 reorient <- function(nim, data, verbose=FALSE, invert=FALSE, tol=1e-7) {
-  ## from nifti1.h there are three different methods of orienting the
+  ## From nifti1.h there are three different methods of orienting the
   ## i,j,k data into x,y,z space.
 
   ## Method 1 is the default for ANALYZE 7.5 files, and will be dealt
@@ -170,7 +172,6 @@ reorient <- function(nim, data, verbose=FALSE, invert=FALSE, tol=1e-7) {
   ## where increasing (+) (i,j,k) is correlated with
   ## (LEFT,ANTERIOR,SUPERIOR)
   real.dimensions <- nim@"dim_"[2:(1+nim@"dim_"[1])]
-
   if (nim@"qform_code" > 0) {
     if (verbose) {
       cat(" ## reorient = Method 2", fill=TRUE)
@@ -183,8 +184,8 @@ reorient <- function(nim, data, verbose=FALSE, invert=FALSE, tol=1e-7) {
     ## which is either = 1 or -1
     if (abs(qfac) != 1) { 
       if (verbose) {
-	cat("ScalingFactor pixdim(nim)[1] =", qfac,
-	    "!= -1 or 1. Defaulting to 1", fill=TRUE)
+        cat("ScalingFactor pixdim(nim)[1] =", qfac,
+            "!= -1 or 1. Defaulting to 1", fill=TRUE)
       }
       qfac <- 1 
     }
@@ -217,7 +218,7 @@ reorient <- function(nim, data, verbose=FALSE, invert=FALSE, tol=1e-7) {
       }
       ## [x] is given by a general affine transformation from [i]
       ##
-      ## [x] <- A%*%(i-1) + shift
+      ## [x] <- A %*% (i-1) + shift
       ## 
       ## where A <- nim@srow_[x,y,z][1:3] and shift <- srow_x,y,z[4]
       S <- array(dim=c(3,4))
@@ -264,13 +265,6 @@ inverseReorient <- function(nim, verbose=FALSE) {
 ############################################################################
 ## integerTranslation
 ############################################################################
-
-
-
-
-
-
-
 #' @title integerTranslation
 #' 
 #' @description ...
@@ -304,9 +298,7 @@ integerTranslation <- function(nim, data, verbose=FALSE) {
   ## This is a right-handed coordinate system.  However, the exact
   ## direction these axes point with respect to the subject depends on
   ## qform_code (Method 2) and sform_code (Method 3).
-
   dims <- 2:(1+nim@"dim_"[1])
-
   if (nim@"qform_code" <= 0 && nim@"sform_code" <= 0 ) {
     if (verbose) {
       cat("  dims =", nim@"dim_"[dims], fill=TRUE)
@@ -377,18 +369,9 @@ integerTranslation <- function(nim, data, verbose=FALSE) {
   invisible()
 }
 
-## write commands
-##    
-##    writeBin(as.vector(nim), fid, size=nim@"bitpix"/8)
-##    writeBin(as.vector(nim@.Data[order(index.xyz)]), fid,
-##                 size=nim@"bitpix"/8)
-##      writeBin(as.vector(nim@.Data[order(index.xyz)]), fid,
-##               size=nim@"bitpix"/8)
-
 ############################################################################
 ## invertIntegerTranslation
 ############################################################################
-
 #' @export
 #' @rdname integerTranslation
 invertIntegerTranslation <- function(nim, verbose=FALSE) {
@@ -406,8 +389,8 @@ invertIntegerTranslation <- function(nim, verbose=FALSE) {
                  rep(rep(j, each=nim@"dim_"[2]), nim@"dim_"[4]),
                  rep(k, each=nim@"dim_"[2] * nim@"dim_"[3]))
     index.ijk <- (ijk[,1] +
-                  ijk[,2] * nim@"dim_"[2] +
-                  ijk[,3] * nim@"dim_"[2] * nim@"dim_"[3])
+                    ijk[,2] * nim@"dim_"[2] +
+                    ijk[,3] * nim@"dim_"[2] * nim@"dim_"[3])
     ## check for qform codes
     if (nim@"qform_code" > 0) {
       if (verbose) {
@@ -427,12 +410,12 @@ invertIntegerTranslation <- function(nim, verbose=FALSE) {
           t(sweep(R %*% t(sweep(ijk, 2, as.array(pixdim(nim)[2:4]), "*")),
                   1, as.array(qoffset), "+"))
         index.xyz <- (xyz[,1] +
-                      xyz[,2] * nim@"dim_"[2] +
-                      xyz[,3] * nim@"dim_"[2] * nim@"dim_"[3])      
+                        xyz[,2] * nim@"dim_"[2] +
+                        xyz[,3] * nim@"dim_"[2] * nim@"dim_"[3])      
         if (verbose) {
           cat("  dims =", nim@"dim_"[dims], fill=TRUE)
         }
-	return(nim@.Data[order(index.xyz)])
+        return(nim@.Data[order(index.xyz)])
       } else {
         stop("-- rotation matrix is NOT diagonal with +/- 1s --")
       }
@@ -446,16 +429,16 @@ invertIntegerTranslation <- function(nim, verbose=FALSE) {
       }
       xyz <- matrix(0, length(nim@.Data), 3)
       xyz[,1] <- (nim@"srow_x"[1] * ijk[,1] + nim@"srow_x"[2] * ijk[,2] +
-                  nim@"srow_x"[3] * ijk[,3] + nim@"srow_x"[4])
+                    nim@"srow_x"[3] * ijk[,3] + nim@"srow_x"[4])
       ## HACK!!! Multiply x-dimension for proper orientation in R
       xyz[,1] <- -xyz[,1]
       xyz[,2] <- (nim@"srow_y"[1] * ijk[,1] + nim@"srow_y"[2] * ijk[,2] +
-                  nim@"srow_y"[3] * ijk[,3] + nim@"srow_y"[4])
+                    nim@"srow_y"[3] * ijk[,3] + nim@"srow_y"[4])
       xyz[,3] <- (nim@"srow_z"[1] * ijk[,1] + nim@"srow_z"[2] * ijk[,2] +
-                  nim@"srow_z"[3] * ijk[,3] + nim@"srow_z"[4])
+                    nim@"srow_z"[3] * ijk[,3] + nim@"srow_z"[4])
       index.xyz <- (xyz[,1] +
-                    xyz[,2] * nim@"dim_"[2] +
-                    xyz[,3] * nim@"dim_"[2] * nim@"dim_"[3])
+                      xyz[,2] * nim@"dim_"[2] +
+                      xyz[,3] * nim@"dim_"[2] * nim@"dim_"[3])
       return(nim@.Data[order(index.xyz)])
     }
   }
@@ -468,25 +451,30 @@ invertIntegerTranslation <- function(nim, verbose=FALSE) {
 #' @name translateCoordinate
 #' @title Translate Voxel Coordinates
 #' 
-#' @description Translates a voxel index into the continuous coordinate space defined by the
-#' NIfTI qform and sform information.
+#' @description Translates a voxel index into the continuous coordinate space
+#' defined by the NIfTI qform and sform information.
 #' 
-#' @details This function takes as input a \code{nifti} object and an index vector in
-#' the voxel space of the object and translates that voxel index into the
-#' continuous coordinate space defined by the object's qform and sform.
+#' @details This function takes as input a \code{nifti} object and an index
+#' vector in the voxel space of the object and translates that voxel index
+#' into the continuous coordinate space defined by the object's qform and
+#' sform.
 #' 
-#' Please note: \enumerate{ \item By default the index \code{i} varies most
-#' rapidly, etc.  \item The ANALYZE 7.5 coordinate system is \tabular{ccl}{ +x
-#' \tab = \tab Left\cr +y \tab = \tab Anterior\cr +z \tab = \tab Superior } (A
-#' left-handed co-ordinate system) \item The three methods below give the
-#' locations of the voxel centres in the x,y,z system.  In many cases programs
-#' will want to display the data on other grids.  In which case the program
-#' will be required to convert the desired (x,y,z) values in to voxel values
-#' using the inverse transformation.  \item Method 2 uses a factor \code{qfac}
-#' which is either -1 or 1.  \code{qfac} is stored in \code{pixdim[0]}.  If
-#' \code{pixdim[0]} != 1 or -1, which should not occur, we assume 1.  \item The
-#' units of the \code{xyzt} are set in \code{xyzt_units} field.  }
-#' 
+#' Please note:
+#' \enumerate{ 
+#' \item By default the index \code{i} varies most rapidly, etc.  
+#' \item The ANALYZE 7.5 coordinate system is \tabular{ccl}{ +x \tab = \tab 
+#' Left\cr +y \tab = \tab Anterior\cr +z \tab = \tab Superior } (A 
+#' left-handed co-ordinate system).
+#' \item The three methods below give the locations of the voxel centres in 
+#' the x,y,z system.  In many cases programs will want to display the data 
+#' on other grids.  In which case the program will be required to convert 
+#' the desired (x,y,z) values in to voxel values using the inverse 
+#' transformation.  
+#' \item Method 2 uses a factor \code{qfac} which is either -1 or 1.  
+#' \code{qfac} is stored in \code{pixdim[0]}.  If \code{pixdim[0]} != 1 or 
+#' -1, which should not occur, we assume 1.  
+#' \item The units of the \code{xyzt} are set in \code{xyzt_units} field.  
+#' }
 #' @param i An index vector in \code{nim}.
 #' @param nim An object of class \code{nifti}.
 #' @param verbose Provide detailed output to the user.
@@ -548,8 +536,8 @@ translateCoordinate <- function(i, nim, verbose=FALSE) {
   ## Method 2. when qform_code > 0, which should be the "normal" case
   if (nim@"qform_code" > 0) { 
     if (verbose) {
-      cat("QForm_code =", nim@"qform_code", ": Orientation by Method 2.",
-	fill=TRUE)
+      cat("QForm_code =", nim@"qform_code", ": Orientation by Method 2.", 
+          fill=TRUE)
     }
     ## The [x] coordinates are given by the pixdim[] scales:
     scaling <- diag(pixdim(nim)[2:4])
@@ -565,19 +553,19 @@ translateCoordinate <- function(i, nim, verbose=FALSE) {
     ## represent the nominal orientation and location of the data. This method
     ## can also be used to represent "aligned" coordinates, which would
     ## typically result from post-acquisition alignment of the volume to a
-    ## "standard" orientation e.g.  the same subject on another day, or a rigid
+    ## "standard" orientation e.g.the same subject on another day, or a rigid
     ## rotation to true anatomical orientation from the tilted position of the
     ## subject in the scanner.
     ## 
     ## [x] =  _R_%*%scaling%*%[i]+shift
     ##
     ## Where scaling[3] = scaling[3]*scalingFactor
-    
+    ##
     ## first enforce qfac = 1 or -1
     if (qfac != 1 && qfac != -1) { 
       if (verbose) {
-	cat("ScalingFactor pixdim(nim)[1]) =", qfac,
-	    "!= -1 or 1. Defaulting to 1", fill=TRUE)
+        cat("ScalingFactor pixdim(nim)[1]) =", qfac,
+            "!= -1 or 1. Defaulting to 1", fill=TRUE)
       }
       qfac <- 1 
     }
@@ -591,7 +579,7 @@ translateCoordinate <- function(i, nim, verbose=FALSE) {
   if (nim@"sform_code" > 0) {
     if (verbose) {
       cat("SForm_code =", nim@"sform_code", ": Orientation by Method 3.",
-	  fill=TRUE)
+          fill=TRUE)
     }
     ## [x] is given by a general affine transformation from [i]
     ##
