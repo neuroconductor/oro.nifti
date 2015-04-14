@@ -23,7 +23,7 @@ Internal function that converts multidimensional arrays to ANALYZE class
 objects.
 }
 \author{
-Andrew Thornton \email{zeripath@users.sourceforge.net} and Brandon
-Whitcher \email{bwhitcher@gmail.com}
+Andrew Thornton \email{zeripath@users.sourceforge.net},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
 }
 

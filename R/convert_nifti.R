@@ -38,11 +38,11 @@
 #' @name Convert NIfTI Codes
 #' @title Convert NIfTI Codes
 #' 
-#' @description Codes that appear in the ANALYZE header are mapped to meaningful chartacter
-#' strings.
+#' @description Codes that appear in the ANALYZE header are mapped to 
+#' meaningful chartacter strings.
 #' 
-#' @details \code{switch} statements are used to map a numeric code to the appropriate
-#' string.
+#' @details \code{switch} statements are used to map a numeric code to the 
+#' appropriate string.
 #' 
 #' @aliases convert.bitpix convert.datatype convert.intent convert.form
 #' @aliases convert.units convert.slice
@@ -68,6 +68,7 @@
 #' convert.orient.anlz(2)
 #' ##  4 = "coronal flipped"
 #' convert.orient.anlz(4)
+#' 
 #' @rdname convert_nifti
 #' @export
 convert.bitpix <- function(bitpix=NULL) {
@@ -93,7 +94,6 @@ convert.bitpix <- function(bitpix=NULL) {
     names(which(nifti.bitpix == bitpix))
   }
 }
-
 #' @rdname convert_nifti
 #' @export
 convert.datatype <- function(datatype.code=NULL) {
@@ -259,7 +259,6 @@ xyzt2space <- function(xyzt) {
   ## define XYZT_TO_SPACE(xyzt) ( (xyzt) & 0x07 )
   bitops::bitAnd(xyzt, 7)
 }
-
 #' @rdname bitwise
 #' @export
 xyzt2time <- function(xyzt) {
@@ -300,9 +299,8 @@ dim2slice <- function(di) {
 #' @name as.nifti
 #' @title as.nifti
 #' 
-#' @description Internal function that converts multidimensional arrays to NIfTI class
-#' objects.
-#' 
+#' @description Internal function that converts multidimensional arrays to 
+#' NIfTI class objects.
 #' 
 #' @aliases as.nifti
 #' @param from is the object to be converted.
@@ -311,8 +309,8 @@ dim2slice <- function(di) {
 #' @param verbose is a logical variable (default = \code{FALSE}) that allows
 #' text-based feedback during execution of the function.
 #' @return An object of class \code{nifti}.
-#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net} and Brandon
-#' Whitcher \email{bwhitcher@@gmail.com}
+#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net}.\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
 #' @export
 as.nifti <- function(from, value=NULL, verbose=FALSE) {
   anlz.as.nifti <- function(from, value=nifti()) {
@@ -373,11 +371,9 @@ as.nifti <- function(from, value=NULL, verbose=FALSE) {
     warning("Range too large to be kept as integer, forcing float")
     floattype(from)
   }
-
   floattype <- function(from) {
     return("FLOAT32")
   }
-
   if (is.null(value)) {
     nim <- nifti()
   } else {
@@ -404,7 +400,6 @@ as.nifti <- function(from, value=NULL, verbose=FALSE) {
       if (length(nim@"dim_") < 8) {
         nim@"dim_" <- c(nim@"dim_", rep(1, 8 - length(nim@"dim_")))
       }
-      
       nim@.Data <- from
       if (getOption("niftiAuditTrail") && is(nim, "niftiAuditTrail")) {
         audit.trail(nim) <-

@@ -4,8 +4,9 @@
 #' \code{anlz} object is passed, the unaltered \code{anlz} object is returned.
 #' @description Forces image \code{scl_slope} to 1 and \code{scl_inter}
 #' to be 0 of slots of class \code{nifti}.  This is so that when images are 
-#' rendered/written, the values correspond to those in the array (stored in 
-#' Data slot) and are not scaled.
+#' rendered/written, the values correspond to those in the array (stored in the
+#' \code{.Data} slot) and are not scaled.
+#' @author John Muschelli \email{muschellij2@@gmail.com}
 #' @name resetSlopeIntercept
 #' @export
 resetSlopeIntercept <- function(img) {

@@ -48,21 +48,21 @@
 #' @rdname miscellaneous
 #' @keywords misc
 #' @export
-nsli <- function(x)
+nsli <- function(x) {
   dim(x)[3]
-
+}
 #' @rdname miscellaneous
 #' @export
-NSLI <- function(x)
+NSLI <- function(x) {
   dim(x)[3]
-
+}
 #' @rdname miscellaneous
 #' @export
-ntim <- function(x)
+ntim <- function(x) {
   dim(x)[4]
-
+}
 #' @rdname miscellaneous
 #' @export
-NTIM <- function(x)
+NTIM <- function(x) {
   dim(x)[4]
-
+}

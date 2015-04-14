@@ -26,7 +26,8 @@ Imports:
     methods,
     utils,
     abind
-Enhances: fmri
+Enhances: 
+    fmri
 License: BSD_3_clause + file LICENSE
 URL: 
   http://rig.oro.us.com, 
@@ -42,7 +43,6 @@ Collate:
     'nifti_assign.R'
     'coerce.R'
     'writeS4.R'
-    'oro.nifti-package.R'    
     'convert_anlz.R'
     'convert_nifti.R'
     'cal_img.R'

@@ -216,15 +216,7 @@ Class "vector", by class "array", distance 3, with explicit coerce
 > 
 > ### ** Examples
 > 
-> (aim <- anlz()) # default
-ANALYZE 7.5 format
-  Type            : anlz
-  Data Type       : 2 (UNSIGNED_CHAR)
-  Bits per Pixel  : 8
-  Orient          : 0 (transverse unflipped)
-  Dimension       : 1 x 1 x 1 x 1
-  Pixel Dimension : 1 x 1 x 1 x 1
-  Voxel Units     : mm
+> aim <- anlz() # default
 > 
 > 
 > 
@@ -291,11 +283,13 @@ ANALYZE 7.5 format
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: aux.file-methods
-> ### Title: Extract Image Attribute 'aux.file'
-> ### Aliases: aux.file aux.file,anlz-method aux.file,nifti-method
-> ###   aux.file-methods aux.file-methods, aux.file<- aux.file<-,anlz-method
-> ###   aux.file<-,nifti-method
+> ### Name: aux_file-methods
+> ### Title: Extract Image Attribute 'aux_file'
+> ### Aliases: aux.file aux.file,anlz-method aux.file,nifti-method aux.file<-
+> ###   aux.file<-,anlz-method aux.file<-,nifti-method aux_file
+> ###   aux_file,anlz-method aux_file,nifti-method aux_file-methods
+> ###   aux_file-methods, aux_file<- aux_file<-,anlz-method
+> ###   aux_file<-,nifti-method
 > 
 > ### ** Examples
 > 
@@ -324,11 +318,13 @@ ANALYZE 7.5 format
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: cal.max-methods
-> ### Title: Extract Image Attribute 'cal.max'
-> ### Aliases: cal.max cal.max,anlz-method cal.max,nifti-method
-> ###   cal.max-methods cal.max-methods, cal.max<- cal.max<-,anlz-method
-> ###   cal.max<-,nifti-method
+> ### Name: cal_max-methods
+> ### Title: Extract Image Attribute 'cal_max'
+> ### Aliases: cal.max cal.max,anlz-method cal.max,nifti-method cal.max<-
+> ###   cal.max<-,anlz-method cal.max<-,nifti-method cal_max
+> ###   cal_max,anlz-method cal_max,nifti-method cal_max-methods
+> ###   cal_max-methods, cal_max<- cal_max<-,anlz-method
+> ###   cal_max<-,nifti-method
 > 
 > ### ** Examples
 > 
@@ -352,11 +348,13 @@ ANALYZE 7.5 format
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: cal.min-methods
-> ### Title: Extract Image Attribute 'cal.min'
-> ### Aliases: cal.min cal.min,anlz-method cal.min,nifti-method
-> ###   cal.min-methods cal.min-methods, cal.min<- cal.min<-,anlz-method
-> ###   cal.min<-,nifti-method
+> ### Name: cal_min-methods
+> ### Title: Extract Image Attribute 'cal_min'
+> ### Aliases: cal.min cal.min,anlz-method cal.min,nifti-method cal.min<-
+> ###   cal.min<-,anlz-method cal.min<-,nifti-method cal_min
+> ###   cal_min,anlz-method cal_min,nifti-method cal_min-methods
+> ###   cal_min-methods, cal_min<- cal_min<-,anlz-method
+> ###   cal_min<-,nifti-method
 > 
 > ### ** Examples
 > 
@@ -482,20 +480,20 @@ ANALYZE 7.5 format
 > 
 > 
 > cleanEx()
-> nameEx("drop_img_dim")
-> ### * drop_img_dim
+> nameEx("dropImageDimension")
+> ### * dropImageDimension
 > 
 > flush(stderr()); flush(stdout())
 > 
-> ### Name: drop_img_dim
+> ### Name: dropImageDimension
 > ### Title: Drop Image Dimension
-> ### Aliases: drop_img_dim
+> ### Aliases: dropImageDimension
 > 
 > ### ** Examples
 > 
-> nim = nifti(array(rnorm(10^3), dim= rep(10, 3)))
-> nim2 = nifti(array(rnorm(10^3), dim= c(10, 10, 1, 10)))
-> drop_img_dim(nim2)
+> nim <- nifti(array(rnorm(10^3), dim = rep(10, 3)))
+> nim2 <- nifti(array(rnorm(10^3), dim = c(10, 10, 1, 10)))
+> dropImageDimension(nim2)
 NIfTI-1 format
   Type            : nifti
   Data Type       : 2 (UINT8)
@@ -508,7 +506,7 @@ NIfTI-1 format
   Pixel Dimension : 1 x 1 x 1 x 1
   Voxel Units     : Unknown
   Time Units      : Unknown
-> drop_img_dim(nim2, onlylast = FALSE)
+> dropImageDimension(nim2, onlylast = FALSE)
 NIfTI-1 format
   Type            : nifti
   Data Type       : 2 (UINT8)
@@ -521,8 +519,8 @@ NIfTI-1 format
   Pixel Dimension : 1 x 1 x 1
   Voxel Units     : Unknown
   Time Units      : Unknown
-> nim3 = nifti(array(rnorm(10^3), dim= c(10, 10, 10, 1)))
-> drop_img_dim(nim3)
+> nim3 <- nifti(array(rnorm(10^3), dim = c(10, 10, 10, 1)))
+> dropImageDimension(nim3)
 NIfTI-1 format
   Type            : nifti
   Data Type       : 2 (UINT8)
@@ -535,7 +533,7 @@ NIfTI-1 format
   Pixel Dimension : 1 x 1 x 1
   Voxel Units     : Unknown
   Time Units      : Unknown
-> drop_img_dim(nim3, onlylast = FALSE) # the same as above
+> dropImageDimension(nim3, onlylast = FALSE) # the same as above
 NIfTI-1 format
   Type            : nifti
   Data Type       : 2 (UINT8)
@@ -548,12 +546,12 @@ NIfTI-1 format
   Pixel Dimension : 1 x 1 x 1
   Voxel Units     : Unknown
   Time Units      : Unknown
-> nim4 = nifti(array(rnorm(10^3), dim= c(10, 10, 10, 1, 10)))
+> nim4 <- nifti(array(rnorm(10^3), dim = c(10, 10, 10, 1, 10)))
 > dim(nim4[,,,1,])
 [1] 10 10 10 10
 > dim(nim4[,,,1,,drop=TRUE])
 [1] 10 10 10 10
-> drop_img_dim(nim4)
+> dropImageDimension(nim4)
 NIfTI-1 format
   Type            : nifti
   Data Type       : 2 (UINT8)
@@ -567,8 +565,8 @@ NIfTI-1 format
   Voxel Units     : Unknown
   Time Units      : Unknown
 > 
-> nim5 = nifti(array(rnorm(10^4), dim= c(1, 10, 10, 10, 1, 10)))
-> drop_img_dim(nim5)
+> nim5 = nifti(array(rnorm(10^4), dim = c(1, 10, 10, 10, 1, 10)))
+> dropImageDimension(nim5)
 NIfTI-1 format
   Type            : nifti
   Data Type       : 2 (UINT8)
@@ -581,7 +579,7 @@ NIfTI-1 format
   Pixel Dimension : 1 x 1 x 1 x 1 x 1 x 1
   Voxel Units     : Unknown
   Time Units      : Unknown
-> drop_img_dim(nim5, onlylast = FALSE)
+> dropImageDimension(nim5, onlylast = FALSE)
 NIfTI-1 format
   Type            : nifti
   Data Type       : 2 (UINT8)
@@ -595,8 +593,8 @@ NIfTI-1 format
   Voxel Units     : Unknown
   Time Units      : Unknown
 > 
-> nim6 = nifti(array(rnorm(10^3), dim= c(1, 10, 10, 10, 1, 1)))
-> drop_img_dim(nim6)
+> nim6 = nifti(array(rnorm(10^3), dim = c(1, 10, 10, 10, 1, 1)))
+> dropImageDimension(nim6)
 NIfTI-1 format
   Type            : nifti
   Data Type       : 2 (UINT8)
@@ -622,7 +620,7 @@ NIfTI-1 format
 > ##D pixdim(colin)
 > ##D # this will error
 > ##D writeNIfTI(colin, filename = tempfile())
-> ##D colin = drop_img_dim(colin)
+> ##D colin <- dropImageDimension(colin)
 > ##D writeNIfTI(colin, filename = tempfile())
 > ## End(Not run)
 > 
@@ -1325,7 +1323,7 @@ QForm_code and SForm_code unset: Orientation by Method 1.
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  9.924 0.156 10.093 0 0 
+Time elapsed:  10.049 0.176 10.239 0 0 
 > grDevices::dev.off()
 null device 
           1 

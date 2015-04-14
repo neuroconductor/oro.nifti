@@ -296,7 +296,7 @@ setValidity("anlz", function(object) {
 #' @references ANALYZE 7.5\cr \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}
 #' @examples
 #' 
-#' (aim <- anlz()) # default
+#' aim <- anlz() # default
 #' 
 #' @export anlz
 anlz <- function(img=array(0, dim=rep(1,4)), dim, datatype=2, ...) {

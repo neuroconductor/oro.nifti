@@ -5,11 +5,11 @@
 #' 
 #' @title check object
 #' 
-#' @description Check whether object is of class \code{\linkS4class{afni}}
+#' @description Check whether object is of class \code{\linkS4class{afni}}.
 #' 
 #' @param x is an object to be checked.
 #' @return Logical indicating whether object is of class
-#' \code{\linkS4class{afni}}
+#' \code{\linkS4class{afni}}.
 #' @author Karsten Tabelow \email{karsten.tabelow@@wias-berlin.de}
 #' @seealso \code{\linkS4class{afni}}
 #' @references AFNI\cr
@@ -17,10 +17,10 @@
 #' @export is.afni
 #' @rdname is_afni
 is.afni <- function(x) {
-  if (!is(x, "afni")) {
+  if (! is(x, "afni")) {
     return(FALSE)
   } else {
-    return (TRUE)
+    return(TRUE)
   }
 }
 
@@ -31,14 +31,14 @@ is.afni <- function(x) {
 #' 
 #' @title check object
 #' 
-#' @description Check whether object is of class \code{\linkS4class{nifti}}
+#' @description Check whether object is of class \code{\linkS4class{nifti}}.
 #' 
 #' @param x is an object to be checked.
 #' @return Logical indicating whether object is of class
-#' \code{\linkS4class{nifti}}
+#' \code{\linkS4class{nifti}}.
 #' @author Karsten Tabelow \email{karsten.tabelow@@wias-berlin.de}
 #' @seealso \code{\linkS4class{nifti}}
-#' @references ANALYZE 7.5\cr \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}
+#' @references NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
 #' @export is.nifti
 #' @rdname is_nifti
 is.nifti <- function(x) {
@@ -56,20 +56,20 @@ is.nifti <- function(x) {
 #' 
 #' @title check object
 #' 
-#' @description Check whether object is of class \code{\linkS4class{anlz}}
+#' @description Check whether object is of class \code{\linkS4class{anlz}}.
 #' 
 #' @param x is an object to be checked.
 #' @return Logical indicating whether object is of class
-#' \code{\linkS4class{anlz}}
+#' \code{\linkS4class{anlz}}.
 #' @author Karsten Tabelow \email{karsten.tabelow@@wias-berlin.de}
 #' @seealso \code{\linkS4class{anlz}}
 #' @references ANALYZE 7.5\cr \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}
 #' @export is.anlz
 #' @rdname is_anlz
 is.anlz <- function(x) {
-  if (!is(x, "anlz")) {
+  if (! is(x, "anlz")) {
     return(FALSE)
   } else {
-    return (TRUE)
+    return(TRUE)
   }
 }

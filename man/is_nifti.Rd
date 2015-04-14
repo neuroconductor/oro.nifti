@@ -11,16 +11,16 @@ is.nifti(x)
 }
 \value{
 Logical indicating whether object is of class
-\code{\linkS4class{nifti}}
+\code{\linkS4class{nifti}}.
 }
 \description{
-Check whether object is of class \code{\linkS4class{nifti}}
+Check whether object is of class \code{\linkS4class{nifti}}.
 }
 \author{
 Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
 }
 \references{
-ANALYZE 7.5\cr \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}
+NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
 }
 \seealso{
 \code{\linkS4class{nifti}}

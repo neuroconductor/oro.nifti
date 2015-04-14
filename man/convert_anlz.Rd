@@ -24,12 +24,12 @@ convert.orient.anlz(orientation)
 A character string.
 }
 \description{
-Codes that appear in the ANALYZE header are mapped to meaningful chartacter
-strings.
+Codes that appear in the ANALYZE header are mapped to
+meaningful chartacter strings.
 }
 \details{
-\code{switch} statements are used to map a numeric code to the appropriate
-string.
+\code{switch} statements are used to map a numeric code to the
+appropriate string.
 }
 \examples{
 ##  4 = SIGNED_SHORT

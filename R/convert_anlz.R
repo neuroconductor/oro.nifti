@@ -35,11 +35,11 @@
 #' @name Convert ANALYZE Codes
 #' @title Convert ANALYZE Codes
 #' 
-#' @description Codes that appear in the ANALYZE header are mapped to meaningful chartacter
-#' strings.
+#' @description Codes that appear in the ANALYZE header are mapped to 
+#' meaningful chartacter strings.
 #' 
-#' @details \code{switch} statements are used to map a numeric code to the appropriate
-#' string.
+#' @details \code{switch} statements are used to map a numeric code to the 
+#' appropriate string.
 #' 
 #' @aliases convert.bitpix.anlz
 #' @param bitpix is the bit-per-pixel code.
@@ -64,7 +64,6 @@
 #' ##  4 = "coronal flipped"
 #' convert.orient.anlz(4)
 #' 
-#' 
 convert.bitpix.anlz <- function(bitpix=NULL) {
   anlz.bitpix <- list("NONE" = 0,
                       "UNKNOWN" = 0,
@@ -83,7 +82,6 @@ convert.bitpix.anlz <- function(bitpix=NULL) {
     names(which(anlz.bitpix == bitpix))
   }
 }
-
 #' @rdname convert_anlz
 #' @aliases convert.datatype.anlz convert.orient.anlz
 #' @export
@@ -105,7 +103,6 @@ convert.datatype.anlz <- function(datatype.code=NULL) {
     names(which(anlz.datatype == as.numeric(datatype.code)))
   }
 }
-
 #' @rdname convert_anlz
 #' @aliases convert.orient.anlz
 #' @export 
@@ -138,8 +135,8 @@ convert.orient.anlz <- function(orientation) {
 #' @param verbose is a logical variable (default = \code{FALSE}) that allows
 #' text-based feedback during execution of the function.
 #' @return An object of class \code{anlz}.
-#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net} and Brandon
-#' Whitcher \email{bwhitcher@@gmail.com}
+#' @author Andrew Thornton \email{zeripath@@users.sourceforge.net},\cr
+#' Brandon Whitcher \email{bwhitcher@@gmail.com}
 #' @export
 as.anlz <- function(from, value=NULL, verbose=FALSE) {
   integertype <- function(from) {
@@ -155,17 +152,14 @@ as.anlz <- function(from, value=NULL, verbose=FALSE) {
     warning("Range too large to be kept as integer, forcing float")
     floattype(from)
   }
-  
   floattype <- function(from) {
     return("FLOAT")
   }
-
   if (is.null(value)) {
     aim <- anlz()
   } else {
     aim <- value
   }
-
   if (is.array(from)) {
     ## Determine a sensible datatype
     dataClass <- class(from[1])
@@ -197,5 +191,3 @@ as.anlz <- function(from, value=NULL, verbose=FALSE) {
   }
   return(aim)
 }
-
-

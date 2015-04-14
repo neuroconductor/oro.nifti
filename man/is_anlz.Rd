@@ -11,10 +11,10 @@ is.anlz(x)
 }
 \value{
 Logical indicating whether object is of class
-\code{\linkS4class{anlz}}
+\code{\linkS4class{anlz}}.
 }
 \description{
-Check whether object is of class \code{\linkS4class{anlz}}
+Check whether object is of class \code{\linkS4class{anlz}}.
 }
 \author{
 Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}

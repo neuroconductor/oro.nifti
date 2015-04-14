@@ -24,7 +24,7 @@ An object of class \code{anlz}.
 Constructor for Analyze class objects.
 }
 \examples{
-(aim <- anlz()) # default
+aim <- anlz() # default
 }
 \author{
 Brandon Whitcher \email{bwhitcher@gmail.com}

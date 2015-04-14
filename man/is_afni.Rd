@@ -11,10 +11,10 @@ is.afni(x)
 }
 \value{
 Logical indicating whether object is of class
-\code{\linkS4class{afni}}
+\code{\linkS4class{afni}}.
 }
 \description{
-Check whether object is of class \code{\linkS4class{afni}}
+Check whether object is of class \code{\linkS4class{afni}}.
 }
 \author{
 Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
