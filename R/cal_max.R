@@ -1,12 +1,12 @@
-#' @name cal.max-methods
-#' @title Extract Image Attribute \code{cal.max}
+#' @name cal_max-methods
+#' @title Extract Image Attribute \code{cal_max}
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}.
 #' @param value is the value to assign to the \code{cal_max} field.  
 #' @description Methods that act on the \code{cal_max} field in the
 #' NIfTI/ANALYZE header.
 #' @rdname cal_max-methods
-#' @aliases cal.max-methods, cal.max
+#' @aliases cal_max-methods, cal_max
 #' @details See documentation on the ANALYZE and/or NIfTI data standards for
 #' more details.
 #' @author John Muschelli \email{muschellij2@@gmail.com},\cr
@@ -27,23 +27,23 @@
 #' mniLR <- readNIfTI(urlfile)
 #' cal.max(mniLR)
 #' @export
-setGeneric("cal.max", function(object) standardGeneric("cal.max"))
+setGeneric("cal_max", function(object) standardGeneric("cal_max"))
 #' @rdname cal_max-methods
-#' @aliases cal.max,nifti-method
+#' @aliases cal_max,nifti-method
 #' @export
-setMethod("cal.max", "nifti", function(object) { object@"cal_max" })
+setMethod("cal_max", "nifti", function(object) { object@"cal_max" })
 #' @rdname cal_max-methods
-#' @aliases cal.max,anlz-method
+#' @aliases cal_max,anlz-method
 #' @export
-setMethod("cal.max", "anlz", function(object) { object@"cal_max" })
+setMethod("cal_max", "anlz", function(object) { object@"cal_max" })
 #' @rdname cal_max-methods
-#' @aliases cal.max<- 
+#' @aliases cal_max<- 
 #' @export
-setGeneric("cal.max<-", function(object, value) { standardGeneric("cal.max<-") })
+setGeneric("cal_max<-", function(object, value) { standardGeneric("cal_max<-") })
 #' @rdname cal_max-methods
-#' @aliases cal.max<-,nifti-method
+#' @aliases cal_max<-,nifti-method
 #' @export
-setMethod("cal.max<-", 
+setMethod("cal_max<-", 
           signature(object="nifti"), 
           function(object, value) { 
             if ( "cal_max" %in% slotNames(object) ){
@@ -57,9 +57,9 @@ setMethod("cal.max<-",
             return(object)
           })
 #' @rdname cal_max-methods
-#' @aliases cal.max<-,anlz-method
+#' @aliases cal_max<-,anlz-method
 #' @export
-setMethod("cal.max<-", 
+setMethod("cal_max<-", 
           signature(object="anlz"), 
           function(object, value) { 
             if ( "cal_max" %in% slotNames(object) ){

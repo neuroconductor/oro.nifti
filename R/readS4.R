@@ -179,7 +179,7 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
     }
   }
   ### Reset cal_max and cal_min - in case these do not work correctly
-  nim = cal_img(nim, infok = TRUE)
+  nim = calibrateImage(nim, infok = TRUE)
   options(warn=oldwarn)
   return(nim)
 }
@@ -625,7 +625,7 @@ readANALYZE <- function(fname, SPM=FALSE, verbose=FALSE, warn=-1) {
   ## Warnings?
   options(warn=oldwarn)
   ### Reset cal_max and cal_min - in case these do not work correctly
-  aim = cal_img(aim, infok = TRUE)  
+  aim <- calibrateImage(aim, infok = TRUE)  
   ## Check validity
   validANALYZE <- getValidity(getClassDef("anlz"))
   validANALYZE(aim)

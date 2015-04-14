@@ -27,8 +27,10 @@ Methods that act on the \dQuote{qform} and \dQuote{sform} information in the
 NIfTI header.
 }
 \section{Methods}{
- \describe{ \item{object = "nifti"}{Extract or replace
-NIfTI description.} }
+
+\describe{
+\item{object = "nifti"}{Extract or replace NIfTI description.}
+}
 }
 \examples{
 \dontrun{

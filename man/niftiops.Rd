@@ -15,9 +15,9 @@
 \S4method{Ops}{numeric,nifti}(e1, e2)
 }
 \arguments{
-\item{e1}{object}
+\item{e1}{is an object of class \code{nifti}.}
 
-\item{e2}{object}
+\item{e2}{is an object of class \code{nifti}.}
 }
 \description{
 Operations for NIfTI Objects

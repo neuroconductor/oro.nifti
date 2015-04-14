@@ -26,8 +26,10 @@ audit.trail(object) <- value
 Operators that act on the audit trail (XML) in the NIfTI header.
 }
 \section{Methods}{
- \describe{ \item{object = "nifti"}{Extract or replace
-NIfTI audit trail.} }
+
+\describe{
+\item{object = "nifti"}{Extract or replace NIfTI audit trail.}
+}
 }
 \author{
 Andrew Thornton \email{zeripath@users.sourceforge.net}

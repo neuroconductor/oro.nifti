@@ -17,25 +17,31 @@ translateCoordinate(i, nim, verbose = FALSE)
 A \code{nifti}-class object with translated coordinates.
 }
 \description{
-Translates a voxel index into the continuous coordinate space defined by the
-NIfTI qform and sform information.
+Translates a voxel index into the continuous coordinate space
+defined by the NIfTI qform and sform information.
 }
 \details{
-This function takes as input a \code{nifti} object and an index vector in
-the voxel space of the object and translates that voxel index into the
-continuous coordinate space defined by the object's qform and sform.
+This function takes as input a \code{nifti} object and an index
+vector in the voxel space of the object and translates that voxel index
+into the continuous coordinate space defined by the object's qform and
+sform.
 
-Please note: \enumerate{ \item By default the index \code{i} varies most
-rapidly, etc.  \item The ANALYZE 7.5 coordinate system is \tabular{ccl}{ +x
-\tab = \tab Left\cr +y \tab = \tab Anterior\cr +z \tab = \tab Superior } (A
-left-handed co-ordinate system) \item The three methods below give the
-locations of the voxel centres in the x,y,z system.  In many cases programs
-will want to display the data on other grids.  In which case the program
-will be required to convert the desired (x,y,z) values in to voxel values
-using the inverse transformation.  \item Method 2 uses a factor \code{qfac}
-which is either -1 or 1.  \code{qfac} is stored in \code{pixdim[0]}.  If
-\code{pixdim[0]} != 1 or -1, which should not occur, we assume 1.  \item The
-units of the \code{xyzt} are set in \code{xyzt_units} field.  }
+Please note:
+\enumerate{
+\item By default the index \code{i} varies most rapidly, etc.
+\item The ANALYZE 7.5 coordinate system is \tabular{ccl}{ +x \tab = \tab
+Left\cr +y \tab = \tab Anterior\cr +z \tab = \tab Superior } (A
+left-handed co-ordinate system).
+\item The three methods below give the locations of the voxel centres in
+the x,y,z system.  In many cases programs will want to display the data
+on other grids.  In which case the program will be required to convert
+the desired (x,y,z) values in to voxel values using the inverse
+transformation.
+\item Method 2 uses a factor \code{qfac} which is either -1 or 1.
+\code{qfac} is stored in \code{pixdim[0]}.  If \code{pixdim[0]} != 1 or
+-1, which should not occur, we assume 1.
+\item The units of the \code{xyzt} are set in \code{xyzt_units} field.
+}
 }
 \examples{
 ffd <- readNIfTI(file.path(system.file("nifti", package="oro.nifti"),

@@ -122,7 +122,7 @@ makefunc("scl_inter", write=TRUE, remove=remove)
 makefunc("slice_end", write=TRUE, remove=remove)
 makefunc("slice_code", write=TRUE, remove=remove)
 makefunc("xyzt_units", write=TRUE, remove=remove)
-makefunc("cal.max", write=TRUE, remove=remove, 
+makefunc("cal_max", write=TRUE, remove=remove, 
          ex_text = c('\\dontrun{',
                      'url <- "http://nifti.nimh.nih.gov/nifti-1/data/avg152T1_LR_nifti.nii.gz"',
                      'urlfile <- file.path(system.file("nifti", package="oro.nifti"),',
@@ -133,7 +133,7 @@ makefunc("cal.max", write=TRUE, remove=remove,
                      '                     "mniLR.nii.gz")',
                      'mniLR <- readNIfTI(urlfile)',
                      'cal.max(mniLR)'))
-makefunc("cal.min", write=TRUE, remove=remove,
+makefunc("cal_min", write=TRUE, remove=remove,
          ex_text = c('\\dontrun{',
                      'url <- "http://nifti.nimh.nih.gov/nifti-1/data/avg152T1_LR_nifti.nii.gz"',
                      'urlfile <- file.path(system.file("nifti", package="oro.nifti"),',
@@ -163,7 +163,7 @@ makefunc("descrip", write=TRUE, remove=remove,
                      'descrip(mniLR) <- paste(descrip(mniLR), version$version.string, sep="; ")',
                      'descrip(mniLR)',
                      '}'))
-makefunc("aux.file", write=TRUE, remove=remove,
+makefunc("aux_file", write=TRUE, remove=remove,
          ex_text = c('\\dontrun{', 
                      'url <- "http://nifti.nimh.nih.gov/nifti-1/data/avg152T1_RL_nifti.nii.gz"', 
                      'urlfile <- file.path(system.file("nifti", package="oro.nifti"),', 

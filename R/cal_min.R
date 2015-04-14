@@ -1,12 +1,12 @@
-#' @name cal.min-methods
-#' @title Extract Image Attribute \code{cal.min}
+#' @name cal_min-methods
+#' @title Extract Image Attribute \code{cal_min}
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}.
 #' @param value is the value to assign to the \code{cal_min} field.  
 #' @description Methods that act on the \code{cal_min} field in the
 #' NIfTI/ANALYZE header.
 #' @rdname cal_min-methods
-#' @aliases cal.min-methods, cal.min
+#' @aliases cal_min-methods, cal_min
 #' @details See documentation on the ANALYZE and/or NIfTI data standards for
 #' more details.
 #' @author John Muschelli \email{muschellij2@@gmail.com},\cr
@@ -27,23 +27,23 @@
 #' mniLR <- readNIfTI(urlfile)
 #' cal.min(mniLR)
 #' @export
-setGeneric("cal.min", function(object) standardGeneric("cal.min"))
+setGeneric("cal_min", function(object) standardGeneric("cal_min"))
 #' @rdname cal_min-methods
-#' @aliases cal.min,nifti-method
+#' @aliases cal_min,nifti-method
 #' @export
-setMethod("cal.min", "nifti", function(object) { object@"cal_min" })
+setMethod("cal_min", "nifti", function(object) { object@"cal_min" })
 #' @rdname cal_min-methods
-#' @aliases cal.min,anlz-method
+#' @aliases cal_min,anlz-method
 #' @export
-setMethod("cal.min", "anlz", function(object) { object@"cal_min" })
+setMethod("cal_min", "anlz", function(object) { object@"cal_min" })
 #' @rdname cal_min-methods
-#' @aliases cal.min<- 
+#' @aliases cal_min<- 
 #' @export
-setGeneric("cal.min<-", function(object, value) { standardGeneric("cal.min<-") })
+setGeneric("cal_min<-", function(object, value) { standardGeneric("cal_min<-") })
 #' @rdname cal_min-methods
-#' @aliases cal.min<-,nifti-method
+#' @aliases cal_min<-,nifti-method
 #' @export
-setMethod("cal.min<-", 
+setMethod("cal_min<-", 
           signature(object="nifti"), 
           function(object, value) { 
             if ( "cal_min" %in% slotNames(object) ){
@@ -57,9 +57,9 @@ setMethod("cal.min<-",
             return(object)
           })
 #' @rdname cal_min-methods
-#' @aliases cal.min<-,anlz-method
+#' @aliases cal_min<-,anlz-method
 #' @export
-setMethod("cal.min<-", 
+setMethod("cal_min<-", 
           signature(object="anlz"), 
           function(object, value) { 
             if ( "cal_min" %in% slotNames(object) ){

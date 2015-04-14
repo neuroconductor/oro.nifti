@@ -140,7 +140,7 @@ setMethod("writeNIfTI", signature(nim="array"),
   oldwarn <- getOption("warn")
   options(warn=warn)
   #### added so that range of the data will equal cal.min/cal.max
-  nim = cal_img(nim)
+  nim <- calibrateImage(nim)
   ##### Added so that bad dimensions are dropped
 #   nim = drop_img_dim(nim)
   ## Basic error checking

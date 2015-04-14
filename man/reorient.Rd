@@ -23,15 +23,16 @@ text-based feedback during execution of the function.}
 zero.}
 }
 \description{
-Transforms in the NIfTI header are parsed and normalized versions of these
-transforms are applied.
+Transforms in the NIfTI header are parsed and normalized
+versions of these transforms are applied.
 }
 \details{
-This function utilizes the \code{performPermutation} function internally.
+This function utilizes the \code{performPermutation} function
+internally.
 }
 \author{
-Andrew Thornton \email{zeripath@users.sourceforge.net} and Brandon
-Whitcher \email{bwhitcher@gmail.com}
+Andrew Thornton \email{zeripath@users.sourceforge.net},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
 }
 \seealso{
 \code{\link{performPermutation}}

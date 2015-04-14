@@ -19,13 +19,13 @@ transformed.}
 text-based feedback during execution of the function.}
 }
 \description{
-Given an orthogonal permutation matrix \eqn{T}, an array of dimensions and a
-one-dimensional representation of data.  It will return a transformed array
-with the transformed dimensions.
+Given an orthogonal permutation matrix \eqn{T}, an array of
+dimensions and a one-dimensional representation of data.  It will return a
+transformed array with the transformed dimensions.
 }
 \details{
-This function is mainly used by the \code{\link{reorient}} function to
-transform nifti data into neuroradiological convention.
+This function is mainly used by the \code{\link{reorient}} function
+to transform nifti data into neuroradiological convention.
 }
 \author{
 Andrew Thornton \email{zeripath@users.sourceforge.net}

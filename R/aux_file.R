@@ -1,12 +1,12 @@
-#' @name aux.file-methods
-#' @title Extract Image Attribute \code{aux.file}
+#' @name aux_file-methods
+#' @title Extract Image Attribute \code{aux_file}
 #' @docType methods 
 #' @param object is an object of class \code{nifti} or \code{anlz}.
 #' @param value is the value to assign to the \code{aux_file} field.  
 #' @description Methods that act on the \code{aux_file} field in the
 #' NIfTI/ANALYZE header.
 #' @rdname aux_file-methods
-#' @aliases aux.file-methods, aux.file
+#' @aliases aux_file-methods, aux_file
 #' @details See documentation on the ANALYZE and/or NIfTI data standards for
 #' more details.
 #' @author John Muschelli \email{muschellij2@@gmail.com},\cr
@@ -31,23 +31,23 @@
 #' aux.file(mniRL) <- "avg152T1_RL_nifti"
 #' aux.file(mniRL)
 #' @export
-setGeneric("aux.file", function(object) standardGeneric("aux.file"))
+setGeneric("aux_file", function(object) standardGeneric("aux_file"))
 #' @rdname aux_file-methods
-#' @aliases aux.file,nifti-method
+#' @aliases aux_file,nifti-method
 #' @export
-setMethod("aux.file", "nifti", function(object) { object@"aux_file" })
+setMethod("aux_file", "nifti", function(object) { object@"aux_file" })
 #' @rdname aux_file-methods
-#' @aliases aux.file,anlz-method
+#' @aliases aux_file,anlz-method
 #' @export
-setMethod("aux.file", "anlz", function(object) { object@"aux_file" })
+setMethod("aux_file", "anlz", function(object) { object@"aux_file" })
 #' @rdname aux_file-methods
-#' @aliases aux.file<- 
+#' @aliases aux_file<- 
 #' @export
-setGeneric("aux.file<-", function(object, value) { standardGeneric("aux.file<-") })
+setGeneric("aux_file<-", function(object, value) { standardGeneric("aux_file<-") })
 #' @rdname aux_file-methods
-#' @aliases aux.file<-,nifti-method
+#' @aliases aux_file<-,nifti-method
 #' @export
-setMethod("aux.file<-", 
+setMethod("aux_file<-", 
           signature(object="nifti"), 
           function(object, value) { 
             if ( "aux_file" %in% slotNames(object) ){
@@ -61,9 +61,9 @@ setMethod("aux.file<-",
             return(object)
           })
 #' @rdname aux_file-methods
-#' @aliases aux.file<-,anlz-method
+#' @aliases aux_file<-,anlz-method
 #' @export
-setMethod("aux.file<-", 
+setMethod("aux_file<-", 
           signature(object="anlz"), 
           function(object, value) { 
             if ( "aux_file" %in% slotNames(object) ){
