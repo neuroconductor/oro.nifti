@@ -9,7 +9,7 @@
 #' @param warn produces a text output if the number of dimensions is under 
 #' three.
 #' @description Drops a dimension of an image that has one-dimension and 
-#' sets respective values to 0 in pixdim or 1 in dim
+#' sets respective values to 0 in \code{pixdim} or 1 in \code{dim}.
 #' @importFrom abind adrop
 #' @examples
 #' 
@@ -25,11 +25,11 @@
 #' dim(nim4[,,,1,,drop=TRUE])
 #' dropImageDimension(nim4)
 #' 
-#' nim5 = nifti(array(rnorm(10^4), dim = c(1, 10, 10, 10, 1, 10)))
+#' nim5 <- nifti(array(rnorm(10^4), dim = c(1, 10, 10, 10, 1, 10)))
 #' dropImageDimension(nim5)
 #' dropImageDimension(nim5, onlylast = FALSE)
 #' 
-#' nim6 = nifti(array(rnorm(10^3), dim = c(1, 10, 10, 10, 1, 1)))
+#' nim6 <- nifti(array(rnorm(10^3), dim = c(1, 10, 10, 10, 1, 1)))
 #' dropImageDimension(nim6)
 #' \dontrun{
 #' ## 27 scans of Colin Holmes (MNI) brain co-registered and averaged
