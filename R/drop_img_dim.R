@@ -49,7 +49,7 @@
 #' }
 #' @rdname drop_img_dim
 #' @export
-dropImageDimension <- function(img, onlylast = TRUE, warn = TRUE){
+dropImageDimension <- function(img, onlylast = TRUE, warn = TRUE) {
   dim_  <- dim_(img)
   imgdim <- dim(img)
   ####
