@@ -32,18 +32,19 @@
 ##
 #' @title Tim's Useful Color Table
 #' 
-#' @description A pleasing rainbow style color table patterned after that used in Matlab.
+#' @description A pleasing rainbow style color table patterned after that used 
+#' in Matlab.
 #' 
-#' @details Based on the \code{tim.colors} function in the \pkg{fields} package.  The
-#' \code{tim.colors} function here has been modified to break any dependence on
-#' code in the \pkg{fields} package.  Spline interpolation
+#' @details Based on the \code{tim.colors} function in the \pkg{fields} package.  
+#' The \code{tim.colors} function here has been modified to break any dependence 
+#' on code in the \pkg{fields} package.  Spline interpolation
 #' (\code{interpSpline}) is used when the number of requested colors is not the
 #' default.
 #' 
 #' @param n is the number of color levels (default = 64).
 #' @return A vector of character strings giving the colors in hexadecimal
 #' format.
-#' @author Tim Hoar (GSP-NCAR); modified by B. Whitcher
+#' @author Tim Hoar (GSP-NCAR); modified by Brandon Whitcher
 #' @seealso \code{\link{hotmetal}}, \code{\link{topo.colors}},
 #' \code{\link{terrain.colors}}
 #' @keywords aplot
@@ -81,11 +82,11 @@ tim.colors <- function(n=64) {
   x <- seq(0, 1, length.out=64)
   xg <- seq(0, 1, length.out=n)
   for (k in 1:3) {
-    hold <- splines::interpSpline(x, rgb.tim[,k])
+    hold <- splines::interpSpline(x, rgb.tim[, k])
     hold <- predict(hold, xg)$y
     hold[hold < 0] <- 0
     hold[hold > 255] <- 255
-    temp[,k] <- round(hold)
+    temp[, k] <- round(hold)
   }
   rgb(temp[,1], temp[,2], temp[,3], maxColorValue=255)
 }

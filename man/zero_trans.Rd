@@ -2,9 +2,12 @@
 % Please edit documentation in R/zero_trans.R
 \name{resetSlopeIntercept}
 \alias{resetSlopeIntercept}
+\alias{zero_trans}
 \title{Change Intercept to 0 and Slope to 1 in NIfTI Object}
 \usage{
 resetSlopeIntercept(img)
+
+zero_trans(...)
 }
 \arguments{
 \item{img}{is a \code{nifti} object (or character of filename).  If an

@@ -8,6 +8,7 @@
 #' \code{.Data} slot) and are not scaled.
 #' @author John Muschelli \email{muschellij2@@gmail.com}
 #' @name resetSlopeIntercept
+#' @rdname zero_trans
 #' @export
 resetSlopeIntercept <- function(img) {
   if (is.nifti(img)) {
@@ -16,5 +17,8 @@ resetSlopeIntercept <- function(img) {
   }
   return(img)
 }
-
-
+#' @rdname zero_trans
+#' @export
+zero_trans <- function(...) {
+  resetSlopeIntercept(...)
+}

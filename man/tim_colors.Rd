@@ -14,12 +14,13 @@ A vector of character strings giving the colors in hexadecimal
 format.
 }
 \description{
-A pleasing rainbow style color table patterned after that used in Matlab.
+A pleasing rainbow style color table patterned after that used
+in Matlab.
 }
 \details{
-Based on the \code{tim.colors} function in the \pkg{fields} package.  The
-\code{tim.colors} function here has been modified to break any dependence on
-code in the \pkg{fields} package.  Spline interpolation
+Based on the \code{tim.colors} function in the \pkg{fields} package.
+The \code{tim.colors} function here has been modified to break any dependence
+on code in the \pkg{fields} package.  Spline interpolation
 (\code{interpSpline}) is used when the number of requested colors is not the
 default.
 }
@@ -28,7 +29,7 @@ tim.colors(10)
 image(outer(1:20, 1:20, "+"), col=tim.colors(75), main="tim.colors")
 }
 \author{
-Tim Hoar (GSP-NCAR); modified by B. Whitcher
+Tim Hoar (GSP-NCAR); modified by Brandon Whitcher
 }
 \seealso{
 \code{\link{hotmetal}}, \code{\link{topo.colors}},
