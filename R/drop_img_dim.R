@@ -47,6 +47,7 @@
 #' colin <- dropImageDimension(colin)
 #' writeNIfTI(colin, filename = tempfile())
 #' }
+#' @rdname drop_img_dim
 #' @export
 dropImageDimension <- function(img, onlylast = TRUE, warn = TRUE){
   dim_  <- dim_(img)
@@ -108,4 +109,9 @@ dropImageDimension <- function(img, onlylast = TRUE, warn = TRUE){
     }
     return(D)
   }
+}
+#' @rdname drop_img_dim
+#' @export
+drop_img_dim <- function(...) {
+  dropImageDimension(...)
 }
