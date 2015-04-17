@@ -1,7 +1,7 @@
 ## Overloading binary operators
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #' @title Operations for NIfTI Objects
-#' @name niftiops
+#' @name nifti-operators
 #' @rdname niftiops
 #' @aliases Ops,nifti,nifti-method
 #' @param e1 is an object of class \code{nifti}.
@@ -9,9 +9,11 @@
 #' @author John Muschellli \email{muschellij2@@gmail.com}
 #' @examples
 #' 
-#' img04 <- nifti()
-#' img05 <- nifti()
-#' img06 <- img04 + img05
+#' img01 <- nifti(array(1:64, c(4,4,4,1)), datatype=4)
+#' img02 <- nifti(array(64:1, c(4,4,4,1)), datatype=4)
+#' is.nifti(img01 + img02)
+#' is.nifti(sqrt(2) * img01)
+#' is.nifti(img02 / pi)
 #' 
 setMethod("Ops", signature(e1="nifti", e2="nifti"),
           function(e1, e2) {

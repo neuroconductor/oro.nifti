@@ -7,14 +7,14 @@
 \usage{
 resetSlopeIntercept(img)
 
-zero_trans(...)
+zero_trans(img)
 }
 \arguments{
 \item{img}{is a \code{nifti} object (or character of filename).  If an
 \code{anlz} object is passed, the unaltered \code{anlz} object is returned.}
 }
 \value{
-object of type passed
+An object of the same type passed.
 }
 \description{
 Forces image \code{scl_slope} to 1 and \code{scl_inter}

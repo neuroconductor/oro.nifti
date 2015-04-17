@@ -7,7 +7,7 @@
 \usage{
 calibrateImage(img, infok = TRUE)
 
-cal_img(...)
+cal_img(img, infok = TRUE)
 }
 \arguments{
 \item{img}{is a \code{nifti} object.}

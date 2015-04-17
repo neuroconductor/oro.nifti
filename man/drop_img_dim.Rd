@@ -7,7 +7,7 @@
 \usage{
 dropImageDimension(img, onlylast = TRUE, warn = TRUE)
 
-drop_img_dim(...)
+drop_img_dim(img, onlylast = TRUE, warn = TRUE)
 }
 \arguments{
 \item{img}{nifti object}
