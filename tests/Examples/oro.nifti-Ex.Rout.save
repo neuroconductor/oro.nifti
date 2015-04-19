@@ -1,6 +1,6 @@
 
-R version 3.1.2 (2014-10-31) -- "Pumpkin Helmet"
-Copyright (C) 2014 The R Foundation for Statistical Computing
+R version 3.2.0 (2015-04-16) -- "Full of Ingredients"
+Copyright (C) 2015 The R Foundation for Statistical Computing
 Platform: x86_64-unknown-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -198,9 +198,14 @@ Class "vector", by class "array", distance 3, with explicit coerce
 > 
 > ### ** Examples
 > 
-> img01 <- anlz()
-> img02 <- anlz()
-> img03 <- img01 + img02
+> img01 <- anlz(array(1:64, c(4,4,4,1)), datatype=4)
+> img02 <- anlz(array(64:1, c(4,4,4,1)), datatype=4)
+> is.anlz(img01 + img02)
+[1] TRUE
+> is.anlz(sqrt(2) * img01)
+[1] TRUE
+> is.anlz(img02 / pi)
+[1] TRUE
 > 
 > 
 > 
@@ -480,14 +485,14 @@ Class "vector", by class "array", distance 3, with explicit coerce
 > 
 > 
 > cleanEx()
-> nameEx("dropImageDimension")
-> ### * dropImageDimension
+> nameEx("drop_img_dim")
+> ### * drop_img_dim
 > 
 > flush(stderr()); flush(stdout())
 > 
 > ### Name: dropImageDimension
 > ### Title: Drop Image Dimension
-> ### Aliases: dropImageDimension
+> ### Aliases: dropImageDimension drop_img_dim
 > 
 > ### ** Examples
 > 
@@ -565,7 +570,7 @@ NIfTI-1 format
   Voxel Units     : Unknown
   Time Units      : Unknown
 > 
-> nim5 = nifti(array(rnorm(10^4), dim = c(1, 10, 10, 10, 1, 10)))
+> nim5 <- nifti(array(rnorm(10^4), dim = c(1, 10, 10, 10, 1, 10)))
 > dropImageDimension(nim5)
 NIfTI-1 format
   Type            : nifti
@@ -593,7 +598,7 @@ NIfTI-1 format
   Voxel Units     : Unknown
   Time Units      : Unknown
 > 
-> nim6 = nifti(array(rnorm(10^3), dim = c(1, 10, 10, 10, 1, 1)))
+> nim6 <- nifti(array(rnorm(10^3), dim = c(1, 10, 10, 10, 1, 1)))
 > dropImageDimension(nim6)
 NIfTI-1 format
   Type            : nifti
@@ -1323,7 +1328,7 @@ QForm_code and SForm_code unset: Orientation by Method 1.
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  10.049 0.176 10.239 0 0 
+Time elapsed:  6.368 2.455 6.22 0 0 
 > grDevices::dev.off()
 null device 
           1 

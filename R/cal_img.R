@@ -14,7 +14,7 @@
 #' @name calibrateImage
 #' @rdname cal_img
 #' @export
-calibrateImage <- function(img, infok=TRUE) {
+calibrateImage <- function(img, infok = TRUE) {
   cmax <- max(img, na.rm=TRUE) 
   if (!infok) {
     cmax <- ifelse(is.finite(cmax), cmax, 0)
@@ -29,6 +29,6 @@ calibrateImage <- function(img, infok=TRUE) {
 }
 #' @rdname cal_img
 #' @export
-cal_img <- function(...) {
-  calibrateImage(...)
+cal_img <- function(img, infok = TRUE) {
+  calibrateImage(img, infok = infok)
 }

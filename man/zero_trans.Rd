@@ -7,7 +7,7 @@
 \usage{
 resetSlopeIntercept(img)
 
-zero_trans(...)
+zero_trans(img)
 }
 \arguments{
 \item{img}{is a \code{nifti} object (or character of filename).  If an
