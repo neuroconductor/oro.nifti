@@ -99,6 +99,11 @@ dropImageDimension <- function(img, onlylast=TRUE, warn=TRUE) {
   } else {
     return(img)
   }
+  
+  # dim_ must have values >= 1
+  checkdim = dim_(img)
+  dim_(img)[checkdim < 1] = 1
+  
   if (ndim >= 3) {
     img@.Data <- D
     return(img)
