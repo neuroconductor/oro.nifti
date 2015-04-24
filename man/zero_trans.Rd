@@ -14,7 +14,7 @@ zero_trans(img)
 \code{anlz} object is passed, the unaltered \code{anlz} object is returned.}
 }
 \value{
-object of type passed
+An object of the same type passed.
 }
 \description{
 Forces image \code{scl_slope} to 1 and \code{scl_inter}

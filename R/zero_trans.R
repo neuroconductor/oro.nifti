@@ -1,5 +1,5 @@
 #' @title Change Intercept to 0 and Slope to 1 in NIfTI Object
-#' @return object of type passed
+#' @return An object of the same type passed.  
 #' @param img is a \code{nifti} object (or character of filename).  If an 
 #' \code{anlz} object is passed, the unaltered \code{anlz} object is returned.
 #' @description Forces image \code{scl_slope} to 1 and \code{scl_inter}
@@ -20,5 +20,9 @@ resetSlopeIntercept <- function(img) {
 #' @rdname zero_trans
 #' @export
 zero_trans <- function(img) {
+<<<<<<< HEAD
   resetSlopeIntercept(img = img)
+=======
+  resetSlopeIntercept(img=img)
+>>>>>>> db47c493be3c6bce655195c649493e29c9a6332a
 }

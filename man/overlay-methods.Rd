@@ -109,10 +109,12 @@ one of the three orthogonal planes in two multidimensional arrays, one on
 top of the other, for medical imaging data.
 }
 \section{Methods}{
- \describe{ \item{x = "nifti", y = "nifti"}{Produce overlay
-of \code{y} on \code{x}.} \item{x = "anlz", y = "anlz"}{Produce overlay of
-\code{y} on \code{x}.} \item{x = "afni", y = "afni"}{Produce overlay of
-\code{y} on \code{x}.} }
+
+\describe{
+\item{x = "nifti", y = "nifti"}{Produce overlay of \code{y} on \code{x}.}
+\item{x = "anlz", y = "anlz"}{Produce overlay of \code{y} on \code{x}.}
+\item{x = "afni", y = "afni"}{Produce overlay of \code{y} on \code{x}.}
+}
 }
 \author{
 Brandon Whitcher \email{bwhitcher@gmail.com}

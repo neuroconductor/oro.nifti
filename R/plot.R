@@ -218,10 +218,12 @@ setMethod("image", signature(x="afni"),
 #' @param bg is the background color in the \code{par} function.
 #' @param \dots other arguments to the \code{image} function may be provided
 #' here.
-#' @section Methods: \describe{ \item{x = "nifti", y = "nifti"}{Produce overlay
-#' of \code{y} on \code{x}.} \item{x = "anlz", y = "anlz"}{Produce overlay of
-#' \code{y} on \code{x}.} \item{x = "afni", y = "afni"}{Produce overlay of
-#' \code{y} on \code{x}.} }
+#' @section Methods: 
+#' \describe{ 
+#' \item{x = "nifti", y = "nifti"}{Produce overlay of \code{y} on \code{x}.} 
+#' \item{x = "anlz", y = "anlz"}{Produce overlay of \code{y} on \code{x}.} 
+#' \item{x = "afni", y = "afni"}{Produce overlay of \code{y} on \code{x}.} 
+#' }
 #' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
 #' @seealso \code{\link{image-methods}}, \code{\link{overlay-methods}}
 #' @keywords methods
@@ -325,7 +327,6 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
   par(oldpar)
   invisible()
 }
-
 #' @export
 #' @rdname overlay-methods
 setGeneric("overlay", function(x, y, ...) standardGeneric("overlay"))

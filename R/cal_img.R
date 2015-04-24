@@ -29,6 +29,11 @@ calibrateImage <- function(img, infok = TRUE) {
 }
 #' @rdname cal_img
 #' @export
+<<<<<<< HEAD
 cal_img <- function(img, infok = TRUE) {
   calibrateImage(img, infok = infok)
+=======
+cal_img <- function(img, infok=TRUE) {
+  calibrateImage(img=img, infok=infok)
+>>>>>>> db47c493be3c6bce655195c649493e29c9a6332a
 }
