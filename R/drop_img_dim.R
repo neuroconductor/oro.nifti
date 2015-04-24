@@ -117,11 +117,6 @@ dropImageDimension <- function(img, onlylast=TRUE, warn=TRUE) {
 }
 #' @rdname drop_img_dim
 #' @export
-<<<<<<< HEAD
-drop_img_dim <- function(img, onlylast = TRUE, warn = TRUE) {
-  dropImageDimension(img = img, onlylast = onlylast, warn = warn)
-=======
 drop_img_dim <- function(img, onlylast=TRUE, warn=TRUE) {
   dropImageDimension(img=img, onlylast=onlylast, warn=warn)
->>>>>>> db47c493be3c6bce655195c649493e29c9a6332a
 }

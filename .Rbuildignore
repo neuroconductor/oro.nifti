@@ -7,3 +7,4 @@
 Generic_.*\.R
 ^\.travis\.yml$
 All_Generics\.R
+^README.*
