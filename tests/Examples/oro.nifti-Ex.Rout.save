@@ -1,13 +1,7 @@
 
-<<<<<<< HEAD
 R version 3.2.0 (2015-04-16) -- "Full of Ingredients"
 Copyright (C) 2015 The R Foundation for Statistical Computing
 Platform: x86_64-unknown-linux-gnu (64-bit)
-=======
-R version 3.1.2 (2014-10-31) -- "Pumpkin Helmet"
-Copyright (C) 2014 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin13.4.0 (64-bit)
->>>>>>> db47c493be3c6bce655195c649493e29c9a6332a
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -27,9 +21,7 @@ Type 'q()' to quit R.
 > source(file.path(R.home("share"), "R", "examples-header.R"))
 > options(warn = 1)
 > library('oro.nifti')
-
-oro.nifti: Rigorous - NIfTI+ANALYZE+AFNI Input / Output (version = 0.5.1)
-
+oro.nifti 0.5.2
 > 
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 > cleanEx()
@@ -1339,11 +1331,7 @@ QForm_code and SForm_code unset: Orientation by Method 1.
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-<<<<<<< HEAD
-Time elapsed:  6.368 2.455 6.22 0 0 
-=======
-Time elapsed:  7.978 0.429 8.554 0 0 
->>>>>>> db47c493be3c6bce655195c649493e29c9a6332a
+Time elapsed:  6.386 2.483 6.255 0 0 
 > grDevices::dev.off()
 null device 
           1 
