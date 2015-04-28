@@ -102,7 +102,8 @@ dropImageDimension <- function(img, onlylast=TRUE, warn=TRUE) {
   
   # dim_ must have values >= 1
   checkdim = dim_(img)
-  dim_(img)[checkdim < 1] = 1
+  checkdim[checkdim < 1] = 1
+  dim_(img) <- checkdim
   
   if (ndim >= 3) {
     img@.Data <- D
