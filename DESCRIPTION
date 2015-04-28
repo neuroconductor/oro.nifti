@@ -27,13 +27,15 @@ Imports:
     utils,
     abind
 Enhances: 
-    fmri
+    dcemriS4,
+    fmri,
+    oro.dicom
 License: BSD_3_clause + file LICENSE
 URL: 
   http://rig.oro.us.com, 
   http://rigorousanalytics.blogspot.com
-LazyData: yes
-ZipData: yes
+LazyData: true
+LazyDataCompression: gzip
 Collate: 
     'auditTrail.R'
     'niftiS4.R'

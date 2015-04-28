@@ -427,7 +427,7 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
 #' @author Brandon Whitcher \email{bwhitcher@@gmail.com},\cr Volker Schmid
 #' \email{volkerschmid@@users.sourceforge.net}
 #' @seealso \code{\link{readNIfTI}}
-#' @references ANALYZE 7.5\cr \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}
+#' @references ANALYZE 7.5\cr \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}
 #' @keywords file
 #' @examples
 #' 
