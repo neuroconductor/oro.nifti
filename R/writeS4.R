@@ -142,7 +142,7 @@ setMethod("writeNIfTI", signature(nim="array"),
   #### added so that range of the data will equal cal.min/cal.max
   nim <- calibrateImage(nim)
   ##### Added so that bad dimensions are dropped
-#   nim = drop_img_dim(nim)
+  #   nim = drop_img_dim(nim)
   ## Basic error checking
   validNIfTI <- getValidity(getClassDef("nifti"))
   if (is.character(vnim <- validNIfTI(nim))) {
@@ -154,7 +154,7 @@ setMethod("writeNIfTI", signature(nim="array"),
   } else {
     fid <- file(paste(filename, "nii", sep="."), "wb")
   }
-
+  ## Extensions...
   extensions <- NULL
   if (is(nim, "niftiExtension")) {
     if (verbose) {
@@ -169,7 +169,7 @@ setMethod("writeNIfTI", signature(nim="array"),
     sec <- niftiAuditTrailToExtension(nim, getwd(), filename, match.call())
     extensions <- append(extensions, sec)
   }
-  if (!is.null(extensions)) {
+  if (! is.null(extensions)) {
     ## update the vox_offset  FIXME twofile!
     totalesizes <- sum(unlist(lapply(extensions, function(x) x@"esize")))
     nim@"extender"[1] <- 1
@@ -178,7 +178,7 @@ setMethod("writeNIfTI", signature(nim="array"),
       cat("  vox_offset =", nim@"vox_offset", fill=TRUE)
     }
   }
-
+  ##
   writeBin(as.integer(nim@"sizeof_hdr"), fid, size=4)
   writeChar(nim@"data_type", fid, nchars=10, eos=NULL)
   writeChar(nim@"db_name", fid, nchars=18, eos=NULL)
@@ -187,39 +187,39 @@ setMethod("writeNIfTI", signature(nim="array"),
   writeChar(nim@"regular", fid, nchars=1, eos=NULL)
   writeBin(as.integer(nim@"dim_info"), fid, size=1)
   writeBin(as.integer(nim@"dim_"), fid, size=2)
-  writeBin(nim@"intent_p1", fid, size=4)
-  writeBin(nim@"intent_p2", fid, size=4)
-  writeBin(nim@"intent_p3", fid, size=4)
+  writeBin(as.double(nim@"intent_p1"), fid, size=4)
+  writeBin(as.double(nim@"intent_p2"), fid, size=4)
+  writeBin(as.double(nim@"intent_p3"), fid, size=4)
   writeBin(as.integer(nim@"intent_code"), fid, size=2)
   writeBin(as.integer(nim@"datatype"), fid, size=2)
   writeBin(as.integer(nim@"bitpix"), fid, size=2)
   writeBin(as.integer(nim@"slice_start"), fid, size=2)
-  writeBin(nim@"pixdim", fid, size=4)
-  writeBin(nim@"vox_offset", fid, size=4) # default offset = 352
-  writeBin(nim@"scl_slope", fid, size=4)
-  writeBin(nim@"scl_inter", fid, size=4)
+  writeBin(as.double(nim@"pixdim"), fid, size=4)
+  writeBin(as.double(nim@"vox_offset"), fid, size=4) # default offset = 352
+  writeBin(as.double(nim@"scl_slope"), fid, size=4)
+  writeBin(as.double(nim@"scl_inter"), fid, size=4)
   writeBin(as.integer(nim@"slice_end"), fid, size=2)
   writeBin(as.integer(nim@"slice_code"), fid, size=1)
   writeBin(as.integer(nim@"xyzt_units"), fid, size=1)
-  writeBin(nim@"cal_max", fid, size=4)
-  writeBin(nim@"cal_min", fid, size=4)
-  writeBin(nim@"slice_duration", fid, size=4)
-  writeBin(nim@"toffset", fid, size=4)
+  writeBin(as.double(nim@"cal_max"), fid, size=4)
+  writeBin(as.double(nim@"cal_min"), fid, size=4)
+  writeBin(as.double(nim@"slice_duration"), fid, size=4)
+  writeBin(as.double(nim@"toffset"), fid, size=4)
   writeBin(as.integer(nim@"glmax"), fid, size=4)
   writeBin(as.integer(nim@"glmin"), fid, size=4)
   writeChar(nim@"descrip", fid, nchars=80, eos=NULL)
   writeChar(nim@"aux_file", fid, nchars=24, eos=NULL)
   writeBin(as.integer(nim@"qform_code"), fid, size=2)
   writeBin(as.integer(nim@"sform_code"), fid, size=2)
-  writeBin(nim@"quatern_b", fid, size=4)
-  writeBin(nim@"quatern_c", fid, size=4)
-  writeBin(nim@"quatern_d", fid, size=4)
-  writeBin(nim@"qoffset_x", fid, size=4)
-  writeBin(nim@"qoffset_y", fid, size=4)
-  writeBin(nim@"qoffset_z", fid, size=4)
-  writeBin(nim@"srow_x", fid, size=4)
-  writeBin(nim@"srow_y", fid, size=4)
-  writeBin(nim@"srow_z", fid, size=4)
+  writeBin(as.double(nim@"quatern_b"), fid, size=4)
+  writeBin(as.double(nim@"quatern_c"), fid, size=4)
+  writeBin(as.double(nim@"quatern_d"), fid, size=4)
+  writeBin(as.double(nim@"qoffset_x"), fid, size=4)
+  writeBin(as.double(nim@"qoffset_y"), fid, size=4)
+  writeBin(as.double(nim@"qoffset_z"), fid, size=4)
+  writeBin(as.double(nim@"srow_x"), fid, size=4)
+  writeBin(as.double(nim@"srow_y"), fid, size=4)
+  writeBin(as.double(nim@"srow_z"), fid, size=4)
   writeChar(nim@"intent_name", fid, nchars=16, eos=NULL)
   writeChar(nim@"magic", fid, nchars=4, eos=NULL)
   writeBin(as.integer(nim@"extender"), fid, size=1)
@@ -244,7 +244,7 @@ setMethod("writeNIfTI", signature(nim="array"),
                invisible()
              })
     } else {
-      stop("@extender set but", nim, "has no extensions")
+      stop("@extender set but", nim, "has no extensions.")
     }
   }
   ## reorient?
@@ -380,8 +380,8 @@ setMethod("writeANALYZE", signature(aim="anlz"),
   writeBin(aim@"funused1", fid, size=4)                # 72 + 4
   writeBin(aim@"funused2", fid, size=4)                # 76 + 4
   writeBin(aim@"funused3", fid, size=4)                # 80 + 4
-  writeBin(as.numeric(aim@"cal_max"), fid, size=4)     # 84 + 4
-  writeBin(as.numeric(aim@"cal_min"), fid, size=4)     # 88 + 4
+  writeBin(as.double(aim@"cal_max"), fid, size=4)     # 84 + 4
+  writeBin(as.double(aim@"cal_min"), fid, size=4)     # 88 + 4
   writeBin(as.integer(aim@"compressed"), fid, size=4)  # 92 + 4
   writeBin(as.integer(aim@"verified"), fid, size=4)    # 96 + 4
   writeBin(as.integer(aim@"glmax"), fid, size=4)       # 100 + 4
@@ -418,7 +418,6 @@ setMethod("writeANALYZE", signature(aim="anlz"),
   if (verbose) {
     cat("  dims =", aim@"dim_"[dims], fill=TRUE)
   }
-  ## writeBin(as.vector(aim), fid, , size=aim@"bitpix"/8)
   data <- as.vector(aim@.Data)
   switch(as.character(aim@"datatype"),
          "1" = writeBin(as.integer(data), fid, size=aim@"bitpix"/8),

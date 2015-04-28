@@ -20,5 +20,5 @@ resetSlopeIntercept <- function(img) {
 #' @rdname zero_trans
 #' @export
 zero_trans <- function(img) {
-  resetSlopeIntercept(img=img)
+  resetSlopeIntercept(img = img)
 }
