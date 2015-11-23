@@ -52,12 +52,14 @@
 dropImageDimension <- function(img, onlylast=TRUE, warn=TRUE) {
   dim_  <- dim_(img)
   imgdim <- dim(img)
-  ####
+  
+  #### Find the indices you need to have, put in the 1s 
   ndim <- length(imgdim) + 1
   dim_[seq(2, ndim)] <- imgdim
   if (ndim +1 <= length(dim_)) {
     dim_[seq(ndim+1, length(dim_))] <- 1
   }
+  #### Find the pixdim
   pdim <- pixdim(img)
   no.data <- dim_ <= 1
   no.data <- no.data | pdim == 0
