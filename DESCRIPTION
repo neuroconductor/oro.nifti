@@ -13,12 +13,12 @@ Authors@R: c(person("Brandon", "Whitcher", role = c("aut", "cre"),
 Description: Functions for the input/output and visualization of
     medical imaging data that follow either the ANALYZE, NIfTI or AFNI
     formats.  This package is part of the Rigorous Analytics bundle.
-Depends: 
+Depends:
     R (>= 2.14.0)
-Suggests: 
+Suggests:
     XML,
     testthat
-Imports: 
+Imports:
     bitops,
     splines,
     graphics,
@@ -26,17 +26,15 @@ Imports:
     methods,
     utils,
     abind
-Enhances: 
-    dcemriS4,
+Enhances: dcemriS4,
     fmri,
     oro.dicom
 License: BSD_3_clause + file LICENSE
-URL: 
-  http://rig.oro.us.com, 
-  http://rigorousanalytics.blogspot.com
+URL: http://rig.oro.us.com,
+    http://rigorousanalytics.blogspot.com
 LazyData: true
 LazyDataCompression: gzip
-Collate: 
+Collate:
     'auditTrail.R'
     'niftiS4.R'
     'analyzeS4.R'
@@ -107,7 +105,7 @@ Collate:
     'srow_y.R'
     'srow_z.R'
     'toffset.R'
-    'xyzt_units.R'   
+    'xyzt_units.R'
     'cal_units.R'
     'compressed.R'
     'dim_un0.R'
@@ -133,5 +131,6 @@ Collate:
     'verified.R'
     'views.R'
     'vols_added.R'
-    'vox_units.R'     
+    'vox_units.R'
     'zzz.R'
+RoxygenNote: 5.0.1.9000
