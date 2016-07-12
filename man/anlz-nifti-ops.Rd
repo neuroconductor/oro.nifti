@@ -25,6 +25,9 @@
 
 \item{e2}{object}
 }
+\description{
+Overloaded operators for anlz and nifti objects
+}
 \examples{
 
 img01 <- anlz(array(1:64, c(4,4,4,1)), datatype=4)

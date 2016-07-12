@@ -1,6 +1,7 @@
 ## Overloading binary operators for anlz object
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #' @title Operations for Objects in the ANALYZE and NIfTI classes
+#' @description Overloaded operators for anlz and nifti objects
 #' @name anlz-nifti-ops
 #' @rdname anlz-nifti-ops
 #' @aliases Ops,anlz,anlz-method

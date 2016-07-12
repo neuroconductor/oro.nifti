@@ -19,6 +19,9 @@
 
 \item{e2}{is an object of class \code{nifti}.}
 }
+\description{
+Overloaded operators for nifti objects
+}
 \examples{
 
 img01 <- nifti(array(1:64, c(4,4,4,1)), datatype=4)

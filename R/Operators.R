@@ -1,6 +1,7 @@
 ## Overloading binary operators
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #' @title Operations for NIfTI Objects
+#' @description Overloaded operators for nifti objects
 #' @name nifti-operators
 #' @rdname niftiops
 #' @aliases Ops,nifti,nifti-method

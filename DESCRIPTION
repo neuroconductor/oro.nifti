@@ -1,6 +1,6 @@
 Package: oro.nifti
-Version: 0.5.4
-Date: 2015-11-23
+Version: 0.5.5
+Date: 2016-07-12
 Title: Rigorous - NIfTI + ANALYZE + AFNI : Input / Output
 Authors@R: c(person("Brandon", "Whitcher", role = c("aut", "cre"),
   email = "bwhitcher@gmail.com"),
