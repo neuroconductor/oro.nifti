@@ -19,6 +19,7 @@ Suggests:
     XML,
     testthat
 Imports:
+    stats,
     bitops,
     splines,
     graphics,

@@ -60,6 +60,7 @@
 #' 
 #' @export hotmetal
 #' @rdname hotmetal
+#' @importFrom stats predict
 hotmetal <- function(n=64) {
   orig <- c("#010000", "#0C0000", "#170000", "#210000", "#2C0000",
             "#360000", "#410000", "#4C0000", "#560000", "#610000",
