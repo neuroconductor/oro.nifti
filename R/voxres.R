@@ -6,7 +6,7 @@
 #' @export
 voxres = function(img, units = c("mm", "cm")){
   units = match.arg(units)
-  divisor = switch(
+  divisor = switch(units,
     "mm" = 1,
     "cm" = 1000
   )
