@@ -1,7 +1,7 @@
 
-R version 3.2.0 (2015-04-16) -- "Full of Ingredients"
-Copyright (C) 2015 The R Foundation for Statistical Computing
-Platform: x86_64-unknown-linux-gnu (64-bit)
+R version 3.3.1 (2016-06-21) -- "Bug in Your Hair"
+Copyright (C) 2016 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -21,7 +21,7 @@ Type 'q()' to quit R.
 > source(file.path(R.home("share"), "R", "examples-header.R"))
 > options(warn = 1)
 > library('oro.nifti')
-oro.nifti 0.5.2
+oro.nifti 0.5.5.2
 > 
 > base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
 > cleanEx()
@@ -36,6 +36,7 @@ oro.nifti 0.5.2
 > ### Keywords: classes
 > 
 > ### ** Examples
+> 
 > 
 > showClass("afni")
 Class "afni" [package "oro.nifti"]
@@ -143,6 +144,7 @@ Class "vector", by class "array", distance 3, with explicit coerce
 > 
 > ### ** Examples
 > 
+> 
 > showClass("anlz")
 Class "anlz" [package "oro.nifti"]
 
@@ -196,6 +198,7 @@ Class "vector", by class "array", distance 3, with explicit coerce
 > 
 > ### ** Examples
 > 
+> 
 > img01 <- anlz(array(1:64, c(4,4,4,1)), datatype=4)
 > img02 <- anlz(array(64:1, c(4,4,4,1)), datatype=4)
 > is.anlz(img01 + img02)
@@ -204,6 +207,7 @@ Class "vector", by class "array", distance 3, with explicit coerce
 [1] TRUE
 > is.anlz(img02 / pi)
 [1] TRUE
+> 
 > 
 > 
 > 
@@ -219,7 +223,9 @@ Class "vector", by class "array", distance 3, with explicit coerce
 > 
 > ### ** Examples
 > 
+> 
 > aim <- anlz() # default
+> 
 > 
 > 
 > 
@@ -245,9 +251,9 @@ Class "vector", by class "array", distance 3, with explicit coerce
 > enableAuditTrail()
 > 
 > wrapper <- function(functionToWrap, nameOfCallingFunction, nim, ...) {
-+   if (!is(nim, "nifti"))
++   if (!is(nim, "nifti")) 
 +     nim <- as(nim, "nifti")
-+ 
++   
 +   if (is(nim, "niftiAuditTrail")) {
 +     ## This will force as(...) to set the call which created the
 +     ## results to the calling function's call rather than
@@ -255,7 +261,7 @@ Class "vector", by class "array", distance 3, with explicit coerce
 +     slot(nim, "trail") <- niftiAuditTrailEvent(slot(nim, "trail"), "processing",
 +                                       nameOfCallingFunction)
 +   }
-+ 
++   
 +   result <- functionToWrap(nim, ...)
 +   as(result, "nifti") <- nim
 +   return(result)
@@ -270,7 +276,7 @@ Class "vector", by class "array", distance 3, with explicit coerce
 > niftiizedForm <- function(nim,...) {
 +   return(wrapper(functionToWrap, "niftiizedForm", nim, ...))
 + }
-> 
+>  
 > ## Not run: 
 > ##D   if (isTRUE(getOption("niftiAuditTrail"))) {
 > ##D     print(slot(as.nifti(functionToWrap(nifti(), 4, 4), nifti()), "trail"))
@@ -388,6 +394,7 @@ Class "vector", by class "array", distance 3, with explicit coerce
 > 
 > ### ** Examples
 > 
+> 
 > ## 4 = CT for anatomic data
 > convert.scene(4, "3DIM_HEAD_ANAT")
 [1] "CT"
@@ -407,6 +414,7 @@ Class "vector", by class "array", distance 3, with explicit coerce
 > 
 > ### ** Examples
 > 
+> 
 > ##  4 = SIGNED_SHORT
 > convert.datatype.anlz(4)
 [1] "SIGNED_SHORT"
@@ -419,6 +427,7 @@ Class "vector", by class "array", distance 3, with explicit coerce
 > ##  4 = "coronal flipped"
 > convert.orient.anlz(4)
 [1] "coronal flipped"
+> 
 > 
 > 
 > 
@@ -435,6 +444,7 @@ Class "vector", by class "array", distance 3, with explicit coerce
 > 
 > ### ** Examples
 > 
+> 
 > ##  4 = SIGNED_SHORT
 > convert.datatype.anlz(4)
 [1] "SIGNED_SHORT"
@@ -447,6 +457,7 @@ Class "vector", by class "array", distance 3, with explicit coerce
 > ##  4 = "coronal flipped"
 > convert.orient.anlz(4)
 [1] "coronal flipped"
+> 
 > 
 > 
 > 
@@ -493,6 +504,7 @@ Class "vector", by class "array", distance 3, with explicit coerce
 > ### Aliases: dropImageDimension drop_img_dim
 > 
 > ### ** Examples
+> 
 > 
 > nim <- nifti(array(rnorm(10^3), dim = rep(10, 3)))
 > nim2 <- nifti(array(rnorm(10^3), dim = c(10, 10, 1, 10)))
@@ -642,10 +654,12 @@ NIfTI-1 format
 > 
 > ### ** Examples
 > 
-> hotmetal(10)
+> 
+> hotmetal(10) 
  [1] "#010000" "#4C0000" "#960000" "#E00000" "#FF2C00" "#FF7600" "#FFC100"
  [8] "#FFFF12" "#FFFF81" "#FFFFF1"
 > image(outer(1:20,1:20,"+"), col=hotmetal(75), main="hotmetal")
+> 
 > 
 > 
 > 
@@ -661,6 +675,7 @@ NIfTI-1 format
 > ### Keywords: classes
 > 
 > ### ** Examples
+> 
 > 
 > showClass("nifti")
 Class "nifti" [package "oro.nifti"]
@@ -726,6 +741,7 @@ Class "niftiAuditTrail", by class "niftiExtension", distance 2
 > 
 > ### ** Examples
 > 
+> 
 > options("niftiAuditTrail"=FALSE)
 > 
 > nim <- nifti() # default
@@ -771,6 +787,7 @@ NIfTI-1 format
 > ### Keywords: classes
 > 
 > ### ** Examples
+> 
 > 
 > showClass("niftiAuditTrail")
 Class "niftiAuditTrail" [package "oro.nifti"]
@@ -819,6 +836,7 @@ Class "nifti", by class "niftiExtension", distance 2
 Class "array", by class "niftiExtension", distance 3
 Class "structure", by class "niftiExtension", distance 4
 Class "vector", by class "niftiExtension", distance 5, with explicit coerce
+> 
 > 
 > 
 > 
@@ -899,6 +917,7 @@ Known Subclasses: "niftiAuditTrail"
 > 
 > ### ** Examples
 > 
+> 
 > showClass("niftiExtensionSection")
 Class "niftiExtensionSection" [package "oro.nifti"]
 
@@ -922,6 +941,7 @@ Class:   numeric   numeric character
 > 
 > ### ** Examples
 > 
+> 
 > img01 <- nifti(array(1:64, c(4,4,4,1)), datatype=4)
 > img02 <- nifti(array(64:1, c(4,4,4,1)), datatype=4)
 > is.nifti(img01 + img02)
@@ -930,6 +950,7 @@ Class:   numeric   numeric character
 [1] TRUE
 > is.nifti(img02 / pi)
 [1] TRUE
+> 
 > 
 > 
 > 
@@ -946,6 +967,7 @@ Class:   numeric   numeric character
 > ### Keywords: methods
 > 
 > ### ** Examples
+> 
 > 
 > ## Not run: 
 > ##D url <- "http://nifti.nimh.nih.gov/nifti-1/data/avg152T1_LR_nifti.nii.gz"
@@ -1003,6 +1025,7 @@ Class:   numeric   numeric character
 > 
 > ### ** Examples
 > 
+> 
 > ## This R matrix is represented by quaternion [a,b,c,d] = [0,1,0,0]
 > ## (which encodes a 180 degree rotation about the x-axis).
 > (R <- quaternion2rotation(1, 0, 0))
@@ -1054,6 +1077,7 @@ Class:   numeric   numeric character
 > 
 > ### ** Examples
 > 
+> 
 > ## avg152T1
 > anlz.path <- system.file("anlz", package="oro.nifti")
 > mni152 <- readANALYZE(file.path(anlz.path, "avg152T1"))
@@ -1074,6 +1098,7 @@ Class:   numeric   numeric character
 > ### Keywords: file
 > 
 > ### ** Examples
+> 
 > 
 > ## Not run: 
 > ##D url <- "http://nifti.nimh.nih.gov/nifti-1/data/filtered_func_data.nii.gz"
@@ -1127,7 +1152,8 @@ NIfTI-1 format
 > 
 > ### ** Examples
 > 
-> tim.colors(10)
+> 
+> tim.colors(10) 
  [1] "#00008F" "#0000FF" "#0070FF" "#00DFFF" "#50FFAF" "#BFFF40" "#FFCF00"
  [8] "#FF6000" "#EF0000" "#800000"
 > image(outer(1:20, 1:20, "+"), col=tim.colors(75), main="tim.colors")
@@ -1145,6 +1171,7 @@ NIfTI-1 format
 > ### Aliases: translateCoordinate
 > 
 > ### ** Examples
+> 
 > 
 > ffd <- readNIfTI(file.path(system.file("nifti", package="oro.nifti"),
 +                            "filtered_func_data"))
@@ -1189,6 +1216,7 @@ QForm_code and SForm_code unset: Orientation by Method 1.
 > 
 > ### ** Examples
 > 
+> 
 > ## Taken from the AFNI Matlab Library
 > ## http://afni.nimh.nih.gov/pub/dist/data/afni_matlab_data.tgz
 > afni.path <- system.file("afni", package="oro.nifti")
@@ -1219,6 +1247,7 @@ QForm_code and SForm_code unset: Orientation by Method 1.
 > ### Keywords: file methods
 > 
 > ### ** Examples
+> 
 > 
 > norm <- dnorm(seq(-5, 5, length=32), sd=2)
 > norm <- (norm-min(norm)) / max(norm-min(norm))
@@ -1272,6 +1301,7 @@ QForm_code and SForm_code unset: Orientation by Method 1.
 > ### Keywords: file methods
 > 
 > ### ** Examples
+> 
 > 
 > norm <- dnorm(seq(-5, 5, length=32), sd=2)
 > norm <- (norm-min(norm)) / max(norm-min(norm))
@@ -1331,7 +1361,7 @@ QForm_code and SForm_code unset: Orientation by Method 1.
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  6.386 2.483 6.255 0 0 
+Time elapsed:  5.836 1.748 5.785 0 0 
 > grDevices::dev.off()
 null device 
           1 
