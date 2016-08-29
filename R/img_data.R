@@ -6,7 +6,7 @@
 #' @description Methods that act on the \code{.Data} field in the
 #' NIfTI/ANALYZE header.
 #' @rdname img_data-methods
-#' @aliases img_data-methods,img_data
+#' @aliases img_data-methods, img_data
 #' @details See documentation on the ANALYZE and/or NIfTI data standards for
 #' more details.
 #' @author John Muschelli \email{muschellij2@@gmail.com},\cr
