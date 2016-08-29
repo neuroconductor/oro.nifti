@@ -2,7 +2,11 @@ makefunc = function(funcname, type="numeric", ex_text = NULL,
                     write = FALSE, remove = FALSE) {
   cat("#", funcname, fill = TRUE)
   x = readLines("Generic_Function.R")
-  f_no_dot = gsub("[.]", "_", funcname)
+  if (!funcname %in% c(".Data")) {
+    f_no_dot = gsub("[.]", "_", funcname)
+  } else {
+    f_no_dot = funcname
+  }
   f_dot = gsub("[_]", ".", funcname)
   if (f_no_dot %in% fields$nifti) {
     x = c(x, readLines("Generic_nifti_accessor.R"))
@@ -12,6 +16,7 @@ makefunc = function(funcname, type="numeric", ex_text = NULL,
   }
   if ((f_no_dot %in% fields$nifti || f_no_dot %in% fields$analyze) && 
       funcname != "sizeof_hdr") {
+    print("regular replacer")
     x = c(x, readLines("Generic_replacement.R"))
     if (f_no_dot %in% fields$nifti) {
       x = c(x, readLines("Generic_nifti_replacement.R"))
@@ -75,7 +80,7 @@ fields <- list(nifti = c("sizeof_hdr", "data_type", "db_name", "extents",
                          "descrip", "aux_file", "qform_code", "sform_code",
                          "quatern_b", "quatern_c", "quatern_d", "qoffset_x",
                          "qoffset_y", "qoffset_z", "srow_x", "srow_y", "srow_z",
-                         "intent_name", "magic", "extender"), 
+                         "intent_name", "magic", "extender", ".Data"), 
                analyze = c("sizeof_hdr", "data_type", "db_name", "extents", 
                            "session_error", "regular", "hkey_un0", "dim_", 
                            "vox_units", "cal_units", "unused1", "datatype", 
@@ -84,12 +89,14 @@ fields <- list(nifti = c("sizeof_hdr", "data_type", "db_name", "extents",
                            "verified", "glmax", "glmin", "descrip", "aux_file", 
                            "orient", "origin", "generated", "scannum", "patient_id",
                            "exp_date", "exp_time", "hist_un0", "views", "vols_added", 
-                           "start_field", "field_skip", "omax", "omin", "smax", "smin"),
+                           "start_field", "field_skip", "omax", "omin", "smax", "smin", 
+                           ".Data"),
                S3 = c("hist_un0", "start_field", "dim_", "dim_un0", "dim_info", 
                       "exp_date", "exp_time"))
 ##
 ## NIfTI header fields
 ##
+makefunc(".Data", write=TRUE, remove=remove)
 makefunc("data_type", write=TRUE, remove=remove)
 makefunc("sizeof_hdr", write=TRUE, remove=remove)
 makefunc("db_name", write=TRUE, remove=remove)
