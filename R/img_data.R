@@ -6,7 +6,7 @@
 #' @description Methods that act on the \code{.Data} field in the
 #' NIfTI/ANALYZE header.
 #' @rdname img_data-methods
-#' @aliases img_data-methods, img_data
+#' @aliases img_data-methods,img_data
 #' @details See documentation on the ANALYZE and/or NIfTI data standards for
 #' more details.
 #' @author John Muschelli \email{muschellij2@@gmail.com},\cr
@@ -35,10 +35,11 @@ setGeneric("img_data<-", function(object, value) { standardGeneric("img_data<-")
 #' @aliases img_data<-,nifti-method
 #' @export
 setMethod("img_data<-", 
-          signature(object="nifti"), 
+          signature(object = "nifti"), 
           function(object, value) { 
-            if ( ".Data" %in% slotNames(object) ){
+            if ( ".Data" %in% slotNames(object) ) {
               object@".Data" <- value
+              object = cal_img(object)
               audit.trail(object) <-
                 niftiAuditTrailEvent(object, "modification", match.call(),
                                      paste(".Data <-", value))               
@@ -51,55 +52,11 @@ setMethod("img_data<-",
 #' @aliases img_data<-,anlz-method
 #' @export
 setMethod("img_data<-", 
-          signature(object="anlz"), 
+          signature(object = "anlz"), 
           function(object, value) { 
-            if ( ".Data" %in% slotNames(object) ){
+            if ( ".Data" %in% slotNames(object) ) {
               object@".Data" <- value
-            } else {
-              warning(".Data is not in slotNames of object")
-            }
-            return(object)
-          })
-#' @rdname img_data-methods
-#' @aliases img_data,nifti-method
-#' @export
-setGeneric("img_data", function(object) standardGeneric("img_data"))
-#' @rdname img_data-methods
-#' @aliases img_data,nifti-method
-#' @export
-setMethod("img_data", "nifti", function(object) { object@".Data" })
-#' @rdname img_data-methods
-#' @aliases img_data,anlz-method
-#' @export
-setMethod("img_data", "anlz", function(object) { object@".Data" })
-#' @rdname img_data-methods
-#' @aliases img_data<- 
-#' @export
-setGeneric("img_data<-", function(object, value) { standardGeneric("img_data<-") })
-#' @rdname img_data-methods
-#' @aliases img_data<-,nifti-method
-#' @export
-setMethod("img_data<-", 
-          signature(object="nifti"), 
-          function(object, value) { 
-            if ( ".Data" %in% slotNames(object) ){
-              object@".Data" <- value
-              audit.trail(object) <-
-                niftiAuditTrailEvent(object, "modification", match.call(),
-                                     paste(".Data <-", value))               
-            } else {
-              warning(".Data is not in slotNames of object")
-            }                       
-            return(object)
-          })
-#' @rdname img_data-methods
-#' @aliases img_data<-,anlz-method
-#' @export
-setMethod("img_data<-", 
-          signature(object="anlz"), 
-          function(object, value) { 
-            if ( ".Data" %in% slotNames(object) ){
-              object@".Data" <- value
+              object = cal_img(object)
             } else {
               warning(".Data is not in slotNames of object")
             }

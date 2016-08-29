@@ -2,28 +2,15 @@
 % Please edit documentation in R/img_data.R
 \docType{methods}
 \name{img_data-methods}
-\alias{img_data}
 \alias{img_data,anlz-method}
 \alias{img_data,nifti-method}
 \alias{img_data-methods}
-\alias{img_data-methods,}
+\alias{img_data-methods,img_data}
 \alias{img_data<-}
 \alias{img_data<-,anlz-method}
 \alias{img_data<-,nifti-method}
 \title{Extract Image Attribute \code{.Data}}
 \usage{
-img_data(object)
-
-\S4method{img_data}{nifti}(object)
-
-\S4method{img_data}{anlz}(object)
-
-img_data(object) <- value
-
-\S4method{img_data}{nifti}(object) <- value
-
-\S4method{img_data}{anlz}(object) <- value
-
 img_data(object)
 
 \S4method{img_data}{nifti}(object)
