@@ -7,7 +7,7 @@
 nii2oro(image)
 }
 \arguments{
-\item{image}{\code{\link{niftiImage}} object}
+\item{image}{\code{niftiImage} object}
 }
 \value{
 Object of class \code{\link{nifti}}
