@@ -1,9 +1,9 @@
 #' @title Convert oro.nifti nifti to RNifti niftiImage object
 #' @description Converts a nifti from oro.nifti to a 
-#' nifitImage object from the RNifti package
+#' niftiImage object from the RNifti package
 #' @param image \code{\link{nifti}} object
 #' @param verbose print messages, passed to \code{\link{writeNIfTI}}
-#' @return Object of class \code{\link{nifitImage}}
+#' @return Object of class \code{niftiImage}
 #' @export
 #' @importFrom RNifti readNifti
 oro2nii = function(image, verbose = FALSE) {

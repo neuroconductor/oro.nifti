@@ -1,7 +1,7 @@
 #' @title Convert RNifti niftiImage to oro.nifti nifti object
 #' @description Converts a niftiImage from RNifti to a 
 #' nifti object from the oro.nifti package
-#' @param image \code{\link{nifitImage}} object
+#' @param image \code{niftiImage} object
 #'
 #' @return Object of class \code{\link{nifti}}
 #' @export

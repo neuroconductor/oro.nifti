@@ -12,10 +12,10 @@ oro2nii(image, verbose = FALSE)
 \item{verbose}{print messages, passed to \code{\link{writeNIfTI}}}
 }
 \value{
-Object of class \code{\link{nifitImage}}
+Object of class \code{\link{niftiImage}}
 }
 \description{
 Converts a nifti from oro.nifti to a 
-nifitImage object from the RNifti package
+niftiImage object from the RNifti package
 }
 
