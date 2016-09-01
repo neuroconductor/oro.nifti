@@ -1,5 +1,5 @@
 Package: oro.nifti
-Version: 0.5.6
+Version: 0.6.0
 Title: Rigorous - NIfTI + ANALYZE + AFNI : Input / Output
 Authors@R: c(person("Brandon", "Whitcher", role = c("aut", "cre"),
   email = "bwhitcher@gmail.com"),
@@ -25,7 +25,8 @@ Imports:
     grDevices,
     methods,
     utils,
-    abind
+    abind,
+    RNifti
 Enhances: dcemriS4,
     fmri,
     oro.dicom
@@ -119,6 +120,8 @@ Collate:
     'generated.R'
     'hist_un0.R'
     'hkey_un0.R'
+    'nii2oro.R'
+    'oro2nii.R'
     'omax.R'
     'omin.R'
     'orient.R'
