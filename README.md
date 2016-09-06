@@ -10,3 +10,7 @@ Travis-CI build for muschellij2/oro.nifti
 
 [![Travis-CI Build Status](https://travis-ci.org/muschellij2/oro.nifti.svg?branch=master)](https://travis-ci.org/muschellij2/oro.nifti)
 
+
+
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/oro.nifti)](http://cran.rstudio.com/web/packages/oro.nifti/index.html)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/oro.nifti)](http://cran.rstudio.com/web/packages/oro.nifti/index.html)
