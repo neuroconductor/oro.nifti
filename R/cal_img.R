@@ -25,6 +25,8 @@ calibrateImage <- function(img, infok = TRUE) {
   }  
   cal.max(img) <- cmax
   cal.min(img) <- cmin
+  glmax(img) <- cmax
+  glmin(img) <- cmin
   return(img)
 }
 #' @rdname cal_img
