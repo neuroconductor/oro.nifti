@@ -64,6 +64,8 @@ setGeneric("writeNIfTI", function(nim,  ...) standardGeneric("writeNIfTI"))
 #' text-based feedback during execution of the function.
 #' @param warn is a number to regulate the display of warnings (default = -1).
 #' See \code{\link{options}} for more details.
+#' @param compression The amount of compression to be applied when writing a 
+#' file when \code{gzipped = TRUE} 
 #' @return Nothing.
 #' @section Methods: \describe{ \item{object = "anlz"}{Convert ANALYZE object
 #' to class \code{nifti} and write the NIfTI volume to disk.} \item{object =
@@ -114,28 +116,29 @@ setGeneric("writeNIfTI", function(nim,  ...) standardGeneric("writeNIfTI"))
 #' @rdname write_nifti
 setMethod("writeNIfTI", signature(nim="nifti"), 
 	  function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
-                   warn=-1) {
-            .writeNIfTI(nim, filename, onefile, gzipped, verbose, warn)
+                   warn=-1, compression = 6) {
+            .writeNIfTI(nim, filename, onefile, gzipped, verbose, warn, compression)
           })
 #' @export
 #' @rdname write_nifti
 setMethod("writeNIfTI", signature(nim="anlz"), 
 	  function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
-                   warn=-1) {
+                   warn=-1, compression = 6) {
             .writeNIfTI(as(nim, "nifti"), filename, onefile, gzipped,
-                        verbose, warn)
+                        verbose, warn, compression)
           })
 #' @export
 #' @rdname write_nifti
 setMethod("writeNIfTI", signature(nim="array"), 
 	  function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
-                   warn=-1) {
+                   warn=-1,
+	           compression = 6) {
             .writeNIfTI(as(nim, "nifti"), filename, onefile, gzipped,
-                        verbose, warn)
+                        verbose, warn, compression)
           })
 
 .writeNIfTI <- function(nim, filename, onefile=TRUE, gzipped=TRUE,
-                        verbose=FALSE, warn=-1) {
+                        verbose=FALSE, warn=-1, compression = 6) {
   ## Warnings?
   oldwarn <- getOption("warn")
   options(warn=warn)
@@ -150,7 +153,8 @@ setMethod("writeNIfTI", signature(nim="array"),
   }
   ## Write header file...
   if (gzipped) {
-    fid <- gzfile(paste(filename, "nii.gz", sep="."), "wb")
+    fid <- gzfile(paste(filename, "nii.gz", sep="."), "wb",
+                  compression = compression)
   } else {
     fid <- file(paste(filename, "nii", sep="."), "wb")
   }
@@ -295,6 +299,8 @@ setGeneric("writeANALYZE", function(aim,  ...) standardGeneric("writeANALYZE"))
 #' text-based feedback during execution of the function.
 #' @param warn is a number to regulate the display of warnings (default = -1).
 #' See \code{\link{options}} for more details.
+#' @param compression The amount of compression to be applied when writing a 
+#' file when \code{gzipped = TRUE}
 #' @return Nothing.
 #' @section Methods: \describe{ \item{object = "anlz"}{Write ANALYZE volume to
 #' disk.} }
@@ -338,11 +344,12 @@ setGeneric("writeANALYZE", function(aim,  ...) standardGeneric("writeANALYZE"))
 #' @export
 #' @rdname write_anlz 
 setMethod("writeANALYZE", signature(aim="anlz"), 
-	  function(aim, filename, gzipped=TRUE, verbose=FALSE, warn=-1) {
-            .writeANALYZE(aim, filename, gzipped, verbose, warn)
+	  function(aim, filename, gzipped=TRUE, verbose=FALSE, warn=-1,
+	           compression = 6) {
+            .writeANALYZE(aim, filename, gzipped, verbose, warn, compression)
           })
 .writeANALYZE <- function(aim, filename, gzipped=TRUE, verbose=FALSE,
-                          warn=-1) {
+                          warn=-1, compression = 6) {
   ## Warnings?
   oldwarn <- getOption("warn")
   options(warn=warn)
@@ -354,7 +361,8 @@ setMethod("writeANALYZE", signature(aim="anlz"),
   }
   ## Write header file...
   if (gzipped) {
-    fid <- gzfile(paste(filename, ".hdr.gz", sep=""), "wb")
+    fid <- gzfile(paste(filename, ".hdr.gz", sep=""), "wb",
+                  compression = compression)
   } else {
     fid <- file(paste(filename, ".hdr", sep=""), "wb")
   }
@@ -410,7 +418,8 @@ setMethod("writeANALYZE", signature(aim="anlz"),
   close(fid)
   ## Write image file...
   if (gzipped) {
-    fid <- gzfile(paste(filename, "img.gz", sep="."), "wb")
+    fid <- gzfile(paste(filename, "img.gz", sep="."), "wb",
+                  compression = compression)
   } else {
     fid <- file(paste(filename, "img", sep="."), "wb")
   }

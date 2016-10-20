@@ -10,13 +10,13 @@
 \title{writeNIfTI}
 \usage{
 \S4method{writeNIfTI}{nifti}(nim, filename, onefile = TRUE, gzipped = TRUE,
-  verbose = FALSE, warn = -1)
+  verbose = FALSE, warn = -1, compression = 6)
 
 \S4method{writeNIfTI}{anlz}(nim, filename, onefile = TRUE, gzipped = TRUE,
-  verbose = FALSE, warn = -1)
+  verbose = FALSE, warn = -1, compression = 6)
 
 \S4method{writeNIfTI}{array}(nim, filename, onefile = TRUE, gzipped = TRUE,
-  verbose = FALSE, warn = -1)
+  verbose = FALSE, warn = -1, compression = 6)
 }
 \arguments{
 \item{nim}{is an object of class \code{nifti} or \code{anlz}.}
@@ -36,6 +36,9 @@ text-based feedback during execution of the function.}
 
 \item{warn}{is a number to regulate the display of warnings (default = -1).
 See \code{\link{options}} for more details.}
+
+\item{compression}{The amount of compression to be applied when writing a 
+file when \code{gzipped = TRUE}}
 }
 \value{
 Nothing.

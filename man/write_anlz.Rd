@@ -8,7 +8,7 @@
 \title{writeANALYZE}
 \usage{
 \S4method{writeANALYZE}{anlz}(aim, filename, gzipped = TRUE,
-  verbose = FALSE, warn = -1)
+  verbose = FALSE, warn = -1, compression = 6)
 }
 \arguments{
 \item{aim}{is an object of class \code{anlz}.}
@@ -24,6 +24,9 @@ text-based feedback during execution of the function.}
 
 \item{warn}{is a number to regulate the display of warnings (default = -1).
 See \code{\link{options}} for more details.}
+
+\item{compression}{The amount of compression to be applied when writing a 
+file when \code{gzipped = TRUE}}
 }
 \value{
 Nothing.
