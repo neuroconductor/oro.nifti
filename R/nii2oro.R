@@ -8,8 +8,9 @@
 #' @importFrom methods as slot<- slotNames
 #' @importFrom RNifti dumpNifti
 nii2oro = function(image) {
-  arr = as(image, "array")
   hdr = dumpNifti(image)
+  arr = as.array(image)
+  arr = as(arr, "array")
   
   
   stopifnot( !("dim_" %in% names(hdr)))
