@@ -374,6 +374,12 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
              endian=endian),
            stop(paste("Data type", nim@"datatype", "unsupported in", fname))
            )
+  if (length(data) != n) {
+    stop(paste0("Not all data was read in: ",
+                "should be length ", n,
+                " but only ", length(data), 
+                " was read in!"))
+  }
   close(fid)
 
   ## WARNING to the user
