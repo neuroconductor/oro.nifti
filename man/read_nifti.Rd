@@ -5,7 +5,7 @@
 \title{readNIfTI}
 \usage{
 readNIfTI(fname, verbose = FALSE, warn = -1, reorient = TRUE,
-  call = NULL)
+  call = NULL, force_extension = FALSE)
 }
 \arguments{
 \item{fname}{is the file name of the NIfTI file(s).}
@@ -21,6 +21,12 @@ Qform/Sform transformations.}
 
 \item{call}{keeps track of the current function call for use in the NIfTI
 extension.}
+
+\item{force_extension}{this function will check to see if the 
+\code{vox_offset} is correct.  If this is forced to \code{348}, which some 
+(very) old NIfTI writers use, this may cause an error if the extension is read,
+and so it is skipped (with a warning). If \code{force_extension = TRUE},
+then reading the extension is forced (when appropriate).}
 }
 \value{
 An object of class \code{nifti}.

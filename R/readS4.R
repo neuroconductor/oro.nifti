@@ -68,6 +68,11 @@
 #' Qform/Sform transformations.
 #' @param call keeps track of the current function call for use in the NIfTI
 #' extension.
+#' @param force_extension this function will check to see if the 
+#' \code{vox_offset} is correct.  If this is forced to \code{348}, which some 
+#' (very) old NIfTI writers use, this may cause an error if the extension is read,
+#' and so it is skipped (with a warning). If \code{force_extension = TRUE},
+#' then reading the extension is forced (when appropriate).
 #' @return An object of class \code{nifti}.
 #' @author Brandon Whitcher \email{bwhitcher@@gmail.com},\cr Volker Schmid
 #' \email{volkerschmid@@users.sourceforge.net},\cr Andrew Thornton
@@ -105,7 +110,7 @@
 #' @export
 #' @name readNIfTI
 readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
-                      call=NULL) {
+                      call=NULL, force_extension = FALSE) {
   if (is.null(call)) {
     call <- match.call()
   }
@@ -144,7 +149,8 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
     }
     nim <- .read.nifti.content(fname, onefile=TRUE, gzipped=TRUE,
                                verbose=verbose, warn=warn, reorient=reorient,
-                               call=call)
+                               call=call,
+                               force_extension = force_extension)
   } else {
     if (file.exists(nii)) {
       ## If uncompressed file exists, then upload!
@@ -153,7 +159,8 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
       }
       nim <- .read.nifti.content(fname, onefile=TRUE, gzipped=FALSE,
                                  verbose=verbose, warn=warn, reorient=reorient,
-                                 call=call)
+                                 call=call,
+                                 force_extension = force_extension)
     } else {
       if (file.exists(hdrgz) && file.exists(imggz)) {
         ## If compressed files exist, then upload!
@@ -162,7 +169,8 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
         }
         nim <- .read.nifti.content(fname, onefile=FALSE, gzipped=TRUE,
                                    verbose=verbose, warn=warn,
-                                   reorient=reorient, call=call)
+                                   reorient=reorient, call=call,
+                                   force_extension = force_extension)
       } else {
         ## If uncompressed files exist, then upload!
         if (file.exists(hdr) && file.exists(img)) {
@@ -171,7 +179,8 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
           }
         nim <- .read.nifti.content(fname, onefile=FALSE, gzipped=FALSE,
                                    verbose=verbose, warn=warn,
-                                   reorient=reorient, call=call)
+                                   reorient=reorient, call=call,
+                                   force_extension = force_extension)
         } else {
           stop("File(s) not found!")
         }
@@ -190,7 +199,7 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
 
 .read.nifti.content <- function(fname, onefile=TRUE, gzipped=TRUE,
                                 verbose=FALSE, warn=-1, reorient=FALSE,
-                                call=NULL) {
+                                call=NULL, force_extension = FALSE) {
   ## Open appropriate file
   if (gzipped) {
     suffix <- ifelse(onefile, "nii.gz", "hdr.gz")
@@ -288,36 +297,49 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
     if (nim@"magic" != "n+1") {
       stop("This is not a one-file NIfTI format")
     }   
-    nim@"extender" <- readBin(fid, integer(), 4, size=1, signed=FALSE,
-                              endian=endian)
-    ## If extension[0] is nonzero, it indicates that extended header
-    ## information is present in the bytes following the extension
-    ## array.  In a .nii file, this extended header data is before the
-    ## image data (and vox_offset must be set correctly to allow for
-    ## this).  In a .hdr file, this extended data follows extension and
-    ## proceeds (potentially) to the end of the file.
-    ##
-    if (nim@"extender"[1] > 0 || nim@"vox_offset" > 352) {
-      if (verbose) {
-        cat("  niftiExtension detected!", fill=TRUE)
+    # relevant to 
+    # https://www.jiscmail.ac.uk/cgi-bin/webadmin?A2=ind0708&L=FSL&D=0&P=245190
+    # getting problems with 348 header but no extension
+    if (seek(fid) == nim@vox_offset) {
+      msg = "Malformed NIfTI - not reading NIfTI extension, use at own risk!"
+      if (warn > 0) {
+        warning(msg) 
+      } else {
+        message(msg)
       }
-      if (!is(nim, "niftiExtension")) {
-        nim <- as(nim, "niftiExtension")
-      }
-      while (seek(fid) < nim@"vox_offset") {
+    } else {
+      nim@"extender" <- readBin(fid, integer(), 4, size=1, signed=FALSE,
+                                endian=endian)
+      ## If extension[0] is nonzero, it indicates that extended header
+      ## information is present in the bytes following the extension
+      ## array.  In a .nii file, this extended header data is before the
+      ## image data (and vox_offset must be set correctly to allow for
+      ## this).  In a .hdr file, this extended data follows extension and
+      ## proceeds (potentially) to the end of the file.
+      ##
+      if (nim@"extender"[1] > 0 || nim@"vox_offset" > 352) {
         if (verbose) {
-          cat("  seek(fid) =", seek(fid), fill=TRUE)
+          cat("  niftiExtension detected!", fill=TRUE)
         }
-        nimextsec <- new("niftiExtensionSection")
-        nimextsec@esize <- readBin(fid, integer(), size=4, endian=endian)
-        nimextsec@ecode <- readBin(fid, integer(), size=4, endian=endian)
-        nimextsec@edata <- .readCharWithEmbeddedNuls(fid, n=nimextsec@esize-8)
-        nim@extensions <- append(nim@extensions, nimextsec)
+        if (!is(nim, "niftiExtension")) {
+          nim <- as(nim, "niftiExtension")
+        }
+        while (seek(fid) < nim@"vox_offset") {
+          if (verbose) {
+            cat("  seek(fid) =", seek(fid), fill=TRUE)
+          }
+          nimextsec <- new("niftiExtensionSection")
+          nimextsec@esize <- readBin(fid, integer(), size=4, endian=endian)
+          nimextsec@ecode <- readBin(fid, integer(), size=4, endian=endian)
+          nimextsec@edata <- .readCharWithEmbeddedNuls(fid, n=nimextsec@esize-8)
+          nim@extensions <- append(nim@extensions, nimextsec)
+        }
       }
       if (seek(fid) > nim@"vox_offset") {
         stop("-- extension size (esize) has overshot voxel offset --")
       }
     }
+    
   }
 
   if (verbose) {
