@@ -3,7 +3,9 @@
 \docType{methods}
 \name{img_data-methods}
 \alias{img_data}
+\alias{img_data,ANY-method}
 \alias{img_data,anlz-method}
+\alias{img_data,character-method}
 \alias{img_data,nifti-method}
 \alias{img_data-methods}
 \alias{img_data-methods,}
@@ -17,6 +19,10 @@ img_data(object)
 \S4method{img_data}{nifti}(object)
 
 \S4method{img_data}{anlz}(object)
+
+\S4method{img_data}{character}(object)
+
+\S4method{img_data}{ANY}(object)
 
 img_data(object) <- value
 

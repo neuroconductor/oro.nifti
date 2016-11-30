@@ -28,6 +28,22 @@ setMethod("img_data", "nifti", function(object) { object@".Data" })
 #' @export
 setMethod("img_data", "anlz", function(object) { object@".Data" })
 #' @rdname img_data-methods
+#' @aliases img_data,character-method
+#' @export
+setMethod("img_data", "character", function(object) { 
+  object = readNifti(object)
+  as.array(object)
+  })
+#' @rdname img_data-methods
+#' @aliases img_data,ANY-method
+#' @importFrom RNifti retrieveNifti
+#' @export
+setMethod("img_data", "ANY", function(object) { 
+  object = RNifti::retrieveNifti(object)
+  as.array(object)
+})
+
+#' @rdname img_data-methods
 #' @aliases img_data<- 
 #' @export
 setGeneric("img_data<-", function(object, value) { standardGeneric("img_data<-") })

@@ -253,6 +253,11 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
   nim@"bitpix" <- readBin(fid, integer(), size=2, endian=endian)
   nim@"slice_start" <- readBin(fid, integer(), size=2, endian=endian)
   nim@"pixdim" <- readBin(fid, numeric(), 8, size=4, endian=endian)
+  bad_pixdim = !is.finite(nim@pixdim)
+  if (any( bad_pixdim )) {
+    message("Some pixel dimensions may be bad!")
+    nim@pixdim[ bad_pixdim ] = 1
+  }
   nim@"vox_offset" <- readBin(fid, numeric(), size=4, endian=endian)
   if (verbose) {
     cat("  vox_offset =", nim@"vox_offset", fill=TRUE)
