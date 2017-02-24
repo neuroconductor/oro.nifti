@@ -2,20 +2,32 @@
 % Please edit documentation in R/plot.R
 \docType{methods}
 \name{overlay-methods}
-\alias{overlay}
-\alias{overlay,afni,afni-method}
-\alias{overlay,afni,array-method}
-\alias{overlay,anlz,anlz-method}
-\alias{overlay,anlz,array-method}
-\alias{overlay,anlz,nifti-method}
-\alias{overlay,array,anlz-method}
-\alias{overlay,array,array-method}
-\alias{overlay,array,nifti-method}
-\alias{overlay,nifti,anlz-method}
-\alias{overlay,nifti,array-method}
-\alias{overlay,nifti,nifti-method}
 \alias{overlay-methods}
 \alias{overlay.nifti}
+\alias{overlay}
+\alias{overlay,nifti,nifti-method}
+\alias{overlay,nifti,anlz-method}
+\alias{overlay,nifti,array-method}
+\alias{overlay,anlz,nifti-method}
+\alias{overlay,anlz,anlz-method}
+\alias{overlay,anlz,array-method}
+\alias{overlay,array,nifti-method}
+\alias{overlay,array,anlz-method}
+\alias{overlay,array,array-method}
+\alias{overlay,afni,afni-method}
+\alias{overlay,afni,array-method}
+\alias{overlay}
+\alias{overlay,nifti,nifti-method}
+\alias{overlay,anlz,anlz-method}
+\alias{overlay,anlz,nifti-method}
+\alias{overlay,nifti,anlz-method}
+\alias{overlay,array,array-method}
+\alias{overlay,array,nifti-method}
+\alias{overlay,nifti,array-method}
+\alias{overlay,array,anlz-method}
+\alias{overlay,anlz,array-method}
+\alias{overlay,afni,afni-method}
+\alias{overlay,afni,array-method}
 \title{Methods for Function overlay}
 \usage{
 overlay.nifti(x, y, z = 1, w = 1, col.x = gray(0:64/64),
@@ -116,11 +128,11 @@ top of the other, for medical imaging data.
 \item{x = "afni", y = "afni"}{Produce overlay of \code{y} on \code{x}.} 
 }
 }
-\author{
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
+
 \seealso{
 \code{\link{image-methods}}, \code{\link{overlay-methods}}
 }
+\author{
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
 \keyword{methods}
-

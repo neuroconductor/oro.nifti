@@ -2,10 +2,11 @@
 % Please edit documentation in R/afniS4.R
 \docType{methods}
 \name{writeAFNI-methods}
+\alias{writeAFNI-methods}
 \alias{writeAFNI}
+\alias{writeAFNI,afni-method}
 \alias{writeAFNI,ANY-method}
 \alias{writeAFNI,afni-method}
-\alias{writeAFNI-methods}
 \title{writeAFNI}
 \usage{
 writeAFNI(nim, ...)
@@ -52,6 +53,7 @@ Current acceptable data types include
 \item{nim = "ANY"}{Not implemented.} 
 }
 }
+
 \examples{
 
 ## Taken from the AFNI Matlab Library
@@ -67,9 +69,6 @@ abs.err <- abs(data - orig)
 image(as(abs.err, "nifti"), zlim=range(0,1), oma=rep(2,4),
       bg="white")
 }
-\author{
-Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
-}
 \references{
 AFNI\cr
 \url{http://afni.nimh.nih.gov/pub/dist/src/README.attributes}
@@ -77,6 +76,8 @@ AFNI\cr
 \seealso{
 \code{\link{writeANALYZE}}, \code{\link{writeNIfTI}}
 }
+\author{
+Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
+}
 \keyword{file}
 \keyword{methods}
-

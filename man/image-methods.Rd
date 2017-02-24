@@ -2,12 +2,14 @@
 % Please edit documentation in R/plot.R
 \docType{methods}
 \name{image-methods}
+\alias{image-methods}
+\alias{image.nifti}
 \alias{image,ANY-method}
 \alias{image,afni-method}
 \alias{image,anlz-method}
 \alias{image,nifti-method}
-\alias{image-methods}
-\alias{image.nifti}
+\alias{image,anlz-method}
+\alias{image,afni-method}
 \title{Methods for Function `image'}
 \usage{
 \S4method{image}{nifti}(x, z = 1, w = 1, col = gray(0:64/64),
@@ -71,11 +73,11 @@ in a \dQuote{lightbox} layout.
 \code{x}.} \item{x = "anlz"}{Produce images for \code{x}.} \item{x =
 "afni"}{Produce images for \code{x}.} }
 }
-\author{
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
+
 \seealso{
 \code{\link{orthographic-methods}}, \code{\link{overlay-methods}}
 }
+\author{
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
 \keyword{methods}
-

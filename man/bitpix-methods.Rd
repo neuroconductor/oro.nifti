@@ -2,14 +2,14 @@
 % Please edit documentation in R/bitpix.R
 \docType{methods}
 \name{bitpix-methods}
-\alias{bitpix}
-\alias{bitpix,anlz-method}
-\alias{bitpix,nifti-method}
 \alias{bitpix-methods}
 \alias{bitpix-methods,}
+\alias{bitpix}
+\alias{bitpix,nifti-method}
+\alias{bitpix,anlz-method}
 \alias{bitpix<-}
-\alias{bitpix<-,anlz-method}
 \alias{bitpix<-,nifti-method}
+\alias{bitpix<-,anlz-method}
 \title{Extract Image Attribute \code{bitpix}}
 \usage{
 bitpix(object)
@@ -37,14 +37,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

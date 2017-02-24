@@ -33,4 +33,3 @@ image(outer(1:20,1:20,"+"), col=hotmetal(75), main="hotmetal")
 \code{\link{topo.colors}}
 }
 \keyword{aplot}
-

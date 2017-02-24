@@ -18,4 +18,3 @@ Object of class \code{niftiImage}
 Converts a nifti from oro.nifti to a 
 niftiImage object from the RNifti package
 }
-

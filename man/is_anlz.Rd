@@ -16,13 +16,12 @@ Logical indicating whether object is of class
 \description{
 Check whether object is of class \code{\linkS4class{anlz}}.
 }
-\author{
-Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
-}
 \references{
 ANALYZE 7.5\cr \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}
 }
 \seealso{
 \code{\linkS4class{anlz}}
 }
-
+\author{
+Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
+}

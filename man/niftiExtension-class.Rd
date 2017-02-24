@@ -12,11 +12,9 @@ that conform to the NIfTI data standard.
  Objects can be created by calls of the form
 \code{new("niftiExtension", data, dim, dimnames, ...)}.
 }
+
 \examples{
 showClass("niftiExtension")
-}
-\author{
-Andrew Thornton \email{zeripath@users.sourceforge.net}
 }
 \references{
 NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
@@ -24,5 +22,7 @@ NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
 \seealso{
 \code{\linkS4class{nifti}}, \code{\linkS4class{niftiAuditTrail}}
 }
+\author{
+Andrew Thornton \email{zeripath@users.sourceforge.net}
+}
 \keyword{classes}
-

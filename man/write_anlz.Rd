@@ -2,9 +2,9 @@
 % Please edit documentation in R/writeS4.R
 \docType{methods}
 \name{writeANALYZE-methods}
+\alias{writeANALYZE-methods}
 \alias{writeANALYZE}
 \alias{writeANALYZE,anlz-method}
-\alias{writeANALYZE-methods}
 \title{writeANALYZE}
 \usage{
 \S4method{writeANALYZE}{anlz}(aim, filename, gzipped = TRUE,
@@ -43,6 +43,7 @@ The \code{writeANALYZE} function utilizes the internal \code{writeBin} and
  \describe{ \item{object = "anlz"}{Write ANALYZE volume to
 disk.} }
 }
+
 \examples{
 
 norm <- dnorm(seq(-5, 5, length=32), sd=2)
@@ -77,15 +78,14 @@ names(equal) <- datatypes$name
 unlist(equal)
 }
 }
-\author{
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 Analyze 7.5\cr \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}
 }
 \seealso{
 \code{\link{writeAFNI}}, \code{\link{writeNIfTI}}
 }
+\author{
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
 \keyword{file}
 \keyword{methods}
-

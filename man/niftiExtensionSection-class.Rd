@@ -13,13 +13,10 @@ A \code{niftiExtensionSection} contains the fields that conform
  Objects can be created by calls of the form
 \code{new("niftiExtensionSection", data, dim, dimnames, ...)}.
 }
+
 \examples{
 
 showClass("niftiExtensionSection")
-}
-\author{
-Brandon Whitcher \email{bwhitcher@gmail.com},\cr Andrew Thornton
-\email{zeripath@users.sourcefore.net}
 }
 \references{
 NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
@@ -27,5 +24,8 @@ NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
 \seealso{
 \code{\linkS4class{niftiExtension}}, \code{\linkS4class{nifti}}
 }
+\author{
+Brandon Whitcher \email{bwhitcher@gmail.com},\cr Andrew Thornton
+\email{zeripath@users.sourcefore.net}
+}
 \keyword{classes}
-

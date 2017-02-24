@@ -4,6 +4,7 @@
 \name{afni-class}
 \alias{afni-class}
 \alias{show,afni-method}
+\alias{show,afni-method}
 \title{Class "afni"}
 \usage{
 \S4method{show}{afni}(object)
@@ -93,12 +94,10 @@ The AFNI class for medical imaging data.
   @export
   @rdname afni-class
 }
+
 \examples{
 
 showClass("afni")
-}
-\author{
-Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
 }
 \references{
 AFNI\cr
@@ -107,5 +106,7 @@ AFNI\cr
 \seealso{
 \code{\linkS4class{nifti}}, \code{\linkS4class{anlz}}
 }
+\author{
+Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
+}
 \keyword{classes}
-

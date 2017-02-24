@@ -2,17 +2,17 @@
 % Please edit documentation in R/hkey_un0.R
 \docType{methods}
 \name{hkey_un0-methods}
-\alias{hkey.un0}
-\alias{hkey.un0,anlz-method}
-\alias{hkey.un0,nifti-method}
-\alias{hkey.un0<-}
-\alias{hkey.un0<-,anlz-method}
-\alias{hkey_un0}
-\alias{hkey_un0,anlz-method}
 \alias{hkey_un0-methods}
 \alias{hkey_un0-methods,}
+\alias{hkey_un0}
+\alias{hkey_un0,anlz-method}
 \alias{hkey_un0<-}
 \alias{hkey_un0<-,anlz-method}
+\alias{hkey.un0}
+\alias{hkey.un0,nifti-method}
+\alias{hkey.un0,anlz-method}
+\alias{hkey.un0<-}
+\alias{hkey.un0<-,anlz-method}
 \title{Extract Image Attribute \code{hkey_un0}}
 \usage{
 hkey_un0(object)
@@ -44,14 +44,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

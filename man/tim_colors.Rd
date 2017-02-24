@@ -29,12 +29,11 @@ default.
 tim.colors(10) 
 image(outer(1:20, 1:20, "+"), col=tim.colors(75), main="tim.colors")
 }
-\author{
-Tim Hoar (GSP-NCAR); modified by Brandon Whitcher
-}
 \seealso{
 \code{\link{hotmetal}}, \code{\link{topo.colors}},
 \code{\link{terrain.colors}}
 }
+\author{
+Tim Hoar (GSP-NCAR); modified by Brandon Whitcher
+}
 \keyword{aplot}
-

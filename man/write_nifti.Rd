@@ -2,11 +2,13 @@
 % Please edit documentation in R/writeS4.R
 \docType{methods}
 \name{writeNIfTI-methods}
+\alias{writeNIfTI-methods}
 \alias{writeNIfTI}
+\alias{writeNIfTI,nifti-method}
 \alias{writeNIfTI,anlz-method}
 \alias{writeNIfTI,array-method}
-\alias{writeNIfTI,nifti-method}
-\alias{writeNIfTI-methods}
+\alias{writeNIfTI,anlz-method}
+\alias{writeNIfTI,array-method}
 \title{writeNIfTI}
 \usage{
 \S4method{writeNIfTI}{nifti}(nim, filename, onefile = TRUE, gzipped = TRUE,
@@ -64,6 +66,7 @@ to class \code{nifti} and write the NIfTI volume to disk.} \item{object =
 "array"}{Convert array to class \code{nifti} and write the NIfTI volume to
 disk.} \item{object = "nifti"}{Write NIfTI volume to disk.} }
 }
+
 \examples{
 
 norm <- dnorm(seq(-5, 5, length=32), sd=2)
@@ -99,16 +102,15 @@ names(equal) <- datatypes$name
 unlist(equal)
 }
 }
-\author{
-Brandon Whitcher \email{bwhitcher@gmail.com},\cr Volker Schmid
-\email{volkerschmid@users.sourceforge.net}
-}
 \references{
 NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
 }
 \seealso{
 \code{\link{writeAFNI}}, \code{\link{writeANALYZE}}
 }
+\author{
+Brandon Whitcher \email{bwhitcher@gmail.com},\cr Volker Schmid
+\email{volkerschmid@users.sourceforge.net}
+}
 \keyword{file}
 \keyword{methods}
-

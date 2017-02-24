@@ -51,9 +51,6 @@ image(TT, zlim=c(0.5,256), oma=rep(2,4))
 orthographic(TT, zlim=c(0.5,256), oma=rep(2,4))
 }
 }
-\author{
-Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
-}
 \references{
 AFNI\cr
 \url{http://afni.nimh.nih.gov/pub/dist/src/README.attributes}
@@ -61,6 +58,8 @@ AFNI\cr
 \seealso{
 \code{\link{readANALYZE}}, \code{\link{readNIfTI}}
 }
+\author{
+Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
+}
 \keyword{file}
 \keyword{methods}
-

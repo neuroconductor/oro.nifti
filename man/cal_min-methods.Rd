@@ -2,20 +2,21 @@
 % Please edit documentation in R/cal_min.R
 \docType{methods}
 \name{cal_min-methods}
-\alias{cal.min}
-\alias{cal.min,anlz-method}
-\alias{cal.min,nifti-method}
-\alias{cal.min<-}
-\alias{cal.min<-,anlz-method}
-\alias{cal.min<-,nifti-method}
-\alias{cal_min}
-\alias{cal_min,anlz-method}
-\alias{cal_min,nifti-method}
 \alias{cal_min-methods}
 \alias{cal_min-methods,}
+\alias{cal_min}
+\alias{cal_min,nifti-method}
+\alias{cal_min,anlz-method}
 \alias{cal_min<-}
-\alias{cal_min<-,anlz-method}
 \alias{cal_min<-,nifti-method}
+\alias{cal_min<-,anlz-method}
+\alias{cal.min}
+\alias{cal.min,nifti-method}
+\alias{cal.min,nifti-method}
+\alias{cal.min,anlz-method}
+\alias{cal.min<-}
+\alias{cal.min<-,nifti-method}
+\alias{cal.min<-,anlz-method}
 \title{Extract Image Attribute \code{cal_min}}
 \usage{
 cal_min(object)
@@ -67,14 +68,13 @@ urlfile <- file.path(system.file("nifti", package="oro.nifti"),
 mniLR <- readNIfTI(urlfile)
 cal.min(mniLR)
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

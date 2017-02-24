@@ -75,16 +75,15 @@ image(colin, oma=rep(2,4))
 orthographic(colin, oma=rep(2,4))
 }
 }
-\author{
-Brandon Whitcher \email{bwhitcher@gmail.com},\cr Volker Schmid
-\email{volkerschmid@users.sourceforge.net},\cr Andrew Thornton
-\email{zeripath@users.sourceforge.net}
-}
 \references{
 NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
 }
 \seealso{
 \code{\link{readAFNI}}, \code{\link{readANALYZE}}
 }
+\author{
+Brandon Whitcher \email{bwhitcher@gmail.com},\cr Volker Schmid
+\email{volkerschmid@users.sourceforge.net},\cr Andrew Thornton
+\email{zeripath@users.sourceforge.net}
+}
 \keyword{file}
-

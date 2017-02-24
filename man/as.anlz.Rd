@@ -26,4 +26,3 @@ objects.
 Andrew Thornton \email{zeripath@users.sourceforge.net},\cr
 Brandon Whitcher \email{bwhitcher@gmail.com}
 }
-

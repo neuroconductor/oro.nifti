@@ -2,20 +2,21 @@
 % Please edit documentation in R/session_error.R
 \docType{methods}
 \name{session_error-methods}
-\alias{session.error}
-\alias{session.error,anlz-method}
-\alias{session.error,nifti-method}
-\alias{session.error<-}
-\alias{session.error<-,anlz-method}
-\alias{session.error<-,nifti-method}
-\alias{session_error}
-\alias{session_error,anlz-method}
-\alias{session_error,nifti-method}
 \alias{session_error-methods}
 \alias{session_error-methods,}
+\alias{session_error}
+\alias{session_error,nifti-method}
+\alias{session_error,anlz-method}
 \alias{session_error<-}
-\alias{session_error<-,anlz-method}
 \alias{session_error<-,nifti-method}
+\alias{session_error<-,anlz-method}
+\alias{session.error}
+\alias{session.error,nifti-method}
+\alias{session.error,nifti-method}
+\alias{session.error,anlz-method}
+\alias{session.error<-}
+\alias{session.error<-,nifti-method}
+\alias{session.error<-,anlz-method}
 \title{Extract Image Attribute \code{session_error}}
 \usage{
 session_error(object)
@@ -55,14 +56,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

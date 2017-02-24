@@ -16,9 +16,6 @@ Logical indicating whether object is of class
 \description{
 Check whether object is of class \code{\linkS4class{afni}}.
 }
-\author{
-Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
-}
 \references{
 AFNI\cr
 \url{http://afni.nimh.nih.gov/pub/dist/src/README.attributes}
@@ -26,4 +23,6 @@ AFNI\cr
 \seealso{
 \code{\linkS4class{afni}}
 }
-
+\author{
+Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
+}

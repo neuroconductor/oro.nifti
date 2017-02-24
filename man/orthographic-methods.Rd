@@ -2,13 +2,18 @@
 % Please edit documentation in R/plot.R
 \docType{methods}
 \name{orthographic-methods}
-\alias{orthographic}
-\alias{orthographic,afni-method}
-\alias{orthographic,anlz-method}
-\alias{orthographic,array-method}
-\alias{orthographic,nifti-method}
 \alias{orthographic-methods}
 \alias{orthographic.nifti}
+\alias{orthographic}
+\alias{orthographic,nifti-method}
+\alias{orthographic,anlz-method}
+\alias{orthographic,array-method}
+\alias{orthographic,afni-method}
+\alias{orthographic}
+\alias{orthographic,nifti-method}
+\alias{orthographic,anlz-method}
+\alias{orthographic,array-method}
+\alias{orthographic,afni-method}
 \title{Methods for Function `orthographic' in Package `dcemriS4'}
 \usage{
 orthographic.nifti(x, y = NULL, xyz = NULL, w = 1, col = gray(0:64/64),
@@ -92,11 +97,11 @@ for \code{x}.} \item{x = "anlz"}{Produce orthographic display for \code{x}.}
 \item{x = "array"}{Produce orthographic display for \code{x}.} \item{x =
 "nifti"}{Produce orthographic display for \code{x}.} }
 }
-\author{
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
+
 \seealso{
 \code{\link{image-methods}}, \code{\link{overlay-methods}}
 }
+\author{
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
 \keyword{methods}
-

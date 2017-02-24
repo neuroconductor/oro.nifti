@@ -2,17 +2,17 @@
 % Please edit documentation in R/vols_added.R
 \docType{methods}
 \name{vols_added-methods}
-\alias{vols.added}
-\alias{vols.added,anlz-method}
-\alias{vols.added,nifti-method}
-\alias{vols.added<-}
-\alias{vols.added<-,anlz-method}
-\alias{vols_added}
-\alias{vols_added,anlz-method}
 \alias{vols_added-methods}
 \alias{vols_added-methods,}
+\alias{vols_added}
+\alias{vols_added,anlz-method}
 \alias{vols_added<-}
 \alias{vols_added<-,anlz-method}
+\alias{vols.added}
+\alias{vols.added,nifti-method}
+\alias{vols.added,anlz-method}
+\alias{vols.added<-}
+\alias{vols.added<-,anlz-method}
 \title{Extract Image Attribute \code{vols_added}}
 \usage{
 vols_added(object)
@@ -44,14 +44,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

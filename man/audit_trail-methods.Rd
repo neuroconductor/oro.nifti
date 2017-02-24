@@ -2,9 +2,12 @@
 % Please edit documentation in R/niftiS4.R
 \docType{methods}
 \name{audit.trail-methods}
-\alias{audit.trail}
-\alias{audit.trail,nifti-method}
 \alias{audit.trail-methods}
+\alias{audit.trail,nifti-method}
+\alias{audit.trail}
+\alias{audit.trail<-,nifti-method}
+\alias{audit.trail<-}
+\alias{audit.trail,nifti-method}
 \alias{audit.trail<-}
 \alias{audit.trail<-,nifti-method}
 \title{Extract or Replace NIfTI Audit Trail}
@@ -31,8 +34,8 @@ Operators that act on the audit trail (XML) in the NIfTI header.
 \item{object = "nifti"}{Extract or replace NIfTI audit trail.}
 }
 }
+
 \author{
 Andrew Thornton \email{zeripath@users.sourceforge.net}
 }
 \keyword{methods}
-

@@ -27,10 +27,9 @@ transformed array with the transformed dimensions.
 This function is mainly used by the \code{\link{reorient}} function
 to transform nifti data into neuroradiological convention.
 }
-\author{
-Andrew Thornton \email{zeripath@users.sourceforge.net}
-}
 \seealso{
 \code{\link{reorient}},\code{\link{inverseReorient}}
 }
-
+\author{
+Andrew Thornton \email{zeripath@users.sourceforge.net}
+}

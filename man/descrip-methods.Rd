@@ -2,14 +2,14 @@
 % Please edit documentation in R/descrip.R
 \docType{methods}
 \name{descrip-methods}
-\alias{descrip}
-\alias{descrip,anlz-method}
-\alias{descrip,nifti-method}
 \alias{descrip-methods}
 \alias{descrip-methods,}
+\alias{descrip}
+\alias{descrip,nifti-method}
+\alias{descrip,anlz-method}
 \alias{descrip<-}
-\alias{descrip<-,anlz-method}
 \alias{descrip<-,nifti-method}
+\alias{descrip<-,anlz-method}
 \title{Extract Image Attribute \code{descrip}}
 \usage{
 descrip(object)
@@ -53,14 +53,13 @@ descrip(mniLR) <- paste(descrip(mniLR), version$version.string, sep="; ")
 descrip(mniLR)
 }
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

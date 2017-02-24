@@ -19,13 +19,11 @@ An extension of the NIfTI class that adds an audit trail in XML format.
                 summary of the imaging data.}
   }
 }
+
 \examples{
 
 showClass("niftiAuditTrail")
 
-}
-\author{
-Andrew Thornton \email{zeripath@users.sourceforge.net}
 }
 \references{
 NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
@@ -33,5 +31,7 @@ NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
 \seealso{
 \code{\linkS4class{nifti}}, \code{\linkS4class{niftiExtension}}
 }
+\author{
+Andrew Thornton \email{zeripath@users.sourceforge.net}
+}
 \keyword{classes}
-

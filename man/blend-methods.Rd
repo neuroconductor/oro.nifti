@@ -3,15 +3,15 @@
 \docType{methods}
 \name{blend}
 \alias{blend}
+\alias{blendVolumes}
+\alias{blend,nifti,nifti-method}
+\alias{blend,nifti,nifti-methods}
 \alias{blend,anlz,anlz-method}
 \alias{blend,anlz,anlz-methods}
 \alias{blend,anlz,nifti-method}
 \alias{blend,anlz,nifti-methods}
 \alias{blend,nifti,anlz-method}
 \alias{blend,nifti,anlz-methods}
-\alias{blend,nifti,nifti-method}
-\alias{blend,nifti,nifti-methods}
-\alias{blendVolumes}
 \title{Merge Two NIfTI or ANALYZE Volumes}
 \usage{
 blendVolumes(x, y, seqX, seqY, method = "linear")
@@ -51,11 +51,11 @@ slice that overlaps between the two volumes.
 \item{x = "anlz", y = "nifti"}{Merge \code{x} and \code{y}.} 
 }
 }
-\author{
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
+
 \seealso{
 \code{\link{image-methods}}, \code{\link{overlay-methods}}
 }
+\author{
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
 \keyword{methods}
-

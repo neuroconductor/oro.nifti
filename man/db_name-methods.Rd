@@ -2,20 +2,21 @@
 % Please edit documentation in R/db_name.R
 \docType{methods}
 \name{db_name-methods}
-\alias{db.name}
-\alias{db.name,anlz-method}
-\alias{db.name,nifti-method}
-\alias{db.name<-}
-\alias{db.name<-,anlz-method}
-\alias{db.name<-,nifti-method}
-\alias{db_name}
-\alias{db_name,anlz-method}
-\alias{db_name,nifti-method}
 \alias{db_name-methods}
 \alias{db_name-methods,}
+\alias{db_name}
+\alias{db_name,nifti-method}
+\alias{db_name,anlz-method}
 \alias{db_name<-}
-\alias{db_name<-,anlz-method}
 \alias{db_name<-,nifti-method}
+\alias{db_name<-,anlz-method}
+\alias{db.name}
+\alias{db.name,nifti-method}
+\alias{db.name,nifti-method}
+\alias{db.name,anlz-method}
+\alias{db.name<-}
+\alias{db.name<-,nifti-method}
+\alias{db.name<-,anlz-method}
 \title{Extract Image Attribute \code{db_name}}
 \usage{
 db_name(object)
@@ -55,14 +56,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

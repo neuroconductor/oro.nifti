@@ -2,21 +2,25 @@
 % Please edit documentation in R/coerce.R
 \docType{methods}
 \name{coerce-methods}
+\alias{coerce-methods}
+\alias{coerce,array,anlz-method}
+\alias{coerce<-,array,anlz-method}
 \alias{as,array,anlz-method}
-\alias{as,array,nifti-method}
 \alias{as<-,array,anlz-method}
 \alias{as<-,array,nifti-method}
-\alias{coerce,anlz,nifti-method}
-\alias{coerce,array,anlz-method}
-\alias{coerce,array,nifti-method}
 \alias{coerce,list,anlz-method}
-\alias{coerce,list,nifti-method}
-\alias{coerce-methods}
-\alias{coerce<-,anlz,nifti-method}
-\alias{coerce<-,array,anlz-method}
-\alias{coerce<-,array,nifti-method}
 \alias{coerce<-,list,anlz-method}
+\alias{coerce,array,nifti-method}
+\alias{as,array,nifti-method}
+\alias{coerce,list,nifti-method}
+\alias{coerce,anlz,nifti-method}
+\alias{coerce<-,array,nifti-method}
 \alias{coerce<-,list,nifti-method}
+\alias{coerce<-,anlz,nifti-method}
+\alias{coerce-methods}
+\alias{coerce-methods}
+\alias{coerce-methods}
+\alias{coerce-methods}
 \title{Force an Object to Belong to the ANALYZE or NIfTI Class}
 \arguments{
 \item{object}{is an object of class \code{array} or inherits from
@@ -60,12 +64,12 @@ list are coerced into NIfTI objects.  All other objects are left alone.  The
 original list structure is retained.} 
 }
 }
+
+\seealso{
+\code{\link{as}}
+}
 \author{
 Andrew Thornton \email{zeripath@users.sourceforge.net},\cr
 Brandon Whitcher \email{bwhitcher@gmail.com}
 }
-\seealso{
-\code{\link{as}}
-}
 \keyword{methods}
-

@@ -16,4 +16,3 @@ Object of class \code{\link{nifti}}
 Converts a niftiImage from RNifti to a 
 nifti object from the oro.nifti package
 }
-

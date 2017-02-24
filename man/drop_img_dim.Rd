@@ -64,4 +64,3 @@ colin <- dropImageDimension(colin)
 writeNIfTI(colin, filename = tempfile())
 }
 }
-

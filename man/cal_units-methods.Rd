@@ -2,17 +2,17 @@
 % Please edit documentation in R/cal_units.R
 \docType{methods}
 \name{cal_units-methods}
-\alias{cal.units}
-\alias{cal.units,anlz-method}
-\alias{cal.units,nifti-method}
-\alias{cal.units<-}
-\alias{cal.units<-,anlz-method}
-\alias{cal_units}
-\alias{cal_units,anlz-method}
 \alias{cal_units-methods}
 \alias{cal_units-methods,}
+\alias{cal_units}
+\alias{cal_units,anlz-method}
 \alias{cal_units<-}
 \alias{cal_units<-,anlz-method}
+\alias{cal.units}
+\alias{cal.units,nifti-method}
+\alias{cal.units,anlz-method}
+\alias{cal.units<-}
+\alias{cal.units<-,anlz-method}
 \title{Extract Image Attribute \code{cal_units}}
 \usage{
 cal_units(object)
@@ -44,14 +44,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

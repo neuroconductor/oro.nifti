@@ -2,16 +2,17 @@
 % Please edit documentation in R/srow_z.R
 \docType{methods}
 \name{srow_z-methods}
+\alias{srow_z-methods}
+\alias{srow_z-methods,}
+\alias{srow_z}
+\alias{srow_z,nifti-method}
+\alias{srow_z<-}
+\alias{srow_z<-,nifti-method}
 \alias{srow.z}
+\alias{srow.z,nifti-method}
 \alias{srow.z,nifti-method}
 \alias{srow.z<-}
 \alias{srow.z<-,nifti-method}
-\alias{srow_z}
-\alias{srow_z,nifti-method}
-\alias{srow_z-methods}
-\alias{srow_z-methods,}
-\alias{srow_z<-}
-\alias{srow_z<-,nifti-method}
 \title{Extract Image Attribute \code{srow_z}}
 \usage{
 srow_z(object)
@@ -43,14 +44,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

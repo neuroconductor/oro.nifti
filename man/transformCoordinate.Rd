@@ -55,4 +55,3 @@ translateCoordinate(xyz, ffd, verbose=TRUE)
 \author{
 Andrew Thornton \email{zeripath@users.sourceforge.net}
 }
-

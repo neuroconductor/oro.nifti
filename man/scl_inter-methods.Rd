@@ -2,16 +2,17 @@
 % Please edit documentation in R/scl_inter.R
 \docType{methods}
 \name{scl_inter-methods}
+\alias{scl_inter-methods}
+\alias{scl_inter-methods,}
+\alias{scl_inter}
+\alias{scl_inter,nifti-method}
+\alias{scl_inter<-}
+\alias{scl_inter<-,nifti-method}
 \alias{scl.inter}
+\alias{scl.inter,nifti-method}
 \alias{scl.inter,nifti-method}
 \alias{scl.inter<-}
 \alias{scl.inter<-,nifti-method}
-\alias{scl_inter}
-\alias{scl_inter,nifti-method}
-\alias{scl_inter-methods}
-\alias{scl_inter-methods,}
-\alias{scl_inter<-}
-\alias{scl_inter<-,nifti-method}
 \title{Extract Image Attribute \code{scl_inter}}
 \usage{
 scl_inter(object)
@@ -43,14 +44,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

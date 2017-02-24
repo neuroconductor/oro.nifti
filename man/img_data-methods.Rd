@@ -2,16 +2,16 @@
 % Please edit documentation in R/img_data.R
 \docType{methods}
 \name{img_data-methods}
-\alias{img_data}
-\alias{img_data,ANY-method}
-\alias{img_data,anlz-method}
-\alias{img_data,character-method}
-\alias{img_data,nifti-method}
 \alias{img_data-methods}
 \alias{img_data-methods,}
+\alias{img_data}
+\alias{img_data,nifti-method}
+\alias{img_data,anlz-method}
+\alias{img_data,character-method}
+\alias{img_data,ANY-method}
 \alias{img_data<-}
-\alias{img_data<-,anlz-method}
 \alias{img_data<-,nifti-method}
+\alias{img_data<-,anlz-method}
 \title{Extract Image Attribute \code{.Data}}
 \usage{
 img_data(object)
@@ -43,14 +43,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

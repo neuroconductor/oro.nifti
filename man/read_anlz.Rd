@@ -42,15 +42,14 @@ mni152 <- readANALYZE(file.path(anlz.path, "avg152T1"))
 image(mni152, oma=rep(2,4))
 orthographic(mni152, oma=rep(2,4))
 }
-\author{
-Brandon Whitcher \email{bwhitcher@gmail.com},\cr Volker Schmid
-\email{volkerschmid@users.sourceforge.net}
-}
 \references{
 ANALYZE 7.5\cr \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}
 }
 \seealso{
 \code{\link{readNIfTI}}
 }
+\author{
+Brandon Whitcher \email{bwhitcher@gmail.com},\cr Volker Schmid
+\email{volkerschmid@users.sourceforge.net}
+}
 \keyword{file}
-

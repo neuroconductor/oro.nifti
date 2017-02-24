@@ -2,14 +2,14 @@
 % Please edit documentation in R/extents.R
 \docType{methods}
 \name{extents-methods}
-\alias{extents}
-\alias{extents,anlz-method}
-\alias{extents,nifti-method}
 \alias{extents-methods}
 \alias{extents-methods,}
+\alias{extents}
+\alias{extents,nifti-method}
+\alias{extents,anlz-method}
 \alias{extents<-}
-\alias{extents<-,anlz-method}
 \alias{extents<-,nifti-method}
+\alias{extents<-,anlz-method}
 \title{Extract Image Attribute \code{extents}}
 \usage{
 extents(object)
@@ -37,14 +37,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

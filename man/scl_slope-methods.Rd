@@ -2,16 +2,17 @@
 % Please edit documentation in R/scl_slope.R
 \docType{methods}
 \name{scl_slope-methods}
+\alias{scl_slope-methods}
+\alias{scl_slope-methods,}
+\alias{scl_slope}
+\alias{scl_slope,nifti-method}
+\alias{scl_slope<-}
+\alias{scl_slope<-,nifti-method}
 \alias{scl.slope}
+\alias{scl.slope,nifti-method}
 \alias{scl.slope,nifti-method}
 \alias{scl.slope<-}
 \alias{scl.slope<-,nifti-method}
-\alias{scl_slope}
-\alias{scl_slope,nifti-method}
-\alias{scl_slope-methods}
-\alias{scl_slope-methods,}
-\alias{scl_slope<-}
-\alias{scl_slope<-,nifti-method}
 \title{Extract Image Attribute \code{scl_slope}}
 \usage{
 scl_slope(object)
@@ -43,14 +44,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

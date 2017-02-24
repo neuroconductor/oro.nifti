@@ -2,14 +2,14 @@
 % Please edit documentation in R/dim_.R
 \docType{methods}
 \name{dim_-methods}
-\alias{dim_}
-\alias{dim_,anlz-method}
-\alias{dim_,nifti-method}
 \alias{dim_-methods}
 \alias{dim_-methods,}
+\alias{dim_}
+\alias{dim_,nifti-method}
+\alias{dim_,anlz-method}
 \alias{dim_<-}
-\alias{dim_<-,anlz-method}
 \alias{dim_<-,nifti-method}
+\alias{dim_<-,anlz-method}
 \title{Extract Image Attribute \code{dim_}}
 \usage{
 dim_(object)
@@ -37,14 +37,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

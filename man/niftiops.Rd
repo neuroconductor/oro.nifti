@@ -2,10 +2,10 @@
 % Please edit documentation in R/Operators.R
 \docType{methods}
 \name{nifti-operators}
+\alias{nifti-operators}
 \alias{Ops,nifti,nifti-method}
 \alias{Ops,nifti,numeric-method}
 \alias{Ops,numeric,nifti-method}
-\alias{nifti-operators}
 \title{Operations for NIfTI Objects}
 \usage{
 \S4method{Ops}{nifti,nifti}(e1, e2)
@@ -34,4 +34,3 @@ is.nifti(img02 / pi)
 \author{
 John Muschellli \email{muschellij2@gmail.com}
 }
-

@@ -2,14 +2,14 @@
 % Please edit documentation in R/regular.R
 \docType{methods}
 \name{regular-methods}
-\alias{regular}
-\alias{regular,anlz-method}
-\alias{regular,nifti-method}
 \alias{regular-methods}
 \alias{regular-methods,}
+\alias{regular}
+\alias{regular,nifti-method}
+\alias{regular,anlz-method}
 \alias{regular<-}
-\alias{regular<-,anlz-method}
 \alias{regular<-,nifti-method}
+\alias{regular<-,anlz-method}
 \title{Extract Image Attribute \code{regular}}
 \usage{
 regular(object)
@@ -37,14 +37,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

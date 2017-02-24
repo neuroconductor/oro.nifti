@@ -28,9 +28,6 @@ string.
 ## 4 = CT for anatomic data
 convert.scene(4, "3DIM_HEAD_ANAT")
 }
-\author{
-Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
-}
 \references{
 AFNI\cr
 \url{http://afni.nimh.nih.gov/pub/dist/src/README.attributes}
@@ -39,5 +36,7 @@ AFNI\cr
 \code{\link{convert.datatype.anlz}},
 \code{\link{convert.orient.anlz}}
 }
+\author{
+Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
+}
 \keyword{misc}
-

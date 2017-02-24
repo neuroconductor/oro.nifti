@@ -2,20 +2,21 @@
 % Please edit documentation in R/vox_offset.R
 \docType{methods}
 \name{vox_offset-methods}
-\alias{vox.offset}
-\alias{vox.offset,anlz-method}
-\alias{vox.offset,nifti-method}
-\alias{vox.offset<-}
-\alias{vox.offset<-,anlz-method}
-\alias{vox.offset<-,nifti-method}
-\alias{vox_offset}
-\alias{vox_offset,anlz-method}
-\alias{vox_offset,nifti-method}
 \alias{vox_offset-methods}
 \alias{vox_offset-methods,}
+\alias{vox_offset}
+\alias{vox_offset,nifti-method}
+\alias{vox_offset,anlz-method}
 \alias{vox_offset<-}
-\alias{vox_offset<-,anlz-method}
 \alias{vox_offset<-,nifti-method}
+\alias{vox_offset<-,anlz-method}
+\alias{vox.offset}
+\alias{vox.offset,nifti-method}
+\alias{vox.offset,nifti-method}
+\alias{vox.offset,anlz-method}
+\alias{vox.offset<-}
+\alias{vox.offset<-,nifti-method}
+\alias{vox.offset<-,anlz-method}
 \title{Extract Image Attribute \code{vox_offset}}
 \usage{
 vox_offset(object)
@@ -55,14 +56,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

@@ -15,4 +15,3 @@ Vector of length 3
 \description{
 Grabs the pixdim and takes the correct elements
 }
-

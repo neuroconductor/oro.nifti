@@ -2,14 +2,14 @@
 % Please edit documentation in R/pixdim.R
 \docType{methods}
 \name{pixdim-methods}
-\alias{pixdim}
-\alias{pixdim,anlz-method}
-\alias{pixdim,nifti-method}
 \alias{pixdim-methods}
 \alias{pixdim-methods,}
+\alias{pixdim}
+\alias{pixdim,nifti-method}
+\alias{pixdim,anlz-method}
 \alias{pixdim<-}
-\alias{pixdim<-,anlz-method}
 \alias{pixdim<-,nifti-method}
+\alias{pixdim<-,anlz-method}
 \title{Extract Image Attribute \code{pixdim}}
 \usage{
 pixdim(object)
@@ -49,14 +49,13 @@ urlfile <- file.path(system.file("nifti", package="oro.nifti"),
 mniLR <- readNIfTI(urlfile)
 pixdim(mniLR)
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

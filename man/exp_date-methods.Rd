@@ -2,10 +2,10 @@
 % Please edit documentation in R/exp_date.R
 \docType{methods}
 \name{exp_date-methods}
-\alias{exp_date}
-\alias{exp_date,anlz-method}
 \alias{exp_date-methods}
 \alias{exp_date-methods,}
+\alias{exp_date}
+\alias{exp_date,anlz-method}
 \alias{exp_date<-}
 \alias{exp_date<-,anlz-method}
 \title{Extract Image Attribute \code{exp_date}}
@@ -31,14 +31,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

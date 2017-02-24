@@ -2,20 +2,21 @@
 % Please edit documentation in R/aux_file.R
 \docType{methods}
 \name{aux_file-methods}
-\alias{aux.file}
-\alias{aux.file,anlz-method}
-\alias{aux.file,nifti-method}
-\alias{aux.file<-}
-\alias{aux.file<-,anlz-method}
-\alias{aux.file<-,nifti-method}
-\alias{aux_file}
-\alias{aux_file,anlz-method}
-\alias{aux_file,nifti-method}
 \alias{aux_file-methods}
 \alias{aux_file-methods,}
+\alias{aux_file}
+\alias{aux_file,nifti-method}
+\alias{aux_file,anlz-method}
 \alias{aux_file<-}
-\alias{aux_file<-,anlz-method}
 \alias{aux_file<-,nifti-method}
+\alias{aux_file<-,anlz-method}
+\alias{aux.file}
+\alias{aux.file,nifti-method}
+\alias{aux.file,nifti-method}
+\alias{aux.file,anlz-method}
+\alias{aux.file<-}
+\alias{aux.file<-,nifti-method}
+\alias{aux.file<-,anlz-method}
 \title{Extract Image Attribute \code{aux_file}}
 \usage{
 aux_file(object)
@@ -71,14 +72,13 @@ aux.file(mniRL)
 aux.file(mniRL) <- "avg152T1_RL_nifti"
 aux.file(mniRL)
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

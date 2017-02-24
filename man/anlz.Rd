@@ -28,9 +28,6 @@ Constructor for Analyze class objects.
 aim <- anlz() # default
 
 }
-\author{
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}
 }
@@ -38,4 +35,6 @@ ANALYZE 7.5\cr \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}
 \code{\linkS4class{anlz}}, \code{\linkS4class{nifti}},
 \code{\link{nifti}}, \code{\link{convert.datatype.anlz}}
 }
-
+\author{
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

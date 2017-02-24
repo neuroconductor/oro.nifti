@@ -2,16 +2,17 @@
 % Please edit documentation in R/slice_code.R
 \docType{methods}
 \name{slice_code-methods}
+\alias{slice_code-methods}
+\alias{slice_code-methods,}
+\alias{slice_code}
+\alias{slice_code,nifti-method}
+\alias{slice_code<-}
+\alias{slice_code<-,nifti-method}
 \alias{slice.code}
+\alias{slice.code,nifti-method}
 \alias{slice.code,nifti-method}
 \alias{slice.code<-}
 \alias{slice.code<-,nifti-method}
-\alias{slice_code}
-\alias{slice_code,nifti-method}
-\alias{slice_code-methods}
-\alias{slice_code-methods,}
-\alias{slice_code<-}
-\alias{slice_code<-,nifti-method}
 \title{Extract Image Attribute \code{slice_code}}
 \usage{
 slice_code(object)
@@ -43,14 +44,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

@@ -2,16 +2,17 @@
 % Please edit documentation in R/slice_duration.R
 \docType{methods}
 \name{slice_duration-methods}
+\alias{slice_duration-methods}
+\alias{slice_duration-methods,}
+\alias{slice_duration}
+\alias{slice_duration,nifti-method}
+\alias{slice_duration<-}
+\alias{slice_duration<-,nifti-method}
 \alias{slice.duration}
+\alias{slice.duration,nifti-method}
 \alias{slice.duration,nifti-method}
 \alias{slice.duration<-}
 \alias{slice.duration<-,nifti-method}
-\alias{slice_duration}
-\alias{slice_duration,nifti-method}
-\alias{slice_duration-methods}
-\alias{slice_duration-methods,}
-\alias{slice_duration<-}
-\alias{slice_duration<-,nifti-method}
 \title{Extract Image Attribute \code{slice_duration}}
 \usage{
 slice_duration(object)
@@ -43,14 +44,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

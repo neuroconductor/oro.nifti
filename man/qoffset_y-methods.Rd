@@ -2,16 +2,17 @@
 % Please edit documentation in R/qoffset_y.R
 \docType{methods}
 \name{qoffset_y-methods}
+\alias{qoffset_y-methods}
+\alias{qoffset_y-methods,}
+\alias{qoffset_y}
+\alias{qoffset_y,nifti-method}
+\alias{qoffset_y<-}
+\alias{qoffset_y<-,nifti-method}
 \alias{qoffset.y}
+\alias{qoffset.y,nifti-method}
 \alias{qoffset.y,nifti-method}
 \alias{qoffset.y<-}
 \alias{qoffset.y<-,nifti-method}
-\alias{qoffset_y}
-\alias{qoffset_y,nifti-method}
-\alias{qoffset_y-methods}
-\alias{qoffset_y-methods,}
-\alias{qoffset_y<-}
-\alias{qoffset_y<-,nifti-method}
 \title{Extract Image Attribute \code{qoffset_y}}
 \usage{
 qoffset_y(object)
@@ -43,14 +44,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

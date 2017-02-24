@@ -3,12 +3,15 @@
 \docType{methods}
 \name{orientation-methods}
 \alias{orientation-methods}
-\alias{qform}
-\alias{qform,nifti-method}
 \alias{qform-methods}
+\alias{qform,nifti-method}
+\alias{qform}
+\alias{sform-methods}
+\alias{sform,nifti-method}
 \alias{sform}
 \alias{sform,nifti-method}
-\alias{sform-methods}
+\alias{qform}
+\alias{qform,nifti-method}
 \title{Extract NIfTI 3D Image Orientation}
 \usage{
 sform(object)
@@ -32,6 +35,7 @@ NIfTI header.
 \item{object = "nifti"}{Extract or replace NIfTI description.}
 }
 }
+
 \examples{
 
 \dontrun{
@@ -49,4 +53,3 @@ sform(mniLR)
 Brandon Whitcher \email{bwhitcher@gmail.com}
 }
 \keyword{methods}
-

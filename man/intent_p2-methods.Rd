@@ -2,16 +2,17 @@
 % Please edit documentation in R/intent_p2.R
 \docType{methods}
 \name{intent_p2-methods}
+\alias{intent_p2-methods}
+\alias{intent_p2-methods,}
+\alias{intent_p2}
+\alias{intent_p2,nifti-method}
+\alias{intent_p2<-}
+\alias{intent_p2<-,nifti-method}
 \alias{intent.p2}
+\alias{intent.p2,nifti-method}
 \alias{intent.p2,nifti-method}
 \alias{intent.p2<-}
 \alias{intent.p2<-,nifti-method}
-\alias{intent_p2}
-\alias{intent_p2,nifti-method}
-\alias{intent_p2-methods}
-\alias{intent_p2-methods,}
-\alias{intent_p2<-}
-\alias{intent_p2<-,nifti-method}
 \title{Extract Image Attribute \code{intent_p2}}
 \usage{
 intent_p2(object)
@@ -43,14 +44,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

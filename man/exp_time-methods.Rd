@@ -2,10 +2,10 @@
 % Please edit documentation in R/exp_time.R
 \docType{methods}
 \name{exp_time-methods}
-\alias{exp_time}
-\alias{exp_time,anlz-method}
 \alias{exp_time-methods}
 \alias{exp_time-methods,}
+\alias{exp_time}
+\alias{exp_time,anlz-method}
 \alias{exp_time<-}
 \alias{exp_time<-,anlz-method}
 \title{Extract Image Attribute \code{exp_time}}
@@ -31,14 +31,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

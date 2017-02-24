@@ -2,16 +2,17 @@
 % Please edit documentation in R/quatern_c.R
 \docType{methods}
 \name{quatern_c-methods}
+\alias{quatern_c-methods}
+\alias{quatern_c-methods,}
+\alias{quatern_c}
+\alias{quatern_c,nifti-method}
+\alias{quatern_c<-}
+\alias{quatern_c<-,nifti-method}
 \alias{quatern.c}
+\alias{quatern.c,nifti-method}
 \alias{quatern.c,nifti-method}
 \alias{quatern.c<-}
 \alias{quatern.c<-,nifti-method}
-\alias{quatern_c}
-\alias{quatern_c,nifti-method}
-\alias{quatern_c-methods}
-\alias{quatern_c-methods,}
-\alias{quatern_c<-}
-\alias{quatern_c<-,nifti-method}
 \title{Extract Image Attribute \code{quatern_c}}
 \usage{
 quatern_c(object)
@@ -43,14 +44,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

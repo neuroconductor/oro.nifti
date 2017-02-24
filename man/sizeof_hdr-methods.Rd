@@ -2,14 +2,15 @@
 % Please edit documentation in R/sizeof_hdr.R
 \docType{methods}
 \name{sizeof_hdr-methods}
-\alias{sizeof.hdr}
-\alias{sizeof.hdr,anlz-method}
-\alias{sizeof.hdr,nifti-method}
-\alias{sizeof_hdr}
-\alias{sizeof_hdr,anlz-method}
-\alias{sizeof_hdr,nifti-method}
 \alias{sizeof_hdr-methods}
 \alias{sizeof_hdr-methods,}
+\alias{sizeof_hdr}
+\alias{sizeof_hdr,nifti-method}
+\alias{sizeof_hdr,anlz-method}
+\alias{sizeof.hdr}
+\alias{sizeof.hdr,nifti-method}
+\alias{sizeof.hdr,nifti-method}
+\alias{sizeof.hdr,anlz-method}
 \title{Extract Image Attribute \code{sizeof_hdr}}
 \usage{
 sizeof_hdr(object)
@@ -35,14 +36,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

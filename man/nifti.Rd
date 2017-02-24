@@ -41,9 +41,6 @@ nim
 nim <- nifti(datatype=4) # 2-byte integers
 nim
 }
-\author{
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
 }
@@ -51,4 +48,6 @@ NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
 \code{\linkS4class{nifti}}, \code{\link{anlz}},
 \code{\link{convert.datatype}}
 }
-
+\author{
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

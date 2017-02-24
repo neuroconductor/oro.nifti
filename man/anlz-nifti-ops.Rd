@@ -2,12 +2,12 @@
 % Please edit documentation in R/anlz_Operators.R
 \docType{methods}
 \name{anlz-nifti-ops}
-\alias{Ops,anlz,anlz-method}
-\alias{Ops,anlz,nifti-method}
-\alias{Ops,anlz,numeric-method}
-\alias{Ops,nifti,anlz-method}
-\alias{Ops,numeric,anlz-method}
 \alias{anlz-nifti-ops}
+\alias{Ops,anlz,anlz-method}
+\alias{Ops,anlz,numeric-method}
+\alias{Ops,numeric,anlz-method}
+\alias{Ops,nifti,anlz-method}
+\alias{Ops,anlz,nifti-method}
 \title{Operations for Objects in the ANALYZE and NIfTI classes}
 \usage{
 \S4method{Ops}{anlz,anlz}(e1, e2)
@@ -40,4 +40,3 @@ is.anlz(img02 / pi)
 \author{
 John Muschellli \email{muschellij2@gmail.com}
 }
-

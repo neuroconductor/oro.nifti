@@ -16,13 +16,12 @@ Logical indicating whether object is of class
 \description{
 Check whether object is of class \code{\linkS4class{nifti}}.
 }
-\author{
-Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
-}
 \references{
 NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
 }
 \seealso{
 \code{\linkS4class{nifti}}
 }
-
+\author{
+Karsten Tabelow \email{karsten.tabelow@wias-berlin.de}
+}

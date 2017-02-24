@@ -2,16 +2,17 @@
 % Please edit documentation in R/intent_name.R
 \docType{methods}
 \name{intent_name-methods}
+\alias{intent_name-methods}
+\alias{intent_name-methods,}
+\alias{intent_name}
+\alias{intent_name,nifti-method}
+\alias{intent_name<-}
+\alias{intent_name<-,nifti-method}
 \alias{intent.name}
+\alias{intent.name,nifti-method}
 \alias{intent.name,nifti-method}
 \alias{intent.name<-}
 \alias{intent.name<-,nifti-method}
-\alias{intent_name}
-\alias{intent_name,nifti-method}
-\alias{intent_name-methods}
-\alias{intent_name-methods,}
-\alias{intent_name<-}
-\alias{intent_name<-,nifti-method}
 \title{Extract Image Attribute \code{intent_name}}
 \usage{
 intent_name(object)
@@ -43,14 +44,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

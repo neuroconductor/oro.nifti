@@ -4,6 +4,7 @@
 \name{nifti-class}
 \alias{nifti-class}
 \alias{show,nifti-method}
+\alias{show,nifti-method}
 \title{Class "nifti"}
 \usage{
 \S4method{show}{nifti}(object)
@@ -105,13 +106,10 @@ function.
                 of the imaging data.}
   }
 }
+
 \examples{
 
 showClass("nifti")
-}
-\author{
-Brandon Whitcher \email{bwhitcher@gmail.com},\cr Andrew Thornton
-\email{zeripath@users.sourcefore.net}
 }
 \references{
 NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
@@ -120,5 +118,8 @@ NIfTI-1\cr \url{http://nifti.nimh.nih.gov/}
 \code{\linkS4class{anlz}}, \code{\linkS4class{niftiExtension}},
 \code{\linkS4class{niftiAuditTrail}}
 }
+\author{
+Brandon Whitcher \email{bwhitcher@gmail.com},\cr Andrew Thornton
+\email{zeripath@users.sourcefore.net}
+}
 \keyword{classes}
-

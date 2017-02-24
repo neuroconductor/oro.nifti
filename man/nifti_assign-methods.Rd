@@ -2,14 +2,14 @@
 % Please edit documentation in R/nifti_assign.R
 \docType{methods}
 \name{nifti_assign-methods}
+\alias{nifti_assign-methods}
+\alias{[<--methods}
 \alias{[<-,ANY,ANY,ANY,ANY-method}
 \alias{[<-,nifti,ANY,ANY,ANY-method}
-\alias{[<-,nifti,ANY,missing,ANY-method}
-\alias{[<-,nifti,missing,missing,array-method}
-\alias{[<-,nifti,numeric,missing,ANY-method}
 \alias{[<-,nifti,numeric,numeric,ANY-method}
-\alias{[<--methods}
-\alias{nifti_assign-methods}
+\alias{[<-,nifti,ANY,missing,ANY-method}
+\alias{[<-,nifti,numeric,missing,ANY-method}
+\alias{[<-,nifti,missing,missing,array-method}
 \title{Methods for Function [<- in Package 'base'}
 \description{
 Methods for function \code{[<-} in Package 'base'
@@ -33,5 +33,5 @@ the data of the provided nifti object with the array provided and updates
 the header.} 
 }
 }
-\keyword{methods}
 
+\keyword{methods}

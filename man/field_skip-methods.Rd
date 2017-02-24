@@ -2,17 +2,17 @@
 % Please edit documentation in R/field_skip.R
 \docType{methods}
 \name{field_skip-methods}
-\alias{field.skip}
-\alias{field.skip,anlz-method}
-\alias{field.skip,nifti-method}
-\alias{field.skip<-}
-\alias{field.skip<-,anlz-method}
-\alias{field_skip}
-\alias{field_skip,anlz-method}
 \alias{field_skip-methods}
 \alias{field_skip-methods,}
+\alias{field_skip}
+\alias{field_skip,anlz-method}
 \alias{field_skip<-}
 \alias{field_skip<-,anlz-method}
+\alias{field.skip}
+\alias{field.skip,nifti-method}
+\alias{field.skip,anlz-method}
+\alias{field.skip<-}
+\alias{field.skip<-,anlz-method}
 \title{Extract Image Attribute \code{field_skip}}
 \usage{
 field_skip(object)
@@ -44,14 +44,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}

@@ -25,4 +25,3 @@ rendered/written, the values correspond to those in the array (stored in the
 \author{
 John Muschelli \email{muschellij2@gmail.com}
 }
-

@@ -2,16 +2,17 @@
 % Please edit documentation in R/intent_code.R
 \docType{methods}
 \name{intent_code-methods}
+\alias{intent_code-methods}
+\alias{intent_code-methods,}
+\alias{intent_code}
+\alias{intent_code,nifti-method}
+\alias{intent_code<-}
+\alias{intent_code<-,nifti-method}
 \alias{intent.code}
+\alias{intent.code,nifti-method}
 \alias{intent.code,nifti-method}
 \alias{intent.code<-}
 \alias{intent.code<-,nifti-method}
-\alias{intent_code}
-\alias{intent_code,nifti-method}
-\alias{intent_code-methods}
-\alias{intent_code-methods,}
-\alias{intent_code<-}
-\alias{intent_code<-,nifti-method}
 \title{Extract Image Attribute \code{intent_code}}
 \usage{
 intent_code(object)
@@ -43,14 +44,13 @@ NIfTI/ANALYZE header.
 See documentation on the ANALYZE and/or NIfTI data standards for
 more details.
 }
-\author{
-John Muschelli \email{muschellij2@gmail.com},\cr
-Brandon Whitcher \email{bwhitcher@gmail.com}
-}
 \references{
 ANALYZE 7.5\cr
 \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
-
+\author{
+John Muschelli \email{muschellij2@gmail.com},\cr
+Brandon Whitcher \email{bwhitcher@gmail.com}
+}
