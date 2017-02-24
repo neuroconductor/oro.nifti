@@ -388,7 +388,7 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
   close(fid)
 
   ## WARNING to the user
-  if (nim@"scl_slope" != 1) {
+  if (nim@"scl_slope" != 0) {
     warning(paste("scl_slope =", nim@"scl_slope", "and data must be rescaled."))
     data <- data * nim@"scl_slope" + nim@"scl_inter"
   }
