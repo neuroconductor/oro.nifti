@@ -10,6 +10,7 @@
 nii2oro = function(image) {
   hdr = dumpNifti(image)
   arr = as.array(image)
+  arr = array(arr)
   arr = as(arr, "array")
   
   
