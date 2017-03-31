@@ -34,7 +34,7 @@ overlay.nifti(x, y, z = 1, w = 1, col.x = gray(0:64/64),
   col.y = hotmetal(), zlim.x = NULL, zlim.y = NULL, plane = c("axial",
   "coronal", "sagittal"), plot.type = c("multiple", "single"), xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", ...)
+  bg = "black", NA.x = FALSE, NA.y = TRUE, ...)
 
 overlay(x, y, ...)
 
@@ -42,25 +42,25 @@ overlay(x, y, ...)
   col.y = hotmetal(), zlim.x = NULL, zlim.y = NULL, plane = c("axial",
   "coronal", "sagittal"), plot.type = c("multiple", "single"), xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", ...)
+  bg = "black", NA.x = FALSE, NA.y = TRUE, ...)
 
 \S4method{overlay}{anlz,anlz}(x, y, z = 1, w = 1, col.x = gray(0:64/64),
   col.y = hotmetal(), zlim.x = NULL, zlim.y = NULL, plane = c("axial",
   "coronal", "sagittal"), plot.type = c("multiple", "single"), xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", ...)
+  bg = "black", NA.x = FALSE, NA.y = TRUE, ...)
 
 \S4method{overlay}{anlz,nifti}(x, y, z = 1, w = 1, col.x = gray(0:64/64),
   col.y = hotmetal(), zlim.x = NULL, zlim.y = NULL, plane = c("axial",
   "coronal", "sagittal"), plot.type = c("multiple", "single"), xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", ...)
+  bg = "black", NA.x = FALSE, NA.y = TRUE, ...)
 
 \S4method{overlay}{nifti,anlz}(x, y, z = 1, w = 1, col.x = gray(0:64/64),
   col.y = hotmetal(), zlim.x = NULL, zlim.y = NULL, plane = c("axial",
   "coronal", "sagittal"), plot.type = c("multiple", "single"), xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", ...)
+  bg = "black", NA.x = FALSE, NA.y = TRUE, ...)
 
 \S4method{overlay}{array,array}(x, y, ...)
 
@@ -108,6 +108,10 @@ matrix (left-to-right, top-to-bottom), or a single slice.}
 \item{mar}{is the number of lines of margin in the \code{par} function.}
 
 \item{bg}{is the background color in the \code{par} function.}
+
+\item{NA.x}{Set any values of 0 in \code{x} to \code{NA}}
+
+\item{NA.y}{Set any values of 0 in \code{y} to \code{NA}}
 
 \item{\dots}{other arguments to the \code{image} function may be provided
 here.}

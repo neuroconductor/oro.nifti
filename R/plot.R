@@ -216,6 +216,8 @@ setMethod("image", signature(x="afni"),
 #' @param oma is the size of the outer margins in the \code{par} function.
 #' @param mar is the number of lines of margin in the \code{par} function.
 #' @param bg is the background color in the \code{par} function.
+#' @param NA.x Set any values of 0 in \code{x} to \code{NA}
+#' @param NA.y Set any values of 0 in \code{y} to \code{NA} 
 #' @param \dots other arguments to the \code{image} function may be provided
 #' here.
 #' @section Methods: 
@@ -234,7 +236,10 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
                           plane=c("axial", "coronal", "sagittal"),
                           plot.type=c("multiple","single"),
                           xlab="", ylab="", axes=FALSE, oma=rep(0,4),
-                          mar=rep(0,4), bg="black", ...) {
+                          mar=rep(0,4), bg="black",
+                          NA.x = FALSE,
+                          NA.y = TRUE,                          
+                          ...) {
   switch(plane[1],
          "axial" = {
            aspect <- x@pixdim[3] / x@pixdim[2]
@@ -261,6 +266,21 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
   ## both volumes must have the same dimension
   if (! all(dim(x)[1:3] == dim(y)[1:3])) {
     stop("dimensions of \"x\" and \"y\" must be equal")
+  }
+  
+  if (NA.x) {
+    x[ x == 0 ] = NA
+    if (all(is.na(x))) {
+      stop(paste0("x has no non-zero values and NA.x = TRUE.  ", 
+                  "Likely set NA.x = FALSE."))
+    }
+  }  
+  if (NA.y) {
+    y[ y == 0 ] = NA
+    if (all(is.na(y))) {
+      stop(paste0("y has no non-zero values and NA.y = TRUE.  ", 
+                  "Either remove the overlay, or set NA.y = FALSE"))
+    }
   }
   ## set dimensions
   X <- nrow(x)
