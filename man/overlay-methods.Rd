@@ -34,7 +34,7 @@ overlay.nifti(x, y, z = 1, w = 1, col.x = gray(0:64/64),
   col.y = hotmetal(), zlim.x = NULL, zlim.y = NULL, plane = c("axial",
   "coronal", "sagittal"), plot.type = c("multiple", "single"), xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", NA.x = FALSE, NA.y = TRUE, ...)
+  bg = "black", NA.x = FALSE, NA.y = FALSE, ...)
 
 overlay(x, y, ...)
 
@@ -42,25 +42,25 @@ overlay(x, y, ...)
   col.y = hotmetal(), zlim.x = NULL, zlim.y = NULL, plane = c("axial",
   "coronal", "sagittal"), plot.type = c("multiple", "single"), xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", NA.x = FALSE, NA.y = TRUE, ...)
+  bg = "black", NA.x = FALSE, NA.y = FALSE, ...)
 
 \S4method{overlay}{anlz,anlz}(x, y, z = 1, w = 1, col.x = gray(0:64/64),
   col.y = hotmetal(), zlim.x = NULL, zlim.y = NULL, plane = c("axial",
   "coronal", "sagittal"), plot.type = c("multiple", "single"), xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", NA.x = FALSE, NA.y = TRUE, ...)
+  bg = "black", NA.x = FALSE, NA.y = FALSE, ...)
 
 \S4method{overlay}{anlz,nifti}(x, y, z = 1, w = 1, col.x = gray(0:64/64),
   col.y = hotmetal(), zlim.x = NULL, zlim.y = NULL, plane = c("axial",
   "coronal", "sagittal"), plot.type = c("multiple", "single"), xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", NA.x = FALSE, NA.y = TRUE, ...)
+  bg = "black", NA.x = FALSE, NA.y = FALSE, ...)
 
 \S4method{overlay}{nifti,anlz}(x, y, z = 1, w = 1, col.x = gray(0:64/64),
   col.y = hotmetal(), zlim.x = NULL, zlim.y = NULL, plane = c("axial",
   "coronal", "sagittal"), plot.type = c("multiple", "single"), xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", NA.x = FALSE, NA.y = TRUE, ...)
+  bg = "black", NA.x = FALSE, NA.y = FALSE, ...)
 
 \S4method{overlay}{array,array}(x, y, ...)
 

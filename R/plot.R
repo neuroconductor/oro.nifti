@@ -238,7 +238,7 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
                           xlab="", ylab="", axes=FALSE, oma=rep(0,4),
                           mar=rep(0,4), bg="black",
                           NA.x = FALSE,
-                          NA.y = TRUE,                          
+                          NA.y = FALSE,                          
                           ...) {
   switch(plane[1],
          "axial" = {
