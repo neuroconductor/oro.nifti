@@ -51,6 +51,7 @@ Collate:
     'hotmetal.R'
     'miscellaneous.R'
     'plot.R'
+    'slice.R'
     'blend.R'
     'readS4.R'
     'remove.R'
