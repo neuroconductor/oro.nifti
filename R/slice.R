@@ -6,7 +6,9 @@
 slice.nifti <- function(x, z=1, w=1, col=gray(0:64/64),
                         plane=c("axial", "coronal", "sagittal"), zlim=NULL,
                         xlab="", ylab="", axes=FALSE, oma=rep(0,4),
-                        mar=rep(0,4), bg="black", ...) {
+                        mar=rep(0,4), bg="black", 
+                        useRaster = TRUE, 
+                        ...) {
   
   image.nifti(
     x = x,
@@ -22,6 +24,7 @@ slice.nifti <- function(x, z=1, w=1, col=gray(0:64/64),
     oma = oma,
     mar = mar,
     bg = bg,
+    useRaster = useRaster,
     ... = ...
   )
 
@@ -54,6 +57,8 @@ slice.nifti <- function(x, z=1, w=1, col=gray(0:64/64),
 #' @param oma is the size of the outer margins in the \code{par} function.
 #' @param mar is the number of lines of margin in the \code{par} function.
 #' @param bg is the background color in the \code{par} function.
+#' @param useRaster if \code{TRUE}, a bitmap raster is used to plot 
+#' the image instead of polygons. Passed to \code{\link[graphics]{image}}
 #' @param \dots other arguments to the \code{image} function may be provided
 #' here.
 #' @section Methods: \describe{ \item{x = "ANY"}{Generic function: see

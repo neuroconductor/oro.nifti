@@ -19,12 +19,12 @@ slice(x, ...)
 \S4method{slice}{nifti}(x, z = 1, w = 1, col = gray(0:64/64),
   plane = c("axial", "coronal", "sagittal"), zlim = NULL, xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", ...)
+  bg = "black", useRaster = TRUE, ...)
 
 \S4method{slice}{anlz}(x, z = 1, w = 1, col = gray(0:64/64),
   plane = c("axial", "coronal", "sagittal"), zlim = NULL, xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", ...)
+  bg = "black", useRaster = TRUE, ...)
 
 \S4method{slice}{afni}(x, ...)
 }
@@ -58,6 +58,9 @@ range.}
 \item{mar}{is the number of lines of margin in the \code{par} function.}
 
 \item{bg}{is the background color in the \code{par} function.}
+
+\item{useRaster}{if \code{TRUE}, a bitmap raster is used to plot 
+the image instead of polygons. Passed to \code{\link[graphics]{image}}}
 }
 \description{
 Produce \dQuote{lightbox} layout of slices for \code{nifti}, \code{anlz} and
