@@ -35,6 +35,8 @@
 #' @param bg is the background color in the \code{par} function.
 #' @param NA.x Set any values of 0 in \code{x} to \code{NA}
 #' @param NA.y Set any values of 0 in \code{y} to \code{NA} 
+#' @param useRaster if \code{TRUE}, a bitmap raster is used to plot 
+#' the image instead of polygons. Passed to \code{\link[graphics]{image}} 
 #' @param \dots other arguments to the \code{image} function may be provided
 #' here.
 #' @section Methods: 
@@ -54,7 +56,8 @@ slice_overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
                           xlab="", ylab="", axes=FALSE, oma=rep(0,4),
                           mar=rep(0,4), bg="black",
                           NA.x = FALSE,
-                          NA.y = TRUE,                          
+                          NA.y = TRUE,   
+                          useRaster = TRUE,
                           ...) {
   overlay.nifti(
     x = x,
@@ -75,6 +78,7 @@ slice_overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
     bg = bg,
     NA.x = NA.x,
     NA.y = NA.y,
+    useRaster = useRaster,
     ...
   )
 }

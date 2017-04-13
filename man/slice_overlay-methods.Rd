@@ -34,7 +34,7 @@ slice_overlay.nifti(x, y, z = 1, w = 1, col.x = gray(0:64/64),
   col.y = hotmetal(), zlim.x = NULL, zlim.y = NULL, plane = c("axial",
   "coronal", "sagittal"), xlab = "", ylab = "", axes = FALSE,
   oma = rep(0, 4), mar = rep(0, 4), bg = "black", NA.x = FALSE,
-  NA.y = TRUE, ...)
+  NA.y = TRUE, useRaster = TRUE, ...)
 
 slice_overlay(x, y, ...)
 
@@ -42,25 +42,25 @@ slice_overlay(x, y, ...)
   col.x = gray(0:64/64), col.y = hotmetal(), zlim.x = NULL,
   zlim.y = NULL, plane = c("axial", "coronal", "sagittal"), xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", NA.x = FALSE, NA.y = TRUE, ...)
+  bg = "black", NA.x = FALSE, NA.y = TRUE, useRaster = TRUE, ...)
 
 \S4method{slice_overlay}{anlz,anlz}(x, y, z = 1, w = 1,
   col.x = gray(0:64/64), col.y = hotmetal(), zlim.x = NULL,
   zlim.y = NULL, plane = c("axial", "coronal", "sagittal"), xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", NA.x = FALSE, NA.y = TRUE, ...)
+  bg = "black", NA.x = FALSE, NA.y = TRUE, useRaster = TRUE, ...)
 
 \S4method{slice_overlay}{anlz,nifti}(x, y, z = 1, w = 1,
   col.x = gray(0:64/64), col.y = hotmetal(), zlim.x = NULL,
   zlim.y = NULL, plane = c("axial", "coronal", "sagittal"), xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", NA.x = FALSE, NA.y = TRUE, ...)
+  bg = "black", NA.x = FALSE, NA.y = TRUE, useRaster = TRUE, ...)
 
 \S4method{slice_overlay}{nifti,anlz}(x, y, z = 1, w = 1,
   col.x = gray(0:64/64), col.y = hotmetal(), zlim.x = NULL,
   zlim.y = NULL, plane = c("axial", "coronal", "sagittal"), xlab = "",
   ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", NA.x = FALSE, NA.y = TRUE, ...)
+  bg = "black", NA.x = FALSE, NA.y = TRUE, useRaster = TRUE, ...)
 
 \S4method{slice_overlay}{array,array}(x, y, ...)
 
@@ -109,6 +109,9 @@ header information.}
 \item{NA.x}{Set any values of 0 in \code{x} to \code{NA}}
 
 \item{NA.y}{Set any values of 0 in \code{y} to \code{NA}}
+
+\item{useRaster}{if \code{TRUE}, a bitmap raster is used to plot 
+the image instead of polygons. Passed to \code{\link[graphics]{image}}}
 
 \item{\dots}{other arguments to the \code{image} function may be provided
 here.}
