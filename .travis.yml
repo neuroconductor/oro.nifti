@@ -11,7 +11,7 @@ r_packages:
   - fmri
   - oro.dicom
 r_binary_packages: 
-  - Rcurl
+  - RCurl
   - testthat
   - XML
 apt_packages:
