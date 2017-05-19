@@ -45,7 +45,7 @@ more details.
 }
 \references{
 ANALYZE 7.5\cr
-\url{http://www.mayo.edu/bir/PDF/ANALYZE75.pdf}\cr
+\url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}\cr
 NIfTI-1\cr
 \url{http://nifti.nimh.nih.gov/}
 }
