@@ -15,11 +15,12 @@
 #' @rdname cal_img
 #' @export
 calibrateImage <- function(img, infok = TRUE) {
-  cmax <- max(img, na.rm=TRUE) 
+  range_img = range(img, na.rm = TRUE)
+  cmax <- range_img[2]
   if (!infok) {
     cmax <- ifelse(is.finite(cmax), cmax, 0)
   }
-  cmin <- min(img, na.rm=TRUE) 
+  cmin <- range_img[1]
   if (! infok) {
     cmin <- ifelse(is.finite(cmin), cmin, 0)
   }  
