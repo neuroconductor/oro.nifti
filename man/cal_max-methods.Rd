@@ -12,7 +12,6 @@
 \alias{cal_max<-,anlz-method}
 \alias{cal.max}
 \alias{cal.max,nifti-method}
-\alias{cal.max,nifti-method}
 \alias{cal.max,anlz-method}
 \alias{cal.max<-}
 \alias{cal.max<-,nifti-method}

@@ -4,7 +4,6 @@
 \name{nifti-class}
 \alias{nifti-class}
 \alias{show,nifti-method}
-\alias{show,nifti-method}
 \title{Class "nifti"}
 \usage{
 \S4method{show}{nifti}(object)

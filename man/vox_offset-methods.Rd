@@ -12,7 +12,6 @@
 \alias{vox_offset<-,anlz-method}
 \alias{vox.offset}
 \alias{vox.offset,nifti-method}
-\alias{vox.offset,nifti-method}
 \alias{vox.offset,anlz-method}
 \alias{vox.offset<-}
 \alias{vox.offset<-,nifti-method}

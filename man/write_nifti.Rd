@@ -7,8 +7,6 @@
 \alias{writeNIfTI,nifti-method}
 \alias{writeNIfTI,anlz-method}
 \alias{writeNIfTI,array-method}
-\alias{writeNIfTI,anlz-method}
-\alias{writeNIfTI,array-method}
 \title{writeNIfTI}
 \usage{
 \S4method{writeNIfTI}{nifti}(nim, filename, onefile = TRUE, gzipped = TRUE,

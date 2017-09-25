@@ -68,11 +68,9 @@
 #' Qform/Sform transformations.
 #' @param call keeps track of the current function call for use in the NIfTI
 #' extension.
-#' @param force_extension this function will check to see if the 
-#' \code{vox_offset} is correct.  If this is forced to \code{348}, which some 
-#' (very) old NIfTI writers use, this may cause an error if the extension is read,
-#' and so it is skipped (with a warning). If \code{force_extension = TRUE},
-#' then reading the extension is forced (when appropriate).
+#' @param read_data Should the data be read in?  If this is FALSE,
+#' then an array of NAs are given instead of the true data.
+#' Useful if you are simply interested in the header.
 #' @return An object of class \code{nifti}.
 #' @author Brandon Whitcher \email{bwhitcher@@gmail.com},\cr Volker Schmid
 #' \email{volkerschmid@@users.sourceforge.net},\cr Andrew Thornton
@@ -109,8 +107,16 @@
 #' @rdname read_nifti
 #' @export
 #' @name readNIfTI
+# #' @param force_extension this function will check to see if the
+# #' \code{vox_offset} is correct.  If this is forced to \code{348}, which some
+# #' (very) old NIfTI writers use, this may cause an error if the extension is read,
+# #' and so it is skipped (with a warning). If \code{force_extension = TRUE},
+# #' then reading the extension is forced (when appropriate).
+
 readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
-                      call=NULL, force_extension = FALSE) {
+                      call=NULL, 
+                      # force_extension = FALSE,
+                      read_data = TRUE) {
   if (is.null(call)) {
     call <- match.call()
   }
@@ -125,9 +131,9 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
   file.name <- pathVector[length(pathVector)]
   path <- paste(pathVector[-length(pathVector)], collapse="/")
   if (length(pathVector) > 1) {
-      fname <- paste(path, file.name, sep="/")
+    fname <- paste(path, file.name, sep="/")
   } else {
-      fname <- file.name
+    fname <- file.name
   }
   ## Strip any extensions
   fname <- sub("\\.gz$", "", fname)
@@ -150,7 +156,8 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
     nim <- .read.nifti.content(fname, onefile=TRUE, gzipped=TRUE,
                                verbose=verbose, warn=warn, reorient=reorient,
                                call=call,
-                               force_extension = force_extension)
+                               # force_extension = force_extension,
+                               read_data = read_data)
   } else {
     if (file.exists(nii)) {
       ## If uncompressed file exists, then upload!
@@ -160,7 +167,8 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
       nim <- .read.nifti.content(fname, onefile=TRUE, gzipped=FALSE,
                                  verbose=verbose, warn=warn, reorient=reorient,
                                  call=call,
-                                 force_extension = force_extension)
+                                 # force_extension = force_extension,
+                                 read_data = read_data)
     } else {
       if (file.exists(hdrgz) && file.exists(imggz)) {
         ## If compressed files exist, then upload!
@@ -170,17 +178,19 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
         nim <- .read.nifti.content(fname, onefile=FALSE, gzipped=TRUE,
                                    verbose=verbose, warn=warn,
                                    reorient=reorient, call=call,
-                                   force_extension = force_extension)
+                                   # force_extension = force_extension,
+                                   read_data = read_data)
       } else {
         ## If uncompressed files exist, then upload!
         if (file.exists(hdr) && file.exists(img)) {
           if (verbose) {
             cat(paste("  files =", hdr, "and", img), fill=TRUE)
           }
-        nim <- .read.nifti.content(fname, onefile=FALSE, gzipped=FALSE,
-                                   verbose=verbose, warn=warn,
-                                   reorient=reorient, call=call,
-                                   force_extension = force_extension)
+          nim <- .read.nifti.content(fname, onefile=FALSE, gzipped=FALSE,
+                                     verbose=verbose, warn=warn,
+                                     reorient=reorient, call=call,
+                                     # force_extension = force_extension,
+                                     read_data = read_data)
         } else {
           stop("File(s) not found!")
         }
@@ -193,13 +203,30 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
   return(nim)
 }
 
+#' @export
+#' @rdname read_nifti
+nifti_header <- function(
+  fname, verbose=FALSE, warn=-1
+) {
+  nim = readNIfTI(
+    fname = fname, 
+    verbose = verbose,
+    warn = warn, 
+    call = NULL,
+    # force_extension = FALSE,
+    read_data = FALSE)
+  return(nim)
+}
+
 ############################################################################
 ############################################################################
 ############################################################################
 
 .read.nifti.content <- function(fname, onefile=TRUE, gzipped=TRUE,
                                 verbose=FALSE, warn=-1, reorient=FALSE,
-                                call=NULL, force_extension = FALSE) {
+                                call=NULL, 
+                                # force_extension = FALSE,
+                                read_data = TRUE) {
   ## Open appropriate file
   if (gzipped) {
     suffix <- ifelse(onefile, "nii.gz", "hdr.gz")
@@ -346,7 +373,7 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
     }
     
   }
-
+  
   if (verbose) {
     cat("  seek(fid) =", seek(fid), fill=TRUE)
   }
@@ -365,28 +392,32 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
     }
     ## seek(fid, nim@"vox_offset") # not necessary for two-file format
   }
-  data <-
-    switch(as.character(nim@"datatype"),
-           "2" = readBin(fid, integer(), n, nim@"bitpix"/8, signed=FALSE,
-             endian=endian),
-           "4" = readBin(fid, integer(), n, nim@"bitpix"/8, endian=endian),
-           "8" = readBin(fid, integer(), n, nim@"bitpix"/8, endian=endian),
-           "16" = readBin(fid, double(), n, nim@"bitpix"/8, endian=endian),
-           "64" = readBin(fid, double(), n, nim@"bitpix"/8, endian=endian),
-           "512" = readBin(fid, integer(), n, nim@"bitpix"/8, signed=FALSE,
-             endian=endian),
-           "768" = readBin(fid, integer(), n, nim@"bitpix"/8, signed=FALSE,
-             endian=endian),
-           stop(paste("Data type", nim@"datatype", "unsupported in", fname))
-           )
-  if (length(data) != n) {
-    stop(paste0("Not all data was read in: ",
-                "should be length ", n,
-                " but only ", length(data), 
-                " was read in!"))
+  if (read_data) { 
+    data <-
+      switch(as.character(nim@"datatype"),
+             "2" = readBin(fid, integer(), n, nim@"bitpix"/8, signed=FALSE,
+                           endian=endian),
+             "4" = readBin(fid, integer(), n, nim@"bitpix"/8, endian=endian),
+             "8" = readBin(fid, integer(), n, nim@"bitpix"/8, endian=endian),
+             "16" = readBin(fid, double(), n, nim@"bitpix"/8, endian=endian),
+             "64" = readBin(fid, double(), n, nim@"bitpix"/8, endian=endian),
+             "512" = readBin(fid, integer(), n, nim@"bitpix"/8, signed=FALSE,
+                             endian=endian),
+             "768" = readBin(fid, integer(), n, nim@"bitpix"/8, signed=FALSE,
+                             endian=endian),
+             stop(paste("Data type", nim@"datatype", "unsupported in", fname))
+      )
+    if (length(data) != n) {
+      stop(paste0("Not all data was read in: ",
+                  "should be length ", n,
+                  " but only ", length(data), 
+                  " was read in!"))
+    }
+  } else {
+    data = array(NA, dim = nim@"dim_"[dims])
   }
   close(fid)
-
+  
   ## WARNING to the user
   if (nim@"scl_slope" != 0) {
     warning(paste("scl_slope =", nim@"scl_slope", "and data must be rescaled."))
@@ -484,9 +515,9 @@ readANALYZE <- function(fname, SPM=FALSE, verbose=FALSE, warn=-1) {
   file.name <- pathVector[length(pathVector)]
   path <- paste(pathVector[-length(pathVector)], collapse="/")
   if (length(pathVector) > 1) {
-      fname <- paste(path, file.name, sep="/")
+    fname <- paste(path, file.name, sep="/")
   } else {
-      fname <- file.name
+    fname <- file.name
   }
   ## Strip any extensions
   fname <- sub("\\.gz$", "", fname)
@@ -631,17 +662,17 @@ readANALYZE <- function(fname, SPM=FALSE, verbose=FALSE, warn=-1) {
   n <- prod(aim@"dim_"[2:5])
   data <- switch(as.character(aim@"datatype"),
                  "1" = readBin(fid, integer(), n, aim@"bitpix"/8,
-                   signed=FALSE, endian=endian),
+                               signed=FALSE, endian=endian),
                  "2" = readBin(fid, integer(), n, aim@"bitpix"/8,
-                   signed=FALSE, endian=endian),
+                               signed=FALSE, endian=endian),
                  "4" = readBin(fid, integer(), n, aim@"bitpix"/8,
-                   endian=endian),
+                               endian=endian),
                  "8" = readBin(fid, integer(), n, aim@"bitpix"/8,
-                   endian=endian),
+                               endian=endian),
                  "16" = readBin(fid, numeric(), n, aim@"bitpix"/8,
-                   endian=endian),
+                                endian=endian),
                  "64" = readBin(fid, double(), n, aim@"bitpix"/8,
-                   endian=endian),
+                                endian=endian),
                  stop(paste("Data type ", aim@"datatype", " (",
                             convert.datatype.anlz(aim@"datatype"), 
                             ") unsupported in", fname, sep="")))

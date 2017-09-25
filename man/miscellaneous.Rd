@@ -5,9 +5,6 @@
 \alias{NSLI}
 \alias{ntim}
 \alias{NTIM}
-\alias{NSLI}
-\alias{ntim}
-\alias{NTIM}
 \title{Dimension Accessor Functions}
 \usage{
 nsli(x)
