@@ -198,7 +198,9 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
     }
   }
   ### Reset cal_max and cal_min - in case these do not work correctly
-  nim = calibrateImage(nim, infok = TRUE)
+  if (read_data) {
+    nim = calibrateImage(nim, infok = TRUE)
+  }
   options(warn=oldwarn)
   return(nim)
 }
@@ -213,6 +215,7 @@ nifti_header <- function(
     verbose = verbose,
     warn = warn, 
     call = NULL,
+    reorient = FALSE,
     # force_extension = FALSE,
     read_data = FALSE)
   return(nim)
@@ -414,14 +417,16 @@ nifti_header <- function(
                   " was read in!"))
     }
   } else {
-    data = array(NA, dim = nim@"dim_"[dims])
+    data = array(NA, nim@"dim_"[dims])
   }
   close(fid)
   
   ## WARNING to the user
-  if (nim@"scl_slope" != 0) {
-    warning(paste("scl_slope =", nim@"scl_slope", "and data must be rescaled."))
-    data <- data * nim@"scl_slope" + nim@"scl_inter"
+  if (read_data) {
+    if (nim@"scl_slope" != 0) {
+      warning(paste("scl_slope =", nim@"scl_slope", "and data must be rescaled."))
+      data <- data * nim@"scl_slope" + nim@"scl_inter"
+    }
   }
   ##
   ## THE SLOW BIT FOLLOWS
@@ -443,11 +448,15 @@ nifti_header <- function(
   ## direction these axes point with respect to the subject depends on
   ## qform_code (Method 2) and sform_code (Method 3).
   ##
-  if (reorient) {
-    nim@.Data <- reorient(nim, data, verbose=verbose)
-    nim@"reoriented" <- TRUE
+  if (read_data) {
+    if (reorient) {
+      nim@.Data <- reorient(nim, data, verbose=verbose)
+      nim@"reoriented" <- TRUE
+    } else {
+      nim@.Data <- array(data, nim@"dim_"[dims])
+    }
   } else {
-    nim@.Data <- array(data, nim@"dim_"[dims])
+    nim@.Data = data
   }
   ## Warnings?
   options(warn=oldwarn)
