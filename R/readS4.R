@@ -285,9 +285,21 @@ nifti_header <- function(
   nim@"pixdim" <- readBin(fid, numeric(), 8, size=4, endian=endian)
   bad_pixdim = !is.finite(nim@pixdim)
   if (any( bad_pixdim )) {
-    message("Some pixel dimensions may be bad!")
+    if (verbose) {
+      message("Some pixel dimensions may be bad!")
+    }
     nim@pixdim[ bad_pixdim ] = 1
   }
+  
+  dims <- 2:(1 + nim@"dim_"[1])
+  bad_pixdim = nim@pixdim[dims] == 0
+  if (any( bad_pixdim )) {
+    if (verbose) {
+      message("Some pixel dimensions are zero, setting to 1")
+    }
+    nim@pixdim[dims][ bad_pixdim ] = 1
+  }
+  
   nim@"vox_offset" <- readBin(fid, numeric(), size=4, endian=endian)
   if (verbose) {
     cat("  vox_offset =", nim@"vox_offset", fill=TRUE)
@@ -380,7 +392,6 @@ nifti_header <- function(
   if (verbose) {
     cat("  seek(fid) =", seek(fid), fill=TRUE)
   }
-  dims <- 2:(1+nim@"dim_"[1])
   n <- prod(nim@"dim_"[dims])
   if (! onefile) {
     if (nim@"magic" != "ni1") {
