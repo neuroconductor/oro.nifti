@@ -12,3 +12,5 @@ test_that("sizeof.hdr()", {
   expect_equal(sizeof.hdr(aim), 348)
   expect_equal(sizeof.hdr(nim), 348)
 })
+
+

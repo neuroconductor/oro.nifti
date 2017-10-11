@@ -9,12 +9,20 @@
 
 * This is a new release.
 
-## Reverse dependencies
+## revdepcheck results
 
-This is a new release, so there are no reverse dependencies.
+We checked 26 reverse dependencies, comparing R CMD check results across CRAN and dev versions of this package.
 
----
+ * We saw 0 new problems
+ * We failed to check 5 packages
 
-* I have run R CMD check on the 26 downstream dependencies.
-  (Summary at ...). 
+Issues with CRAN packages are summarised below.
+
+### Failed to check
+
+* brainGraph   (failed to install)
+* cudaBayesreg (failed to install)
+* fslr         (check timed out) - sent email to maintainer
+* gdimap       (check timed out)
+* spm12r       (check timed out) - sent email to maintainer
   
