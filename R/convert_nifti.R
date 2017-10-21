@@ -313,6 +313,15 @@ dim2slice <- function(di) {
 #' Brandon Whitcher \email{bwhitcher@@gmail.com}
 #' @export
 as.nifti <- function(from, value=NULL, verbose=FALSE) {
+  if (is.niftiExtension(from)) {
+    class(from) = "nifti"
+    extender(from) = rep(0, 4)
+    vox_offset(from) = 352
+    if ("extension" %in% slotNames(from)) {
+      from@extension = NULL
+    }
+    return(from)
+  }
   anlz.as.nifti <- function(from, value=nifti()) {
     ## So what kind of thing do we keep?
     slots <- c("dim_", "datatype", "bitpix", "pixdim", "descrip",

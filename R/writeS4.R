@@ -121,6 +121,18 @@ setMethod("writeNIfTI", signature(nim="nifti"),
           })
 #' @export
 #' @rdname write_nifti
+setMethod("writeNIfTI", signature(nim="niftiExtension"), 
+          function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
+                   warn=-1, compression = 6) {
+            nim = as.nifti(nim)
+            msg = paste0(
+              "Class is of niftiExtension, extensions",
+              " will be removed")
+            warning(msg)
+            .writeNIfTI(nim, filename, onefile, gzipped, verbose, warn, compression)
+          })
+#' @export
+#' @rdname write_nifti
 setMethod("writeNIfTI", signature(nim="anlz"), 
 	  function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
                    warn=-1, compression = 6) {

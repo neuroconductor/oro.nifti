@@ -2,9 +2,12 @@
 % Please edit documentation in R/is.R
 \name{is.nifti}
 \alias{is.nifti}
+\alias{is.niftiExtension}
 \title{check object}
 \usage{
 is.nifti(x)
+
+is.niftiExtension(x)
 }
 \arguments{
 \item{x}{is an object to be checked.}
