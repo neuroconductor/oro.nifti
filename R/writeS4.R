@@ -124,13 +124,14 @@ setMethod("writeNIfTI", signature(nim="nifti"),
 setMethod("writeNIfTI", signature(nim="niftiExtension"), 
           function(nim, filename, onefile=TRUE, gzipped=TRUE, verbose=FALSE,
                    warn=-1, compression = 6) {
-            nim = as.nifti(nim)
+            # nim = as.nifti(nim)
             msg = paste0(
               "Class is of niftiExtension, extensions",
-              " will be removed")
+              " can be removed using as.nifti")
             warning(msg)
             .writeNIfTI(nim, filename, onefile, gzipped, verbose, warn, compression)
           })
+
 #' @export
 #' @rdname write_nifti
 setMethod("writeNIfTI", signature(nim="anlz"), 
@@ -251,9 +252,12 @@ setMethod("writeNIfTI", signature(nim="array"),
                writeBin(as.integer(x@"esize"), fid, size=4)
                writeBin(as.integer(x@"ecode"), fid, size=4)
                ## Write out all the characters in the data section
-	       writeChar(x@"edata", fid, nchars=nchar(x@"edata"), eos=NULL)
+	       # writeChar(x@"edata", fid, nchars=nchar(x@"edata"), eos=NULL)
+	       writeChar(x@"edata", fid, nchars=as.integer(x@"esize") - 8, 
+	                 eos=NULL, useBytes = TRUE)
 	       ## add margin to write \0 till 0 mod 16
-	       margin <- (-(nchar(x@"edata", type="bytes") + 8) %% 16) 
+	       # margin <- (-(nchar(x@"edata", type="bytes") + 8) %% 16) 
+	       margin <- (-as.integer(x@"esize") %% 16) 
 	       if (margin > 0) {
 		 writeBin(rep("", margin), fid, size=margin)
 	       }
