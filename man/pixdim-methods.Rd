@@ -6,15 +6,19 @@
 \alias{pixdim-methods,}
 \alias{pixdim}
 \alias{pixdim,nifti-method}
+\alias{pixdim,ANY-method}
 \alias{pixdim,anlz-method}
 \alias{pixdim<-}
 \alias{pixdim<-,nifti-method}
 \alias{pixdim<-,anlz-method}
+\alias{pixdim<-,ANY-method}
 \title{Extract Image Attribute \code{pixdim}}
 \usage{
 pixdim(object)
 
 \S4method{pixdim}{nifti}(object)
+
+\S4method{pixdim}{ANY}(object)
 
 \S4method{pixdim}{anlz}(object)
 
@@ -23,6 +27,8 @@ pixdim(object) <- value
 \S4method{pixdim}{nifti}(object) <- value
 
 \S4method{pixdim}{anlz}(object) <- value
+
+\S4method{pixdim}{ANY}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}

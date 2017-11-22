@@ -33,6 +33,18 @@ setGeneric("pixdim", function(object) standardGeneric("pixdim"))
 #' @export
 setMethod("pixdim", "nifti", function(object) { object@"pixdim" })
 #' @rdname pixdim-methods
+#' @aliases pixdim,ANY-method
+#' @export
+#' @importFrom RNifti pixdim
+setMethod("pixdim", "ANY", function(object) { 
+  if (inherits(object, "niftiImage")) {
+    return(RNifti::pixdim(object))
+  } else {
+    stop("Not implemented for this type!")
+  }
+})
+
+#' @rdname pixdim-methods
 #' @aliases pixdim,anlz-method
 #' @export
 setMethod("pixdim", "anlz", function(object) { object@"pixdim" })
@@ -69,3 +81,18 @@ setMethod("pixdim<-",
             }
             return(object)
           })
+
+#' @rdname pixdim-methods
+#' @aliases pixdim<-,ANY-method
+#' @export
+#' @importFrom RNifti pixdim<-
+setMethod(
+  "pixdim<-", 
+  signature(object = "ANY"), 
+  function(object, value) { 
+    if (inherits(object, "niftiImage")) {
+      object = RNifti::`pixdim<-`(object, value)
+      return(object)
+    }
+    stop("Not implemented for this type!")
+  })
