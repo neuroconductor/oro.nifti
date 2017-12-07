@@ -6,6 +6,7 @@
 \alias{origin-methods,}
 \alias{origin}
 \alias{origin,anlz-method}
+\alias{origin,ANY-method}
 \alias{origin<-}
 \alias{origin<-,anlz-method}
 \title{Extract Image Attribute \code{origin}}
@@ -13,6 +14,8 @@
 origin(object)
 
 \S4method{origin}{anlz}(object)
+
+\S4method{origin}{ANY}(object)
 
 origin(object) <- value
 

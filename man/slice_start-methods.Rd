@@ -10,6 +10,7 @@
 \alias{slice_start<-,nifti-method}
 \alias{slice.start}
 \alias{slice.start,nifti-method}
+\alias{slice.start,nifti-method}
 \alias{slice.start<-}
 \alias{slice.start<-,nifti-method}
 \title{Extract Image Attribute \code{slice_start}}

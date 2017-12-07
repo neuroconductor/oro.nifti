@@ -17,6 +17,10 @@
 \alias{coerce<-,array,nifti-method}
 \alias{coerce<-,list,nifti-method}
 \alias{coerce<-,anlz,nifti-method}
+\alias{coerce-methods}
+\alias{coerce-methods}
+\alias{coerce-methods}
+\alias{coerce-methods}
 \title{Force an Object to Belong to the ANALYZE or NIfTI Class}
 \arguments{
 \item{object}{is an object of class \code{array} or inherits from

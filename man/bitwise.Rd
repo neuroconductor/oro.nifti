@@ -7,6 +7,11 @@
 \alias{dim2freq}
 \alias{dim2phase}
 \alias{dim2slice}
+\alias{xyzt2time}
+\alias{space.time2xyzt}
+\alias{dim2freq}
+\alias{dim2phase}
+\alias{dim2slice}
 \title{Bitwise Conversion Subroutines}
 \usage{
 xyzt2space(xyzt)

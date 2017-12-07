@@ -10,6 +10,7 @@
 \alias{quatern_c<-,nifti-method}
 \alias{quatern.c}
 \alias{quatern.c,nifti-method}
+\alias{quatern.c,nifti-method}
 \alias{quatern.c<-}
 \alias{quatern.c<-,nifti-method}
 \title{Extract Image Attribute \code{quatern_c}}

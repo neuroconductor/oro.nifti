@@ -9,6 +9,7 @@
 \alias{sizeof_hdr,anlz-method}
 \alias{sizeof.hdr}
 \alias{sizeof.hdr,nifti-method}
+\alias{sizeof.hdr,nifti-method}
 \alias{sizeof.hdr,anlz-method}
 \title{Extract Image Attribute \code{sizeof_hdr}}
 \usage{

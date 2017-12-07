@@ -12,6 +12,7 @@
 \alias{session_error<-,anlz-method}
 \alias{session.error}
 \alias{session.error,nifti-method}
+\alias{session.error,nifti-method}
 \alias{session.error,anlz-method}
 \alias{session.error<-}
 \alias{session.error<-,nifti-method}

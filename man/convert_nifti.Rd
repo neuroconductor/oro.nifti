@@ -6,6 +6,9 @@
 \alias{convert.datatype}
 \alias{convert.intent}
 \alias{convert.form}
+\alias{convert.datatype}
+\alias{convert.intent}
+\alias{convert.form}
 \alias{convert.units}
 \alias{convert.slice}
 \title{Convert NIfTI Codes}

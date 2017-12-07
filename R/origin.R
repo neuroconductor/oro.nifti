@@ -24,6 +24,16 @@ setGeneric("origin", function(object) standardGeneric("origin"))
 #' @export
 setMethod("origin", "anlz", function(object) { object@"origin" })
 #' @rdname origin-methods
+#' @aliases origin,ANY-method
+#' @export
+#' @importFrom RNifti origin
+setMethod("origin", "ANY", function(object) { 
+  if (inherits(object, "niftiImage")) {
+    return(RNifti::origin(object))
+  } 
+  stop("origin not implemented for this type!")
+})
+#' @rdname origin-methods
 #' @aliases origin<- 
 #' @export
 setGeneric("origin<-", function(object, value) { standardGeneric("origin<-") })

@@ -10,6 +10,7 @@
 \alias{intent_p1<-,nifti-method}
 \alias{intent.p1}
 \alias{intent.p1,nifti-method}
+\alias{intent.p1,nifti-method}
 \alias{intent.p1<-}
 \alias{intent.p1<-,nifti-method}
 \title{Extract Image Attribute \code{intent_p1}}

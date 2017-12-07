@@ -10,6 +10,7 @@
 \alias{xyzt_units<-,nifti-method}
 \alias{xyzt.units}
 \alias{xyzt.units,nifti-method}
+\alias{xyzt.units,nifti-method}
 \alias{xyzt.units<-}
 \alias{xyzt.units<-,nifti-method}
 \title{Extract Image Attribute \code{xyzt_units}}

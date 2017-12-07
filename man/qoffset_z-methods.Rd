@@ -10,6 +10,7 @@
 \alias{qoffset_z<-,nifti-method}
 \alias{qoffset.z}
 \alias{qoffset.z,nifti-method}
+\alias{qoffset.z,nifti-method}
 \alias{qoffset.z<-}
 \alias{qoffset.z<-,nifti-method}
 \title{Extract Image Attribute \code{qoffset_z}}

@@ -10,6 +10,7 @@
 \alias{slice_end<-,nifti-method}
 \alias{slice.end}
 \alias{slice.end,nifti-method}
+\alias{slice.end,nifti-method}
 \alias{slice.end<-}
 \alias{slice.end<-,nifti-method}
 \title{Extract Image Attribute \code{slice_end}}

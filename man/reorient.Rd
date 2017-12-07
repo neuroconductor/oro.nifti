@@ -3,6 +3,7 @@
 \name{reorient}
 \alias{reorient}
 \alias{inverseReorient}
+\alias{inverseReorient}
 \title{Reorient Image using NIfTI header}
 \usage{
 reorient(nim, data, verbose = FALSE, invert = FALSE, tol = 1e-07)

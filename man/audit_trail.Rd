@@ -12,6 +12,14 @@
 \alias{niftiAuditTrailCreated}
 \alias{niftiAuditTrailEvent}
 \alias{getLastCallWithName}
+\alias{enableAuditTrail}
+\alias{getLastCallWithName}
+\alias{newAuditTrail}
+\alias{niftiExtensionToAuditTrail}
+\alias{niftiAuditTrailSystemNode}
+\alias{niftiAuditTrailSystemNodeEvent}
+\alias{niftiAuditTrailCreated}
+\alias{niftiAuditTrailEvent}
 \title{Facilitate the Creation and Modification of Audit Trails}
 \usage{
 oro.nifti.info(type)
