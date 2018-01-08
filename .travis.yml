@@ -27,7 +27,7 @@ notifications:
     on_success: change
     on_failure: change
 
-after_deploy:
+after_success:
   # travis_wait 100 Rscript -e 'covr::coveralls(type = "all")' ;
   - if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; 
     then
