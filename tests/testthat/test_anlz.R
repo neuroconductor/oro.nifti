@@ -15,7 +15,7 @@ test_that("extracting some info", {
   expect_silent(cal.units(img01))
   expect_silent({
     cal.units(img01) = "hey"
-    })
+  })
   expect_equal(cal.units(img01), "hey")
   
   expect_silent({
@@ -27,15 +27,22 @@ test_that("extracting some info", {
 
 # db_name
 test_that("extract and assign", {
-  funcs = "db_name"
+  # funcs = c("db_name", "data_type")
+  funcs = c("data_type", "db_name", "extents", "session_error", 
+            "regular", "hkey_un0", "vox_units", "cal_units", "aux_file", 
+            "generated", "scannum", "patient_id", "exp_date", "exp_time", 
+            "hist_un0")
   func = funcs[1]
-  assign_func = paste0(func, "<-")
-  t_value = basename(tempfile())
-  expect_silent(do.call(func, args = list(img01)))
-  expect_silent({
-    img01 = do.call(assign_func, list(object = img01, value = t_value))
-  })
-  expect_equal(do.call(func, list(img01)), t_value)
+  
+  for (ifunc in funcs) {
+    assign_func = paste0(func, "<-")
+    t_value = basename(tempfile())
+    expect_silent(do.call(func, args = list(img01)))
+    expect_silent({
+      img01 = do.call(assign_func, list(object = img01, value = t_value))
+    })
+    expect_equal(do.call(func, list(img01)), t_value)
+  }
 })
 
 

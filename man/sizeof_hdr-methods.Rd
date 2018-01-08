@@ -11,6 +11,9 @@
 \alias{sizeof.hdr,nifti-method}
 \alias{sizeof.hdr,nifti-method}
 \alias{sizeof.hdr,anlz-method}
+\alias{sizeof_hdr<-}
+\alias{sizeof_hdr<-,nifti-method}
+\alias{sizeof_hdr<-,anlz-method}
 \title{Extract Image Attribute \code{sizeof_hdr}}
 \usage{
 sizeof_hdr(object)
@@ -24,9 +27,17 @@ sizeof.hdr(object)
 \S4method{sizeof.hdr}{nifti}(object)
 
 \S4method{sizeof.hdr}{anlz}(object)
+
+sizeof_hdr(object) <- value
+
+\S4method{sizeof_hdr}{nifti}(object) <- value
+
+\S4method{sizeof_hdr}{anlz}(object) <- value
 }
 \arguments{
 \item{object}{is an object of class \code{nifti} or \code{anlz}.}
+
+\item{value}{is the value to assign to the \code{data_type} field.}
 }
 \description{
 Methods that act on the \code{sizeof_hdr} field in the

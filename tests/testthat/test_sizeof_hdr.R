@@ -14,3 +14,12 @@ test_that("sizeof.hdr()", {
 })
 
 
+test_that("sizeof_hdr()", {
+  expect_silent({
+    sizeof_hdr(aim) = 5
+    })
+  expect_silent({
+    sizeof_hdr(nim) = 5
+  })
+})
+
