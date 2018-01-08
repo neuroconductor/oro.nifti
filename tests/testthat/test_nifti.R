@@ -4,8 +4,17 @@ img01 <- nifti(array(1:64, c(4,4,4,1)), datatype=4)
 ximg01 = img01
 img02 <- nifti(array(64:1, c(4,4,4,1)), datatype=4)
 
+test_that("as.nifti", {
+  expect_s4_class(as.nifti(img01), "nifti")
+  anlz_img = as.anlz(img01)
+  expect_s4_class(anlz_img, "anlz")
+  expect_s4_class(img01 + anlz_img, "nifti")
+  expect_s4_class(img01 + anlz_img, "nifti")
+})
 
 test_that("operators", {
+  expect_false(is.afni(img01))
+  expect_false(is.anlz(img01))
   expect_true(is.nifti(img01 + img02))
   expect_true(is.nifti(sqrt(2) * img01))
   expect_true(is.nifti(img02 / pi))

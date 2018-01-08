@@ -47,6 +47,19 @@ setMethod("datatype<-",
             }                       
             return(object)
           })
+
+#' @rdname datatype-methods
+#' @aliases datatype,ANY-method
+#' @export
+#' @importFrom RNifti dumpNifti
+setMethod("datatype", "ANY", function(object) { 
+  if (inherits(object, "niftiImage")) {
+    return(RNifti::dumpNifti(object)$datatype)
+  } else {
+    stop("Not implemented for this type!")
+  }
+})
+
 #' @rdname datatype-methods
 #' @aliases datatype<-,anlz-method
 #' @export

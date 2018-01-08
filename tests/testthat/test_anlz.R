@@ -4,6 +4,11 @@ img01 <- anlz(array(1:64, c(4,4,4,1)), datatype=4)
 ximg01 = img01
 img02 <- anlz(array(64:1, c(4,4,4,1)), datatype=4)
 
+test_that("as.nifti", {
+  expect_s4_class(as.nifti(img01), "nifti")
+  expect_s4_class(as.anlz(img01), "anlz")
+})
+
 
 test_that("operators", {
   expect_true(is.anlz(img01 + img02))
