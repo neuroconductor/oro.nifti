@@ -1,5 +1,5 @@
 Package: oro.nifti
-Version: 0.9.2
+Version: 0.9.3
 Title: Rigorous - NIfTI + ANALYZE + AFNI : Input / Output
 Authors@R: c(person("Brandon", "Whitcher", role = c("aut", "cre"),
   email = "bwhitcher@gmail.com"),
@@ -139,6 +139,7 @@ Collate:
     'vols_added.R'
     'vox_units.R'
     'voxres.R'
+    'img_length.R'
     'zzz.R'
 RoxygenNote: 6.0.1.9000
 Encoding: UTF-8

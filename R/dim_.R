@@ -60,3 +60,15 @@ setMethod("dim_<-",
             }
             return(object)
           })
+
+#' @rdname dim_-methods
+#' @aliases dim_,ANY-method
+#' @export
+#' @importFrom RNifti dumpNifti
+setMethod("dim_", "ANY", function(object) { 
+  if (inherits(object, "niftiImage")) {
+    return(RNifti::dumpNifti(object)$dim)
+  } else {
+    stop("Not implemented for this type!")
+  }
+})

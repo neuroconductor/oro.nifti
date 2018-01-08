@@ -15,3 +15,9 @@ Vector of length 3
 \description{
 Grabs the pixdim and takes the correct elements
 }
+\examples{
+nim <- nifti(array(rnorm(10^3), dim = c(5, 2, 100)),
+pixdim = c(1, 0.5, 0.2, 1))
+voxdim(nim)
+
+}
