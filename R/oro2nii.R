@@ -9,7 +9,7 @@
 oro2nii = function(image, verbose = FALSE) {
   outfile = tempfile()
   writeNIfTI(image, 
-             outfile = outfile, 
+             filename = outfile, 
              onefile = TRUE,
              gzipped = TRUE,
              verbose = verbose)
