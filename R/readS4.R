@@ -428,7 +428,7 @@ nifti_header <- function(
                   " was read in!"))
     }
   } else {
-    data = array(NA, nim@"dim_"[dims])
+    data = array(NA_integer_, nim@"dim_"[dims])
   }
   close(fid)
   
@@ -436,7 +436,19 @@ nifti_header <- function(
   if (read_data) {
     if (nim@"scl_slope" != 0) {
       warning(paste("scl_slope =", nim@"scl_slope", "and data must be rescaled."))
-      data <- data * nim@"scl_slope" + nim@"scl_inter"
+      # trying to preserve type of integer
+      if (all.equal(nim@"scl_slope", as.integer(nim@"scl_slope"))) {
+        nim@"scl_slope" = as.integer(nim@"scl_slope")
+      }
+      # trying to preserve type of integer
+      if (all.equal(nim@"scl_inter", as.integer(nim@"scl_inter"))) {
+        nim@"scl_inter" = as.integer(nim@"scl_inter")
+      }      
+      # irrelevant scaling
+      # notice the not in front of the phrase
+      if  ( !(nim@"scl_inter" == 1L && nim@"scl_inter" == 0L) ) {
+        data <- data * nim@"scl_slope" + nim@"scl_inter"
+      }
     }
   }
   ##
