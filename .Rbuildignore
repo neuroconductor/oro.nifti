@@ -11,4 +11,4 @@ All_Generics\.R
 ^cran-comments\.md$
 vignettes/nifti2*
 vignettes/jss*
-
+revdep/*
