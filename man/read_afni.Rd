@@ -14,7 +14,7 @@ readAFNI(fname, vol = NULL, verbose = FALSE, warn = -1, call = NULL)
 \item{verbose}{is a logical variable (default = \code{FALSE}) that allows
 text-based feedback during execution of the function.}
 
-\item{warn}{is a number to regularegulatete the display of warnings (default
+\item{warn}{is a number to regulate the display of warnings (default
 = -1).  See \code{options} for more details.}
 
 \item{call}{keeps track of the current function call for use in the AFNI

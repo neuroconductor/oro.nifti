@@ -7,9 +7,6 @@
 \alias{audit.trail}
 \alias{audit.trail<-,nifti-method}
 \alias{audit.trail<-}
-\alias{audit.trail,nifti-method}
-\alias{audit.trail<-}
-\alias{audit.trail<-,nifti-method}
 \title{Extract or Replace NIfTI Audit Trail}
 \usage{
 audit.trail(object)

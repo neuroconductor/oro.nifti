@@ -312,7 +312,7 @@ setValidity("afni", function(object) {
 #' @param vol vector of brick numbers to be read from file.
 #' @param verbose is a logical variable (default = \code{FALSE}) that allows
 #' text-based feedback during execution of the function.
-#' @param warn is a number to regularegulatete the display of warnings (default
+#' @param warn is a number to regulate the display of warnings (default
 #' = -1).  See \code{options} for more details.
 #' @param call keeps track of the current function call for use in the AFNI
 #' extension.

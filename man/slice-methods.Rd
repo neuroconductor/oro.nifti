@@ -9,9 +9,6 @@
 \alias{slice,afni-method}
 \alias{slice,anlz-method}
 \alias{slice,nifti-method}
-\alias{slice,nifti-method}
-\alias{slice,anlz-method}
-\alias{slice,afni-method}
 \title{Methods for Function `slice'}
 \usage{
 slice(x, ...)

@@ -10,7 +10,6 @@
 \alias{sform_code<-,nifti-method}
 \alias{sform.code}
 \alias{sform.code,nifti-method}
-\alias{sform.code,nifti-method}
 \alias{sform.code<-}
 \alias{sform.code<-,nifti-method}
 \title{Extract Image Attribute \code{sform_code}}

@@ -11,8 +11,6 @@
 
 ## Reverse dependencies
 
-This is a new release, so there are no reverse dependencies.
-
 ---
 
 * I have run R CMD check on the NUMBER downstream dependencies.

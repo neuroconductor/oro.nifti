@@ -435,7 +435,6 @@ nifti_header <- function(
   ## WARNING to the user
   if (read_data) {
     if (nim@"scl_slope" != 0) {
-      warning(paste("scl_slope =", nim@"scl_slope", "and data must be rescaled."))
       # trying to preserve type of integer
       if (all.equal(nim@"scl_slope", as.integer(nim@"scl_slope"))) {
         nim@"scl_slope" = as.integer(nim@"scl_slope")
@@ -447,6 +446,9 @@ nifti_header <- function(
       # irrelevant scaling
       # notice the not in front of the phrase
       if  ( !(nim@"scl_inter" == 1L && nim@"scl_inter" == 0L) ) {
+        warning(paste("scl_slope =", nim@"scl_slope", 
+                      "and data must be rescaled."))
+        
         data <- data * nim@"scl_slope" + nim@"scl_inter"
       }
     }
