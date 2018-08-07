@@ -16,6 +16,18 @@
 \alias{slice_overlay,array,array-method}
 \alias{slice_overlay,afni,afni-method}
 \alias{slice_overlay,afni,array-method}
+\alias{slice_overlay}
+\alias{slice_overlay,nifti,nifti-method}
+\alias{slice_overlay,anlz,anlz-method}
+\alias{slice_overlay,anlz,nifti-method}
+\alias{slice_overlay,nifti,anlz-method}
+\alias{slice_overlay,array,array-method}
+\alias{slice_overlay,array,nifti-method}
+\alias{slice_overlay,nifti,array-method}
+\alias{slice_overlay,array,anlz-method}
+\alias{slice_overlay,anlz,array-method}
+\alias{slice_overlay,afni,afni-method}
+\alias{slice_overlay,afni,array-method}
 \title{Methods for Function slice_overlay}
 \usage{
 slice_overlay.nifti(x, y, z = 1, w = 1, col.x = gray(0:64/64),

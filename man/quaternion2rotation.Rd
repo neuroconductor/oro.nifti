@@ -3,6 +3,7 @@
 \name{quaternion2rotation}
 \alias{quaternion2rotation}
 \alias{quaternion2mat44}
+\alias{quaternion2mat44}
 \title{Convert Quaternion into a Rotation Matrix}
 \usage{
 quaternion2rotation(b, c, d, tol = 1e-07)

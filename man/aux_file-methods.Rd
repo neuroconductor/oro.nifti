@@ -12,6 +12,7 @@
 \alias{aux_file<-,anlz-method}
 \alias{aux.file}
 \alias{aux.file,nifti-method}
+\alias{aux.file,nifti-method}
 \alias{aux.file,anlz-method}
 \alias{aux.file<-}
 \alias{aux.file<-,nifti-method}

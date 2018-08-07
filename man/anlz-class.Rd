@@ -4,6 +4,7 @@
 \name{anlz-class}
 \alias{anlz-class}
 \alias{show,anlz-method}
+\alias{show,anlz-method}
 \title{Class "anlz"}
 \usage{
 \S4method{show}{anlz}(object)

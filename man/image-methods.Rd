@@ -8,6 +8,8 @@
 \alias{image,afni-method}
 \alias{image,anlz-method}
 \alias{image,nifti-method}
+\alias{image,anlz-method}
+\alias{image,afni-method}
 \title{Methods for Function `image'}
 \usage{
 \S4method{image}{nifti}(x, z = 1, w = 1, col = gray(0:64/64),

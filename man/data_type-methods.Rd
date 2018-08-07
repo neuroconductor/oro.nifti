@@ -12,6 +12,7 @@
 \alias{data_type<-,anlz-method}
 \alias{data.type}
 \alias{data.type,nifti-method}
+\alias{data.type,nifti-method}
 \alias{data.type,anlz-method}
 \alias{data.type<-}
 \alias{data.type<-,nifti-method}

@@ -3,6 +3,7 @@
 \name{integerTranslation}
 \alias{integerTranslation}
 \alias{invertIntegerTranslation}
+\alias{invertIntegerTranslation}
 \title{integerTranslation}
 \usage{
 integerTranslation(nim, data, verbose = FALSE)

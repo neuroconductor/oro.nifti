@@ -8,6 +8,12 @@
 \alias{rmhdr}
 \alias{rmimggz}
 \alias{rmimg}
+\alias{rmnii}
+\alias{rmgz}
+\alias{rmhdrgz}
+\alias{rmhdr}
+\alias{rmimggz}
+\alias{rmimg}
 \title{Remove File Extensions Around the NIfTI/ANALYZE Formats}
 \usage{
 rmniigz(x)

@@ -12,6 +12,7 @@
 \alias{db_name<-,anlz-method}
 \alias{db.name}
 \alias{db.name,nifti-method}
+\alias{db.name,nifti-method}
 \alias{db.name,anlz-method}
 \alias{db.name<-}
 \alias{db.name<-,nifti-method}

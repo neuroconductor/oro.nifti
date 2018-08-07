@@ -436,11 +436,11 @@ nifti_header <- function(
   if (read_data) {
     if (nim@"scl_slope" != 0) {
       # trying to preserve type of integer
-      if (all.equal(nim@"scl_slope", as.integer(nim@"scl_slope"))) {
+      if (isTRUE(all.equal(nim@"scl_slope", as.integer(nim@"scl_slope")))) {
         nim@"scl_slope" = as.integer(nim@"scl_slope")
       }
       # trying to preserve type of integer
-      if (all.equal(nim@"scl_inter", as.integer(nim@"scl_inter"))) {
+      if (isTRUE(all.equal(nim@"scl_inter", as.integer(nim@"scl_inter")))) {
         nim@"scl_inter" = as.integer(nim@"scl_inter")
       }      
       # irrelevant scaling

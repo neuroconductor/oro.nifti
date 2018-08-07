@@ -10,6 +10,7 @@
 \alias{slice_duration<-,nifti-method}
 \alias{slice.duration}
 \alias{slice.duration,nifti-method}
+\alias{slice.duration,nifti-method}
 \alias{slice.duration<-}
 \alias{slice.duration<-,nifti-method}
 \title{Extract Image Attribute \code{slice_duration}}

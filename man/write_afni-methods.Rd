@@ -6,6 +6,7 @@
 \alias{writeAFNI}
 \alias{writeAFNI,afni-method}
 \alias{writeAFNI,ANY-method}
+\alias{writeAFNI,afni-method}
 \title{writeAFNI}
 \usage{
 writeAFNI(nim, ...)

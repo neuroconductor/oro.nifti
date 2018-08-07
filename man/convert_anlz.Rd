@@ -5,6 +5,7 @@
 \alias{convert.bitpix.anlz}
 \alias{convert.datatype.anlz}
 \alias{convert.orient.anlz}
+\alias{convert.orient.anlz}
 \title{Convert ANALYZE Codes}
 \usage{
 convert.bitpix.anlz(bitpix = NULL)
