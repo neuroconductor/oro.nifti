@@ -10,6 +10,7 @@
 \alias{srow_y<-,nifti-method}
 \alias{srow.y}
 \alias{srow.y,nifti-method}
+\alias{srow.y,nifti-method}
 \alias{srow.y<-}
 \alias{srow.y<-,nifti-method}
 \title{Extract Image Attribute \code{srow_y}}

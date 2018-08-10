@@ -9,6 +9,9 @@
 \alias{sform-methods}
 \alias{sform,nifti-method}
 \alias{sform}
+\alias{sform,nifti-method}
+\alias{qform}
+\alias{qform,nifti-method}
 \title{Extract NIfTI 3D Image Orientation}
 \usage{
 sform(object)

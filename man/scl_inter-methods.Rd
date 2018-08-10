@@ -10,6 +10,7 @@
 \alias{scl_inter<-,nifti-method}
 \alias{scl.inter}
 \alias{scl.inter,nifti-method}
+\alias{scl.inter,nifti-method}
 \alias{scl.inter<-}
 \alias{scl.inter<-,nifti-method}
 \title{Extract Image Attribute \code{scl_inter}}

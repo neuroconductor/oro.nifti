@@ -1,6 +1,6 @@
 Package: oro.nifti
-Version: 0.9.6
-Title: Rigorous - NIfTI + ANALYZE + AFNI : Input / Output
+Version: 0.9.7
+Title: Rigorous - 'NIfTI' + 'ANALYZE' + 'AFNI' : Input / Output
 Authors@R: c(person("Brandon", "Whitcher", role = c("aut", "cre"),
   email = "bwhitcher@gmail.com"),
 	person("Volker", "Schmid", role = "aut", email="volker.schmid@lmu.de"),
@@ -10,7 +10,7 @@ Authors@R: c(person("Brandon", "Whitcher", role = c("aut", "cre"),
 	person("Jon", "Clayden", role = "ctb", 	email = "code@clayden.org"),
 	person("John", "Muschelli", role = "ctb", email = "muschellij2@gmail.com"))
 Description: Functions for the input/output and visualization of
-    medical imaging data that follow either the ANALYZE, NIfTI or AFNI
+    medical imaging data that follow either the 'ANALYZE', 'NIfTI' or 'AFNI'
     formats.  This package is part of the Rigorous Analytics bundle.
 Depends:
     R (>= 2.14.0)

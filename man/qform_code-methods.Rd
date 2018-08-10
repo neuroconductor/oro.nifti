@@ -10,6 +10,7 @@
 \alias{qform_code<-,nifti-method}
 \alias{qform.code}
 \alias{qform.code,nifti-method}
+\alias{qform.code,nifti-method}
 \alias{qform.code<-}
 \alias{qform.code<-,nifti-method}
 \title{Extract Image Attribute \code{qform_code}}

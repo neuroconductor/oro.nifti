@@ -9,6 +9,11 @@
 \alias{orthographic,anlz-method}
 \alias{orthographic,array-method}
 \alias{orthographic,afni-method}
+\alias{orthographic}
+\alias{orthographic,nifti-method}
+\alias{orthographic,anlz-method}
+\alias{orthographic,array-method}
+\alias{orthographic,afni-method}
 \title{Methods for Function `orthographic' in Package `dcemriS4'}
 \usage{
 orthographic.nifti(x, y = NULL, xyz = NULL, w = 1, col = gray(0:64/64),
