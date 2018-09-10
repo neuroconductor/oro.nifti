@@ -4,8 +4,8 @@
 \alias{nifti}
 \title{Constructor for NIfTI}
 \usage{
-nifti(img = array(0, dim = rep(1, 4)), dim, datatype = 2, cal.min = NULL,
-  cal.max = NULL, pixdim = NULL, ...)
+nifti(img = array(0, dim = rep(1, 4)), dim, datatype = 2,
+  cal.min = NULL, cal.max = NULL, pixdim = NULL, ...)
 }
 \arguments{
 \item{img}{is a multidimensional array of data.}

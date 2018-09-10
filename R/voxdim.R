@@ -10,6 +10,9 @@
 #' voxdim(nim)
 #' 
 voxdim = function(img){
+  if (inherits(img, "niftiImage")) {
+    return(RNifti::pixdim(img)[1:3])
+  }
   pixdim(img)[2:4]
 }
 

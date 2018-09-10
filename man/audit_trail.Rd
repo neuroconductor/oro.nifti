@@ -12,14 +12,6 @@
 \alias{niftiAuditTrailCreated}
 \alias{niftiAuditTrailEvent}
 \alias{getLastCallWithName}
-\alias{enableAuditTrail}
-\alias{getLastCallWithName}
-\alias{newAuditTrail}
-\alias{niftiExtensionToAuditTrail}
-\alias{niftiAuditTrailSystemNode}
-\alias{niftiAuditTrailSystemNodeEvent}
-\alias{niftiAuditTrailCreated}
-\alias{niftiAuditTrailEvent}
 \title{Facilitate the Creation and Modification of Audit Trails}
 \usage{
 oro.nifti.info(type)
@@ -30,11 +22,11 @@ getLastCallWithName(functionName)
 
 newAuditTrail()
 
-niftiExtensionToAuditTrail(nim, workingDirectory = NULL, filename = NULL,
-  call = NULL)
-
-niftiAuditTrailSystemNode(type = "system-info", workingDirectory = NULL,
+niftiExtensionToAuditTrail(nim, workingDirectory = NULL,
   filename = NULL, call = NULL)
+
+niftiAuditTrailSystemNode(type = "system-info",
+  workingDirectory = NULL, filename = NULL, call = NULL)
 
 niftiAuditTrailSystemNodeEvent(trail, type = NULL, call = NULL,
   workingDirectory = NULL, filename = NULL, comment = NULL)

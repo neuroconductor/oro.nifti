@@ -9,7 +9,6 @@
 \alias{sizeof_hdr,anlz-method}
 \alias{sizeof.hdr}
 \alias{sizeof.hdr,nifti-method}
-\alias{sizeof.hdr,nifti-method}
 \alias{sizeof.hdr,anlz-method}
 \alias{sizeof_hdr<-}
 \alias{sizeof_hdr<-,nifti-method}

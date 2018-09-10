@@ -8,21 +8,19 @@
 \alias{writeNIfTI,anlz-method}
 \alias{writeNIfTI,array-method}
 \alias{writeNIfTI,niftiExtension-method}
-\alias{writeNIfTI,anlz-method}
-\alias{writeNIfTI,array-method}
 \title{writeNIfTI}
 \usage{
-\S4method{writeNIfTI}{nifti}(nim, filename, onefile = TRUE, gzipped = TRUE,
-  verbose = FALSE, warn = -1, compression = 6)
+\S4method{writeNIfTI}{nifti}(nim, filename, onefile = TRUE,
+  gzipped = TRUE, verbose = FALSE, warn = -1, compression = 6)
 
 \S4method{writeNIfTI}{niftiExtension}(nim, filename, onefile = TRUE,
   gzipped = TRUE, verbose = FALSE, warn = -1, compression = 6)
 
-\S4method{writeNIfTI}{anlz}(nim, filename, onefile = TRUE, gzipped = TRUE,
-  verbose = FALSE, warn = -1, compression = 6)
+\S4method{writeNIfTI}{anlz}(nim, filename, onefile = TRUE,
+  gzipped = TRUE, verbose = FALSE, warn = -1, compression = 6)
 
-\S4method{writeNIfTI}{array}(nim, filename, onefile = TRUE, gzipped = TRUE,
-  verbose = FALSE, warn = -1, compression = 6)
+\S4method{writeNIfTI}{array}(nim, filename, onefile = TRUE,
+  gzipped = TRUE, verbose = FALSE, warn = -1, compression = 6)
 }
 \arguments{
 \item{nim}{is an object of class \code{nifti} or \code{anlz}.}

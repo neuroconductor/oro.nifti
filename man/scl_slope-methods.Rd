@@ -10,7 +10,6 @@
 \alias{scl_slope<-,nifti-method}
 \alias{scl.slope}
 \alias{scl.slope,nifti-method}
-\alias{scl.slope,nifti-method}
 \alias{scl.slope<-}
 \alias{scl.slope<-,nifti-method}
 \title{Extract Image Attribute \code{scl_slope}}

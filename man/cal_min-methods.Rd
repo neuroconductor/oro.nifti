@@ -12,7 +12,6 @@
 \alias{cal_min<-,anlz-method}
 \alias{cal.min}
 \alias{cal.min,nifti-method}
-\alias{cal.min,nifti-method}
 \alias{cal.min,anlz-method}
 \alias{cal.min<-}
 \alias{cal.min<-,nifti-method}

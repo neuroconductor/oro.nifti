@@ -4,7 +4,6 @@
 \name{afni-class}
 \alias{afni-class}
 \alias{show,afni-method}
-\alias{show,afni-method}
 \title{Class "afni"}
 \usage{
 \S4method{show}{afni}(object)

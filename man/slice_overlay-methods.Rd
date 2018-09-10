@@ -16,51 +16,43 @@
 \alias{slice_overlay,array,array-method}
 \alias{slice_overlay,afni,afni-method}
 \alias{slice_overlay,afni,array-method}
-\alias{slice_overlay}
-\alias{slice_overlay,nifti,nifti-method}
-\alias{slice_overlay,anlz,anlz-method}
-\alias{slice_overlay,anlz,nifti-method}
-\alias{slice_overlay,nifti,anlz-method}
-\alias{slice_overlay,array,array-method}
-\alias{slice_overlay,array,nifti-method}
-\alias{slice_overlay,nifti,array-method}
-\alias{slice_overlay,array,anlz-method}
-\alias{slice_overlay,anlz,array-method}
-\alias{slice_overlay,afni,afni-method}
-\alias{slice_overlay,afni,array-method}
 \title{Methods for Function slice_overlay}
 \usage{
 slice_overlay.nifti(x, y, z = 1, w = 1, col.x = gray(0:64/64),
-  col.y = hotmetal(), zlim.x = NULL, zlim.y = NULL, plane = c("axial",
-  "coronal", "sagittal"), xlab = "", ylab = "", axes = FALSE,
-  oma = rep(0, 4), mar = rep(0, 4), bg = "black", NA.x = FALSE,
-  NA.y = TRUE, useRaster = TRUE, ...)
+  col.y = hotmetal(), zlim.x = NULL, zlim.y = NULL,
+  plane = c("axial", "coronal", "sagittal"), xlab = "", ylab = "",
+  axes = FALSE, oma = rep(0, 4), mar = rep(0, 4), bg = "black",
+  NA.x = FALSE, NA.y = TRUE, useRaster = TRUE, ...)
 
 slice_overlay(x, y, ...)
 
 \S4method{slice_overlay}{nifti,nifti}(x, y, z = 1, w = 1,
   col.x = gray(0:64/64), col.y = hotmetal(), zlim.x = NULL,
-  zlim.y = NULL, plane = c("axial", "coronal", "sagittal"), xlab = "",
-  ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", NA.x = FALSE, NA.y = TRUE, useRaster = TRUE, ...)
+  zlim.y = NULL, plane = c("axial", "coronal", "sagittal"),
+  xlab = "", ylab = "", axes = FALSE, oma = rep(0, 4),
+  mar = rep(0, 4), bg = "black", NA.x = FALSE, NA.y = TRUE,
+  useRaster = TRUE, ...)
 
 \S4method{slice_overlay}{anlz,anlz}(x, y, z = 1, w = 1,
   col.x = gray(0:64/64), col.y = hotmetal(), zlim.x = NULL,
-  zlim.y = NULL, plane = c("axial", "coronal", "sagittal"), xlab = "",
-  ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", NA.x = FALSE, NA.y = TRUE, useRaster = TRUE, ...)
+  zlim.y = NULL, plane = c("axial", "coronal", "sagittal"),
+  xlab = "", ylab = "", axes = FALSE, oma = rep(0, 4),
+  mar = rep(0, 4), bg = "black", NA.x = FALSE, NA.y = TRUE,
+  useRaster = TRUE, ...)
 
 \S4method{slice_overlay}{anlz,nifti}(x, y, z = 1, w = 1,
   col.x = gray(0:64/64), col.y = hotmetal(), zlim.x = NULL,
-  zlim.y = NULL, plane = c("axial", "coronal", "sagittal"), xlab = "",
-  ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", NA.x = FALSE, NA.y = TRUE, useRaster = TRUE, ...)
+  zlim.y = NULL, plane = c("axial", "coronal", "sagittal"),
+  xlab = "", ylab = "", axes = FALSE, oma = rep(0, 4),
+  mar = rep(0, 4), bg = "black", NA.x = FALSE, NA.y = TRUE,
+  useRaster = TRUE, ...)
 
 \S4method{slice_overlay}{nifti,anlz}(x, y, z = 1, w = 1,
   col.x = gray(0:64/64), col.y = hotmetal(), zlim.x = NULL,
-  zlim.y = NULL, plane = c("axial", "coronal", "sagittal"), xlab = "",
-  ylab = "", axes = FALSE, oma = rep(0, 4), mar = rep(0, 4),
-  bg = "black", NA.x = FALSE, NA.y = TRUE, useRaster = TRUE, ...)
+  zlim.y = NULL, plane = c("axial", "coronal", "sagittal"),
+  xlab = "", ylab = "", axes = FALSE, oma = rep(0, 4),
+  mar = rep(0, 4), bg = "black", NA.x = FALSE, NA.y = TRUE,
+  useRaster = TRUE, ...)
 
 \S4method{slice_overlay}{array,array}(x, y, ...)
 

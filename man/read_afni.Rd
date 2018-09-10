@@ -4,7 +4,8 @@
 \alias{readAFNI}
 \title{readAFNI}
 \usage{
-readAFNI(fname, vol = NULL, verbose = FALSE, warn = -1, call = NULL)
+readAFNI(fname, vol = NULL, verbose = FALSE, warn = -1,
+  call = NULL)
 }
 \arguments{
 \item{fname}{is the file name of the AFNI file.}
