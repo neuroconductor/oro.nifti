@@ -51,7 +51,7 @@ more details.
 }
 \examples{
 file = system.file("extdata", "example.nii.gz", package = "RNifti")
-img = readNifti(file)
+img = RNifti::readNifti(file)
 intent_name(img)
 intent_name(img) = "hey"
 stopifnot(intent_name(img) ==  "hey")

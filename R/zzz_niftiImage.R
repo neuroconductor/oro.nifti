@@ -1,7 +1,7 @@
 #' @rdname scl_slope-methods
 #' @examples
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' scl_slope(img)
 #' scl.slope(img)
 
@@ -38,7 +38,7 @@ setMethod("scl_slope", "niftiImage", function(object) {
 #' @export
 #' @examples
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' scl_inter(img)
 #' scl.inter(img)
 setMethod("scl_inter", "niftiImage", function(object) { 
@@ -93,7 +93,7 @@ setMethod("scl.inter", "niftiImage", function(object) {
 #' @export
 #' @examples
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' descrip(img)
 setMethod("descrip", "niftiImage", function(object) { object$"descrip" })
 
@@ -102,7 +102,7 @@ setMethod("descrip", "niftiImage", function(object) { object$"descrip" })
 #' @export
 #' @examples
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' descrip(img) = "a file"
 #' descrip(img)
 #' stopifnot(descrip(img) == "a file")
@@ -119,7 +119,7 @@ setMethod("descrip<-",
 #' @export
 #' @examples
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' data_type(img)
 #' datatype(img)
 setMethod("data_type", "niftiImage", function(object) { object$"datatype" })
@@ -156,7 +156,7 @@ setMethod("datatype", "niftiImage", function(object) { object$"datatype" })
 #' @export
 #' @examples
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' intent_p1(img)
 #' intent_p1(img) = 2
 #' stopifnot(intent_p1(img) == 2)
@@ -216,7 +216,7 @@ setMethod("intent_p3<-",
 #' @export
 #' @examples
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' intent_code(img)
 #' intent_code(img) = 4
 #' stopifnot(intent_code(img) == 4)
@@ -238,7 +238,7 @@ setMethod("intent_code<-",
 #' @export
 #' @examples
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' cal.max(img)
 #' cal_max(img)
 #' cal.max(img) = 2500
@@ -314,7 +314,7 @@ setMethod("cal_max<-",
 #' @export
 #' @examples
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' slice_start(img)
 #' slice_start(img) = 4
 #' stopifnot(slice_start(img) == 4) 
@@ -353,7 +353,7 @@ setMethod("slice.start<-",
 #' @export
 #' @examples
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' slice_end(img)
 #' slice_end(img) = 4
 #' stopifnot(slice_end(img) == 4) 
@@ -392,9 +392,9 @@ setMethod("slice.end<-",
 #' @export
 #' @examples
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' vox_offset(img)
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' vox.offset(img)
 setMethod("vox_offset", "niftiImage", function(object) { object$"vox_offset" })
 
@@ -432,7 +432,7 @@ setMethod("vox.offset", "niftiImage", function(object) { object$"vox_offset" })
 #' @export
 #' @examples
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' bitpix(img)
 setMethod("bitpix", "niftiImage", function(object) { object$"bitpix" })
 
@@ -452,7 +452,7 @@ setMethod("bitpix", "niftiImage", function(object) { object$"bitpix" })
 #' @export
 #' @examples
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' xyzt_units(img)
 #' xyzt_units(img) = 8
 #' stopifnot(xyzt_units(img) ==  8)
@@ -474,7 +474,7 @@ setMethod("xyzt_units<-",
 #' @export
 #' @examples 
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' slice_duration(img)
 #' slice_duration(img) = 8
 #' stopifnot(slice_duration(img) ==  8)
@@ -495,7 +495,7 @@ setMethod("slice_duration<-",
 #' @export
 #' @examples 
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' slice_code(img)
 #' slice_code(img) = 8
 #' stopifnot(slice_code(img) ==  8)
@@ -517,7 +517,7 @@ setMethod("slice_code<-",
 #' @export
 #' @examples 
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' toffset(img)
 #' toffset(img) = 8
 #' stopifnot(toffset(img) ==  8)
@@ -539,7 +539,7 @@ setMethod("toffset<-",
 #' @export
 #' @examples 
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' aux_file(img)
 #' aux_file(img) = "hey"
 #' stopifnot(aux_file(img) ==  "hey")
@@ -561,7 +561,7 @@ setMethod("aux_file<-",
 #' @export
 #' @examples 
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' qform_code(img)
 #' qform_code(img) = 8
 #' stopifnot(qform_code(img) ==  8)
@@ -583,7 +583,7 @@ setMethod("qform_code<-",
 #' @export
 #' @examples 
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' sform_code(img)
 #' sform_code(img) = 4
 #' stopifnot(sform_code(img) ==  4)
@@ -605,7 +605,7 @@ setMethod("sform_code<-",
 #' @export
 #' @examples 
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' intent_name(img)
 #' intent_name(img) = "hey"
 #' stopifnot(intent_name(img) ==  "hey")
@@ -627,7 +627,7 @@ setMethod("intent_name<-",
 #' @export
 #' @examples 
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' quatern_b(img)
 #' quatern_b(img) = 3
 #' stopifnot(quatern_b(img) == 3)
@@ -685,7 +685,7 @@ setMethod("quatern_d<-",
 #' @export
 #' @examples 
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' qoffset_x(img)
 #' qoffset_x(img) = 10
 #' stopifnot(qoffset_x(img) == 10)
@@ -706,7 +706,7 @@ setMethod("qoffset_x<-",
 #' @export
 #' @examples 
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' qoffset_y(img)
 #' qoffset_y(img) = 10
 #' stopifnot(qoffset_y(img) == 10)
@@ -727,7 +727,7 @@ setMethod("qoffset_y<-",
 #' @export
 #' @examples 
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' qoffset_z(img)
 #' qoffset_z(img) = 10
 #' stopifnot(qoffset_z(img) == 10)
@@ -749,7 +749,7 @@ setMethod("qoffset_z<-",
 #' @export
 #' @examples 
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' srow_x(img)
 #' srow_x(img) = rep(0, 4)
 #' stopifnot(srow_x(img) == rep(0, 4))
@@ -809,7 +809,7 @@ setMethod("srow_z<-",
 #' @export
 #' @examples 
 #' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = readNifti(file)
+#' img = RNifti::readNifti(file)
 #' magic(img)
 #' magic(img) = "n1"
 #' stopifnot(magic(img) == "n1")

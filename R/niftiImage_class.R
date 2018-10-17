@@ -9,10 +9,12 @@
 #' @exportClass niftiImage
 setOldClass("niftiImage")
 
+#' "internalImage" class
+#'
 #' @name internalImage-class
 #' @aliases internalImage
+#' @family internalImage
 #' 
-#' @rdname internalImage
 #' @exportClass internalImage
 setOldClass("internalImage")
 

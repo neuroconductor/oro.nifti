@@ -51,7 +51,7 @@ more details.
 }
 \examples{
 file = system.file("extdata", "example.nii.gz", package = "RNifti")
-img = readNifti(file)
+img = RNifti::readNifti(file)
 slice_duration(img)
 slice_duration(img) = 8
 stopifnot(slice_duration(img) ==  8)

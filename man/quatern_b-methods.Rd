@@ -51,7 +51,7 @@ more details.
 }
 \examples{
 file = system.file("extdata", "example.nii.gz", package = "RNifti")
-img = readNifti(file)
+img = RNifti::readNifti(file)
 quatern_b(img)
 quatern_b(img) = 3
 stopifnot(quatern_b(img) == 3)

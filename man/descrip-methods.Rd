@@ -59,10 +59,10 @@ descrip(mniLR) <- paste(descrip(mniLR), version$version.string, sep="; ")
 descrip(mniLR)
 }
 file = system.file("extdata", "example.nii.gz", package = "RNifti")
-img = readNifti(file)
+img = RNifti::readNifti(file)
 descrip(img)
 file = system.file("extdata", "example.nii.gz", package = "RNifti")
-img = readNifti(file)
+img = RNifti::readNifti(file)
 descrip(img) = "a file"
 descrip(img)
 stopifnot(descrip(img) == "a file")

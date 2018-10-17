@@ -52,7 +52,7 @@ more details.
 }
 \examples{
 file = system.file("extdata", "example.nii.gz", package = "RNifti")
-img = readNifti(file)
+img = RNifti::readNifti(file)
 scl_slope(img)
 scl.slope(img)
 }

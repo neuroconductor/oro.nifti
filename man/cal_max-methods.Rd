@@ -79,7 +79,7 @@ urlfile <- file.path(system.file("nifti", package="oro.nifti"),
 mniLR <- readNIfTI(urlfile)
 cal.max(mniLR)
 file = system.file("extdata", "example.nii.gz", package = "RNifti")
-img = readNifti(file)
+img = RNifti::readNifti(file)
 cal.max(img)
 cal_max(img)
 cal.max(img) = 2500

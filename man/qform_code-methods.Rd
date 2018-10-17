@@ -51,7 +51,7 @@ more details.
 }
 \examples{
 file = system.file("extdata", "example.nii.gz", package = "RNifti")
-img = readNifti(file)
+img = RNifti::readNifti(file)
 qform_code(img)
 qform_code(img) = 8
 stopifnot(qform_code(img) ==  8)

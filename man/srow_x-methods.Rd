@@ -51,7 +51,7 @@ more details.
 }
 \examples{
 file = system.file("extdata", "example.nii.gz", package = "RNifti")
-img = readNifti(file)
+img = RNifti::readNifti(file)
 srow_x(img)
 srow_x(img) = rep(0, 4)
 stopifnot(srow_x(img) == rep(0, 4))

@@ -77,7 +77,7 @@ aux.file(mniRL)
 aux.file(mniRL) <- "avg152T1_RL_nifti"
 aux.file(mniRL)
 file = system.file("extdata", "example.nii.gz", package = "RNifti")
-img = readNifti(file)
+img = RNifti::readNifti(file)
 aux_file(img)
 aux_file(img) = "hey"
 stopifnot(aux_file(img) ==  "hey")

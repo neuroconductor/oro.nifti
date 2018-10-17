@@ -39,7 +39,7 @@ more details.
 }
 \examples{
 file = system.file("extdata", "example.nii.gz", package = "RNifti")
-img = readNifti(file)
+img = RNifti::readNifti(file)
 magic(img)
 magic(img) = "n1"
 stopifnot(magic(img) == "n1")

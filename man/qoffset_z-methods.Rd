@@ -51,7 +51,7 @@ more details.
 }
 \examples{
 file = system.file("extdata", "example.nii.gz", package = "RNifti")
-img = readNifti(file)
+img = RNifti::readNifti(file)
 qoffset_z(img)
 qoffset_z(img) = 10
 stopifnot(qoffset_z(img) == 10)

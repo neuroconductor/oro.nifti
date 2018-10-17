@@ -51,7 +51,7 @@ more details.
 }
 \examples{
 file = system.file("extdata", "example.nii.gz", package = "RNifti")
-img = readNifti(file)
+img = RNifti::readNifti(file)
 xyzt_units(img)
 xyzt_units(img) = 8
 stopifnot(xyzt_units(img) ==  8)
