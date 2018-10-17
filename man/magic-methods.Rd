@@ -41,8 +41,12 @@ more details.
 file = system.file("extdata", "example.nii.gz", package = "RNifti")
 img = RNifti::readNifti(file)
 magic(img)
-magic(img) = "n1"
-stopifnot(magic(img) == "n1")
+magic(img) = "ni1"
+stopifnot(magic(img) == "ni1")
+magic(img) = "n+1"
+stopifnot(magic(img) == "n+1")
+magic(img) = "r" # bad magic
+stopifnot(magic(img) == "")
 }
 \references{
 ANALYZE 7.5\cr
