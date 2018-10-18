@@ -35,8 +35,30 @@
   options("niftiAuditTrail" = FALSE)
 }
 
+rule <- function(pad = "-", gap = 2L) {
+  paste0(rep(pad, getOption("width") - gap), collapse = "")
+}
+
 .onAttach <- function(lib, pkg) {
   txt <- paste(pkg, utils::packageDescription(pkg, lib)[["Version"]])
   packageStartupMessage(txt)
+  setHook(packageEvent("RNifti", "attach"), function(...) {
+    packageStartupMessage(rule())
+    packageStartupMessage(
+      "You have loaded RNifti after oro.nifti ", 
+      "(either directly or from another package) - this is likely ",
+      "to cause problems with certain functions.\n", 
+      "If you need functions from both RNifti and oro.nifti, ",
+      "please load RNifti first, then oro.nifti:\n", 
+      "library(RNifti); library(oro.nifti)"
+    )
+    packageStartupMessage(rule())
+
+  })
 }
 
+
+
+.onDetach <- function(libpath) {
+  setHook(packageEvent("RNifti", "attach"), NULL, "replace")
+}

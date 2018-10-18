@@ -1,5 +1,5 @@
 Package: oro.nifti
-Version: 0.9.8
+Version: 0.9.9
 Title: Rigorous - 'NIfTI' + 'ANALYZE' + 'AFNI' : Input / Output
 Authors@R: c(person("Brandon", "Whitcher", role = c("aut", "cre"),
   email = "bwhitcher@gmail.com"),
@@ -27,7 +27,7 @@ Imports:
     methods,
     utils,
     abind,
-    RNifti
+    RNifti (>= 0.9.0)
 Enhances: dcemriS4,
     fmri,
     oro.dicom
@@ -123,6 +123,7 @@ Collate:
     'generated.R'
     'hist_un0.R'
     'hkey_un0.R'
+    'niftiImage_class.R'
     'nii2oro.R'
     'oro2nii.R'
     'omax.R'
@@ -142,5 +143,6 @@ Collate:
     'voxres.R'
     'img_length.R'
     'zzz.R'
+    'zzz_niftiImage.R'
 RoxygenNote: 6.1.0
 Encoding: UTF-8

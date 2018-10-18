@@ -32,7 +32,9 @@ setMethod("img_data", "anlz", function(object) { object@".Data" })
 #' @export
 setMethod("img_data", "character", function(object) { 
   object = readNifti(object)
-  as.array(object)
+  object = array(object)
+  object = as.array(object)
+  as(object, "array")
   })
 #' @rdname img_data-methods
 #' @aliases img_data,ANY-method
@@ -40,7 +42,9 @@ setMethod("img_data", "character", function(object) {
 #' @export
 setMethod("img_data", "ANY", function(object) { 
   object = RNifti::retrieveNifti(object)
-  as.array(object)
+  object = array(object)
+  object = as.array(object)
+  as(object, "array")
 })
 
 #' @rdname img_data-methods
