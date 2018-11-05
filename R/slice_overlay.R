@@ -87,6 +87,9 @@ slice_overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
 setGeneric("slice_overlay", function(x, y, ...) standardGeneric("slice_overlay"))
 #' @export
 #' @rdname slice_overlay-methods
+setMethod("slice_overlay", signature(x="nifti", y="missing"), slice_overlay.nifti)
+#' @export
+#' @rdname slice_overlay-methods
 setMethod("slice_overlay", signature(x="nifti", y="nifti"), slice_overlay.nifti)
 #' @export
 #' @rdname slice_overlay-methods

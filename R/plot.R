@@ -250,7 +250,9 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
            } else {
              x@.Data <- aperm(x, c(1,3,2,4))
            }
-           y@.Data <- aperm(y, c(1,3,2))
+           if (!missing(y)) {
+             y@.Data <- aperm(y, c(1,3,2))
+           }
            aspect <- x@pixdim[4] / x@pixdim[2]
          },
          "sagittal" = {
@@ -259,7 +261,9 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
            } else {
              x@.Data <- aperm(x, c(2,3,1,4))
            }
-           y@.Data <- aperm(y, c(2,3,1))
+           if (!missing(y)) {
+             y@.Data <- aperm(y, c(2,3,1))
+           }
            aspect <- x@pixdim[4] / x@pixdim[3]
          },
          stop(paste("Orthogonal plane", plane[1], "is not valid.")))
@@ -275,11 +279,13 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
                   "Likely set NA.x = FALSE."))
     }
   }  
-  if (NA.y) {
-    y[ y == 0 ] = NA
-    if (all(is.na(y))) {
-      stop(paste0("y has no non-zero values and NA.y = TRUE.  ", 
-                  "Either remove the overlay, or set NA.y = FALSE"))
+  if (!missing(y)) {
+    if (NA.y) {
+      y[ y == 0 ] = NA
+      if (all(is.na(y))) {
+        stop(paste0("y has no non-zero values and NA.y = TRUE.  ", 
+                    "Either remove the overlay, or set NA.y = FALSE"))
+      }
     }
   }
   ## set dimensions
@@ -306,13 +312,15 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
                     length=length(col.x)-1),
                 max(x, zlim.x, na.rm=TRUE))
   ## check for z-limits in y; use internal by default
-  if (is.null(zlim.y)) {
-    zlim.y <- c(y@"cal_min", y@"cal_max")
-    if (any(!is.finite(zlim.y)) || diff(zlim.y) == 0) {
-      zlim.y <- c(y@"glmin", y@"glmax")
-    }
-    if (any(!is.finite(zlim.y)) || diff(zlim.y) == 0) {
-      zlim.y <- range(y, na.rm=TRUE)
+  if (!missing(y)) {
+    if (is.null(zlim.y)) {
+      zlim.y <- c(y@"cal_min", y@"cal_max")
+      if (any(!is.finite(zlim.y)) || diff(zlim.y) == 0) {
+        zlim.y <- c(y@"glmin", y@"glmax")
+      }
+      if (any(!is.finite(zlim.y)) || diff(zlim.y) == 0) {
+        zlim.y <- range(y, na.rm=TRUE)
+      }
     }
   }
   if (plot.type[1] == "multiple") {
@@ -331,7 +339,9 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
       graphics::image(1:X, 1:Y, x[,,z], col=col.x, breaks=breaks.x,
                       zlim=zlim.x, asp=aspect, axes=axes, xlab=xlab,
                       ylab=ylab, ...)
-      graphics::image(1:X, 1:Y, y[,,z], col=col.y, zlim=zlim.y, add=TRUE)
+      if (!missing(y)) {
+        graphics::image(1:X, 1:Y, y[,,z], col=col.y, zlim=zlim.y, add=TRUE)
+      }
     }
   } else { # four-dimensional array
     if (w < 1 || w > W) {
@@ -341,7 +351,9 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
       graphics::image(1:X, 1:Y, x[,,z,w], col=col.x, breaks=breaks.x,
                       zlim=zlim.x, asp=aspect, axes=axes, xlab=xlab,
                       ylab=ylab, ...)
-      graphics::image(1:X, 1:Y, y[,,z], col=col.y, zlim=zlim.y, add=TRUE)
+      if (!missing(y)) {
+        graphics::image(1:X, 1:Y, y[,,z], col=col.y, zlim=zlim.y, add=TRUE)
+      }
     }
   }
   par(oldpar)
@@ -350,6 +362,9 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
 #' @export
 #' @rdname overlay-methods
 setGeneric("overlay", function(x, y, ...) standardGeneric("overlay"))
+#' @export
+#' @rdname overlay-methods
+setMethod("overlay", signature(x="nifti", y="missing"), overlay.nifti)
 #' @export
 #' @rdname overlay-methods
 setMethod("overlay", signature(x="nifti", y="nifti"), overlay.nifti)

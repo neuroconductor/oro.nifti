@@ -446,7 +446,7 @@ nifti_header <- function(
       # irrelevant scaling
       # notice the not in front of the phrase
       if  ( !(nim@"scl_slope" == 1L & nim@"scl_inter" == 0L) ) {
-        warning(paste("scl_slope =", nim@"scl_slope,", 
+        warning(paste("scl_slope =", nim@"scl_slope", 
                       "scl_inter =", nim@"scl_inter", 
                       "and data must be rescaled."))
         
