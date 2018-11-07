@@ -22,11 +22,11 @@ setGeneric("dim_info", function(object) standardGeneric("dim_info"))
 #' @rdname dim_info-methods
 #' @aliases dim_info,nifti-method
 #' @export
-setMethod("dim_info", "nifti", function(object) { object@"dim_info" })
+setMethod("dim_info", "nifti", function(object) object@"dim_info")
 #' @rdname dim_info-methods
 #' @aliases dim_info<- 
 #' @export
-setGeneric("dim_info<-", function(object, value) { standardGeneric("dim_info<-") })
+setGeneric("dim_info<-", function(object, value) standardGeneric("dim_info<-"))
 #' @rdname dim_info-methods
 #' @aliases dim_info<-,nifti-method
 #' @export

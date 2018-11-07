@@ -22,15 +22,15 @@ setGeneric("vox_offset", function(object) standardGeneric("vox_offset"))
 #' @rdname vox_offset-methods
 #' @aliases vox_offset,nifti-method
 #' @export
-setMethod("vox_offset", "nifti", function(object) { object@"vox_offset" })
+setMethod("vox_offset", "nifti", function(object) object@"vox_offset")
 #' @rdname vox_offset-methods
 #' @aliases vox_offset,anlz-method
 #' @export
-setMethod("vox_offset", "anlz", function(object) { object@"vox_offset" })
+setMethod("vox_offset", "anlz", function(object) object@"vox_offset")
 #' @rdname vox_offset-methods
 #' @aliases vox_offset<- 
 #' @export
-setGeneric("vox_offset<-", function(object, value) { standardGeneric("vox_offset<-") })
+setGeneric("vox_offset<-", function(object, value) standardGeneric("vox_offset<-"))
 #' @rdname vox_offset-methods
 #' @aliases vox_offset<-,nifti-method
 #' @export
@@ -67,15 +67,15 @@ setGeneric("vox.offset", function(object) standardGeneric("vox.offset"))
 #' @rdname vox_offset-methods
 #' @aliases vox.offset,nifti-method
 #' @export
-setMethod("vox.offset", "nifti", function(object) { object@"vox_offset" })
+setMethod("vox.offset", "nifti", function(object) object@"vox_offset")
 #' @rdname vox_offset-methods
 #' @aliases vox.offset,anlz-method
 #' @export
-setMethod("vox.offset", "anlz", function(object) { object@"vox_offset" })
+setMethod("vox.offset", "anlz", function(object) object@"vox_offset")
 #' @rdname vox_offset-methods
 #' @aliases vox.offset<- 
 #' @export
-setGeneric("vox.offset<-", function(object, value) { standardGeneric("vox.offset<-") })
+setGeneric("vox.offset<-", function(object, value) standardGeneric("vox.offset<-"))
 #' @rdname vox_offset-methods
 #' @aliases vox.offset<-,nifti-method
 #' @export

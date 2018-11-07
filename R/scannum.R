@@ -22,11 +22,11 @@ setGeneric("scannum", function(object) standardGeneric("scannum"))
 #' @rdname scannum-methods
 #' @aliases scannum,anlz-method
 #' @export
-setMethod("scannum", "anlz", function(object) { object@"scannum" })
+setMethod("scannum", "anlz", function(object) object@"scannum")
 #' @rdname scannum-methods
 #' @aliases scannum<- 
 #' @export
-setGeneric("scannum<-", function(object, value) { standardGeneric("scannum<-") })
+setGeneric("scannum<-", function(object, value) standardGeneric("scannum<-"))
 #' @rdname scannum-methods
 #' @aliases scannum<-,anlz-method
 #' @export

@@ -22,11 +22,11 @@ setGeneric("omin", function(object) standardGeneric("omin"))
 #' @rdname omin-methods
 #' @aliases omin,anlz-method
 #' @export
-setMethod("omin", "anlz", function(object) { object@"omin" })
+setMethod("omin", "anlz", function(object) object@"omin")
 #' @rdname omin-methods
 #' @aliases omin<- 
 #' @export
-setGeneric("omin<-", function(object, value) { standardGeneric("omin<-") })
+setGeneric("omin<-", function(object, value) standardGeneric("omin<-"))
 #' @rdname omin-methods
 #' @aliases omin<-,anlz-method
 #' @export

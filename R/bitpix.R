@@ -22,15 +22,15 @@ setGeneric("bitpix", function(object) standardGeneric("bitpix"))
 #' @rdname bitpix-methods
 #' @aliases bitpix,nifti-method
 #' @export
-setMethod("bitpix", "nifti", function(object) { object@"bitpix" })
+setMethod("bitpix", "nifti", function(object) object@"bitpix")
 #' @rdname bitpix-methods
 #' @aliases bitpix,anlz-method
 #' @export
-setMethod("bitpix", "anlz", function(object) { object@"bitpix" })
+setMethod("bitpix", "anlz", function(object) object@"bitpix")
 #' @rdname bitpix-methods
 #' @aliases bitpix<- 
 #' @export
-setGeneric("bitpix<-", function(object, value) { standardGeneric("bitpix<-") })
+setGeneric("bitpix<-", function(object, value) standardGeneric("bitpix<-"))
 #' @rdname bitpix-methods
 #' @aliases bitpix<-,nifti-method
 #' @export

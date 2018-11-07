@@ -22,11 +22,11 @@ setGeneric("hkey_un0", function(object) standardGeneric("hkey_un0"))
 #' @rdname hkey_un0-methods
 #' @aliases hkey_un0,anlz-method
 #' @export
-setMethod("hkey_un0", "anlz", function(object) { object@"hkey_un0" })
+setMethod("hkey_un0", "anlz", function(object) object@"hkey_un0")
 #' @rdname hkey_un0-methods
 #' @aliases hkey_un0<- 
 #' @export
-setGeneric("hkey_un0<-", function(object, value) { standardGeneric("hkey_un0<-") })
+setGeneric("hkey_un0<-", function(object, value) standardGeneric("hkey_un0<-"))
 #' @rdname hkey_un0-methods
 #' @aliases hkey_un0<-,anlz-method
 #' @export
@@ -47,11 +47,11 @@ setGeneric("hkey.un0", function(object) standardGeneric("hkey.un0"))
 #' @rdname hkey_un0-methods
 #' @aliases hkey.un0,anlz-method
 #' @export
-setMethod("hkey.un0", "anlz", function(object) { object@"hkey_un0" })
+setMethod("hkey.un0", "anlz", function(object) object@"hkey_un0")
 #' @rdname hkey_un0-methods
 #' @aliases hkey.un0<- 
 #' @export
-setGeneric("hkey.un0<-", function(object, value) { standardGeneric("hkey.un0<-") })
+setGeneric("hkey.un0<-", function(object, value) standardGeneric("hkey.un0<-"))
 #' @rdname hkey_un0-methods
 #' @aliases hkey.un0<-,anlz-method
 #' @export

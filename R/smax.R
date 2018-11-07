@@ -22,11 +22,11 @@ setGeneric("smax", function(object) standardGeneric("smax"))
 #' @rdname smax-methods
 #' @aliases smax,anlz-method
 #' @export
-setMethod("smax", "anlz", function(object) { object@"smax" })
+setMethod("smax", "anlz", function(object) object@"smax")
 #' @rdname smax-methods
 #' @aliases smax<- 
 #' @export
-setGeneric("smax<-", function(object, value) { standardGeneric("smax<-") })
+setGeneric("smax<-", function(object, value) standardGeneric("smax<-"))
 #' @rdname smax-methods
 #' @aliases smax<-,anlz-method
 #' @export

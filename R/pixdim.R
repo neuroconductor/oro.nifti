@@ -31,7 +31,7 @@ setGeneric("pixdim", function(object) standardGeneric("pixdim"))
 #' @rdname pixdim-methods
 #' @aliases pixdim,nifti-method
 #' @export
-setMethod("pixdim", "nifti", function(object) { object@"pixdim" })
+setMethod("pixdim", "nifti", function(object) object@"pixdim")
 #' @rdname pixdim-methods
 #' @aliases pixdim,ANY-method
 #' @export
@@ -47,11 +47,11 @@ setMethod("pixdim", "ANY", function(object) {
 #' @rdname pixdim-methods
 #' @aliases pixdim,anlz-method
 #' @export
-setMethod("pixdim", "anlz", function(object) { object@"pixdim" })
+setMethod("pixdim", "anlz", function(object) object@"pixdim")
 #' @rdname pixdim-methods
 #' @aliases pixdim<- 
 #' @export
-setGeneric("pixdim<-", function(object, value) { standardGeneric("pixdim<-") })
+setGeneric("pixdim<-", function(object, value) standardGeneric("pixdim<-"))
 #' @rdname pixdim-methods
 #' @aliases pixdim<-,nifti-method
 #' @export

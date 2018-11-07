@@ -22,11 +22,11 @@ setGeneric("extender", function(object) standardGeneric("extender"))
 #' @rdname extender-methods
 #' @aliases extender,nifti-method
 #' @export
-setMethod("extender", "nifti", function(object) { object@"extender" })
+setMethod("extender", "nifti", function(object) object@"extender")
 #' @rdname extender-methods
 #' @aliases extender<- 
 #' @export
-setGeneric("extender<-", function(object, value) { standardGeneric("extender<-") })
+setGeneric("extender<-", function(object, value) standardGeneric("extender<-"))
 #' @rdname extender-methods
 #' @aliases extender<-,nifti-method
 #' @export

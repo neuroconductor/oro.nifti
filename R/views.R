@@ -22,11 +22,11 @@ setGeneric("views", function(object) standardGeneric("views"))
 #' @rdname views-methods
 #' @aliases views,anlz-method
 #' @export
-setMethod("views", "anlz", function(object) { object@"views" })
+setMethod("views", "anlz", function(object) object@"views")
 #' @rdname views-methods
 #' @aliases views<- 
 #' @export
-setGeneric("views<-", function(object, value) { standardGeneric("views<-") })
+setGeneric("views<-", function(object, value) standardGeneric("views<-"))
 #' @rdname views-methods
 #' @aliases views<-,anlz-method
 #' @export

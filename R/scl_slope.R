@@ -22,11 +22,11 @@ setGeneric("scl_slope", function(object) standardGeneric("scl_slope"))
 #' @rdname scl_slope-methods
 #' @aliases scl_slope,nifti-method
 #' @export
-setMethod("scl_slope", "nifti", function(object) { object@"scl_slope" })
+setMethod("scl_slope", "nifti", function(object) object@"scl_slope")
 #' @rdname scl_slope-methods
 #' @aliases scl_slope<- 
 #' @export
-setGeneric("scl_slope<-", function(object, value) { standardGeneric("scl_slope<-") })
+setGeneric("scl_slope<-", function(object, value) standardGeneric("scl_slope<-"))
 #' @rdname scl_slope-methods
 #' @aliases scl_slope<-,nifti-method
 #' @export
@@ -50,11 +50,11 @@ setGeneric("scl.slope", function(object) standardGeneric("scl.slope"))
 #' @rdname scl_slope-methods
 #' @aliases scl.slope,nifti-method
 #' @export
-setMethod("scl.slope", "nifti", function(object) { object@"scl_slope" })
+setMethod("scl.slope", "nifti", function(object) object@"scl_slope")
 #' @rdname scl_slope-methods
 #' @aliases scl.slope<- 
 #' @export
-setGeneric("scl.slope<-", function(object, value) { standardGeneric("scl.slope<-") })
+setGeneric("scl.slope<-", function(object, value) standardGeneric("scl.slope<-"))
 #' @rdname scl_slope-methods
 #' @aliases scl.slope<-,nifti-method
 #' @export

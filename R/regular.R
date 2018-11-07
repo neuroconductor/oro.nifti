@@ -22,15 +22,15 @@ setGeneric("regular", function(object) standardGeneric("regular"))
 #' @rdname regular-methods
 #' @aliases regular,nifti-method
 #' @export
-setMethod("regular", "nifti", function(object) { object@"regular" })
+setMethod("regular", "nifti", function(object) object@"regular")
 #' @rdname regular-methods
 #' @aliases regular,anlz-method
 #' @export
-setMethod("regular", "anlz", function(object) { object@"regular" })
+setMethod("regular", "anlz", function(object) object@"regular")
 #' @rdname regular-methods
 #' @aliases regular<- 
 #' @export
-setGeneric("regular<-", function(object, value) { standardGeneric("regular<-") })
+setGeneric("regular<-", function(object, value) standardGeneric("regular<-"))
 #' @rdname regular-methods
 #' @aliases regular<-,nifti-method
 #' @export

@@ -22,11 +22,11 @@ setGeneric("slice_code", function(object) standardGeneric("slice_code"))
 #' @rdname slice_code-methods
 #' @aliases slice_code,nifti-method
 #' @export
-setMethod("slice_code", "nifti", function(object) { object@"slice_code" })
+setMethod("slice_code", "nifti", function(object) object@"slice_code")
 #' @rdname slice_code-methods
 #' @aliases slice_code<- 
 #' @export
-setGeneric("slice_code<-", function(object, value) { standardGeneric("slice_code<-") })
+setGeneric("slice_code<-", function(object, value) standardGeneric("slice_code<-"))
 #' @rdname slice_code-methods
 #' @aliases slice_code<-,nifti-method
 #' @export
@@ -50,11 +50,11 @@ setGeneric("slice.code", function(object) standardGeneric("slice.code"))
 #' @rdname slice_code-methods
 #' @aliases slice.code,nifti-method
 #' @export
-setMethod("slice.code", "nifti", function(object) { object@"slice_code" })
+setMethod("slice.code", "nifti", function(object) object@"slice_code")
 #' @rdname slice_code-methods
 #' @aliases slice.code<- 
 #' @export
-setGeneric("slice.code<-", function(object, value) { standardGeneric("slice.code<-") })
+setGeneric("slice.code<-", function(object, value) standardGeneric("slice.code<-"))
 #' @rdname slice_code-methods
 #' @aliases slice.code<-,nifti-method
 #' @export

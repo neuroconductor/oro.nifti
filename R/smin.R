@@ -22,11 +22,11 @@ setGeneric("smin", function(object) standardGeneric("smin"))
 #' @rdname smin-methods
 #' @aliases smin,anlz-method
 #' @export
-setMethod("smin", "anlz", function(object) { object@"smin" })
+setMethod("smin", "anlz", function(object) object@"smin")
 #' @rdname smin-methods
 #' @aliases smin<- 
 #' @export
-setGeneric("smin<-", function(object, value) { standardGeneric("smin<-") })
+setGeneric("smin<-", function(object, value) standardGeneric("smin<-"))
 #' @rdname smin-methods
 #' @aliases smin<-,anlz-method
 #' @export

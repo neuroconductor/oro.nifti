@@ -22,11 +22,11 @@ setGeneric("generated", function(object) standardGeneric("generated"))
 #' @rdname generated-methods
 #' @aliases generated,anlz-method
 #' @export
-setMethod("generated", "anlz", function(object) { object@"generated" })
+setMethod("generated", "anlz", function(object) object@"generated")
 #' @rdname generated-methods
 #' @aliases generated<- 
 #' @export
-setGeneric("generated<-", function(object, value) { standardGeneric("generated<-") })
+setGeneric("generated<-", function(object, value) standardGeneric("generated<-"))
 #' @rdname generated-methods
 #' @aliases generated<-,anlz-method
 #' @export

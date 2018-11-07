@@ -22,11 +22,11 @@ setGeneric("magic", function(object) standardGeneric("magic"))
 #' @rdname magic-methods
 #' @aliases magic,nifti-method
 #' @export
-setMethod("magic", "nifti", function(object) { object@"magic" })
+setMethod("magic", "nifti", function(object) object@"magic")
 #' @rdname magic-methods
 #' @aliases magic<- 
 #' @export
-setGeneric("magic<-", function(object, value) { standardGeneric("magic<-") })
+setGeneric("magic<-", function(object, value) standardGeneric("magic<-"))
 #' @rdname magic-methods
 #' @aliases magic<-,nifti-method
 #' @export

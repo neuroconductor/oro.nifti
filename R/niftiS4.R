@@ -573,7 +573,7 @@ nifti <- function(img=array(0, dim=rep(1,4)), dim, datatype=2,
 #' @keywords methods
 #' @export
 #' @rdname audit_trail-methods
-setGeneric("audit.trail", function(object) { standardGeneric("audit.trail") })
+setGeneric("audit.trail", function(object) standardGeneric("audit.trail"))
 #' @export
 #' @rdname audit_trail-methods
 #' @aliases audit.trail,nifti-method
@@ -589,7 +589,7 @@ setMethod("audit.trail", "nifti",
 #' @export
 #' @rdname audit_trail-methods
 setGeneric("audit.trail<-",
-           function(object, value) { standardGeneric("audit.trail<-") })
+           function(object, value) standardGeneric("audit.trail<-") )
 #' @export
 #' @rdname audit_trail-methods
 setReplaceMethod("audit.trail", "nifti",
@@ -705,7 +705,7 @@ setReplaceMethod("[",
 #' sform(mniLR)
 #' @export
 #' @rdname orientation-methods
-setGeneric("sform", function(object) { standardGeneric("sform") })
+setGeneric("sform", function(object) standardGeneric("sform"))
 #' @export
 #' @rdname orientation-methods
 setMethod("sform", "nifti",
@@ -719,7 +719,7 @@ setMethod("sform", "nifti",
 #############################################################################
 #' @export
 #' @rdname orientation-methods
-setGeneric("qform", function(object) { standardGeneric("qform") })
+setGeneric("qform", function(object) standardGeneric("qform"))
 #' @export
 #' @rdname orientation-methods
 setMethod("qform", "nifti", function(object) { quaternion2mat44(object) })

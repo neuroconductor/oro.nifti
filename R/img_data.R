@@ -22,11 +22,11 @@ setGeneric("img_data", function(object) standardGeneric("img_data"))
 #' @rdname img_data-methods
 #' @aliases img_data,nifti-method
 #' @export
-setMethod("img_data", "nifti", function(object) { object@".Data" })
+setMethod("img_data", "nifti", function(object) object@".Data")
 #' @rdname img_data-methods
 #' @aliases img_data,anlz-method
 #' @export
-setMethod("img_data", "anlz", function(object) { object@".Data" })
+setMethod("img_data", "anlz", function(object) object@".Data")
 #' @rdname img_data-methods
 #' @aliases img_data,character-method
 #' @export
@@ -50,7 +50,7 @@ setMethod("img_data", "ANY", function(object) {
 #' @rdname img_data-methods
 #' @aliases img_data<- 
 #' @export
-setGeneric("img_data<-", function(object, value) { standardGeneric("img_data<-") })
+setGeneric("img_data<-", function(object, value) standardGeneric("img_data<-"))
 #' @rdname img_data-methods
 #' @aliases img_data<-,nifti-method
 #' @export

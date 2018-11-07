@@ -31,15 +31,15 @@ setGeneric("cal_min", function(object) standardGeneric("cal_min"))
 #' @rdname cal_min-methods
 #' @aliases cal_min,nifti-method
 #' @export
-setMethod("cal_min", "nifti", function(object) { object@"cal_min" })
+setMethod("cal_min", "nifti", function(object) object@"cal_min")
 #' @rdname cal_min-methods
 #' @aliases cal_min,anlz-method
 #' @export
-setMethod("cal_min", "anlz", function(object) { object@"cal_min" })
+setMethod("cal_min", "anlz", function(object) object@"cal_min")
 #' @rdname cal_min-methods
 #' @aliases cal_min<- 
 #' @export
-setGeneric("cal_min<-", function(object, value) { standardGeneric("cal_min<-") })
+setGeneric("cal_min<-", function(object, value) standardGeneric("cal_min<-"))
 #' @rdname cal_min-methods
 #' @aliases cal_min<-,nifti-method
 #' @export
@@ -76,15 +76,15 @@ setGeneric("cal.min", function(object) standardGeneric("cal.min"))
 #' @rdname cal_min-methods
 #' @aliases cal.min,nifti-method
 #' @export
-setMethod("cal.min", "nifti", function(object) { object@"cal_min" })
+setMethod("cal.min", "nifti", function(object) object@"cal_min")
 #' @rdname cal_min-methods
 #' @aliases cal.min,anlz-method
 #' @export
-setMethod("cal.min", "anlz", function(object) { object@"cal_min" })
+setMethod("cal.min", "anlz", function(object) object@"cal_min")
 #' @rdname cal_min-methods
 #' @aliases cal.min<- 
 #' @export
-setGeneric("cal.min<-", function(object, value) { standardGeneric("cal.min<-") })
+setGeneric("cal.min<-", function(object, value) standardGeneric("cal.min<-"))
 #' @rdname cal_min-methods
 #' @aliases cal.min<-,nifti-method
 #' @export

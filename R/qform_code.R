@@ -22,11 +22,11 @@ setGeneric("qform_code", function(object) standardGeneric("qform_code"))
 #' @rdname qform_code-methods
 #' @aliases qform_code,nifti-method
 #' @export
-setMethod("qform_code", "nifti", function(object) { object@"qform_code" })
+setMethod("qform_code", "nifti", function(object) object@"qform_code")
 #' @rdname qform_code-methods
 #' @aliases qform_code<- 
 #' @export
-setGeneric("qform_code<-", function(object, value) { standardGeneric("qform_code<-") })
+setGeneric("qform_code<-", function(object, value) standardGeneric("qform_code<-"))
 #' @rdname qform_code-methods
 #' @aliases qform_code<-,nifti-method
 #' @export
@@ -50,11 +50,11 @@ setGeneric("qform.code", function(object) standardGeneric("qform.code"))
 #' @rdname qform_code-methods
 #' @aliases qform.code,nifti-method
 #' @export
-setMethod("qform.code", "nifti", function(object) { object@"qform_code" })
+setMethod("qform.code", "nifti", function(object) object@"qform_code")
 #' @rdname qform_code-methods
 #' @aliases qform.code<- 
 #' @export
-setGeneric("qform.code<-", function(object, value) { standardGeneric("qform.code<-") })
+setGeneric("qform.code<-", function(object, value) standardGeneric("qform.code<-"))
 #' @rdname qform_code-methods
 #' @aliases qform.code<-,nifti-method
 #' @export

@@ -22,11 +22,11 @@ setGeneric("quatern_c", function(object) standardGeneric("quatern_c"))
 #' @rdname quatern_c-methods
 #' @aliases quatern_c,nifti-method
 #' @export
-setMethod("quatern_c", "nifti", function(object) { object@"quatern_c" })
+setMethod("quatern_c", "nifti", function(object) object@"quatern_c")
 #' @rdname quatern_c-methods
 #' @aliases quatern_c<- 
 #' @export
-setGeneric("quatern_c<-", function(object, value) { standardGeneric("quatern_c<-") })
+setGeneric("quatern_c<-", function(object, value) standardGeneric("quatern_c<-"))
 #' @rdname quatern_c-methods
 #' @aliases quatern_c<-,nifti-method
 #' @export
@@ -50,11 +50,11 @@ setGeneric("quatern.c", function(object) standardGeneric("quatern.c"))
 #' @rdname quatern_c-methods
 #' @aliases quatern.c,nifti-method
 #' @export
-setMethod("quatern.c", "nifti", function(object) { object@"quatern_c" })
+setMethod("quatern.c", "nifti", function(object) object@"quatern_c")
 #' @rdname quatern_c-methods
 #' @aliases quatern.c<- 
 #' @export
-setGeneric("quatern.c<-", function(object, value) { standardGeneric("quatern.c<-") })
+setGeneric("quatern.c<-", function(object, value) standardGeneric("quatern.c<-"))
 #' @rdname quatern_c-methods
 #' @aliases quatern.c<-,nifti-method
 #' @export
