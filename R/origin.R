@@ -22,7 +22,7 @@ setGeneric("origin", function(object) standardGeneric("origin"))
 #' @rdname origin-methods
 #' @aliases origin,anlz-method
 #' @export
-setMethod("origin", "anlz", function(object) { object@"origin" })
+setMethod("origin", "anlz", function(object) object@"origin")
 #' @rdname origin-methods
 #' @aliases origin,ANY-method
 #' @export
@@ -36,7 +36,7 @@ setMethod("origin", "ANY", function(object) {
 #' @rdname origin-methods
 #' @aliases origin<- 
 #' @export
-setGeneric("origin<-", function(object, value) { standardGeneric("origin<-") })
+setGeneric("origin<-", function(object, value) standardGeneric("origin<-"))
 #' @rdname origin-methods
 #' @aliases origin<-,anlz-method
 #' @export

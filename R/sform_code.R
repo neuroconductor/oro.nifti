@@ -22,11 +22,11 @@ setGeneric("sform_code", function(object) standardGeneric("sform_code"))
 #' @rdname sform_code-methods
 #' @aliases sform_code,nifti-method
 #' @export
-setMethod("sform_code", "nifti", function(object) { object@"sform_code" })
+setMethod("sform_code", "nifti", function(object) object@"sform_code")
 #' @rdname sform_code-methods
 #' @aliases sform_code<- 
 #' @export
-setGeneric("sform_code<-", function(object, value) { standardGeneric("sform_code<-") })
+setGeneric("sform_code<-", function(object, value) standardGeneric("sform_code<-"))
 #' @rdname sform_code-methods
 #' @aliases sform_code<-,nifti-method
 #' @export
@@ -50,11 +50,11 @@ setGeneric("sform.code", function(object) standardGeneric("sform.code"))
 #' @rdname sform_code-methods
 #' @aliases sform.code,nifti-method
 #' @export
-setMethod("sform.code", "nifti", function(object) { object@"sform_code" })
+setMethod("sform.code", "nifti", function(object) object@"sform_code")
 #' @rdname sform_code-methods
 #' @aliases sform.code<- 
 #' @export
-setGeneric("sform.code<-", function(object, value) { standardGeneric("sform.code<-") })
+setGeneric("sform.code<-", function(object, value) standardGeneric("sform.code<-"))
 #' @rdname sform_code-methods
 #' @aliases sform.code<-,nifti-method
 #' @export

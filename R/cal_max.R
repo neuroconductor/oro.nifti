@@ -31,15 +31,15 @@ setGeneric("cal_max", function(object) standardGeneric("cal_max"))
 #' @rdname cal_max-methods
 #' @aliases cal_max,nifti-method
 #' @export
-setMethod("cal_max", "nifti", function(object) { object@"cal_max" })
+setMethod("cal_max", "nifti", function(object) object@"cal_max")
 #' @rdname cal_max-methods
 #' @aliases cal_max,anlz-method
 #' @export
-setMethod("cal_max", "anlz", function(object) { object@"cal_max" })
+setMethod("cal_max", "anlz", function(object) object@"cal_max")
 #' @rdname cal_max-methods
 #' @aliases cal_max<- 
 #' @export
-setGeneric("cal_max<-", function(object, value) { standardGeneric("cal_max<-") })
+setGeneric("cal_max<-", function(object, value) standardGeneric("cal_max<-"))
 #' @rdname cal_max-methods
 #' @aliases cal_max<-,nifti-method
 #' @export
@@ -76,15 +76,15 @@ setGeneric("cal.max", function(object) standardGeneric("cal.max"))
 #' @rdname cal_max-methods
 #' @aliases cal.max,nifti-method
 #' @export
-setMethod("cal.max", "nifti", function(object) { object@"cal_max" })
+setMethod("cal.max", "nifti", function(object) object@"cal_max")
 #' @rdname cal_max-methods
 #' @aliases cal.max,anlz-method
 #' @export
-setMethod("cal.max", "anlz", function(object) { object@"cal_max" })
+setMethod("cal.max", "anlz", function(object) object@"cal_max")
 #' @rdname cal_max-methods
 #' @aliases cal.max<- 
 #' @export
-setGeneric("cal.max<-", function(object, value) { standardGeneric("cal.max<-") })
+setGeneric("cal.max<-", function(object, value) standardGeneric("cal.max<-"))
 #' @rdname cal_max-methods
 #' @aliases cal.max<-,nifti-method
 #' @export

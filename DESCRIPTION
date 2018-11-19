@@ -1,5 +1,5 @@
 Package: oro.nifti
-Version: 0.9.9
+Version: 0.9.11
 Title: Rigorous - 'NIfTI' + 'ANALYZE' + 'AFNI' : Input / Output
 Authors@R: c(person("Brandon", "Whitcher", role = c("aut", "cre"),
   email = "bwhitcher@gmail.com"),
@@ -17,7 +17,9 @@ Depends:
 Suggests:
     XML,
     testthat,
-    covr
+    covr,
+    knitr,
+    rmarkdown
 Imports:
     stats,
     bitops,
@@ -146,3 +148,4 @@ Collate:
     'zzz_niftiImage.R'
 RoxygenNote: 6.1.0
 Encoding: UTF-8
+

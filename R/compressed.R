@@ -22,11 +22,11 @@ setGeneric("compressed", function(object) standardGeneric("compressed"))
 #' @rdname compressed-methods
 #' @aliases compressed,anlz-method
 #' @export
-setMethod("compressed", "anlz", function(object) { object@"compressed" })
+setMethod("compressed", "anlz", function(object) object@"compressed")
 #' @rdname compressed-methods
 #' @aliases compressed<- 
 #' @export
-setGeneric("compressed<-", function(object, value) { standardGeneric("compressed<-") })
+setGeneric("compressed<-", function(object, value) standardGeneric("compressed<-"))
 #' @rdname compressed-methods
 #' @aliases compressed<-,anlz-method
 #' @export

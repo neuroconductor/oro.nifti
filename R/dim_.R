@@ -22,15 +22,15 @@ setGeneric("dim_", function(object) standardGeneric("dim_"))
 #' @rdname dim_-methods
 #' @aliases dim_,nifti-method
 #' @export
-setMethod("dim_", "nifti", function(object) { object@"dim_" })
+setMethod("dim_", "nifti", function(object) object@"dim_")
 #' @rdname dim_-methods
 #' @aliases dim_,anlz-method
 #' @export
-setMethod("dim_", "anlz", function(object) { object@"dim_" })
+setMethod("dim_", "anlz", function(object) object@"dim_")
 #' @rdname dim_-methods
 #' @aliases dim_<- 
 #' @export
-setGeneric("dim_<-", function(object, value) { standardGeneric("dim_<-") })
+setGeneric("dim_<-", function(object, value) standardGeneric("dim_<-"))
 #' @rdname dim_-methods
 #' @aliases dim_<-,nifti-method
 #' @export

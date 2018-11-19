@@ -22,11 +22,11 @@ setGeneric("exp_time", function(object) standardGeneric("exp_time"))
 #' @rdname exp_time-methods
 #' @aliases exp_time,anlz-method
 #' @export
-setMethod("exp_time", "anlz", function(object) { object@"exp_time" })
+setMethod("exp_time", "anlz", function(object) object@"exp_time")
 #' @rdname exp_time-methods
 #' @aliases exp_time<- 
 #' @export
-setGeneric("exp_time<-", function(object, value) { standardGeneric("exp_time<-") })
+setGeneric("exp_time<-", function(object, value) standardGeneric("exp_time<-"))
 #' @rdname exp_time-methods
 #' @aliases exp_time<-,anlz-method
 #' @export

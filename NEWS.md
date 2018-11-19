@@ -1,3 +1,10 @@
+# oro.nifti 0.9.11
+
+* Fixed bug in scale and slope parameter.
+* Added specific imports for `RNifti` objects.
+* Removed `{` and `}` for "expensive" S4 overloading according to Hadley book.
+* `voxdim` for `RNifti` now works.
+
 # oro.nifti 0.9.5
 
 * Fixed niftiExtensions to write out nifti files and not mess up header.

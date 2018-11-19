@@ -22,11 +22,11 @@ setGeneric("xyzt_units", function(object) standardGeneric("xyzt_units"))
 #' @rdname xyzt_units-methods
 #' @aliases xyzt_units,nifti-method
 #' @export
-setMethod("xyzt_units", "nifti", function(object) { object@"xyzt_units" })
+setMethod("xyzt_units", "nifti", function(object) object@"xyzt_units")
 #' @rdname xyzt_units-methods
 #' @aliases xyzt_units<- 
 #' @export
-setGeneric("xyzt_units<-", function(object, value) { standardGeneric("xyzt_units<-") })
+setGeneric("xyzt_units<-", function(object, value) standardGeneric("xyzt_units<-"))
 #' @rdname xyzt_units-methods
 #' @aliases xyzt_units<-,nifti-method
 #' @export
@@ -50,11 +50,11 @@ setGeneric("xyzt.units", function(object) standardGeneric("xyzt.units"))
 #' @rdname xyzt_units-methods
 #' @aliases xyzt.units,nifti-method
 #' @export
-setMethod("xyzt.units", "nifti", function(object) { object@"xyzt_units" })
+setMethod("xyzt.units", "nifti", function(object) object@"xyzt_units")
 #' @rdname xyzt_units-methods
 #' @aliases xyzt.units<- 
 #' @export
-setGeneric("xyzt.units<-", function(object, value) { standardGeneric("xyzt.units<-") })
+setGeneric("xyzt.units<-", function(object, value) standardGeneric("xyzt.units<-"))
 #' @rdname xyzt_units-methods
 #' @aliases xyzt.units<-,nifti-method
 #' @export

@@ -50,6 +50,8 @@
 #' @references AFNI\cr
 #' \url{http://afni.nimh.nih.gov/pub/dist/src/README.attributes}
 #' @keywords classes
+#' @export
+#' @rdname afni-class
 #' @examples
 #' 
 #' showClass("afni")
@@ -121,8 +123,6 @@
 #'   with explicit coerce.\cr
 #'   Class \code{"\linkS4class{vector}"}, by class \dQuote{array}, distance 5,
 #'   with explicit test and coerce.
-#'   @export
-#'   @rdname afni-class
 setClass("afni", 
          representation(
            ## Mandatory attributes                 # number in R index count

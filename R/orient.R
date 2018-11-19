@@ -22,11 +22,11 @@ setGeneric("orient", function(object) standardGeneric("orient"))
 #' @rdname orient-methods
 #' @aliases orient,anlz-method
 #' @export
-setMethod("orient", "anlz", function(object) { object@"orient" })
+setMethod("orient", "anlz", function(object) object@"orient")
 #' @rdname orient-methods
 #' @aliases orient<- 
 #' @export
-setGeneric("orient<-", function(object, value) { standardGeneric("orient<-") })
+setGeneric("orient<-", function(object, value) standardGeneric("orient<-"))
 #' @rdname orient-methods
 #' @aliases orient<-,anlz-method
 #' @export

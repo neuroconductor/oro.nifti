@@ -22,11 +22,11 @@ setGeneric("start_field", function(object) standardGeneric("start_field"))
 #' @rdname start_field-methods
 #' @aliases start_field,anlz-method
 #' @export
-setMethod("start_field", "anlz", function(object) { object@"start_field" })
+setMethod("start_field", "anlz", function(object) object@"start_field")
 #' @rdname start_field-methods
 #' @aliases start_field<- 
 #' @export
-setGeneric("start_field<-", function(object, value) { standardGeneric("start_field<-") })
+setGeneric("start_field<-", function(object, value) standardGeneric("start_field<-"))
 #' @rdname start_field-methods
 #' @aliases start_field<-,anlz-method
 #' @export

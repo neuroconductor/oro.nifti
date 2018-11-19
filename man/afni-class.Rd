@@ -90,8 +90,6 @@ The AFNI class for medical imaging data.
   with explicit coerce.\cr
   Class \code{"\linkS4class{vector}"}, by class \dQuote{array}, distance 5,
   with explicit test and coerce.
-  @export
-  @rdname afni-class
 }
 
 \examples{

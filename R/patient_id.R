@@ -22,11 +22,11 @@ setGeneric("patient_id", function(object) standardGeneric("patient_id"))
 #' @rdname patient_id-methods
 #' @aliases patient_id,anlz-method
 #' @export
-setMethod("patient_id", "anlz", function(object) { object@"patient_id" })
+setMethod("patient_id", "anlz", function(object) object@"patient_id")
 #' @rdname patient_id-methods
 #' @aliases patient_id<- 
 #' @export
-setGeneric("patient_id<-", function(object, value) { standardGeneric("patient_id<-") })
+setGeneric("patient_id<-", function(object, value) standardGeneric("patient_id<-"))
 #' @rdname patient_id-methods
 #' @aliases patient_id<-,anlz-method
 #' @export
@@ -47,11 +47,11 @@ setGeneric("patient.id", function(object) standardGeneric("patient.id"))
 #' @rdname patient_id-methods
 #' @aliases patient.id,anlz-method
 #' @export
-setMethod("patient.id", "anlz", function(object) { object@"patient_id" })
+setMethod("patient.id", "anlz", function(object) object@"patient_id")
 #' @rdname patient_id-methods
 #' @aliases patient.id<- 
 #' @export
-setGeneric("patient.id<-", function(object, value) { standardGeneric("patient.id<-") })
+setGeneric("patient.id<-", function(object, value) standardGeneric("patient.id<-"))
 #' @rdname patient_id-methods
 #' @aliases patient.id<-,anlz-method
 #' @export

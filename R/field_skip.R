@@ -22,11 +22,11 @@ setGeneric("field_skip", function(object) standardGeneric("field_skip"))
 #' @rdname field_skip-methods
 #' @aliases field_skip,anlz-method
 #' @export
-setMethod("field_skip", "anlz", function(object) { object@"field_skip" })
+setMethod("field_skip", "anlz", function(object) object@"field_skip")
 #' @rdname field_skip-methods
 #' @aliases field_skip<- 
 #' @export
-setGeneric("field_skip<-", function(object, value) { standardGeneric("field_skip<-") })
+setGeneric("field_skip<-", function(object, value) standardGeneric("field_skip<-"))
 #' @rdname field_skip-methods
 #' @aliases field_skip<-,anlz-method
 #' @export
@@ -47,11 +47,11 @@ setGeneric("field.skip", function(object) standardGeneric("field.skip"))
 #' @rdname field_skip-methods
 #' @aliases field.skip,anlz-method
 #' @export
-setMethod("field.skip", "anlz", function(object) { object@"field_skip" })
+setMethod("field.skip", "anlz", function(object) object@"field_skip")
 #' @rdname field_skip-methods
 #' @aliases field.skip<- 
 #' @export
-setGeneric("field.skip<-", function(object, value) { standardGeneric("field.skip<-") })
+setGeneric("field.skip<-", function(object, value) standardGeneric("field.skip<-"))
 #' @rdname field_skip-methods
 #' @aliases field.skip<-,anlz-method
 #' @export

@@ -22,15 +22,15 @@ setGeneric("datatype", function(object) standardGeneric("datatype"))
 #' @rdname datatype-methods
 #' @aliases datatype,nifti-method
 #' @export
-setMethod("datatype", "nifti", function(object) { object@"datatype" })
+setMethod("datatype", "nifti", function(object) object@"datatype")
 #' @rdname datatype-methods
 #' @aliases datatype,anlz-method
 #' @export
-setMethod("datatype", "anlz", function(object) { object@"datatype" })
+setMethod("datatype", "anlz", function(object) object@"datatype")
 #' @rdname datatype-methods
 #' @aliases datatype<- 
 #' @export
-setGeneric("datatype<-", function(object, value) { standardGeneric("datatype<-") })
+setGeneric("datatype<-", function(object, value) standardGeneric("datatype<-"))
 #' @rdname datatype-methods
 #' @aliases datatype<-,nifti-method
 #' @export

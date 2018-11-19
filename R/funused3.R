@@ -22,11 +22,11 @@ setGeneric("funused3", function(object) standardGeneric("funused3"))
 #' @rdname funused3-methods
 #' @aliases funused3,anlz-method
 #' @export
-setMethod("funused3", "anlz", function(object) { object@"funused3" })
+setMethod("funused3", "anlz", function(object) object@"funused3")
 #' @rdname funused3-methods
 #' @aliases funused3<- 
 #' @export
-setGeneric("funused3<-", function(object, value) { standardGeneric("funused3<-") })
+setGeneric("funused3<-", function(object, value) standardGeneric("funused3<-"))
 #' @rdname funused3-methods
 #' @aliases funused3<-,anlz-method
 #' @export

@@ -22,11 +22,11 @@ setGeneric("cal_units", function(object) standardGeneric("cal_units"))
 #' @rdname cal_units-methods
 #' @aliases cal_units,anlz-method
 #' @export
-setMethod("cal_units", "anlz", function(object) { object@"cal_units" })
+setMethod("cal_units", "anlz", function(object) object@"cal_units")
 #' @rdname cal_units-methods
 #' @aliases cal_units<- 
 #' @export
-setGeneric("cal_units<-", function(object, value) { standardGeneric("cal_units<-") })
+setGeneric("cal_units<-", function(object, value) standardGeneric("cal_units<-"))
 #' @rdname cal_units-methods
 #' @aliases cal_units<-,anlz-method
 #' @export
@@ -47,11 +47,11 @@ setGeneric("cal.units", function(object) standardGeneric("cal.units"))
 #' @rdname cal_units-methods
 #' @aliases cal.units,anlz-method
 #' @export
-setMethod("cal.units", "anlz", function(object) { object@"cal_units" })
+setMethod("cal.units", "anlz", function(object) object@"cal_units")
 #' @rdname cal_units-methods
 #' @aliases cal.units<- 
 #' @export
-setGeneric("cal.units<-", function(object, value) { standardGeneric("cal.units<-") })
+setGeneric("cal.units<-", function(object, value) standardGeneric("cal.units<-"))
 #' @rdname cal_units-methods
 #' @aliases cal.units<-,anlz-method
 #' @export

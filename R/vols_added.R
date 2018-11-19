@@ -22,11 +22,11 @@ setGeneric("vols_added", function(object) standardGeneric("vols_added"))
 #' @rdname vols_added-methods
 #' @aliases vols_added,anlz-method
 #' @export
-setMethod("vols_added", "anlz", function(object) { object@"vols_added" })
+setMethod("vols_added", "anlz", function(object) object@"vols_added")
 #' @rdname vols_added-methods
 #' @aliases vols_added<- 
 #' @export
-setGeneric("vols_added<-", function(object, value) { standardGeneric("vols_added<-") })
+setGeneric("vols_added<-", function(object, value) standardGeneric("vols_added<-"))
 #' @rdname vols_added-methods
 #' @aliases vols_added<-,anlz-method
 #' @export
@@ -47,11 +47,11 @@ setGeneric("vols.added", function(object) standardGeneric("vols.added"))
 #' @rdname vols_added-methods
 #' @aliases vols.added,anlz-method
 #' @export
-setMethod("vols.added", "anlz", function(object) { object@"vols_added" })
+setMethod("vols.added", "anlz", function(object) object@"vols_added")
 #' @rdname vols_added-methods
 #' @aliases vols.added<- 
 #' @export
-setGeneric("vols.added<-", function(object, value) { standardGeneric("vols.added<-") })
+setGeneric("vols.added<-", function(object, value) standardGeneric("vols.added<-"))
 #' @rdname vols_added-methods
 #' @aliases vols.added<-,anlz-method
 #' @export

@@ -22,11 +22,11 @@ setGeneric("srow_z", function(object) standardGeneric("srow_z"))
 #' @rdname srow_z-methods
 #' @aliases srow_z,nifti-method
 #' @export
-setMethod("srow_z", "nifti", function(object) { object@"srow_z" })
+setMethod("srow_z", "nifti", function(object) object@"srow_z")
 #' @rdname srow_z-methods
 #' @aliases srow_z<- 
 #' @export
-setGeneric("srow_z<-", function(object, value) { standardGeneric("srow_z<-") })
+setGeneric("srow_z<-", function(object, value) standardGeneric("srow_z<-"))
 #' @rdname srow_z-methods
 #' @aliases srow_z<-,nifti-method
 #' @export
@@ -50,11 +50,11 @@ setGeneric("srow.z", function(object) standardGeneric("srow.z"))
 #' @rdname srow_z-methods
 #' @aliases srow.z,nifti-method
 #' @export
-setMethod("srow.z", "nifti", function(object) { object@"srow_z" })
+setMethod("srow.z", "nifti", function(object) object@"srow_z")
 #' @rdname srow_z-methods
 #' @aliases srow.z<- 
 #' @export
-setGeneric("srow.z<-", function(object, value) { standardGeneric("srow.z<-") })
+setGeneric("srow.z<-", function(object, value) standardGeneric("srow.z<-"))
 #' @rdname srow_z-methods
 #' @aliases srow.z<-,nifti-method
 #' @export

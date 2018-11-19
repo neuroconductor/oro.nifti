@@ -22,11 +22,11 @@ setGeneric("qoffset_x", function(object) standardGeneric("qoffset_x"))
 #' @rdname qoffset_x-methods
 #' @aliases qoffset_x,nifti-method
 #' @export
-setMethod("qoffset_x", "nifti", function(object) { object@"qoffset_x" })
+setMethod("qoffset_x", "nifti", function(object) object@"qoffset_x")
 #' @rdname qoffset_x-methods
 #' @aliases qoffset_x<- 
 #' @export
-setGeneric("qoffset_x<-", function(object, value) { standardGeneric("qoffset_x<-") })
+setGeneric("qoffset_x<-", function(object, value) standardGeneric("qoffset_x<-"))
 #' @rdname qoffset_x-methods
 #' @aliases qoffset_x<-,nifti-method
 #' @export
@@ -50,11 +50,11 @@ setGeneric("qoffset.x", function(object) standardGeneric("qoffset.x"))
 #' @rdname qoffset_x-methods
 #' @aliases qoffset.x,nifti-method
 #' @export
-setMethod("qoffset.x", "nifti", function(object) { object@"qoffset_x" })
+setMethod("qoffset.x", "nifti", function(object) object@"qoffset_x")
 #' @rdname qoffset_x-methods
 #' @aliases qoffset.x<- 
 #' @export
-setGeneric("qoffset.x<-", function(object, value) { standardGeneric("qoffset.x<-") })
+setGeneric("qoffset.x<-", function(object, value) standardGeneric("qoffset.x<-"))
 #' @rdname qoffset_x-methods
 #' @aliases qoffset.x<-,nifti-method
 #' @export

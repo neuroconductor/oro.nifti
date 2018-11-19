@@ -23,11 +23,11 @@ setGeneric("sizeof_hdr", function(object) standardGeneric("sizeof_hdr"))
 #' @rdname sizeof_hdr-methods
 #' @aliases sizeof_hdr,nifti-method
 #' @export
-setMethod("sizeof_hdr", "nifti", function(object) { object@"sizeof_hdr" })
+setMethod("sizeof_hdr", "nifti", function(object) object@"sizeof_hdr")
 #' @rdname sizeof_hdr-methods
 #' @aliases sizeof_hdr,anlz-method
 #' @export
-setMethod("sizeof_hdr", "anlz", function(object) { object@"sizeof_hdr" })
+setMethod("sizeof_hdr", "anlz", function(object) object@"sizeof_hdr")
 #' @rdname sizeof_hdr-methods
 #' @aliases sizeof.hdr,nifti-method
 #' @export
@@ -35,16 +35,16 @@ setGeneric("sizeof.hdr", function(object) standardGeneric("sizeof.hdr"))
 #' @rdname sizeof_hdr-methods
 #' @aliases sizeof.hdr,nifti-method
 #' @export
-setMethod("sizeof.hdr", "nifti", function(object) { object@"sizeof_hdr" })
+setMethod("sizeof.hdr", "nifti", function(object) object@"sizeof_hdr")
 #' @rdname sizeof_hdr-methods
 #' @aliases sizeof.hdr,anlz-method
 #' @export
-setMethod("sizeof.hdr", "anlz", function(object) { object@"sizeof_hdr" })
+setMethod("sizeof.hdr", "anlz", function(object) object@"sizeof_hdr")
 
 #' @rdname sizeof_hdr-methods
 #' @aliases sizeof_hdr<- 
 #' @export
-setGeneric("sizeof_hdr<-", function(object, value) { standardGeneric("sizeof_hdr<-") })
+setGeneric("sizeof_hdr<-", function(object, value) standardGeneric("sizeof_hdr<-"))
 #' @rdname sizeof_hdr-methods
 #' @aliases sizeof_hdr<-,nifti-method
 #' @export

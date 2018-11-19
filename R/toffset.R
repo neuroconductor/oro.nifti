@@ -22,11 +22,11 @@ setGeneric("toffset", function(object) standardGeneric("toffset"))
 #' @rdname toffset-methods
 #' @aliases toffset,nifti-method
 #' @export
-setMethod("toffset", "nifti", function(object) { object@"toffset" })
+setMethod("toffset", "nifti", function(object) object@"toffset")
 #' @rdname toffset-methods
 #' @aliases toffset<- 
 #' @export
-setGeneric("toffset<-", function(object, value) { standardGeneric("toffset<-") })
+setGeneric("toffset<-", function(object, value) standardGeneric("toffset<-"))
 #' @rdname toffset-methods
 #' @aliases toffset<-,nifti-method
 #' @export
