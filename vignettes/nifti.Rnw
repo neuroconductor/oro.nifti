@@ -138,7 +138,7 @@ file.
       \code{image}, \code{orthographic}, \code{overlay} & Two-dimensional visualization methods.\\
       \code{is.afni}, \code{is.anlz}, \code{is.nifti} & Logical checks.\\
       \code{readAFNI}, \code{readANALYZE}, \code{readNIfTI} & Data input.\\
-      \code{writeAFNI}, \code{writeANALYZE}, \code{writeNIfTI} & Data otuput.\\
+      \code{writeAFNI}, \code{writeANALYZE}, \code{writeNIfTI} & Data output.\\
       \hline
       \end{tabular}
   \end{center}

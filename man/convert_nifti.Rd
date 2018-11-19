@@ -43,7 +43,7 @@ A character string.
 }
 \description{
 Codes that appear in the ANALYZE header are mapped to 
-meaningful chartacter strings.
+meaningful character strings.
 }
 \details{
 \code{switch} statements are used to map a numeric code to the 
