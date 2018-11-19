@@ -17,7 +17,9 @@ Depends:
 Suggests:
     XML,
     testthat,
-    covr
+    covr,
+    knitr,
+    rmarkdown
 Imports:
     stats,
     bitops,
@@ -146,3 +148,4 @@ Collate:
     'zzz_niftiImage.R'
 RoxygenNote: 6.1.0
 Encoding: UTF-8
+VignetteBuilder: knitr
