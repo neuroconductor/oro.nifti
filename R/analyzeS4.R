@@ -260,7 +260,7 @@ setValidity("anlz", function(object) {
     retval <- c(retval, "dim[1]/img mismatch")
   }
   ## pixdim[n] required when dim[n] is required
-  if (!all(as.logical(object@"dim_"[indices]) &&
+  if (!all(as.logical(object@"dim_"[indices]) &
            as.logical(object@"pixdim"[indices]))) {
     retval <- c(retval, "dim/pixdim mismatch")
   }
