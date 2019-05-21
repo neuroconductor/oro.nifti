@@ -12,8 +12,8 @@
 #' @export
 resetSlopeIntercept <- function(img) {
   if (is.nifti(img)) {
-    scl.slope(img) <- 1
-    scl.inter(img) <- 0
+    scl.slope(img) <- 1L
+    scl.inter(img) <- 0L
   }
   return(img)
 }

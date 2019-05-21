@@ -1,3 +1,8 @@
+# oro.nifti 0.10.1
+
+* Added an `origin` accessor for `nifti` objects.
+* Fixed rescaling of data when `nifti` read in.  See `rescale_data` argument in `ori.nifti:::.read.nifti.content`.
+
 # oro.nifti 0.9.11
 
 * Fixed bug in scale and slope parameter.

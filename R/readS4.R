@@ -71,6 +71,8 @@
 #' @param read_data Should the data be read in?  If this is FALSE,
 #' then an array of NAs are given instead of the true data.
 #' Useful if you are simply interested in the header.
+#' @param rescale_data Should the data be rescaled using the 
+#' slope and intercept values?  If so, slope and intercept will be reset
 #' @return An object of class \code{nifti}.
 #' @author Brandon Whitcher \email{bwhitcher@@gmail.com},\cr Volker Schmid
 #' \email{volkerschmid@@users.sourceforge.net},\cr Andrew Thornton
@@ -116,7 +118,8 @@
 readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
                       call=NULL, 
                       # force_extension = FALSE,
-                      read_data = TRUE) {
+                      read_data = TRUE,
+                      rescale_data = TRUE) {
   if (is.null(call)) {
     call <- match.call()
   }
@@ -148,49 +151,52 @@ readNIfTI <- function(fname, verbose=FALSE, warn=-1, reorient=TRUE,
   img <- paste(fname, "img", sep=".")
   imggz <- paste(fname, "img.gz", sep=".")
   ## Check all possible file extensions
+  args = list(fname, 
+              onefile = TRUE, 
+              gzipped = TRUE,
+              verbose = verbose, 
+              warn = warn, 
+              reorient = reorient,
+              call = call,
+              # force_extension = force_extension,
+              read_data = read_data,
+              rescale_data = rescale_data)
+  
   if (file.exists(niigz)) {
     ## If compressed file exists, then upload!
     if (verbose) {
       cat(paste("  files =", niigz), fill=TRUE)
     }
-    nim <- .read.nifti.content(fname, onefile=TRUE, gzipped=TRUE,
-                               verbose=verbose, warn=warn, reorient=reorient,
-                               call=call,
-                               # force_extension = force_extension,
-                               read_data = read_data)
+    args$onefile = TRUE
+    args$gzipped = TRUE
+    nim = do.call(.read.nifti.content, args = args)
   } else {
     if (file.exists(nii)) {
       ## If uncompressed file exists, then upload!
       if (verbose) {
         cat(paste("  files =", nii), fill=TRUE)
       }
-      nim <- .read.nifti.content(fname, onefile=TRUE, gzipped=FALSE,
-                                 verbose=verbose, warn=warn, reorient=reorient,
-                                 call=call,
-                                 # force_extension = force_extension,
-                                 read_data = read_data)
+      args$onefile = TRUE
+      args$gzipped = FALSE
+      nim = do.call(.read.nifti.content, args = args)   
     } else {
       if (file.exists(hdrgz) && file.exists(imggz)) {
         ## If compressed files exist, then upload!
         if (verbose) {
           cat(paste("  files =", hdrgz, "and", imggz), fill=TRUE)
         }
-        nim <- .read.nifti.content(fname, onefile=FALSE, gzipped=TRUE,
-                                   verbose=verbose, warn=warn,
-                                   reorient=reorient, call=call,
-                                   # force_extension = force_extension,
-                                   read_data = read_data)
+        args$onefile = FALSE
+        args$gzipped = TRUE
+        nim = do.call(.read.nifti.content, args = args)
       } else {
         ## If uncompressed files exist, then upload!
         if (file.exists(hdr) && file.exists(img)) {
           if (verbose) {
             cat(paste("  files =", hdr, "and", img), fill=TRUE)
           }
-          nim <- .read.nifti.content(fname, onefile=FALSE, gzipped=FALSE,
-                                     verbose=verbose, warn=warn,
-                                     reorient=reorient, call=call,
-                                     # force_extension = force_extension,
-                                     read_data = read_data)
+          args$onefile = FALSE
+          args$gzipped = FALSE
+          nim = do.call(.read.nifti.content, args = args)          
         } else {
           stop("File(s) not found!")
         }
@@ -229,7 +235,8 @@ nifti_header <- function(
                                 verbose=FALSE, warn=-1, reorient=FALSE,
                                 call=NULL, 
                                 # force_extension = FALSE,
-                                read_data = TRUE) {
+                                read_data = TRUE,
+                                rescale_data = TRUE) {
   ## Open appropriate file
   if (gzipped) {
     suffix <- ifelse(onefile, "nii.gz", "hdr.gz")
@@ -434,23 +441,28 @@ nifti_header <- function(
   
   ## WARNING to the user
   if (read_data) {
-    if (nim@"scl_slope" != 0) {
-      # trying to preserve type of integer
-      if (isTRUE(all.equal(nim@"scl_slope", as.integer(nim@"scl_slope")))) {
-        nim@"scl_slope" = as.integer(nim@"scl_slope")
-      }
-      # trying to preserve type of integer
-      if (isTRUE(all.equal(nim@"scl_inter", as.integer(nim@"scl_inter")))) {
-        nim@"scl_inter" = as.integer(nim@"scl_inter")
-      }      
-      # irrelevant scaling
-      # notice the not in front of the phrase
-      if  ( !(nim@"scl_slope" == 1L & nim@"scl_inter" == 0L) ) {
-        warning(paste("scl_slope =", nim@"scl_slope", 
-                      "scl_inter =", nim@"scl_inter", 
-                      "and data must be rescaled."))
-        
-        data <- data * nim@"scl_slope" + nim@"scl_inter"
+    if (rescale_data) {
+      # https://nifti.nimh.nih.gov/nifti-1/documentation/nifti1fields/nifti1fields_pages/scl_slopeinter.html
+      if (nim@"scl_slope" != 0) {
+        # trying to preserve type of integer
+        if (isTRUE(all.equal(nim@"scl_slope", as.integer(nim@"scl_slope")))) {
+          nim@"scl_slope" = as.integer(nim@"scl_slope")
+        }         
+        # trying to preserve type of integer
+        if (isTRUE(all.equal(nim@"scl_inter", as.integer(nim@"scl_inter")))) {
+          nim@"scl_inter" = as.integer(nim@"scl_inter")
+        }      
+        # irrelevant scaling
+        # notice the not in front of the phrase
+        if  ( !(nim@"scl_slope" == 1L & nim@"scl_inter" == 0L) ) {
+          warning(paste("scl_slope =", nim@"scl_slope", 
+                        "scl_inter =", nim@"scl_inter", 
+                        "and data must be rescaled."))
+          
+          data <- data * nim@"scl_slope" + nim@"scl_inter"
+          nim@scl_slope = 1L
+          nim@scl_inter = 0L
+        }
       }
     }
   }

@@ -81,6 +81,13 @@ setMethod("slice", signature(x = "nifti"), slice.nifti)
 setMethod("slice", signature(x = "anlz"), slice.nifti)
 #' @export
 #' @rdname slice-methods
+setMethod("slice", signature(x = "array"), 
+          function(x, ...) {
+            x <- as(x, "nifti")
+            slice.nifti(x, ...)
+          })
+#' @export
+#' @rdname slice-methods
 setMethod("slice", signature(x = "afni"),
           function(x, ...) {
             x <- as(x, "nifti")
