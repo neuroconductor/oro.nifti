@@ -64,10 +64,10 @@ setMethod("dim_<-",
 #' @rdname dim_-methods
 #' @aliases dim_,ANY-method
 #' @export
-#' @importFrom RNifti dumpNifti
+#' @importFrom RNifti niftiHeader
 setMethod("dim_", "ANY", function(object) { 
   if (inherits(object, "niftiImage")) {
-    return(RNifti::dumpNifti(object)$dim)
+    return(RNifti::niftiHeader(object)$dim)
   } else {
     stop("Not implemented for this type!")
   }

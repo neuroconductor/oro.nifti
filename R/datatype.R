@@ -51,10 +51,10 @@ setMethod("datatype<-",
 #' @rdname datatype-methods
 #' @aliases datatype,ANY-method
 #' @export
-#' @importFrom RNifti dumpNifti
+#' @importFrom RNifti niftiHeader
 setMethod("datatype", "ANY", function(object) { 
   if (inherits(object, "niftiImage")) {
-    return(RNifti::dumpNifti(object)$datatype)
+    return(RNifti::niftiHeader(object)$datatype)
   } else {
     stop("Not implemented for this type!")
   }

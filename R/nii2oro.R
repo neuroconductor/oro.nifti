@@ -6,9 +6,9 @@
 #' @return Object of class \code{\link{nifti}}
 #' @export
 #' @importFrom methods as slot<- slotNames
-#' @importFrom RNifti dumpNifti
+#' @importFrom RNifti niftiHeader
 nii2oro = function(image) {
-  hdr = dumpNifti(image)
+  hdr = niftiHeader(image)
   arr = as.array(image)
   arr = array(arr, dim = dim(arr))
   arr = as(arr, "array")
