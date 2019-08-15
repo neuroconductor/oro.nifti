@@ -38,7 +38,10 @@ setMethod("pixdim", "nifti", function(object) object@"pixdim")
 #' @importFrom RNifti pixdim
 setMethod("pixdim", "ANY", function(object) { 
   if (inherits(object, "niftiImage")) {
+    # RNifti::niftiHeader(object)$pixdim
     return(RNifti::pixdim(object))
+  } else if (inherits(object, "niftiHeader")) {
+    return(object$pixdim)
   } else {
     stop("Not implemented for this type!")
   }

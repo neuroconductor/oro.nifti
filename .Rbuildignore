@@ -16,3 +16,4 @@ vignettes/nifti2*
 vignettes/jss*
 revdep/*
 
+^appveyor\.yml$
