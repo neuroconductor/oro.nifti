@@ -34,6 +34,7 @@ Enhances: dcemriS4,
     fmri,
     oro.dicom
 License: BSD_3_clause + file LICENSE
+BugReports: https://github.com/bjw34032/oro.nifti/issues
 URL: http://rig.oro.us.com,
     http://rigorousanalytics.blogspot.com
 LazyData: true
