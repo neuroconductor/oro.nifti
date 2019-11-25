@@ -78,10 +78,12 @@ img <- round(255 * img)
 img[17:32,,] <- 255 - img[17:32,,]
 img.nifti <- nifti(img) # create NIfTI object
 
-writeNIfTI(img.nifti, "test-nifti-image-uint8", verbose=TRUE)
+fname = file.path(tempdir(), "test-nifti-image-uint8")
+
+writeNIfTI(img.nifti, fname, verbose=TRUE)
 ## These files should be viewable in, for example, FSLview
 ## Make sure you adjust the min/max values for proper visualization
-data <- readNIfTI("test-nifti-image-uint8", verbose=TRUE)
+data <- readNIfTI(fname, verbose=TRUE)
 image(img.nifti, oma=rep(2,4), bg="white")
 image(data, oma=rep(2,4), bg="white")
 abs.err <- abs(data - img.nifti)
@@ -95,6 +97,7 @@ datatypes <- list(code=c(2, 4, 8, 16, 64),
 equal <- vector("list")
 for (i in 1:length(datatypes$code)) {
   fname <- paste("test-nifti-image-", datatypes$name[i], sep="")
+  fname = file.path(tempdir(), fname)
   rm(img.nifti)
   img.nifti <- nifti(img, datatype=datatypes$code[i])
   writeNIfTI(img.nifti, fname, verbose=TRUE)

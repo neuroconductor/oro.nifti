@@ -7,7 +7,7 @@
 #' @aliases Ops,nifti,nifti-method
 #' @param e1 is an object of class \code{nifti}.
 #' @param e2 is an object of class \code{nifti}.
-#' @author John Muschellli \email{muschellij2@@gmail.com}
+#' @author John Muschelli \email{muschellij2@@gmail.com}
 #' @examples
 #' 
 #' img01 <- nifti(array(1:64, c(4,4,4,1)), datatype=4)

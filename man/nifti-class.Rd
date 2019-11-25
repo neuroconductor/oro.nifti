@@ -97,7 +97,7 @@ function.
 \section{Methods}{
 
   \describe{
-    \item{image}{\code{signature(x = "nifti")}: diplays the image(s).}
+    \item{image}{\code{signature(x = "nifti")}: displays the image(s).}
     \item{orthographic}{\code{signature(x = "nifti")}: displays the image(s).}
     \item{overlay}{\code{signature(x = "nifti", y = "nifti")}: displays
                    the image(s).}

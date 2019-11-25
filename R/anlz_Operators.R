@@ -7,7 +7,7 @@
 #' @aliases Ops,anlz,anlz-method
 #' @param e1 object
 #' @param e2 object
-#' @author John Muschellli \email{muschellij2@@gmail.com}
+#' @author John Muschelli \email{muschellij2@@gmail.com}
 #' @examples
 #' 
 #' img01 <- anlz(array(1:64, c(4,4,4,1)), datatype=4)

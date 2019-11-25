@@ -92,7 +92,7 @@ function.
 \section{Methods}{
 
   \describe{
-    \item{image}{\code{signature(x = "anlz")}: diplays the image(s).}
+    \item{image}{\code{signature(x = "anlz")}: displays the image(s).}
     \item{show}{\code{signature(object = "anlz")}: prints out a summary
                 of the imaging data.}
   }

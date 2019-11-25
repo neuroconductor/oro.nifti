@@ -38,5 +38,5 @@ is.anlz(img02 / pi)
 
 }
 \author{
-John Muschellli \email{muschellij2@gmail.com}
+John Muschelli \email{muschellij2@gmail.com}
 }
