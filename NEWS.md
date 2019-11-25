@@ -2,6 +2,8 @@
 
 * Added an `origin` accessor for `nifti` objects.
 * Fixed rescaling of data when `nifti` read in.  See `rescale_data` argument in `ori.nifti:::.read.nifti.content`.
+* Fixes bugs in writing data.
+* Fixes some typos in docs.
 
 # oro.nifti 0.9.11
 
