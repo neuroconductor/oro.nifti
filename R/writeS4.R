@@ -325,7 +325,7 @@ setGeneric("writeANALYZE", function(aim,  ...) standardGeneric("writeANALYZE"))
 #' disk.} }
 #' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
 #' @seealso \code{\link{writeAFNI}}, \code{\link{writeNIfTI}}
-#' @references Analyze 7.5\cr \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}
+#' @references Analyze 7.5\cr \url{http://eeg.sourceforge.net/ANALYZE75.pdf}
 #' @keywords file methods
 #' @examples
 #' 
