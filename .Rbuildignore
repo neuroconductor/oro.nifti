@@ -17,3 +17,5 @@ vignettes/jss*
 revdep/*
 
 ^appveyor\.yml$
+^vignettes/*\.jpeg$
+^vignettes/*\.nii\.gz$

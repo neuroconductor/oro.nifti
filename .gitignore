@@ -6,3 +6,5 @@ inst/doc
 ^\.Rproj\.user$
 .DS_Store
 revdep/
+vignettes/*.nii.gz
+vignettes/*.jpeg
