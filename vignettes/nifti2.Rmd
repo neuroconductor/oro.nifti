@@ -47,7 +47,7 @@ library("XML")
 library("splines")
 library("oro.nifti")
 options(prompt = "R> ", continue = "+  ", width = 70, useFancyQuotes = FALSE)
-options(niftiAuditTrail = TRUE)
+# options(niftiAuditTrail = TRUE)
 ```
 
 # Introduction
