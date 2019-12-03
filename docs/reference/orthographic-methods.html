@@ -126,30 +126,78 @@ objects." />
 objects.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>orthographic.nifti</span>(<span class='no'>x</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>xyz</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>col</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>), <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(), <span class='kw'>zlim</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>crosshairs</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>col.crosshairs</span> <span class='kw'>=</span> <span class='st'>"red"</span>,
-  <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
-  <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>), <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>, <span class='kw'>text</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>text.color</span> <span class='kw'>=</span> <span class='st'>"white"</span>,
-  <span class='kw'>text.cex</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>orthographic.nifti</span>(
+  <span class='no'>x</span>,
+  <span class='kw'>y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>xyz</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>col</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>),
+  <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(),
+  <span class='kw'>zlim</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>crosshairs</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>col.crosshairs</span> <span class='kw'>=</span> <span class='st'>"red"</span>,
+  <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
+  <span class='kw'>text</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>text.color</span> <span class='kw'>=</span> <span class='st'>"white"</span>,
+  <span class='kw'>text.cex</span> <span class='kw'>=</span> <span class='fl'>2</span>,
+  <span class='no'>...</span>
+)
 
 <span class='fu'>orthographic</span>(<span class='no'>x</span>, <span class='no'>...</span>)
 
 <span class='co'># S4 method for nifti</span>
-<span class='fu'>orthographic</span>(<span class='no'>x</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>xyz</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>col</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>), <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(), <span class='kw'>zlim</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>crosshairs</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>col.crosshairs</span> <span class='kw'>=</span> <span class='st'>"red"</span>,
-  <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
-  <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>), <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>, <span class='kw'>text</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>text.color</span> <span class='kw'>=</span> <span class='st'>"white"</span>,
-  <span class='kw'>text.cex</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='no'>...</span>)
+<span class='fu'>orthographic</span>(
+  <span class='no'>x</span>,
+  <span class='kw'>y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>xyz</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>col</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>),
+  <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(),
+  <span class='kw'>zlim</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>crosshairs</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>col.crosshairs</span> <span class='kw'>=</span> <span class='st'>"red"</span>,
+  <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
+  <span class='kw'>text</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>text.color</span> <span class='kw'>=</span> <span class='st'>"white"</span>,
+  <span class='kw'>text.cex</span> <span class='kw'>=</span> <span class='fl'>2</span>,
+  <span class='no'>...</span>
+)
 
 <span class='co'># S4 method for anlz</span>
-<span class='fu'>orthographic</span>(<span class='no'>x</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>xyz</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>col</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>), <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(), <span class='kw'>zlim</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>crosshairs</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>col.crosshairs</span> <span class='kw'>=</span> <span class='st'>"red"</span>,
-  <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
-  <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>), <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>, <span class='kw'>text</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>text.color</span> <span class='kw'>=</span> <span class='st'>"white"</span>,
-  <span class='kw'>text.cex</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='no'>...</span>)
+<span class='fu'>orthographic</span>(
+  <span class='no'>x</span>,
+  <span class='kw'>y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>xyz</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>col</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>),
+  <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(),
+  <span class='kw'>zlim</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>crosshairs</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>col.crosshairs</span> <span class='kw'>=</span> <span class='st'>"red"</span>,
+  <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
+  <span class='kw'>text</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>text.color</span> <span class='kw'>=</span> <span class='st'>"white"</span>,
+  <span class='kw'>text.cex</span> <span class='kw'>=</span> <span class='fl'>2</span>,
+  <span class='no'>...</span>
+)
 
 <span class='co'># S4 method for array</span>
 <span class='fu'>orthographic</span>(<span class='no'>x</span>, <span class='no'>...</span>)

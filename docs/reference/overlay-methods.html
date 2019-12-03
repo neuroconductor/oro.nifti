@@ -124,53 +124,144 @@
     <p>Methods for function <code>overlay</code></p>
     </div>
 
-    <pre class="usage"><span class='fu'>overlay.nifti</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>z</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>col.x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>),
-  <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(), <span class='kw'>zlim.x</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>plane</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"axial"</span>, <span class='st'>"coronal"</span>, <span class='st'>"sagittal"</span>), <span class='kw'>plot.type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"multiple"</span>,
-  <span class='st'>"single"</span>), <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
-  <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>), <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>, <span class='kw'>NA.x</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>NA.y</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>overlay.nifti</span>(
+  <span class='no'>x</span>,
+  <span class='no'>y</span>,
+  <span class='kw'>z</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>col.x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>),
+  <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(),
+  <span class='kw'>zlim.x</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>plane</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"axial"</span>, <span class='st'>"coronal"</span>, <span class='st'>"sagittal"</span>),
+  <span class='kw'>plot.type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"multiple"</span>, <span class='st'>"single"</span>),
+  <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
+  <span class='kw'>NA.x</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>NA.y</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)
 
 <span class='fu'>overlay</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='no'>...</span>)
 
 <span class='co'># S4 method for nifti,missing</span>
-<span class='fu'>overlay</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>z</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>col.x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>), <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(), <span class='kw'>zlim.x</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>plane</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"axial"</span>, <span class='st'>"coronal"</span>, <span class='st'>"sagittal"</span>),
-  <span class='kw'>plot.type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"multiple"</span>, <span class='st'>"single"</span>), <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>), <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>), <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>NA.x</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>NA.y</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>overlay</span>(
+  <span class='no'>x</span>,
+  <span class='no'>y</span>,
+  <span class='kw'>z</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>col.x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>),
+  <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(),
+  <span class='kw'>zlim.x</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>plane</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"axial"</span>, <span class='st'>"coronal"</span>, <span class='st'>"sagittal"</span>),
+  <span class='kw'>plot.type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"multiple"</span>, <span class='st'>"single"</span>),
+  <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
+  <span class='kw'>NA.x</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>NA.y</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)
 
 <span class='co'># S4 method for nifti,nifti</span>
-<span class='fu'>overlay</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>z</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>col.x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>), <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(), <span class='kw'>zlim.x</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>plane</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"axial"</span>, <span class='st'>"coronal"</span>, <span class='st'>"sagittal"</span>),
-  <span class='kw'>plot.type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"multiple"</span>, <span class='st'>"single"</span>), <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>), <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>), <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>NA.x</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>NA.y</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>overlay</span>(
+  <span class='no'>x</span>,
+  <span class='no'>y</span>,
+  <span class='kw'>z</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>col.x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>),
+  <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(),
+  <span class='kw'>zlim.x</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>plane</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"axial"</span>, <span class='st'>"coronal"</span>, <span class='st'>"sagittal"</span>),
+  <span class='kw'>plot.type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"multiple"</span>, <span class='st'>"single"</span>),
+  <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
+  <span class='kw'>NA.x</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>NA.y</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)
 
 <span class='co'># S4 method for anlz,anlz</span>
-<span class='fu'>overlay</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>z</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>col.x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>), <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(), <span class='kw'>zlim.x</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>plane</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"axial"</span>, <span class='st'>"coronal"</span>, <span class='st'>"sagittal"</span>),
-  <span class='kw'>plot.type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"multiple"</span>, <span class='st'>"single"</span>), <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>), <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>), <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>NA.x</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>NA.y</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>overlay</span>(
+  <span class='no'>x</span>,
+  <span class='no'>y</span>,
+  <span class='kw'>z</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>col.x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>),
+  <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(),
+  <span class='kw'>zlim.x</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>plane</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"axial"</span>, <span class='st'>"coronal"</span>, <span class='st'>"sagittal"</span>),
+  <span class='kw'>plot.type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"multiple"</span>, <span class='st'>"single"</span>),
+  <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
+  <span class='kw'>NA.x</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>NA.y</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)
 
 <span class='co'># S4 method for anlz,nifti</span>
-<span class='fu'>overlay</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>z</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>col.x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>), <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(), <span class='kw'>zlim.x</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>plane</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"axial"</span>, <span class='st'>"coronal"</span>, <span class='st'>"sagittal"</span>),
-  <span class='kw'>plot.type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"multiple"</span>, <span class='st'>"single"</span>), <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>), <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>), <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>NA.x</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>NA.y</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>overlay</span>(
+  <span class='no'>x</span>,
+  <span class='no'>y</span>,
+  <span class='kw'>z</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>col.x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>),
+  <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(),
+  <span class='kw'>zlim.x</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>plane</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"axial"</span>, <span class='st'>"coronal"</span>, <span class='st'>"sagittal"</span>),
+  <span class='kw'>plot.type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"multiple"</span>, <span class='st'>"single"</span>),
+  <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
+  <span class='kw'>NA.x</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>NA.y</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)
 
 <span class='co'># S4 method for nifti,anlz</span>
-<span class='fu'>overlay</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='kw'>z</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
-  <span class='kw'>col.x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>), <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(), <span class='kw'>zlim.x</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>plane</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"axial"</span>, <span class='st'>"coronal"</span>, <span class='st'>"sagittal"</span>),
-  <span class='kw'>plot.type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"multiple"</span>, <span class='st'>"single"</span>), <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>, <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>,
-  <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>), <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>), <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
-  <span class='kw'>NA.x</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>NA.y</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+<span class='fu'>overlay</span>(
+  <span class='no'>x</span>,
+  <span class='no'>y</span>,
+  <span class='kw'>z</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>1</span>,
+  <span class='kw'>col.x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/grDevices/gray.html'>gray</a></span>(<span class='fl'>0</span>:<span class='fl'>64</span>/<span class='fl'>64</span>),
+  <span class='kw'>col.y</span> <span class='kw'>=</span> <span class='fu'><a href='hotmetal.html'>hotmetal</a></span>(),
+  <span class='kw'>zlim.x</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>zlim.y</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>plane</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"axial"</span>, <span class='st'>"coronal"</span>, <span class='st'>"sagittal"</span>),
+  <span class='kw'>plot.type</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"multiple"</span>, <span class='st'>"single"</span>),
+  <span class='kw'>xlab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>ylab</span> <span class='kw'>=</span> <span class='st'>""</span>,
+  <span class='kw'>axes</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>oma</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>0</span>, <span class='fl'>4</span>),
+  <span class='kw'>bg</span> <span class='kw'>=</span> <span class='st'>"black"</span>,
+  <span class='kw'>NA.x</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>NA.y</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)
 
 <span class='co'># S4 method for array,array</span>
 <span class='fu'>overlay</span>(<span class='no'>x</span>, <span class='no'>y</span>, <span class='no'>...</span>)

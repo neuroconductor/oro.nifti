@@ -134,17 +134,35 @@ objects.</p>
 
 <span class='fu'>newAuditTrail</span>()
 
-<span class='fu'>niftiExtensionToAuditTrail</span>(<span class='no'>nim</span>, <span class='kw'>workingDirectory</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>filename</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>call</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>niftiExtensionToAuditTrail</span>(
+  <span class='no'>nim</span>,
+  <span class='kw'>workingDirectory</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>filename</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>call</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+)
 
-<span class='fu'>niftiAuditTrailSystemNode</span>(<span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"system-info"</span>,
-  <span class='kw'>workingDirectory</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>filename</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>call</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>niftiAuditTrailSystemNode</span>(
+  <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"system-info"</span>,
+  <span class='kw'>workingDirectory</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>filename</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>call</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+)
 
-<span class='fu'>niftiAuditTrailSystemNodeEvent</span>(<span class='no'>trail</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>call</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>workingDirectory</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>filename</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>comment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>niftiAuditTrailSystemNodeEvent</span>(
+  <span class='no'>trail</span>,
+  <span class='kw'>type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>call</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>workingDirectory</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>filename</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>comment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+)
 
-<span class='fu'>niftiAuditTrailCreated</span>(<span class='kw'>history</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>call</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>workingDirectory</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>filename</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>niftiAuditTrailCreated</span>(
+  <span class='kw'>history</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>call</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>workingDirectory</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>filename</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+)
 
 <span class='fu'>niftiAuditTrailEvent</span>(<span class='no'>trail</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>call</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>comment</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
 
