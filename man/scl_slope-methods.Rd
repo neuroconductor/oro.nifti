@@ -14,7 +14,6 @@
 \alias{scl.slope<-,nifti-method}
 \alias{scl_slope,niftiImage-method}
 \alias{scl.slope,niftiImage-method}
-\alias{scl.slope<-,niftiImage-method}
 \title{Extract Image Attribute \code{scl_slope}}
 \usage{
 scl_slope(object)

@@ -20,7 +20,6 @@
 #' @param value is the values used to modify \sQuote{object} (see the
 #' discussion below).  You should supply an object with class \code{nifti} in
 #' order to pass NIfTI header information.
-#' @aliases as.anlz as.nifti
 #' @param from is the object to be converted.
 #' @param value is the \code{nifti} class object to use as a template for
 #' various ANALYZE/NIfTI header information.

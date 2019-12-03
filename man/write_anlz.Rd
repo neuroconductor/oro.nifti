@@ -7,8 +7,14 @@
 \alias{writeANALYZE,anlz-method}
 \title{writeANALYZE}
 \usage{
-\S4method{writeANALYZE}{anlz}(aim, filename, gzipped = TRUE,
-  verbose = FALSE, warn = -1, compression = 6)
+\S4method{writeANALYZE}{anlz}(
+  aim,
+  filename,
+  gzipped = TRUE,
+  verbose = FALSE,
+  warn = -1,
+  compression = 6
+)
 }
 \arguments{
 \item{aim}{is an object of class \code{anlz}.}

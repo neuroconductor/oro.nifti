@@ -3,7 +3,6 @@
 #' 
 #' @description Methods for function \code{[<-} in Package 'base'
 #' 
-#' @name [<--methods
 #' @aliases [<--methods [<-,ANY,ANY,ANY,ANY-method [<-,nifti,ANY,ANY,ANY-method
 #' [<-,nifti,numeric,numeric,ANY-method [<-,nifti,ANY,missing,ANY-method
 #' [<-,nifti,numeric,missing,ANY-method [<-,nifti,missing,missing,array-method

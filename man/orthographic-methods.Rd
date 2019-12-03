@@ -11,28 +11,76 @@
 \alias{orthographic,afni-method}
 \title{Methods for Function `orthographic' in Package `dcemriS4'}
 \usage{
-orthographic.nifti(x, y = NULL, xyz = NULL, w = 1,
-  col = gray(0:64/64), col.y = hotmetal(), zlim = NULL,
-  zlim.y = NULL, crosshairs = TRUE, col.crosshairs = "red",
-  xlab = "", ylab = "", axes = FALSE, oma = rep(0, 4),
-  mar = rep(0, 4), bg = "black", text = NULL, text.color = "white",
-  text.cex = 2, ...)
+orthographic.nifti(
+  x,
+  y = NULL,
+  xyz = NULL,
+  w = 1,
+  col = gray(0:64/64),
+  col.y = hotmetal(),
+  zlim = NULL,
+  zlim.y = NULL,
+  crosshairs = TRUE,
+  col.crosshairs = "red",
+  xlab = "",
+  ylab = "",
+  axes = FALSE,
+  oma = rep(0, 4),
+  mar = rep(0, 4),
+  bg = "black",
+  text = NULL,
+  text.color = "white",
+  text.cex = 2,
+  ...
+)
 
 orthographic(x, ...)
 
-\S4method{orthographic}{nifti}(x, y = NULL, xyz = NULL, w = 1,
-  col = gray(0:64/64), col.y = hotmetal(), zlim = NULL,
-  zlim.y = NULL, crosshairs = TRUE, col.crosshairs = "red",
-  xlab = "", ylab = "", axes = FALSE, oma = rep(0, 4),
-  mar = rep(0, 4), bg = "black", text = NULL, text.color = "white",
-  text.cex = 2, ...)
+\S4method{orthographic}{nifti}(
+  x,
+  y = NULL,
+  xyz = NULL,
+  w = 1,
+  col = gray(0:64/64),
+  col.y = hotmetal(),
+  zlim = NULL,
+  zlim.y = NULL,
+  crosshairs = TRUE,
+  col.crosshairs = "red",
+  xlab = "",
+  ylab = "",
+  axes = FALSE,
+  oma = rep(0, 4),
+  mar = rep(0, 4),
+  bg = "black",
+  text = NULL,
+  text.color = "white",
+  text.cex = 2,
+  ...
+)
 
-\S4method{orthographic}{anlz}(x, y = NULL, xyz = NULL, w = 1,
-  col = gray(0:64/64), col.y = hotmetal(), zlim = NULL,
-  zlim.y = NULL, crosshairs = TRUE, col.crosshairs = "red",
-  xlab = "", ylab = "", axes = FALSE, oma = rep(0, 4),
-  mar = rep(0, 4), bg = "black", text = NULL, text.color = "white",
-  text.cex = 2, ...)
+\S4method{orthographic}{anlz}(
+  x,
+  y = NULL,
+  xyz = NULL,
+  w = 1,
+  col = gray(0:64/64),
+  col.y = hotmetal(),
+  zlim = NULL,
+  zlim.y = NULL,
+  crosshairs = TRUE,
+  col.crosshairs = "red",
+  xlab = "",
+  ylab = "",
+  axes = FALSE,
+  oma = rep(0, 4),
+  mar = rep(0, 4),
+  bg = "black",
+  text = NULL,
+  text.color = "white",
+  text.cex = 2,
+  ...
+)
 
 \S4method{orthographic}{array}(x, ...)
 
