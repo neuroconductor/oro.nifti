@@ -166,4 +166,3 @@ Collate:
     'zzz_niftiImage.R'
 RoxygenNote: 7.0.1
 Encoding: UTF-8
-VignetteBuilder: knitr
