@@ -336,6 +336,13 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
   }
   oldpar <- par(no.readonly=TRUE)
   par(mfrow=ceiling(rep(sqrt(lz),2)), oma=oma, mar=mar, bg=bg)
+  if (ndim == 2) {
+    x = array(x, dim = c(dim(x), 1))
+    z = 1
+    if (length(dim(y)) < 3) {
+      y = array(y, dim = c(dim(y), 1))
+    }
+  }  
   if (is.na(W)) { # three-dimensional array
     for (z in index) {
       graphics::image(1:X, 1:Y, x[,,z], col=col.x, breaks=breaks.x,
