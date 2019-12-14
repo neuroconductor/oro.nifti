@@ -268,7 +268,8 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
          },
          stop(paste("Orthogonal plane", plane[1], "is not valid.")))
   ## both volumes must have the same dimension
-  if (! all(dim(x)[1:3] == dim(y)[1:3])) {
+  ndim = length(dim(x))
+  if (! all(dim(x)[1:ndim] == dim(y)[1:ndim])) {
     stop("dimensions of \"x\" and \"y\" must be equal")
   }
   
@@ -292,6 +293,7 @@ overlay.nifti <- function(x, y, z=1, w=1, col.x=gray(0:64/64),
   X <- nrow(x)
   Y <- ncol(x)
   Z <- nsli(x)
+  if (is.na(Z)) Z = 1
   W <- ntim(x)
   ## check dimensions
   if (X == 0 || Y == 0 || Z == 0) {
