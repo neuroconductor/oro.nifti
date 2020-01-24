@@ -4,6 +4,7 @@
 * Fixed rescaling of data when `nifti` read in.  See `rescale_data` argument in `ori.nifti:::.read.nifti.content`.
 * Fixes bugs in writing data.
 * Fixes some typos in docs.
+* Fixed bug in `overlay` where `y` is `3D` but `x` is `4D` but the 3 dims agree.
 
 # oro.nifti 0.9.11
 
