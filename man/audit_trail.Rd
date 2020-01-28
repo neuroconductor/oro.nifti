@@ -22,17 +22,35 @@ getLastCallWithName(functionName)
 
 newAuditTrail()
 
-niftiExtensionToAuditTrail(nim, workingDirectory = NULL,
-  filename = NULL, call = NULL)
+niftiExtensionToAuditTrail(
+  nim,
+  workingDirectory = NULL,
+  filename = NULL,
+  call = NULL
+)
 
-niftiAuditTrailSystemNode(type = "system-info",
-  workingDirectory = NULL, filename = NULL, call = NULL)
+niftiAuditTrailSystemNode(
+  type = "system-info",
+  workingDirectory = NULL,
+  filename = NULL,
+  call = NULL
+)
 
-niftiAuditTrailSystemNodeEvent(trail, type = NULL, call = NULL,
-  workingDirectory = NULL, filename = NULL, comment = NULL)
+niftiAuditTrailSystemNodeEvent(
+  trail,
+  type = NULL,
+  call = NULL,
+  workingDirectory = NULL,
+  filename = NULL,
+  comment = NULL
+)
 
-niftiAuditTrailCreated(history = NULL, call = NULL,
-  workingDirectory = NULL, filename = NULL)
+niftiAuditTrailCreated(
+  history = NULL,
+  call = NULL,
+  workingDirectory = NULL,
+  filename = NULL
+)
 
 niftiAuditTrailEvent(trail, type = NULL, call = NULL, comment = NULL)
 }

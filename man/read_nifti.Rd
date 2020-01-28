@@ -5,8 +5,15 @@
 \alias{nifti_header}
 \title{readNIfTI}
 \usage{
-readNIfTI(fname, verbose = FALSE, warn = -1, reorient = TRUE,
-  call = NULL, read_data = TRUE, rescale_data = TRUE)
+readNIfTI(
+  fname,
+  verbose = FALSE,
+  warn = -1,
+  reorient = TRUE,
+  call = NULL,
+  read_data = TRUE,
+  rescale_data = TRUE
+)
 
 nifti_header(fname, verbose = FALSE, warn = -1)
 }

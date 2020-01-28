@@ -25,10 +25,6 @@
 \item{Class}{is the name of the class to which \sQuote{object} should be
 coerced; i.e., \code{nifti}.}
 
-\item{value}{is the values used to modify \sQuote{object} (see the
-discussion below).  You should supply an object with class \code{nifti} in
-order to pass NIfTI header information.}
-
 \item{from}{is the object to be converted.}
 
 \item{value}{is the \code{nifti} class object to use as a template for

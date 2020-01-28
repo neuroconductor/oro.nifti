@@ -87,10 +87,12 @@ setGeneric("writeNIfTI", function(nim,  ...) standardGeneric("writeNIfTI"))
 #' img[17:32,,] <- 255 - img[17:32,,]
 #' img.nifti <- nifti(img) # create NIfTI object
 #' 
-#' writeNIfTI(img.nifti, "test-nifti-image-uint8", verbose=TRUE)
+#' fname = file.path(tempdir(), "test-nifti-image-uint8")
+#' 
+#' writeNIfTI(img.nifti, fname, verbose=TRUE)
 #' ## These files should be viewable in, for example, FSLview
 #' ## Make sure you adjust the min/max values for proper visualization
-#' data <- readNIfTI("test-nifti-image-uint8", verbose=TRUE)
+#' data <- readNIfTI(fname, verbose=TRUE)
 #' image(img.nifti, oma=rep(2,4), bg="white")
 #' image(data, oma=rep(2,4), bg="white")
 #' abs.err <- abs(data - img.nifti)
@@ -104,6 +106,7 @@ setGeneric("writeNIfTI", function(nim,  ...) standardGeneric("writeNIfTI"))
 #' equal <- vector("list")
 #' for (i in 1:length(datatypes$code)) {
 #'   fname <- paste("test-nifti-image-", datatypes$name[i], sep="")
+#'   fname = file.path(tempdir(), fname)
 #'   rm(img.nifti)
 #'   img.nifti <- nifti(img, datatype=datatypes$code[i])
 #'   writeNIfTI(img.nifti, fname, verbose=TRUE)
@@ -322,7 +325,7 @@ setGeneric("writeANALYZE", function(aim,  ...) standardGeneric("writeANALYZE"))
 #' disk.} }
 #' @author Brandon Whitcher \email{bwhitcher@@gmail.com}
 #' @seealso \code{\link{writeAFNI}}, \code{\link{writeNIfTI}}
-#' @references Analyze 7.5\cr \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}
+#' @references Analyze 7.5\cr \url{http://eeg.sourceforge.net/ANALYZE75.pdf}
 #' @keywords file methods
 #' @examples
 #' 
@@ -333,10 +336,12 @@ setGeneric("writeANALYZE", function(aim,  ...) standardGeneric("writeANALYZE"))
 #' img[17:32,,] <- 255 - img[17:32,,]
 #' img.anlz <- anlz(img) # create Analyze object
 #' 
-#' writeANALYZE(img.anlz, "test-anlz-image-uint8", verbose=TRUE)
+#' fname = file.path(tempdir(), "test-anlz-image-uint8")
+#' 
+#' writeANALYZE(img.anlz, fname, verbose=TRUE)
 #' ## These files should be viewable in, for example, FSLview
 #' ## Make sure you adjust the min/max values for proper visualization
-#' data <- readANALYZE("test-anlz-image-uint8", verbose=TRUE)
+#' data <- readANALYZE(fname, verbose=TRUE)
 #' image(img.anlz, oma=rep(2,4), bg="white")
 #' image(data, oma=rep(2,4), bg="white")
 #' abs.err <- abs(data - img.anlz)
@@ -349,6 +354,7 @@ setGeneric("writeANALYZE", function(aim,  ...) standardGeneric("writeANALYZE"))
 #' equal <- vector("list")
 #' for (i in 1:length(datatypes$code)) {
 #'   fname <- paste("test-anlz-image-", datatypes$name[i], sep="")
+#'   fname = file.path(tempdir(), fname)
 #'   rm(img.anlz)
 #'   img.anlz <- anlz(img, datatype=datatypes$code[i])
 #'   writeANALYZE(img.anlz, fname)

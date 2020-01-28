@@ -1,10 +1,4 @@
-#' @rdname scl_slope-methods
-#' @examples
-#' file = system.file("extdata", "example.nii.gz", package = "RNifti")
-#' img = RNifti::readNifti(file)
-#' scl_slope(img)
-#' scl.slope(img)
-
+# #' @rdname scl_slope-methods
 # setMethod("scl_slope<-", 
 #           signature(object = "niftiImage"), 
 #           function(object, value) { 
@@ -15,6 +9,11 @@
 
 #' @rdname scl_slope-methods
 #' @aliases scl_slope,niftiImage-method
+#' @examples
+#' file = system.file("extdata", "example.nii.gz", package = "RNifti")
+#' img = RNifti::readNifti(file)
+#' scl_slope(img)
+#' scl.slope(img)
 #' @export
 setMethod("scl_slope", "niftiImage", function(object) { 
   object$scl_slope
@@ -46,13 +45,10 @@ setMethod("scl_inter", "niftiImage", function(object) {
 })
 
 
-#' @rdname scl_slope-methods
-#' @aliases scl.slope<-,niftiImage-method
-#' @export
-#' 
-
-
-
+# #' @rdname scl_slope-methods
+# #' @aliases scl.slope<-,niftiImage-method
+# #' @export
+# #' 
 # setMethod("scl.slope<-", 
 #           signature(object = "niftiImage"), 
 #           function(object, value) { 

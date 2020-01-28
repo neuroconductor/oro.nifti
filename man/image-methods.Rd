@@ -10,15 +10,39 @@
 \alias{image,nifti-method}
 \title{Methods for Function `image'}
 \usage{
-\S4method{image}{nifti}(x, z = 1, w = 1, col = gray(0:64/64),
-  plane = c("axial", "coronal", "sagittal"), plot.type = c("multiple",
-  "single"), zlim = NULL, xlab = "", ylab = "", axes = FALSE,
-  oma = rep(0, 4), mar = rep(0, 4), bg = "black", ...)
+\S4method{image}{nifti}(
+  x,
+  z = 1,
+  w = 1,
+  col = gray(0:64/64),
+  plane = c("axial", "coronal", "sagittal"),
+  plot.type = c("multiple", "single"),
+  zlim = NULL,
+  xlab = "",
+  ylab = "",
+  axes = FALSE,
+  oma = rep(0, 4),
+  mar = rep(0, 4),
+  bg = "black",
+  ...
+)
 
-\S4method{image}{anlz}(x, z = 1, w = 1, col = gray(0:64/64),
-  plane = c("axial", "coronal", "sagittal"), plot.type = c("multiple",
-  "single"), zlim = NULL, xlab = "", ylab = "", axes = FALSE,
-  oma = rep(0, 4), mar = rep(0, 4), bg = "black", ...)
+\S4method{image}{anlz}(
+  x,
+  z = 1,
+  w = 1,
+  col = gray(0:64/64),
+  plane = c("axial", "coronal", "sagittal"),
+  plot.type = c("multiple", "single"),
+  zlim = NULL,
+  xlab = "",
+  ylab = "",
+  axes = FALSE,
+  oma = rep(0, 4),
+  mar = rep(0, 4),
+  bg = "black",
+  ...
+)
 
 \S4method{image}{afni}(x, ...)
 }

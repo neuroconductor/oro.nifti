@@ -92,7 +92,7 @@ function.
 \section{Methods}{
 
   \describe{
-    \item{image}{\code{signature(x = "anlz")}: diplays the image(s).}
+    \item{image}{\code{signature(x = "anlz")}: displays the image(s).}
     \item{show}{\code{signature(object = "anlz")}: prints out a summary
                 of the imaging data.}
   }
@@ -103,7 +103,7 @@ function.
 showClass("anlz")
 }
 \references{
-ANALYZE 7.5\cr\url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}
+ANALYZE 7.5\cr\url{http://eeg.sourceforge.net/ANALYZE75.pdf}
 }
 \seealso{
 \code{\linkS4class{nifti}}, \code{\linkS4class{niftiExtension}}

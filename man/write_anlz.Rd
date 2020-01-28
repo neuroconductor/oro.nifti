@@ -7,8 +7,14 @@
 \alias{writeANALYZE,anlz-method}
 \title{writeANALYZE}
 \usage{
-\S4method{writeANALYZE}{anlz}(aim, filename, gzipped = TRUE,
-  verbose = FALSE, warn = -1, compression = 6)
+\S4method{writeANALYZE}{anlz}(
+  aim,
+  filename,
+  gzipped = TRUE,
+  verbose = FALSE,
+  warn = -1,
+  compression = 6
+)
 }
 \arguments{
 \item{aim}{is an object of class \code{anlz}.}
@@ -53,10 +59,12 @@ img <- round(255*img)
 img[17:32,,] <- 255 - img[17:32,,]
 img.anlz <- anlz(img) # create Analyze object
 
-writeANALYZE(img.anlz, "test-anlz-image-uint8", verbose=TRUE)
+fname = file.path(tempdir(), "test-anlz-image-uint8")
+
+writeANALYZE(img.anlz, fname, verbose=TRUE)
 ## These files should be viewable in, for example, FSLview
 ## Make sure you adjust the min/max values for proper visualization
-data <- readANALYZE("test-anlz-image-uint8", verbose=TRUE)
+data <- readANALYZE(fname, verbose=TRUE)
 image(img.anlz, oma=rep(2,4), bg="white")
 image(data, oma=rep(2,4), bg="white")
 abs.err <- abs(data - img.anlz)
@@ -69,6 +77,7 @@ datatypes <- list(code=c(2, 4, 8, 16, 64),
 equal <- vector("list")
 for (i in 1:length(datatypes$code)) {
   fname <- paste("test-anlz-image-", datatypes$name[i], sep="")
+  fname = file.path(tempdir(), fname)
   rm(img.anlz)
   img.anlz <- anlz(img, datatype=datatypes$code[i])
   writeANALYZE(img.anlz, fname)
@@ -79,7 +88,7 @@ unlist(equal)
 }
 }
 \references{
-Analyze 7.5\cr \url{https://rportal.mayo.edu/bir/ANALYZE75.pdf}
+Analyze 7.5\cr \url{http://eeg.sourceforge.net/ANALYZE75.pdf}
 }
 \seealso{
 \code{\link{writeAFNI}}, \code{\link{writeNIfTI}}

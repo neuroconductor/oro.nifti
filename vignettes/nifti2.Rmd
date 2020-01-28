@@ -47,7 +47,15 @@ library("XML")
 library("splines")
 library("oro.nifti")
 options(prompt = "R> ", continue = "+  ", width = 70, useFancyQuotes = FALSE)
-options(niftiAuditTrail = TRUE)
+# options(niftiAuditTrail = TRUE)
+mniRL_jpeg = file.path(tempdir(), "mniRL.jpeg")
+mniLR_jpeg = file.path(tempdir(), "mniLR.jpeg")
+ffd_jpeg = file.path(tempdir(), "ffd.jpeg")
+ffd_orthographic_jpeg = file.path(tempdir(), "ffd_orthographic.jpeg")
+ffd_design_jpeg = file.path(tempdir(), "ffd_design.jpeg")
+ffd_zstat1_jpeg = file.path(tempdir(), "ffd_zstat1.jpeg")
+ffd_zstat2_jpeg = file.path(tempdir(), "ffd_zstat2.jpeg")
+mniRL_orthographic_jpeg = file.path(tempdir(), "mniRL_orthographic.jpeg")
 ```
 
 # Introduction
@@ -220,7 +228,7 @@ differently when dealing with medical image objects (\code{nifti} and
 \code{anlz}).  The command
 
 ```{r mniLR-png,echo=FALSE,results="hide"}
-jpeg(filename="mniLR.jpeg", width=480, height=480, quality=95, bg="black")
+jpeg(filename=mniLR_jpeg, width=480, height=480, quality=95, bg="black")
 image(mniLR)
 dev.off()
 ```
@@ -241,8 +249,8 @@ option \code{plot.type="single"} in conjunction with the option
 \begin{figure}[tbp]
   \begin{center}
     \begin{tabular}{cc}
-      \includegraphics*[width=0.45\textwidth]{mniLR.jpeg} &
-      \includegraphics*[width=0.45\textwidth]{mniRL.jpeg}\\
+      \includegraphics*[width=0.45\textwidth]{`r mniLR_jpeg`} &
+      \includegraphics*[width=0.45\textwidth]{`r mniRL_jpeg`}\\
       \textbf{(a)} & \textbf{(b)}
     \end{tabular}
   \end{center}
@@ -265,7 +273,7 @@ fname <- system.file(file.path("nifti", "mniRL.nii.gz"), package="oro.nifti")
 (mniRL <- readNIfTI(fname))
 ``` 
 ```{r mniRL-png,echo=FALSE,results="hide"}
-jpeg(filename="mniRL.jpeg", width=480, height=480, quality=95, bg="black")
+jpeg(filename=mniRL_jpeg, width=480, height=480, quality=95, bg="black")
 image(mniRL)
 dev.off()
 ``` 
@@ -286,7 +294,7 @@ is where "right is left" and one is looking at the subject.
 
 \begin{figure}[tbp]
   \begin{center}
-    \includegraphics*[width=0.65\textwidth]{mniRL_orthographic.jpeg}
+    \includegraphics*[width=0.65\textwidth]{`r mniRL_orthographic_jpeg`}
     \end{center}
   \caption{Orthographic display of the MNI volume \code{mniRL\_nifti}.
     By default the mid-axial, mid-sagittal and mid-coronal planes are
@@ -299,7 +307,7 @@ An additional graphical display function has been added for
 orthographic visualization of the data.
 
 ```{r mniRL-ortho-png,echo=FALSE,results="hide"}
-jpeg(filename="mniRL_orthographic.jpeg", width=480, height=480, quality=95, bg="black")
+jpeg(filename=mniRL_orthographic_jpeg, width=480, height=480, quality=95, bg="black")
 orthographic(mniRL)
 dev.off()
 ``` 
@@ -393,6 +401,10 @@ writeNIfTI(random.image, "random")
 list.files(pattern="random")
 ``` 
 
+```{r NIfTI-remove, echo = FALSE}
+file.remove("random.nii.gz")
+```
+
 \subsection{The audit trail}
 
 Following on from the \proglang{S}4 implementation of both the NIfTI
@@ -476,9 +488,9 @@ ANALYZE/NIfTI data using a \proglang{Tcl}/\proglang{Tk} interface
 \begin{figure}[tbp]
   \begin{center}
     \begin{tabular}{c}
-      \includegraphics*[width=0.6\textwidth]{ffd.jpeg}\\
+      \includegraphics*[width=0.6\textwidth]{`r ffd_jpeg`}\\
       \textbf{(a)}\\
-      \includegraphics*[width=0.6\textwidth]{ffd_orthographic.jpeg}\\
+      \includegraphics*[width=0.6\textwidth]{`r ffd_orthographic_jpeg`}\\
       \textbf{(b)}
     \end{tabular}
   \end{center}
@@ -502,7 +514,7 @@ filtered.func.data <-
 (ffd <- readNIfTI(filtered.func.data))
 ``` 
 ```{r ffd-png,echo=FALSE,results="hide"}
-jpeg(filename="ffd.jpeg", width=480, height=480, quality=95, bg="black")
+jpeg(filename=ffd_jpeg, width=480, height=480, quality=95, bg="black")
 image(ffd, zlim=range(ffd)*0.95)
 dev.off()
 ``` 
@@ -524,7 +536,7 @@ using the axial plane containing the left-and-right thalamus to
 approximately center the crosshair vertically.
 
 ```{r ffd-ortho-png,echo=FALSE,results="hide"}
-jpeg(filename="ffd_orthographic.jpeg", width=480, height=480, quality=95, bg="black")
+jpeg(filename=ffd_orthographic_jpeg, width=480, height=480, quality=95, bg="black")
 orthographic(ffd, xyz=c(34,29,10), zlim=range(ffd)*0.9)
 dev.off()
 ``` 
@@ -548,7 +560,7 @@ test on activation in fMRI experiments
 
 \begin{figure}[tbp]
   \begin{center}
-    \includegraphics*[width=\textwidth]{ffd_design.jpeg}
+    \includegraphics*[width=\textwidth]{`r ffd_design_jpeg`}
     \end{center}
   \caption{Visual (30 seconds on/off) and auditory (45 seconds on/off)
     stimuli, convolved with a parametric haemodynamic response
@@ -582,7 +594,7 @@ visual.hrf <- visual.hrf[index]
 auditory.hrf <- auditory.hrf[index]
 ``` 
 ```{r ffd-design.png,echo=FALSE,results="hide"}
-jpeg("ffd_design.jpeg", width=3*480, height=1.5*480, quality=95)
+jpeg(ffd_design_jpeg, width=3*480, height=1.5*480, quality=95)
 par(mfrow=c(1,2), mar=c(5,4,4,2) + 1, mex=0.85, 
     cex=1.5, cex.axis=1.5, cex.lab=1.5, cex.main=1.5)
 plot(index, visual.hrf, type="l", lwd=2,
@@ -626,9 +638,9 @@ ffd.glm <- apply(ffd, 1:3, voxel.lsfit, thresh=0.1 * max(ffd))
 \begin{figure}[tbp]
   \begin{center}
     \begin{tabular}{c}
-      \includegraphics*[width=0.6\textwidth]{ffd_zstat1.jpeg}\\
+      \includegraphics*[width=0.6\textwidth]{`r ffd_zstat1_jpeg`}\\
       \textbf{(a)}\\
-      \includegraphics*[width=0.6\textwidth]{ffd_zstat2.jpeg}\\
+      \includegraphics*[width=0.6\textwidth]{`r ffd_zstat2_jpeg`}\\
       \textbf{(b)}
     \end{tabular}
   \end{center}
@@ -657,7 +669,7 @@ Z.auditory <- nifti(qnorm(pt(ffd.glm[2,,,], dof, log.p=TRUE), log.p=TRUE),
 ``` 
 
 ```{r zstat1-png,echo=FALSE,results="hide"}
-jpeg("ffd_zstat1.jpeg", width=480, height=480, quality=95, bg="black")
+jpeg(ffd_zstat1_jpeg, width=480, height=480, quality=95, bg="black")
 yrange <- c(5, max(Z.visual, na.rm=TRUE))
 overlay(ffd, ifelse(Z.visual > 5, Z.visual, NA), 
         zlim.x=range(ffd)*0.95, zlim.y=yrange)
@@ -671,7 +683,7 @@ overlay(ffd, ifelse(Z.visual > 5, Z.visual, NA),
 ```
 
 ```{r zstat2-png,echo=FALSE,results="hide"}
-jpeg("ffd_zstat2.jpeg", width=480, height=480, quality=95, bg="black")
+jpeg(ffd_zstat2_jpeg, width=480, height=480, quality=95, bg="black")
 yrange <- c(5, max(Z.auditory, na.rm=TRUE))
 overlay(ffd, ifelse(Z.auditory > 5, Z.auditory, NA), 
         zlim.x=range(ffd)*0.95, zlim.y=yrange)
