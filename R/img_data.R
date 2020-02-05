@@ -41,8 +41,8 @@ setMethod("img_data", "character", function(object) {
 #' @importFrom RNifti retrieveNifti
 #' @export
 setMethod("img_data", "ANY", function(object) { 
-  object = RNifti::retrieveNifti(object)
-  object = array(object)
+  object = RNifti::asNifti(object, internal = FALSE)
+  object = array(object, dim = dim(object))
   object = as.array(object)
   as(object, "array")
 })

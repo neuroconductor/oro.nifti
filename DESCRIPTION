@@ -1,5 +1,5 @@
 Package: oro.nifti
-Version: 0.10.1
+Version: 0.10.2
 Title: Rigorous - 'NIfTI' + 'ANALYZE' + 'AFNI' : Input / Output
 Authors@R: 
     c(person(given = "Brandon",
@@ -164,5 +164,5 @@ Collate:
     'img_length.R'
     'zzz.R'
     'zzz_niftiImage.R'
-RoxygenNote: 7.0.1
+RoxygenNote: 7.0.2
 Encoding: UTF-8
