@@ -46,7 +46,8 @@ Imports:
     methods,
     utils,
     abind,
-    RNifti (>= 0.9.0)
+    RNifti (>= 0.9.0),
+    rticles
 Enhances: dcemriS4,
     fmri,
     oro.dicom
